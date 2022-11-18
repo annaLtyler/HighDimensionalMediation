@@ -1,0 +1,23 @@
+---
+title: "High Dimensional Mediation Manuscript"
+author: J. Matthew Mahoney and Anna L Tyler
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output: 
+  html_document:
+    code_folding: hide
+    collapsed: no
+    toc: yes
+    toc_float: yes
+---
+
+## Abstract
+Here we describe high-dimensional mediation.
+
+## Introduction
+
+## Results
+
+## Discussion
+
+## Methods
+
