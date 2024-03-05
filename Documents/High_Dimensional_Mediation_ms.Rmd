@@ -296,29 +296,27 @@ the median transcript (Fig XXXZ).
 
 Local heritability of transcripts was negatively correlated with
 its trait relevance, defined as the maximum correlation of the 
-transcript and all traits, suggesting that the more local genotype
-influenced transcript abundance, the less effect variation in
-transcript abundance was related to the measured traits. 
-Conversely, distal heritability of transcripts was positively 
-correlated with trait relevance. That is, 
+transcript and all traits. This suggests that the more local 
+genotype influenced transcript abundance, the less effect 
+variation in transcript abundance was related to the measured 
+traits. Conversely, distal heritability of transcripts was 
+positively correlated with trait relevance. That is, transcripts
+that were more highly correlated with the measured traits 
+tended to be distally heritable rather than locally heritable.
+That trait-correlated transcripts have low local heritability
+is consistent with previous observations that low-heritability
+transcripts explain more expression-mediated disease heritability
+than high-heritability transcripts [cite]. However, the positive
+relationship between trait correlation and distal heritability
+suggests that there are alternative mechanisms through which
+genetic regulation of transcripts may influence traits.
 
-
-
-
-
-
-### Local heritability is negatively correlated with trait relevance
-
-
-
-* **Supplemental Figure or Table** LOD vs. correlation plots
-	for all tissues.
-
-* Use above and your version of Yao et al analysis to motivate the 
-	multivariate mediation model (it will be good to emphasize that this is 
-	not garden variety SVD analysis, cite Mitteroecker but emphasize novelty).
 
 ### High Dimensional Mediation identifies composite transcript that perfectly mediates composite trait
+
+To identify mechanisms through which genetic regulation of transcripts
+influences heritable traits, we propose high-dimensional mediation analysis
+(HDMA) (Fig. XXX). In this process we 
 
 * Fit the model.
 
