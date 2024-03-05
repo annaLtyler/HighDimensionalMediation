@@ -1,0 +1,81 @@
+Tissue-derived transcriptomes are increasingly viewed 
+as a biological bridge between genetic risk factors for 
+complex disease and their associated pathophysiology. 
+Gene expression quantitative trait loci (eQTL) and 
+large-scale genome-wide association (GWAS) facilitate 
+a conceptual model to potentially infer genetic variants 
+that alter nearby gene expression and account for 
+co-localized disease risk. However, these studies in humans 
+are consistently limited by mismatched populations and sample 
+sizes for eQTL vs GWAS, limited tissue availability, and 
+human population history and structure. Here, we perform a 
+multi-tissue analysis of multiple traits related to metabolic 
+disorders in an outbred population of laboratory mice. The 
+combination of comprehensive clinical phenotyping with 
+corresponding tissue gene expression from the same genetically 
+diverse animals enables an advanced analytical strategy linking 
+genetics, tissue-specific transcriptomes, and disease biomarkers. 
+We infer paths of QTL that alter gene expression patterns linked 
+to correlated metabolic traits, thereby augmenting genetic 
+associations with pathway alterations that reveal the underlying 
+molecular dysfunction of disease and candidate proteins for 
+intervention.
+
+
+
+drive to associate genetic variation with variation in risk of complex disease
+	GWAS, TWAS
+
+missing heritability
+
+omnigenic model
+
+complex systems - 
+	biological systems are complex at every level of organization
+		low heritability genes account for most of expression-mediated disease heritability
+			in both humans and mice, across multiple, relevant tissues.
+		traits are canalized against variation in genes and environment
+			transcripts that vary widely in abundance based on cis effects cannot have a large
+			effect on traits
+			transcripts that have a large effect on traits cannot vary widely in abundance based on 
+			local effects
+			both scenarios create a fragile network
+		biological networks are robust to perturbation - canalized
+		and yet biological networks are also evolvable: there is variation in these newtorks across
+			individuals that does have an effect on traits
+		how do we associate the variability in gene expression with variability in traits?
+			need to fit the whole model - trait-correlated transcripts have low heritability
+				locally driven transcripts have low trait correlation
+		need a holistic approach - in a complex disease the effects of individual variants and
+			fluxuation of individual transcripts do not renormalize at higher levels of 
+			organization
+		cannot trace this small-scale fluctuation to fluctuation in traits, except in Mendelian disease
+			rather we need to look at higher order structure
+		interestingly, the extremely high-dimensional variation at the lower levels is transmitted
+			to lower dimensional fluctuation at higher levels (true? cite? how to explain?)
+			or is it that the variation at all levels is low-dimensional? 
+			or that a few dimensions of the variation at lower levels translates to variation at the 
+				higher levels?
+			 
+	emergence with low-dimensionality
+		how many axes of variation are there? 
+		top 10 PCs of adipose expression matrix explain: 16.43, 6.55, 4.24, 3.04, 2.44, 
+			1.95, 1.28, 1.23, 1.14, and 1.04% of variation
+		relatively high-dimensional
+		top 10 PCs of phenotype matrix explain: 58.12, 11.11, 9.87, 4.41, 3.75, 2.77, 2.24, 
+			2.06, 1.31, and 0.82% of variation
+		many fewer axes of variation (but also way fewer things measured)
+	
+	individuals are individuals
+	
+	mediated genetic effects for each transcript give detailed estimate of causal effects
+		but global signature may be more useful for identifying potential targets through CMAP
+		or TRiAGE - does TRiAGE agree with CMAP?
+		not really. Btk is ranked 88, Ikbkb is ranked 2454, Ikbke is ranked 4715
+		
+
+Mediation analysis is well suited to identification of causal genetic 
+variants because we know that the arrow of causation extends from 
+gene to gene expression and phenotypes and there is no causal arrow
+backward from gene expression and phenotype to genotype. Thus there 
+is number of possible models fitting the data is greatly reduced (bmediatR: 35533209).

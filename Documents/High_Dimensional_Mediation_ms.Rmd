@@ -1,5 +1,5 @@
 ---
-title: "High Dimensional Mediation Manuscript"
+title: "High Dimensional Mediation for Massively Polygenic Traits"
 author: J. Matthew Mahoney and Anna L Tyler
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output: 
@@ -11,93 +11,305 @@ output:
 ---
 
 ## Abstract
-Here we summarize the paper
+
+
+The transcriptome is increasingly viewed as a bridge between genetic 
+risk factors for complex disease and their associated pathophysiology.
+Powerful insights into disease mechanism can be made by linking genetic
+variants affecting gene expression (expression quantiatitive trait loci - 
+eQTLs) to phenotypes. 
+
+**Make the case for looking at the distally
+heritable signature here. Not as a failure of local eQTL, but just as
+another promising avenue of exploration**.
+
+In the end we show that there is a distally heritable signature that
+(a) is related to disease, (b) translates across populations and species, 
+and (c) is targetable. Although local eQTLs give us promise of understanding
+very specific mechanisms and targeting very specific things, distally
+heritable signatures give us insights into mechanism at an extrapolated 
+level - inflammation, metabolism - and they are targetable based on the work 
+of CMAP. A fruitful avenue of exploration for understanding and treating 
+common diseases.
+
+Studies have shown that the majority of 
+expression-mediated disease heritability is explained by transcripts with 
+low local heritability. 
+
+Thus it is possible that there are identifiable, distally heritable 
+transcriptomic signatures that mediate the effect of transcription on 
+phenotype. We propose high-dimensional mediation (HDM) to identify the 
+distally heritable portion of the transcriptome that mediates the effect 
+of genome on phenome. (a bit more about the technique) We performed 
+HDM in a population of 371 diversity outbred (DO) mice, both male and 
+female, maintained on a high-fat, high-sugar diet. (DO mice are...) 
+The mice were extensively phenotyped for multiple, clinically relevant 
+metabolic measures including measures of obesity and insulin resistance. 
+We measured transcriptome-wide gene expression in four tissues: white 
+adipose tissue, pancreatic islets, liver, and skeletal muscle. We performed 
+HDM using kernelized matrices of the genome, transcriptomes, and phenome 
+to identify genome, transcriptome, and phenome scores where the 
+transcriptome score perfectly mediated the effect of the genome score 
+on the phenome score. We calculated loadings onto individual
+transcripts and phenotypes to interpret the scores. Using 
+loadings on individual transcripts, we were able to functionally annotate
+heritable transcriptional programs that lead to increased weight gain
+and insulin resistance in the DO population. We combined transcript loadings 
+with local eQTL allele effects to identify risk variants and protective 
+variants in the DO mice. These annotations of risk and protective alleles
+allowed us to perform a TWAS-like analysis within the DO population as well 
+as in an independent population of Collaborative Cross (CC) F1 mice (CC-RIX). 
+In the DO population, each mouse carried a relatively balanced set of risk 
+and protective alleles. The mean of these local allele effects (the 
+polygenic risk score - PGS) explained between 14\% (skeletal muscle eQTL) 
+and 47\% (adipose eQTL) of trait variance in the DO population, mirroring 
+success of TWAS within European populations. However, when we calculated 
+PRS in the CC-RIX based on the values derived in the DO population, PRS 
+completely failed to predict phenotype (numbers forthcoming). Although 
+all the alleles in the CC-RIX are all present in the DO population, 
+the presence of risk and protective alleles as defined in the DO did not 
+predict outcomes in the CC-RIX, supporting the hypothesis that local 
+eQTLs contribute minimally to phenotypic outcomes. We performed an analogous 
+analysis with the transcriptomic scores in both populations. We multiplied 
+transcript loadings by measured gene expression in each mouse to generate 
+a prediction of phenotype that captured the distally heritable portion of 
+the transcriptome. The distributions 
+of these scores across individuals were much more highly skewed than the 
+genotype-informed scores. That is, obese mice had transcriptomes that were 
+clearly skewed toward obesity, while lean mice had transcriptomes that were 
+clearly skewed toward leanness. The mean of these scores (the polytranscriptomic
+risk score - PtRS) explained between 43\% (skeletal muscle) 63\% (adipose tissue) 
+of phenotypic outcome; substantially more than the TWAS-based PRS in the DO mice. 
+Moreover, when applied to the CC-RIX transcriptomes, we were able to accurately 
+predict body weight outcomes in this independent population, explaining up to
+71\% of trait variance across individuals. The PtRS were furthmore able to predict 
+obese/non-obese and diabetic/non-diabetic labels in human subjects with 
+measured adipose transcription downloaded from the Gene Expression Omnibus 
+(GEO). Together, these results suggest that the PRS developed in the DO 
+performed well when predicting phenotype in the DO because it was capturing 
+the distally heritable transcriptomic signature. It failed in the CC-RIX 
+because it did not capture the distally heritable signature in this second 
+population. Because it captures the distally heritable component of the 
+transcriptome that is related to phenotype, the PtRS was able to predict 
+phenotype from transcriptome data in the CC-RIX and in human transcriptome 
+data. Thus, the polytranscriptomic signature we identified captured distally 
+heritable transcriptomic information that is related to metabolic phenotypes 
+across multiple mouse and human populations. Because the transcriptomic 
+signature is gene-based, it can be functionally annotated. We demonstrate 
+the adipose inflammation and macrophage infiltration is a heritable component 
+of the development of obesity and insulin resistance in response to a high-fat, 
+high-sugar diet. We further show that this transcriptional signature is 
+targeted by the most common classes of drugs used in type 2 diabetes that 
+are known to reverse insulin resistance.  
+
+Such distal effects, rather than capturing the immediate,
+local effects of genotype on gene expression, would capture broad genetic 
+information, including massively polygenic effects and the effects of 
+genetic interactions on all transcripts and phenotypes across developmental 
+time. 
+
+### Ideas that need to be introduced in the introduction
+gene expression as a bridge between genotype and phenotype
+local eQTLs have been useful, and in par (29567659)
+
+mediation right up front
+
+trait relevance is 
 
 ## Introduction
 
-Tissue-derived transcriptomes are increasingly viewed 
-as a biological bridge between genetic risk factors for 
-complex disease and their associated pathophysiology. 
-Gene expression quantitative trait loci (eQTL) and 
-large-scale genome-wide association (GWAS) facilitate 
-a conceptual model to potentially infer genetic variants 
-that alter nearby gene expression and account for 
-co-localized disease risk. However, these studies in humans 
-are consistently limited by mismatched populations and sample 
-sizes for eQTL vs GWAS, limited tissue availability, and 
-human population history and structure. Here, we perform a 
-multi-tissue analysis of multiple traits related to metabolic 
-disorders in an outbred population of laboratory mice. The 
-combination of comprehensive clinical phenotyping with 
-corresponding tissue gene expression from the same genetically 
-diverse animals enables an advanced analytical strategy linking 
-genetics, tissue-specific transcriptomes, and disease biomarkers. 
-We infer paths of QTL that alter gene expression patterns linked 
-to correlated metabolic traits, thereby augmenting genetic 
-associations with pathway alterations that reveal the underlying 
-molecular dysfunction of disease and candidate proteins for 
-intervention.
+In the quest to understand genetic contributions to complex traits, gene
+expression is an important bridge between genotype and phenotype. The 
+majority of variants identified in GWAS are in regulatory regions of the 
+genome [cite], suggesting that they influence clinical phenotypes through 
+regulation of gene expression. Consistent with this idea, powerful 
+insights into disease mechanism can be made by linking genetic variants 
+affecting gene expression (expression quantitative trait loci - eQTLs) to 
+phenotypes. In particular, mediation analysis has been used to identify 
+transcripts that mediate the effect of genetic variants on phenotypes. 
+In mice... (mice: @pmid29567659,@pmid31465442,@pmid35672473) (bmediatR: 
+@pmid35533209) In humans... (human - @pmid25533967, @pmid24232670)
+
+Thus far, the primary focus of expression mediated traits has been 
+on local genetic variation; that is genetic variation that influences
+the transcription of local genes, thereby causing variation in traits.
+However, there is evidence that the bulk of disease heritability is
+mediated by the distal component of gene expression, rather than the
+local component [@32424349]. Yao et al. [cite] observed that 
+genes with low local heritability explain more expression-mediated 
+disease heritability than genes with high local heritability. We have 
+observed a similar pattern in mice, which we describe here. Thus, 
+identifying heritable components of copmlex traits that are mediated 
+through distally regulated variation in gene expression.
+
+Identification of distal factors influencing gene expression and 
+traits is challenging, as the multiple testing corrections are much
+more severe for distal effects [@pmid24013639]. 
 
 
+transition to and justify systems approach. where does HDM come from?
+another field?
 
-drive to associate genetic variation with variation in risk of complex disease
-	GWAS, TWAS
+Here we propose high-dimensional mediation (HDM) to identify the 
+distally heritable portion of the transcriptome that mediates the 
+effect of the genome on phenome. (a bit more about the technique) 
 
-missing heritability
 
-omnigenic model
+## Abstract/Results
 
-complex systems - 
-	biological systems are complex at every level of organization
-		low heritability genes account for most of expression-mediated disease heritability
-			in both humans and mice, across multiple, relevant tissues.
-		traits are canalized against variation in genes and environment
-			transcripts that vary widely in abundance based on cis effects cannot have a large
-			effect on traits
-			transcripts that have a large effect on traits cannot vary widely in abundance based on 
-			local effects
-			both scenarios create a fragile network
-		biological networks are robust to perturbation - canalized
-		and yet biological networks are also evolvable: there is variation in these newtorks across
-			individuals that does have an effect on traits
-		how do we associate the variability in gene expression with variability in traits?
-			need to fit the whole model - trait-correlated transcripts have low heritability
-				locally driven transcripts have low trait correlation
-		need a holistic approach - in a complex disease the effects of individual variants and
-			fluxuation of individual transcripts do not renormalize at higher levels of 
-			organization
-		cannot trace this small-scale fluctuation to fluctuation in traits, except in Mendelian disease
-			rather we need to look at higher order structure
-		interestingly, the extremely high-dimensional variation at the lower levels is transmitted
-			to lower dimensional fluctuation at higher levels (true? cite? how to explain?)
-			or is it that the variation at all levels is low-dimensional? 
-			or that a few dimensions of the variation at lower levels translates to variation at the 
-				higher levels?
-			 
-	emergence with low-dimensionality
-		how many axes of variation are there? 
-		top 10 PCs of adipose expression matrix explain: 16.43, 6.55, 4.24, 3.04, 2.44, 
-			1.95, 1.28, 1.23, 1.14, and 1.04% of variation
-		relatively high-dimensional
-		top 10 PCs of phenotype matrix explain: 58.12, 11.11, 9.87, 4.41, 3.75, 2.77, 2.24, 
-			2.06, 1.31, and 0.82% of variation
-		many fewer axes of variation (but also way fewer things measured)
-	
-	individuals are individuals
-	
-	mediated genetic effects for each transcript give detailed estimate of causal effects
-		but global signature may be more useful for identifying potential targets through CMAP
-		or TRiAGE - does TRiAGE agree with CMAP?
-		not really. Btk is ranked 88, Ikbkb is ranked 2454, Ikbke is ranked 4715
-		
+We found that HDM successfully links genomes, transcriptomes, and phenomes in 
+a mouse population with comprehensive data collection. 
+We performed HDM inanalyzed a population of 371 diversity outbred (DO) mice, 
+both male and female, maintained on a high-fat, high-sugar diet. (DO mice are...) 
+Individual genomes were determined with high-density genotyping chips and haplotype 
+reconstruction. The mice were extensively phenotyped for multiple, clinically 
+relevant metabolic measures including measures of obesity and insulin resistance. 
+We measured transcriptome-wide gene expression in four tissues: white adipose 
+tissue, pancreatic islets, liver, and skeletal muscle. We performed HDM using 
+kernelized matrices of the genome, transcriptomes, and phenome to identify genome, 
+transcriptome, and phenome scores where the transcriptome score perfectly mediated 
+the effect of the genome score on the phenome score. We calculated loadings onto 
+individual transcripts and phenotypes to interpret the scores. High phenome scores 
+were associated with insulin resistance and high body weight, whereas low phenome 
+scores were associated with insulin sensitivity and low body weight. Large positive 
+transcript loadings indicated transcripts that were positively associated with 
+phenome score. Large negative transcript loadings indicated transcripts that 
+were negatively associated with phenome score. 
+
+In assessing genotype-phenotype relationships, we found that local eQTL were 
+insufficient for predicting trait variance in the validation population.
+ We combined transcript loadings with local eQTL allele effects to identify 
+ risk variants and protective variants in the DO mice. These annotations of 
+ risk and protective alleles allowed us to perform a TWAS-like analysis within 
+ the DO population as well as in an independent population of Collaborative Cross 
+ (CC) F1 mice (CC-RIX). In the DO population, each mouse carried a relatively 
+ balanced set of risk and protective alleles. The mean of these local allele 
+ effects (the polygenic risk score - PGS) explained between 14\% (skeletal muscle 
+ eQTL) and 47\% (adipose eQTL) of trait variance in the DO population, mirroring 
+ success of TWAS within European populations. However, when we calculated PRS in 
+ the CC-RIX based on the values derived in the DO population, PRS completely 
+ failed to predict phenotype (numbers forthcoming). Although all the alleles 
+ in the CC-RIX were all present in the DO population, the associations of risk 
+ and protection as defined in the DO did not hold in the CC-RIX, supporting the 
+ hypothesis that local eQTLs contribute minimally to phenotypic outcomes. 
+
+In contrast, we discovered that the collective distal contributions to gene 
+expression strongly predicted clinical traits in the validation population. 
+We performed an analogous analysis with the transcriptomic scores in both 
+populations. We multiplied transcript loadings by measured gene expression 
+in each mouse to generate a prediction of phenotype that captured the distally 
+heritable portion of the transcriptome. The distributions of these scores across 
+individuals were much more highly skewed than the genotype-informed scores. 
+Obese mice had transcriptomes that were clearly skewed toward positive scores, 
+while lean mice had transcriptomes that were clearly skewed toward negative 
+scores. The means of these scores (the polytranscriptomic risk score - PtRS) 
+explained between 43\% (skeletal muscle) 63\% (adipose tissue) of phenotypic 
+outcome in the DO mice--substantially more than PRS, which is based on local 
+eQTLs. Moreover, when applied to the CC-RIX transcriptomes, PtRS accurately 
+predict body weight outcomes in this independent population, explaining as much 
+as 71\% of trait variance across individuals. PtRS was furthermore able to predict 
+obese/non-obese and diabetic/non-diabetic labels in human subjects with measured 
+adipose transcription downloaded from the Gene Expression Omnibus (GEO). 
+
+Together, these results suggest that PRS based on local eQTLs performed well in 
+the population in which it was developed because the eQTLs were densely sampled 
+enough that they actually represent the distally heritable transcriptomic 
+signature. PRS failed in the CC-RIX because it did not capture the distally 
+heritable signature in this unrelated population. PtRS, on the other hand, was 
+able to predict phenotype from transcriptome data in the DO, the CC-RIX, and in 
+human transcriptome data. Thus PtRS captured distally heritable transcriptomic 
+information that was related to metabolic phenotypes across multiple mouse and 
+human populations. Furthermore, because the transcriptomic signature is gene-based, 
+it can be functionally annotated. We demonstrated that adipose inflammation and 
+macrophage infiltration were heritable components of the development of obesity 
+and insulin resistance in response to a high-fat, high-sugar diet. We further 
+showed that this transcriptional signature is targeted by the most common 
+classes of drugs used in type 2 diabetes that are known to reverse insulin 
+resistance.  HDM thus represents a promising method for the analysis of highly 
+polygenic traits. It identifies biologically meaningful, interpretable, and 
+translational transcriptomic signatures that mediate the effect of the genome 
+on the phenome.
+
 
 ## Results
 
-* Experimental design - ~500 DO mice, 4 tissues with GEX data, Metabolic phenotypes.
-	Description of the phenotypes (multivariate structure)
+### Genetic variation contributes to wide phenotypic variation
 
-* **Figure 1:** phenotype decomposition
-	example plot of correlation of LOD scores with trait correlations
+A population of 371 diversity outbred mice (XXX male and XXX female),
+was placed on a high-fat (XXX/%), high-sugar (XXX/%) diet starting 
+at XXX weeks of age as descrived previously [cite]. Each individual 
+was assessed longitudinally for multiple metabolic measures including 
+fasting glucose levels, glucose tolerance, insulin levels, body weight, 
+and blood lipid levels (Methods).
+
+Although the environment was consistent across animals, the genetic
+diversity present in this population resulted in widely varying
+distributions across physiological measurements (Fig. 1. and Fig. S1).
+For example, body weights of adult individuals varied from less than
+the average adult B6 body weight to several times the body weight of
+a B6 adult in both sexes (Fig. 1A). Body weight was strongly positively
+correlated with food consumption (Fig. 1B $R^2 = 0.31$) and fasting
+blood glucose (FBG) (Fig. 1D, $R^2 = 0.21$) suggesting a link between 
+behavioral factors and metabolic disease. FBG levels varied widely 
+across individuals (Fig. 1C), although few of the animals had FBG 
+levels that would indicate pre-diabetes (XXX /%), or diabetes (XXX /%) 
+according to previously developed cutoffs (pre-diabetes: FBG $>= 250$ 
+mg/dL, diabetes: FBG $>= 300$ mg/dL) [cite]. However, the high 
+heritability of this trait and others (Fig. 1E) indicates that background 
+genetics contribute substantially to correlates of metabolic disease in 
+this population.
+
+The landscape of trait correlations (Fig 1.F) shows that most of the 
+metabolic trait pairs were relatively weakly correlated indicating 
+complex relationships among the measured traits. This low level of 
+redundancy suggests a broad sampling of multiple heritable aspects 
+of metabolic disease including overall body weight, glucose homeostasis,
+pancreatic composition and liver function.
+
+### Distal Heritability Correlates with Phenotype Relevance
+
+To help elaborate the mechanistic details of genetic effects on 
+metabolic phenotypes in the DO population, we also measured 
+gene expression in four tissues known to be involved in metabolic 
+disease: adipose, pancreatic islet, liver, and skeletal muscle. 
+To confirm the heritability of transcript levels, we performed 
+expression QTL analysis using R/qtl2 [cite] (Methods) and 
+identified both local and distal eQTL for transcripts in each
+tissue (Supp. Fig XXX). Significant local eQTLs far outnumbered 
+distal eQTLs (Supp. Fig. XXX) and tended to be shared across 
+tissues (Supp. Fig. XXX) whereas the few significant distal eQTL 
+we identified tended to be tissue-specific (Supp. Fig. XXX)
+
+The low number of significant distaly eQTLs is driven in part by
+multiple testing corrections: Local eQTLs only require a single 
+statitistical test to associate each transcript with the genotype
+at the nearest marker, whereas distal eQTLs require testing all 
+markers except for the local marker. Additionally, distal effects
+can be spread out across multiple locations making each one 
+more difficult to detect statistically. To better compare the 
+relative contribution of local and distal genetics to transcript 
+levels, we performed a heritability analysis for each transcript 
+(Methods). Overall, local and distal factors contributed approximately
+equally to transcript abundance. In all tissues, both local and
+distal factors explained between 13 and 19\% of the variance in 
+the median transcript (Fig XXXZ). 
+
+Local heritability of transcripts was negatively correlated with
+its trait relevance, defined as the maximum correlation of the 
+transcript and all traits, suggesting that the more local genotype
+influenced transcript abundance, the less effect variation in
+transcript abundance was related to the measured traits. 
+Conversely, distal heritability of transcripts was positively 
+correlated with trait relevance. That is, 
+
+
+
+
+
+
+### Local heritability is negatively correlated with trait relevance
+
+
 
 * **Supplemental Figure or Table** LOD vs. correlation plots
 	for all tissues.
@@ -105,6 +317,8 @@ complex systems -
 * Use above and your version of Yao et al analysis to motivate the 
 	multivariate mediation model (it will be good to emphasize that this is 
 	not garden variety SVD analysis, cite Mitteroecker but emphasize novelty).
+
+### High Dimensional Mediation identifies composite transcript that perfectly mediates composite trait
 
 * Fit the model.
 
@@ -129,63 +343,101 @@ complex systems -
 * **Figure 2:** HDM workflow, with stats for partial correlations
 	and permutation results
 
-Look at the loading structure on P to anchor us.
+### Interpretation of loadings
+
+Loadings on traits indicate how the traits contribute to the composite trait,
+Body weight contributes the most, followed by insulin measurements.
+
 
 * **Figure 3:** A. Trait loadings and phenome score. B. Example
 	transcript loadings.
 
+Transcript loadings tell us which transcripts' expression mediates
+the effect of genetics on the trait. Large positive loadings indicate
+the inheriting higher expression is associated with a higher phenotype
+score (higher risk of obesity and metabolic disease). Conversely, 
+large negative loadings indicate that inheriting lower expression of 
+these transcripts is associated with a lower phenotype score (lower
+risk of obesity and metabolic disease). These transcripts are different
+in each tissue. In adipose tissue increased immune activation and decreased
+metabolic activity were associated with increased obesity.
+
+* **Supplemental Figure XXX** Enrichments of high and low loadings
+	in each tissue
+
 * **Supplemental Figure or Table** Transcript loadings for 
 	all tissues.
 
-* The distribution of loadings suggests that the composite
-	trait is highly polygenic. Expression of most transcripts
-	has a small effect on P, but there is a continuous distribution
-	between highly negative effects on P and highly positive effects
-	on P.
+Figure 4 shows the clustering of transcripts with top loadings
+in each tissue. Each tissue has a distinct signature of high and
+low loadings. The transripts cluster into functional modules with 
+functional enrichments known to be related to obesity and metabolic
+disease. E.g. leptin signaling and apelin signaling.  
 
-	* What would this distribution look like for a monogenic trait 
-	like TSC? TSC isn't related to the expression of individual 
-	genes, but rather the disrupted function of a gene. I think if 
-	we did this with TSC, it would probably look similar.
-	That is, I think there would be many transcripts that modified 
-	the measured traits, i.e. seizures, cognition, etc. because these
-	traits themselves are highly polygenic. Is there a trait we could
-	look at the would be less polygenic?
-	
-* Loading patterns are different in the different tissues.
-	That is transcripts contribute differentially to P depending 
-	on which tissue they are expressed in.
+* **Figure 4** Tissue of action heatmap. Apelin boxplot and model?
+	To speculative?
 
-* For example, 
-Look at some details of genetic loadings? Use one or few examples 
-that can be revisited.
+### Further interpretation/application
 
-What do loading say about importance of cis-QTL?
+#### targeting gene signatures
+The transcriptome is highly interconnected and redundant.
+Here we focus not on individual genes, but rather the 
+gene signature as a whole. If we aren't identifying 
+individual genes, what do we target? We can do this
+in several ways. The enrichments of high and low 
+loadings gives us biological processes that are associated 
+with heritable risk of metabolic disease (e.g. leptin, apelin). 
+These biological processes could be targeted. Injecting obese 
+mice with apelin stimulates increased glucose utilization. 
 
-(Maybe) bring in the TWAS analysis with local only vs local + K 
-imputation? (Don't bog down)
+Alternatively, we can target the gene signature as a whole 
+using CMAP. Identifying drugs to target gene signatures is 
+possible through CMAP. We put our loadings from islet into 
+CMAP. The top hit was PPAR receptor agonist. Rosiglitazone,
+a widely used diabetes drug, is a PPAR receptor agonist.
+Another class of drugs on the list was sufonylureas, which
+are another major class of drugs for type 2 diabetes.
 
-Look at high and low diabetes potential individual's ala., 
-Anna's slide, law of large numbers explains why polygenic 
-disease models are hard to find.
+* **Supplemental Table** results from CMAP
 
-All of the above is fine, but is it useful?? Segue….
+#### Signatures of tissue composition correlate with phenotype
+Cell-type specific markers indicate that obesity is associated with 
+increased proportion of macrophages in the adipose tissue. In the 
+islet obesity was associated with signatures indicating increased 
+proportions of alpha cells as well as decreased proportions of delta 
+and endothelial cells. Proportions of beta cells were unaffected.
 
-What are the tissue contributions:
-Use the mediation model to look at the tissue-specific 
-contributions, overall variance explained but also cherry 
-pick example genes. Show tissue-specific enrichments based 
-T=loading scores
+#### Gene signatures validate in an independent mouse data set
+We used an independent mouse data set to validate the loadings
+identified in high-dimensional mediation. This data set was
+the CC-RIX... We multiplied the transcript levels scaled across
+individuals by the transcript loadings. The mean of this vector
+is the prediction of the phenotype score in the mouse based on
+its gene expression profile. We then correlated these values with
+metabolic traits measured in the independent data set (measured
+values in 3.CC-RIX_Validation.Rmd). Predicted phenotype values
+derived from adipose expression were highly correlated with body
+weight in the CC-RIX.
 
-How much do individual genes matter? i.e., if we can't find 
-genes, what use is this? Use enrichment of high and low 
-scoring individuals to find biological processes (a term 
-that is better than 'pathway')
-Dump it in the drug discovery tool. Voila!
+#### Gene signatures validate in human data sets
+We used adipose gene expression sets downloaded from GEO. We 
+multiplied gene expression values by the loadings from high-dimensional
+mediation. The mean of this loaded gene expression signature is 
+a prediction of the phenotype score of the individual. Higher 
+scores suggest higher levels of obesity and metabolic disease.
+We tested whether phenotype score predictions were different 
+between patients groups labeled obese and non-obese, as well
+as diabetic vs. non-diabetic. In each case, there was a statistically
+significant difference between the patient groups. In all cases
+the diabetic and obese groups had higher predicted phenotype 
+scores than the non-diabetic and non-obese groups.
 
 
 
-* phenotype score - a single number indicating how diebetic each mouse is 
+
+
+
+* phenotype score - a single number indicating how diabetic each mouse is 
 	- loadings are all correlated, so mice with high scores have higher body weight, higher 
 		levels of insulin, and more insulin resistance
 	- transcript loading - does increased gene expression increase or decrease phenotype score
@@ -223,6 +475,8 @@ of that regulation (we are only looking at abundance, though, not splicing.
 Pritchard has a paper [27126046] that says that variants that affect splicing,
 not expression levels, are major contributors to complex traits: trait-associated
 SNPs were more enriched in splicing eQTL, than in abundance eQTL.)
+Also, the genome sequence is constant across cell types, whereas gene expression
+is cell-type-specific, so you need to measure lots of it in each individual
 
 ## Discussion
 Here we discuss the implications of the results.

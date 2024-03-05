@@ -1,0 +1,256 @@
+---
+title: "High Dimensional Mediation for Massively Polygenic Traits"
+author: J. Matthew Mahoney and Anna L Tyler
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output: 
+  html_document:
+    code_folding: hide
+    collapsed: no
+    toc: yes
+    toc_float: yes
+---
+
+## Abstract
+Transcriptomes as a bridge between genotype and phenotype
+help annotate the molecular pathways underlying genetic risk factors for disease
+GWAS hits tend to be in regulatory regions, but it is difficult to 
+identify the molecular functions of these variants
+
+highly heritable transcripts are not correlated with traits
+transcripts that are correlated with traits are not highly 
+heritable
+studies in humans have shown the same thing
+
+studies also suggest that the bulk of the heritability of the
+transcriptome is distal, not local
+
+human studies measure genomes, transcriptomes, and phenomes in 
+different populations. Alignments of these three things are
+indirect at best.
+
+## Introduction
+
+Tissue-derived transcriptomes are increasingly viewed 
+as a biological bridge between genetic risk factors for 
+complex disease and their associated pathophysiology. 
+Gene expression quantitative trait loci (eQTL) and 
+large-scale genome-wide association (GWAS) facilitate 
+a conceptual model to potentially infer genetic variants 
+that alter nearby gene expression and account for 
+co-localized disease risk. However, these studies in humans 
+are consistently limited by mismatched populations and sample 
+sizes for eQTL vs GWAS, limited tissue availability, and 
+human population history and structure. Here, we perform a 
+multi-tissue analysis of multiple traits related to metabolic 
+disorders in an outbred population of laboratory mice. The 
+combination of comprehensive clinical phenotyping with 
+corresponding tissue gene expression from the same genetically 
+diverse animals enables an advanced analytical strategy linking 
+genetics, tissue-specific transcriptomes, and disease biomarkers. 
+We infer paths of QTL that alter gene expression patterns linked 
+to correlated metabolic traits, thereby augmenting genetic 
+associations with pathway alterations that reveal the underlying 
+molecular dysfunction of disease and candidate proteins for 
+intervention.
+
+
+
+drive to associate genetic variation with variation in risk of complex disease
+	GWAS, TWAS
+
+missing heritability
+
+omnigenic model
+
+complex systems - 
+	biological systems are complex at every level of organization
+		low heritability genes account for most of expression-mediated disease heritability
+			in both humans and mice, across multiple, relevant tissues.
+		traits are canalized against variation in genes and environment
+			transcripts that vary widely in abundance based on cis effects cannot have a large
+			effect on traits
+			transcripts that have a large effect on traits cannot vary widely in abundance based on 
+			local effects
+			both scenarios create a fragile network
+		biological networks are robust to perturbation - canalized
+		and yet biological networks are also evolvable: there is variation in these newtorks across
+			individuals that does have an effect on traits
+		how do we associate the variability in gene expression with variability in traits?
+			need to fit the whole model - trait-correlated transcripts have low heritability
+				locally driven transcripts have low trait correlation
+		need a holistic approach - in a complex disease the effects of individual variants and
+			fluxuation of individual transcripts do not renormalize at higher levels of 
+			organization
+		cannot trace this small-scale fluctuation to fluctuation in traits, except in Mendelian disease
+			rather we need to look at higher order structure
+		interestingly, the extremely high-dimensional variation at the lower levels is transmitted
+			to lower dimensional fluctuation at higher levels (true? cite? how to explain?)
+			or is it that the variation at all levels is low-dimensional? 
+			or that a few dimensions of the variation at lower levels translates to variation at the 
+				higher levels?
+			 
+	emergence with low-dimensionality
+		how many axes of variation are there? 
+		top 10 PCs of adipose expression matrix explain: 16.43, 6.55, 4.24, 3.04, 2.44, 
+			1.95, 1.28, 1.23, 1.14, and 1.04% of variation
+		relatively high-dimensional
+		top 10 PCs of phenotype matrix explain: 58.12, 11.11, 9.87, 4.41, 3.75, 2.77, 2.24, 
+			2.06, 1.31, and 0.82% of variation
+		many fewer axes of variation (but also way fewer things measured)
+	
+	individuals are individuals
+	
+	mediated genetic effects for each transcript give detailed estimate of causal effects
+		but global signature may be more useful for identifying potential targets through CMAP
+		or TRiAGE - does TRiAGE agree with CMAP?
+		not really. Btk is ranked 88, Ikbkb is ranked 2454, Ikbke is ranked 4715
+		
+
+## Results
+
+* Experimental design - ~500 DO mice, 4 tissues with GEX data, Metabolic phenotypes.
+	Description of the phenotypes (multivariate structure)
+
+* **Figure 1:** phenotype decomposition
+	example plot of correlation of LOD scores with trait correlations
+
+* **Supplemental Figure or Table** LOD vs. correlation plots
+	for all tissues.
+
+* Use above and your version of Yao et al analysis to motivate the 
+	multivariate mediation model (it will be good to emphasize that this is 
+	not garden variety SVD analysis, cite Mitteroecker but emphasize novelty).
+
+* Fit the model.
+
+* Show that genotype (K) is associated with phenotype (P), 
+	Gene expression (T) is associated with P, but given T that G 
+	and K are not strongly associated. Validate these using permutations.
+	
+	* easy to fit very high correlation between random transcriptome
+		and genome. It is less easy to find a high T-random P correlation.
+		It is very difficult to fit the full model with random data. The
+		observed data have high correlations for both G-T and T-P. The observed
+		T-P correlation is much higher than anytying in the null, whereas
+		the observed G-T correlation is a bit lower. Is that something we
+		need to discuss?
+
+	* Also, T has completely mediated the effect of G on P. (The 0 partial 
+		correlation between G and P is 0.) This suggests that genetically 
+		determined variation in phenotype is mediated through genetically
+		determined variation in transcription. Could be overfit, of course,
+		not sure how much hay to make out of this.
+
+* **Figure 2:** HDM workflow, with stats for partial correlations
+	and permutation results
+
+Look at the loading structure on P to anchor us.
+
+* **Figure 3:** A. Trait loadings and phenome score. B. Example
+	transcript loadings.
+
+* **Supplemental Figure or Table** Transcript loadings for 
+	all tissues.
+
+* The distribution of loadings suggests that the composite
+	trait is highly polygenic. Expression of most transcripts
+	has a small effect on P, but there is a continuous distribution
+	between highly negative effects on P and highly positive effects
+	on P.
+
+	* What would this distribution look like for a monogenic trait 
+	like TSC? TSC isn't related to the expression of individual 
+	genes, but rather the disrupted function of a gene. I think if 
+	we did this with TSC, it would probably look similar.
+	That is, I think there would be many transcripts that modified 
+	the measured traits, i.e. seizures, cognition, etc. because these
+	traits themselves are highly polygenic. Is there a trait we could
+	look at the would be less polygenic?
+	
+* Loading patterns are different in the different tissues.
+	That is transcripts contribute differentially to P depending 
+	on which tissue they are expressed in.
+
+* For example, 
+Look at some details of genetic loadings? Use one or few examples 
+that can be revisited.
+
+What do loading say about importance of cis-QTL?
+
+(Maybe) bring in the TWAS analysis with local only vs local + K 
+imputation? (Don't bog down)
+
+Look at high and low diabetes potential individual's ala., 
+Anna's slide, law of large numbers explains why polygenic 
+disease models are hard to find.
+
+All of the above is fine, but is it useful?? Segue….
+
+What are the tissue contributions:
+Use the mediation model to look at the tissue-specific 
+contributions, overall variance explained but also cherry 
+pick example genes. Show tissue-specific enrichments based 
+T=loading scores
+
+How much do individual genes matter? i.e., if we can't find 
+genes, what use is this? Use enrichment of high and low 
+scoring individuals to find biological processes (a term 
+that is better than 'pathway')
+Dump it in the drug discovery tool. Voila!
+
+
+
+* phenotype score - a single number indicating how diebetic each mouse is 
+	- loadings are all correlated, so mice with high scores have higher body weight, higher 
+		levels of insulin, and more insulin resistance
+	- transcript loading - does increased gene expression increase or decrease phenotype score
+		combine transcript loading, local eQTL effect, and local individual phenotype
+		to generate a mediated genetic effect (MGE): the phenotypic effect of a transcript in 
+		an individual with a known phenotype
+	- can look at MGE in an individual - 
+		* most effects are tiny
+		* both extreme risk alleles and extreme protective alleles in an individual - offset each other
+		* mean of effects is the estimated phenotype score in response to HFD 
+		(poly-transcriptomic risk score PtRS)
+	- across all individuals:
+		* all animals are a collection of risk and protective alleles
+		* most transcripts have an effect on trait, and most effects are very small
+		* the inter-individual variance is much much smaller than the intra-individual variance
+			there are large risk/protective alleles within each individual, but the 
+			dynamic range across individuals is very small
+		* each individual is unique - the large-effect loci are not shared across individuals
+			some evidence for a subset of high-risk animals with ER stress issues
+	- PtRS was highly correlated with phenotype score across all tissues
+		 - transcription in all tissues is related to 
+		
+## Notes from literature
+allelic heterogeneity is a problem for mapping and dilutes statistical 
+power to identify disease-associated loci [11404818] - because our method
+doe not use individual markers for mapping, we avoid this issue. we aim 
+at variation in gene expression levels. This readout avoids issues with
+mapping resolution and is gene-based. If the overall point of mapping is 
+to identify individual genes and molecular mechanisms, then we can actually
+get at this more directly by looking at variation in levels of gene products
+rather at the genome itself, and then inferring the effect on gene products (?)
+
+If disease variants largely are regulatory in nature, lets look at the output
+of that regulation (we are only looking at abundance, though, not splicing.
+Pritchard has a paper [27126046] that says that variants that affect splicing,
+not expression levels, are major contributors to complex traits: trait-associated
+SNPs were more enriched in splicing eQTL, than in abundance eQTL.)
+Also, the genome sequence is constant across cell types, whereas gene expression
+is cell-type-specific, so you need to measure lots of it in each individual
+
+## Discussion
+Here we discuss the implications of the results.
+
+## Methods
+Here we describe the methods.
+
+## Data Availability
+Here we tell people where to find the data
+
+## Acknowledgements
+Here we thank people
+
+
