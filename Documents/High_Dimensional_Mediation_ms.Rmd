@@ -316,7 +316,13 @@ genetic regulation of transcripts may influence traits.
 
 To identify mechanisms through which genetic regulation of transcripts
 influences heritable traits, we propose high-dimensional mediation analysis
-(HDMA) (Fig. XXX). In this process we 
+(HDMA) (Fig. XXX). In this process we kernelize each of the genome, 
+transcriptome, and phenome, and perform regularized and sparse generalized
+canonical correlation analysis (RGCCA) [cite] in which we explicitly
+model the mediation by the transcriptome on the effect of the genome 
+on the phenome (Methods, Fig. XXX). RGCCA is an extended form of canonical
+correlation analysis (CCA) [cite] in which multiple data sets can be 
+modeled simultaneously. 
 
 * Fit the model.
 
