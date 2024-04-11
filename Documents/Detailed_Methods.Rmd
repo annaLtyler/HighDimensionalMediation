@@ -179,3 +179,53 @@ had literature support when it had at least two abstracts linking it to
 the terms diabetes or obesity in the respective tissue. 
 
 ## CC-RIX mice
+
+## CC-RIX genotypes
+We used the most recent common ancestor (MRCA) genotypes for the 
+Collaborative Cross (CC) mice available on the University of 
+North Carolina website: 
+\url{http://www.csbio.unc.edu/CCstatus/CCGenomes/}
+
+To generate CC-RIX genotypes, we averaged the haplotype 
+probabilities for the two parental strains at each locus. 
+
+## Imputation of gene expression in CC-RIX
+
+To impute gene expression in the CC-RIX, we performed the following
+steps for each transcript in each tissue (adipose, liver, and skeletal muscle):
+  1. Calculate diploid CC-RIX genotype for all CC-RIX individuals
+    at the marker nearest the transcription start site of the transcript.
+  2. Multiply the genotype probabilities by the eQTL coefficients
+    identified in the DO population. 
+
+To check the accuracy of the imputation, we correlated the 
+each imputed transcript with the measure transcript. The
+average Pearson correlation (r) was close to 0.5 for all 
+three tissues (Supp. Fig. XXXA), and as expected, the 
+correlation between the imputed transcript and the measured
+transcript was highly positively dependent on the local 
+eQTL LOD score of the transcript (Supp. Fig. XXXB).
+
+## Prediction of CC-RIX traits
+
+We used both measured expression and imputed expression
+combined with the results from HDMA in the to predict
+phenotype in the CC-RIX. The traits measured in the DO
+and the CC-RIX were not identical, so we limited our
+prediction to body weight, which was measured in both
+populations, and was the largest contributor to the 
+phenotype score in the DO. 
+
+For each CC-RIX individual, we multiplied the transcript
+abundaces across the transcriptome by the loadings derived
+from the HDMA in the DO population (Fig. XXXA). This resulted 
+in a vector with $n$ elements, where $n$ is the number of 
+transcripts in the trancriptome. Each element was a weigted 
+value that combined the relative abundance of the transcript 
+with how that abundance affected the phenotype. We averaged 
+the values in this vector to calculate an overall predicted
+phenotype score for the individual CC-RIX animal. 
+
+After calculating this predicted phenotype value across
+all CC-RIX animals, we correlated the predicted values from
+each tissue with measured body weight (Fig. XXXB).

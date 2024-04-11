@@ -437,10 +437,11 @@ expression levels influence metabolic phenotypes. If
 local regulation is the predominant factor influencing
 gene expression, we should be able to predict an individual's
 phenotype based on their genotypes across all local eQTLs.
-We tested this hypothesis both in the original DO population,
-as well as in an independent population of F1 mice generated
-through multiple pairings of Collaborative Cross (CC) [cite]
-strains (Methods).
+We tested this hypothesis in an independent population of 
+F1 mice generated through multiple pairings of Collaborative 
+Cross (CC) [cite] strains (Fig. XXX) (Methods).
+
+
 
 #### targeting gene signatures
 The transcriptome is highly interconnected and redundant.
