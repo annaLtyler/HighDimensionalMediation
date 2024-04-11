@@ -11,7 +11,7 @@ output:
 ---
 
 
-## Mice
+## Diversity Outbred Mice
 
 ## Trait measurements
 
@@ -83,3 +83,99 @@ of the transcript.
 We compared local and distal estimates of heritability to measures of trait
 relevance for each transcript. Trait relevance, was the Pearson correlation
 (R) between the transcript and the trait.
+
+## Kernelization
+
+Before running high-dimensional mediation analysis, we kernelized the 
+genotype, transcriptomic, and phenotype data sets to generate $n \times n$
+matrices in where $n$ is the number of individual mice. Each matrix described
+the relationships among individuals based on their genome, transcriptome, or 
+phenome. Each matrix was generated as follows:
+
+### Kernelizing the genome
+
+The kernel matrix of the genome is the overall kinship matrix as 
+calculated by calc_kinship() in the R package qtl2 [cite]. We further 
+mean-centered this matrix based on DO generation. 
+
+### Kernelizing the transcriptome
+
+Prior to kernelizing the transcriptome, we regressed out the
+effects of sex and DO generation. We then mean centered and 
+standardized transcripts across individuals. The kernel matrix
+($K_t$) for the transcriptome of each tissue was calculated 
+as follows:
+
+\begin{equation*}
+K_t = \frac{Tr \times Tr^T}{n_{Tx}}
+\end{equation}
+
+where $Tr$ is a matrix of transcript abundances with individuals 
+in rows and transcripts in columns, $Tr^T$ is $Tr$ transpose,
+and $n_{Tx}$ is the number of transcripts in the matrix.
+We kernelized each tissue's transcriptome and then averaged
+across all tissues to generate a single transcriptome kernel
+for all tissues.
+
+### Kernelizing the phenome
+
+The phenome kernel was constructed the same way as the transcriptome
+kernel. We regressed out sex and DO generation and then mean centered
+and standardized the phenotypes. We used knn.impute() [cite] to impute
+missing values. We then used the above equation to generate the phenome 
+kernel replacing the trancript matrix and number
+of transcripts with the phenotype matrix and number of phenotypes.
+
+## High-Dimensional Mediation Analysis
+
+Matt has text for this section.
+
+## Calculation of Loadings
+
+## TWAS in DO mice
+We performed a transcriptome-wide analysis (TWAS) [cite] in the 
+DO mice to compare to the results of high-dimensional mediation. 
+To perform TWAS, we fit a linear model to explain variation in 
+each transcript across the population using the genotype at the 
+nearest marker to the gene transcription start site (TSS). We
+used kinship as a random effect and sex, diet, and DO generation 
+as fixed effects. The predicted transcript from each of these models
+was the imputed transcript based only on the local genotype.
+
+**model equation**
+
+We correlated each imputed transcript with each of the metabolic
+phenotypes after adjusting phenotypes for sex, diet, and DO generation.
+To calculate significance of these correlations, we performed permutation 
+testing by shuffling labels of individual mice and recalculating 
+correlation values. Significant correlations were those more extreme
+than any of the permuted values, corresponding to an empirical $p$
+value of 0. These are transcripts whose locally encoded expression
+level was significantly correlated with one of the metabolic traits.
+This suggests an association between the genetically encoded transcript
+level and the trait, but does not identify a direction of causation. 
+
+
+
+## Literature support for genes
+To determine whether each gene among those with large loadings or
+large heritability had a supported connection to obesity or diabetes
+in the literature, we used the R package easyPubMed [cite]. We searched
+for the terms ("diabetes" OR "obesity") along with the tissue name (adipose,
+islet, liver, or muscle), and the gene name. We restricted the gene name
+to appear in the title or abstract as some short names appeared at random
+in contact information. We checked each gene with apparent literature
+support by hand to verify that support, and we removed spurious associations.
+For example, FAU is used as an acronym for fatty acid uptake and CAD is 
+used as an acronym for coronary artery disease. Both terms co-occur with 
+the terms diabetes and obesity in a manner independent of the genes 
+\textit{Fau} and \textit{Cad}. Other genes that co-occurred with
+diabetes and obesity, but not as a functional connection were similarly
+removed. For example, the gene \textit{Rpl27} is used as a reference gene 
+for quantification of the expression of other genes, and co-occurrence with
+diabetes and obesity is a coincidence. We counted the abstracts associated
+with diabetes or obesity and each gene name, and determined that a gene
+had literature support when it had at least two abstracts linking it to
+the terms diabetes or obesity in the respective tissue. 
+
+## CC-RIX mice
