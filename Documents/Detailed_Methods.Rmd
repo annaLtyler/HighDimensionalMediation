@@ -142,7 +142,7 @@ used kinship as a random effect and sex, diet, and DO generation
 as fixed effects. The predicted transcript from each of these models
 was the imputed transcript based only on the local genotype.
 
-**model equation**
+**equation**
 
 We correlated each imputed transcript with each of the metabolic
 phenotypes after adjusting phenotypes for sex, diet, and DO generation.
@@ -154,8 +154,6 @@ value of 0. These are transcripts whose locally encoded expression
 level was significantly correlated with one of the metabolic traits.
 This suggests an association between the genetically encoded transcript
 level and the trait, but does not identify a direction of causation. 
-
-
 
 ## Literature support for genes
 To determine whether each gene among those with large loadings or
@@ -229,3 +227,30 @@ phenotype score for the individual CC-RIX animal.
 After calculating this predicted phenotype value across
 all CC-RIX animals, we correlated the predicted values from
 each tissue with measured body weight (Fig. XXXB).
+
+## Cell type specificity
+
+We investigated whether the loadings derived from HDMA reflected
+tissue composition changes in the DO mice prone to obesity on the
+high-fat diet. To do this, we acquired lists of cell-type specific
+transcripts from the literature. In adipose tissue, we looked
+at cell-type specific transcripts for macrophages, leukocytes,
+adipocyte progenitors, and adipocytes as defined in [29087381].
+In pancreatic islets, we looked at cell-type specific transcripts
+for alpha cells, beta cells, delta cells, ductal cells, mast cells, 
+macrophages, acinar cells, stellate cells, gamma and epsilon cells, 
+and endothelial cells as defined by [36778506]. Both studies defined
+cell-type specific transcripts based on human cell types. We collected 
+the loadings for each set of cell-type specific transcripts in the 
+respective tissue and asked whether the mean loading for the cell 
+type differed significantly from 0 (Figure XXX). A significant positive 
+loading for the cell type would suggest a genetic predisposition to 
+have a higher proportion of that cell type in the tissue. To determine
+whether each mean loading differed significantly from 0, we 
+performed permutation tests. We randomly sampled $n$ genes outside
+of the cell-type specific, where $n$ was the number 
+of genes in the set. We compared the distribution of loading means
+over 10,000 random draws to that seen in the observed data. We 
+used a significance threshold of 0.01.
+
+

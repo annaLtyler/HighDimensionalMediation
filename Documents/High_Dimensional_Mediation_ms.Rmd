@@ -441,7 +441,59 @@ We tested this hypothesis in an independent population of
 F1 mice generated through multiple pairings of Collaborative 
 Cross (CC) [cite] strains (Fig. XXX) (Methods).
 
+We used either measured transcription or transcription imputed
+from local eQTLs calculated in the DO population to predict
+body weight in the CC-RIX (Methods) (Fig. XXXB). Gene expression
+imputed from local eQTLs was completely uncorrelated with body 
+weight in the CC-RIX regardless of tissue. In contrast, body 
+weight predicterd from measured gene expression was highly 
+correlated with meaasured body weight in the CC-RIX. The 
+correlation was highest for expression measured in adipose 
+tissue ($r = 0.65$, $p = 2.9 \times 10^{-63}$), which is consistent 
+with our previous observation that adipose transcription is 
+the strongest mediator of the genetic effects on metabolic 
+traits. Further consistent with our previous results, gene 
+expression measured in skeletal muscle was the weakest predictor, 
+although, it still produced a prediction that was significantly 
+correlated with the measured value ($r = 0.32$, $p = 9.7 \times 10^{-12}$).
 
+Taken together, these results support the hypothesis that 
+distal, rather than local genetic factors are primarily
+driving complex-trait related variation in gene expression.
+
+### Distally heritable transcriptomic signature reflects changes in composition of adipose tissue and islets
+
+Functional enrichments of high-loading genes in the adipose
+tissue, suggested that the obese mice in the population had
+a genetic predisposition toward elevated macrophage infiltration 
+into the adipose tissue. We investigated this further 
+bioinformatically by comparing the loadings of cell-type-specific 
+transcripts (Methods). In adipose tissue, the mean loading of 
+macrophage-specific genes was substantially above 0 (Fig. XXX), 
+indicating that obese mice were genetically predisposed to have 
+high levels of macrophage infiltration in adipose tissue in 
+response to the high-fat, high-sugar diet. 
+
+In islet, the mean loadings for alpha-cell specific transcripts were 
+significantly positive, while the mean loadings for delta- and 
+endothelial-cell specific genes were significantly negative (Fig. XXX). 
+These results suggest that obese mice had inherited higher proportions 
+of alpha cells, and lower proportions of endothelial and delta cells
+in their pancreatic islets. 
+
+The loadings for pancreatic beta cell-type specific loadings was 
+not significantly different from zero. This does not reflect on the
+function of the beta cells in the obese mice, but rather suggests
+that mice prone to obesity were not obese because they inherited 
+fewer beta cells than non-obese mice.
+
+Biological interpretation of alpha, endothelial, delta cells??
+
+### Distally heritable transcriptomic signature translates to human disease
+
+Ultimately, the distally heritable transcriptomic signature 
+that we identified in DO mice will be useful if it teaches
+us about human disease. 
 
 #### targeting gene signatures
 The transcriptome is highly interconnected and redundant.
@@ -464,24 +516,7 @@ are another major class of drugs for type 2 diabetes.
 
 * **Supplemental Table** results from CMAP
 
-#### Signatures of tissue composition correlate with phenotype
-Cell-type specific markers indicate that obesity is associated with 
-increased proportion of macrophages in the adipose tissue. In the 
-islet obesity was associated with signatures indicating increased 
-proportions of alpha cells as well as decreased proportions of delta 
-and endothelial cells. Proportions of beta cells were unaffected.
 
-#### Gene signatures validate in an independent mouse data set
-We used an independent mouse data set to validate the loadings
-identified in high-dimensional mediation. This data set was
-the CC-RIX... We multiplied the transcript levels scaled across
-individuals by the transcript loadings. The mean of this vector
-is the prediction of the phenotype score in the mouse based on
-its gene expression profile. We then correlated these values with
-metabolic traits measured in the independent data set (measured
-values in 3.CC-RIX_Validation.Rmd). Predicted phenotype values
-derived from adipose expression were highly correlated with body
-weight in the CC-RIX.
 
 #### Gene signatures validate in human data sets
 We used adipose gene expression sets downloaded from GEO. We 
