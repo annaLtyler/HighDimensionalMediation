@@ -168,7 +168,7 @@ several times the body weight of a B6 adult in both sexes (Fig.
 considerably (Fig. \ref{fig:trait_overview}B) although few of the
 animals had FBG levels that would indicate pre-diabetes (XXX/\%), or
 diabetes (XXX/\%) according to previously developed cutoffs
-(pre-diabetes: FBG \(>= 250\) mg/dL, diabetes: FBG \(>= 300\) mg/dL)
+(pre-diabetes: FBG \(\geq 250\) mg/dL, diabetes: FBG \(\geq 300\) mg/dL)
 \cite{pmid17018838}. Males had higher FBG than females on average (Fig.
 \ref{fig:trait_overview}C) as has been observed before suggesting either
 that males were more susceptible to metabolic disease on the high-fat
@@ -538,22 +538,49 @@ variation in gene expression.
 variation in composition of adipose tissue and
 islets}\label{distally-heritable-transcriptomic-signatures-reflect-variation-in-composition-of-adipose-tissue-and-islets}
 
-Functional enrichments of high-loading genes in the adipose tissue,
+Interpretation of global distal genetic influences on gene expression
+and phenotype is potentially more challenging than interpretation and
+translation of local genetic influences. Effects can not be located to
+individual gene variants or transcripts, but because we have a measure
+of importance across all transcripts in multiple tissues, we can look at
+global patterns. We noted earlier that functional enrichments of
+transcripts with large positive loadings in the adipose tissue,
 suggested that the obese mice in the population had a genetic
 predisposition toward elevated macrophage infiltration into the adipose
-tissue. We investigated this further bioinformatically by comparing the
-loadings of cell-type-specific transcripts (Methods). In adipose tissue,
-the mean loading of macrophage-specific genes was substantially above 0
-(Fig. XXX), indicating that obese mice were genetically predisposed to
-have high levels of macrophage infiltration in adipose tissue in
-response to the high-fat, high-sugar diet.
+tissue. This suggests heritabl variability in cell-type composition of
+the adipose tissue. We investigated this further bioinformatically by
+comparing the loadings of cell-type-specific transcripts (Methods). For
+adipose tissue we used a list of cell-type specific genes identified in
+human adipose tissue
+
+In adipose tissue, the mean loading of macrophage-specific genes was
+substantially greater than 0 (Fig. \ref{fig:human_translation}A),
+indicating that obese mice were genetically predisposed to have high
+levels of macrophage infiltration in adipose tissue in response to the
+high-fat, high-sugar diet.
+
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{Figures/Fig8_Human_Translation.pdf} 
+\caption{HDM results translate to humans. \textbf{A.} Distribution of 
+loadings for cell-type-specific transcripts in adipose tissue. \textbf{B.} 
+Distribution of loadings for cell-type-specific transcripts in pancreatic 
+islets (green). \textbf{C.} Null distributions for the mean loading of 
+randomly selected transcripts in each cell type compared with the observed 
+mean loading of each group of transcripts (red asterisk). \textbf{D.} 
+Predictions of metabolic phenotypes in four adipose transcription data 
+sets downloaded from GEO. In each study the obese/diabetic patients were 
+predicted to have greater metabolic disease than the lean/non-diabetic 
+patients based on the HDM results from DO mice.
+}
+\label{fig:human_translation}
+\end{figure}
 
 In islet, the mean loadings for alpha-cell specific transcripts were
 significantly positive, while the mean loadings for delta- and
-endothelial-cell specific genes were significantly negative (Fig. XXX).
-These results suggest that obese mice had inherited higher proportions
-of alpha cells, and lower proportions of endothelial and delta cells in
-their pancreatic islets.
+endothelial-cell specific genes were significantly negative (Fig.
+\ref{fig:human_translation}B). These results suggest that obese mice had
+inherited higher proportions of alpha cells, and lower proportions of
+endothelial and delta cells in their pancreatic islets.
 
 The loadings for pancreatic beta cell-type specific loadings was not
 significantly different from zero. This does not reflect on the function
@@ -631,6 +658,8 @@ Here we tell people where to find the data
 \subsection{Acknowledgements}\label{acknowledgements}
 
 Here we thank people
+
+\pagebreak
 
 \subsection{Supplemental Figures}\label{supplemental-figures}
 
