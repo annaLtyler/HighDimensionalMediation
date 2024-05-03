@@ -1,0 +1,421 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\newcommand{\beginsupplement}{%
+        \setcounter{table}{0}
+        \renewcommand{\thetable}{S\arabic{table}}%
+        \setcounter{figure}{0}
+        \renewcommand{\thefigure}{S\arabic{figure}}%
+     }
+
+\usepackage{lineno}
+\linenumbers
+
+\usepackage{natbib}
+
+\usepackage{setspace} \doublespacing
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Detailed Methods for High Dimensional Mediation for Massively Polygenic Traits},
+  pdfauthor={J. Matthew Mahoney and Anna L Tyler},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Detailed Methods for High Dimensional Mediation for Massively
+Polygenic Traits}
+\author{J. Matthew Mahoney and Anna L Tyler}
+\date{May 03, 2024}
+
+\begin{document}
+\maketitle
+
+\subsection{Diversity Outbred Mice}\label{diversity-outbred-mice}
+
+\subsection{Trait measurements}\label{trait-measurements}
+
+\subsection{Trait selection}\label{trait-selection}
+
+We filtered the measured traits in this study to a set of relatively
+non-redundant measures that were well-represented in the population
+(having at least XXX individuals), and spanned multiple aspects of
+metabolic disease. A complete description of trait filtering can be
+found in File XXX (1b.Trait\_Selection.Rmd).
+
+We took two approaches for traits with multiple redundant measurements,
+for example logintudinal body weights. In the case of longitudinal
+measurements, we used the final measurement, as this was the closest
+physiological measurement to the measurement of gene expression, which
+was done at the end of the experiment. The labels for these traits are
+have the word ``Final'' appended to their name. For traits with multiple
+highly related measurements, such as cholesterol, we used the first
+principal component of the group of measurements. For example, we used
+the first principal component of all LDL measurements as the measurement
+of LDL. For each set of traits, we ensured the first principal component
+had the correct sign by correlating it with the average of the traits.
+For correlation coefficients (R) less than 0, we multiplied the
+principal component by -1. The labels for these traits have the term
+``PC1'' appended to their name.
+
+\subsection{RNA Sequencing}\label{rna-sequencing}
+
+RNA sequencing was performed as described earlier {[}cite{]}.
+Briefly,\ldots{}
+
+\subsection{Processing of RNA sequencing
+data}\label{processing-of-rna-sequencing-data}
+
+We used the Expectation-Maximization algorithm for Allele Specific
+Expression (EMASE) {[}cite{]} to quantify multi-parent allele-specific
+and total expression from RNA-seq data for each tissue. EMASE was
+performed by the Genotype by RNA-seq (GBRS) software package
+(\url{https://gbrs.readthedocs.io/en/latest/}). In the process, R1 and
+R2 FASTQ files were combined and aligned to a hybridized (8-way)
+transcriptome generated for the 8 DO founder strains as single-ended
+reads. GBRS was also used to reconstruct the mouse genotype
+probabilities along \textasciitilde69K markers, which was used for
+confirming genotypes in the quality control (QC) process. For the QC
+process, we used a Euclidean distances method (developed by Greg Keele -
+Churchill Lab) to compare the GBRS genotype probabilities between the
+tissues and the genotype probabilities array for all mice. The counts
+matrix for each tissue was processed to filter out transcripts with less
+than one read for at least half of the samples. RNA-seq batch effects
+were removed by regressing out batch as a random effect and considering
+sex and generation as fixed effects using lme4 R package. RNA-Seq counts
+were normalized relative to total read counts using the variance
+stabilizing transform (VST) as implemented in DESeq2 and using rank
+normal score.
+
+We used R/qtl2 {[}cite{]} to perform eQTL analysis. We used the rank
+normal score data and used sex and DO generation as additive covariates.
+We also used kinship as a random effect. We used permutations to find a
+LOD threshold of 8 for significant QTLs which corresponded to a \(p\)
+value of 0.05.
+
+To assess whether eQTL were shared across tissues, we compared eQTLs for
+each transcript across tissues. Significant eQTLs within 4Mb of each
+other were considered overlapping. We considered local and distal eQTLs
+separately.
+
+To estimate local and distal heritability of each transcript, we scaled
+each normalized transcript to have a variance of 1. We then modeled this
+transcript with the local genotype using the fit1() function in R/qtl
+with a kinship correction. We used the resulting model to predict the
+transcript values. The variance of the predicted transcript its local
+heribatility. We then estimated the heritability of the residual of the
+model fit. The variance of the residual multiplied by its heritability
+is the distal heritability of the transcript.
+
+We compared local and distal estimates of heritability to measures of
+trait relevance for each transcript. Trait relevance, was the Pearson
+correlation (R) between the transcript and the trait.
+
+\subsection{Kernelization}\label{kernelization}
+
+Before running high-dimensional mediation analysis, we kernelized the
+genotype, transcriptomic, and phenotype data sets to generate
+\(n \times n\) matrices in where \(n\) is the number of individual mice.
+Each matrix described the relationships among individuals based on their
+genome, transcriptome, or phenome. Each matrix was generated as follows:
+
+\subsubsection{Kernelizing the genome}\label{kernelizing-the-genome}
+
+The kernel matrix of the genome is the overall kinship matrix as
+calculated by calc\_kinship() in the R package qtl2 {[}cite{]}. We
+further mean-centered this matrix based on DO generation.
+
+\subsubsection{Kernelizing the
+transcriptome}\label{kernelizing-the-transcriptome}
+
+Prior to kernelizing the transcriptome, we regressed out the effects of
+sex and DO generation. We then mean centered and standardized
+transcripts across individuals. The kernel matrix (\(K_t\)) for the
+transcriptome of each tissue was calculated as follows:
+
+\begin{equation*}
+K_t = \frac{Tr \times Tr^T}{n_{Tx}}
+\end{equation*}
+
+where \(Tr\) is a matrix of transcript abundances with individuals in
+rows and transcripts in columns, \(Tr^T\) is \(Tr\) transpose, and
+\(n_{Tx}\) is the number of transcripts in the matrix. We kernelized
+each tissue's transcriptome and then averaged across all tissues to
+generate a single transcriptome kernel for all tissues.
+
+\subsubsection{Kernelizing the phenome}\label{kernelizing-the-phenome}
+
+The phenome kernel was constructed the same way as the transcriptome
+kernel. We regressed out sex and DO generation and then mean centered
+and standardized the phenotypes. We used knn.impute() {[}cite{]} to
+impute missing values. We then used the above equation to generate the
+phenome kernel replacing the trancript matrix and number of transcripts
+with the phenotype matrix and number of phenotypes.
+
+\subsection{High-Dimensional Mediation
+Analysis}\label{high-dimensional-mediation-analysis}
+
+Matt has text for this section.
+
+\subsection{Calculation of Loadings}\label{calculation-of-loadings}
+
+Loadings onto transcripts and traits were calculated in the following
+way. calc\_loadings()
+
+\subsection{TWAS in DO mice}\label{twas-in-do-mice}
+
+We performed a transcriptome-wide analysis (TWAS) {[}cite{]} in the DO
+mice to compare to the results of high-dimensional mediation. To perform
+TWAS, we fit a linear model to explain variation in each transcript
+across the population using the genotype at the nearest marker to the
+gene transcription start site (TSS). We used kinship as a random effect
+and sex, diet, and DO generation as fixed effects. The predicted
+transcript from each of these models was the imputed transcript based
+only on the local genotype.
+
+\textbf{equation}
+
+We correlated each imputed transcript with each of the metabolic
+phenotypes after adjusting phenotypes for sex, diet, and DO generation.
+To calculate significance of these correlations, we performed
+permutation testing by shuffling labels of individual mice and
+recalculating correlation values. Significant correlations were those
+more extreme than any of the permuted values, corresponding to an
+empirical \(p\) value of 0. These are transcripts whose locally encoded
+expression level was significantly correlated with one of the metabolic
+traits. This suggests an association between the genetically encoded
+transcript level and the trait, but does not identify a direction of
+causation.
+
+\subsection{Literature support for
+genes}\label{literature-support-for-genes}
+
+To determine whether each gene among those with large loadings or large
+heritability had a supported connection to obesity or diabetes in the
+literature, we used the R package easyPubMed {[}cite{]}. We searched for
+the terms (``diabetes'' OR ``obesity'') along with the tissue name
+(adipose, islet, liver, or muscle), and the gene name. We restricted the
+gene name to appear in the title or abstract as some short names
+appeared at random in contact information. We checked each gene with
+apparent literature support by hand to verify that support, and we
+removed spurious associations. For example, FAU is used as an acronym
+for fatty acid uptake and CAD is used as an acronym for coronary artery
+disease. Both terms co-occur with the terms diabetes and obesity in a
+manner independent of the genes \textit{Fau} and \textit{Cad}. Other
+genes that co-occurred with diabetes and obesity, but not as a
+functional connection were similarly removed. For example, the gene
+\textit{Rpl27} is used as a reference gene for quantification of the
+expression of other genes, and co-occurrence with diabetes and obesity
+is a coincidence. We counted the abstracts associated with diabetes or
+obesity and each gene name, and determined that a gene had literature
+support when it had at least two abstracts linking it to the terms
+diabetes or obesity in the respective tissue.
+
+\subsection{CC-RIX mice}\label{cc-rix-mice}
+
+\subsection{CC-RIX genotypes}\label{cc-rix-genotypes}
+
+We used the most recent common ancestor (MRCA) genotypes for the
+Collaborative Cross (CC) mice available on the University of North
+Carolina website: \url{http://www.csbio.unc.edu/CCstatus/CCGenomes/}
+
+To generate CC-RIX genotypes, we averaged the haplotype probabilities
+for the two parental strains at each locus.
+
+\subsection{Imputation of gene expression in
+CC-RIX}\label{imputation-of-gene-expression-in-cc-rix}
+
+To impute gene expression in the CC-RIX, we performed the following
+steps for each transcript in each tissue (adipose, liver, and skeletal
+muscle): 1. Calculate diploid CC-RIX genotype for all CC-RIX individuals
+at the marker nearest the transcription start site of the transcript. 2.
+Multiply the genotype probabilities by the eQTL coefficients identified
+in the DO population.
+
+To check the accuracy of the imputation, we correlated the each imputed
+transcript with the measure transcript. The average Pearson correlation
+(r) was close to 0.5 for all three tissues (Supp. Fig. XXXA), and as
+expected, the correlation between the imputed transcript and the
+measured transcript was highly positively dependent on the local eQTL
+LOD score of the transcript (Supp. Fig. XXXB).
+
+\subsection{Prediction of CC-RIX
+traits}\label{prediction-of-cc-rix-traits}
+
+We used both measured expression and imputed expression combined with
+the results from HDMA in the to predict phenotype in the CC-RIX. The
+traits measured in the DO and the CC-RIX were not identical, so we
+limited our prediction to body weight, which was measured in both
+populations, and was the largest contributor to the phenotype score in
+the DO.
+
+For each CC-RIX individual, we multiplied the transcript abundaces
+across the transcriptome by the loadings derived from the HDMA in the DO
+population (Fig. XXXA). This resulted in a vector with \(n\) elements,
+where \(n\) is the number of transcripts in the trancriptome. Each
+element was a weigted value that combined the relative abundance of the
+transcript with how that abundance affected the phenotype. We averaged
+the values in this vector to calculate an overall predicted phenotype
+score for the individual CC-RIX animal.
+
+After calculating this predicted phenotype value across all CC-RIX
+animals, we correlated the predicted values from each tissue with
+measured body weight (Fig. XXXB).
+
+\subsection{Cell type specificity}\label{cell-type-specificity}
+
+We investigated whether the loadings derived from HDMA reflected tissue
+composition changes in the DO mice prone to obesity on the high-fat
+diet. To do this, we acquired lists of cell-type specific transcripts
+from the literature. In adipose tissue, we looked at cell-type specific
+transcripts for macrophages, leukocytes, adipocyte progenitors, and
+adipocytes as defined in {[}29087381{]}. In pancreatic islets, we looked
+at cell-type specific transcripts for alpha cells, beta cells, delta
+cells, ductal cells, mast cells, macrophages, acinar cells, stellate
+cells, gamma and epsilon cells, and endothelial cells as defined by
+{[}36778506{]}. Both studies defined cell-type specific transcripts
+based on human cell types. We collected the loadings for each set of
+cell-type specific transcripts in the respective tissue and asked
+whether the mean loading for the cell type differed significantly from 0
+(Figure XXX). A significant positive loading for the cell type would
+suggest a genetic predisposition to have a higher proportion of that
+cell type in the tissue. To determine whether each mean loading differed
+significantly from 0, we performed permutation tests. We randomly
+sampled \(n\) genes outside of the cell-type specific, where \(n\) was
+the number of genes in the set. We compared the distribution of loading
+means over 10,000 random draws to that seen in the observed data. We
+used a significance threshold of 0.01.
+
+\subsection{Comparison of transcriptomic signatures to human
+transcriptomic
+signatures}\label{comparison-of-transcriptomic-signatures-to-human-transcriptomic-signatures}
+
+To compare the transcriptomic signatures identified in the DO mice to
+those seen in human patients, we downloaded human gene expression data
+from the Gene Expression Omnibus (GEO) {[}cite{]}. We focused on adipose
+tissue because this had the strongest relationship to obesity and
+insulin resistance in the DO. We downloaded the following human gene
+expression data sets:
+
+\begin{itemize}
+\item
+  Accession number GSE152517 - Performed bulk RNA sequencing on visceral
+  adipose tissue resected from seven diabetic and seven non-diabetic
+  obese individuals.
+\item
+  Accession number GSE44000 - Used Agilent-014850 4X44K human whole
+  genome platform arrays (GPL6480) to measure gene expression in
+  purified adipocytes derived from the subcutaneous adipose tissue of
+  seven obese (BMI\textgreater30) and seven lean (BMI\textless25)
+  post-menopausal women.
+\item
+  Accession number GSE205668 - Subcutaneous adipose tissue was resected
+  during elective surgery from 35 normal weight, and 26 obese children.
+  Gene expression was measured by RNA sequencing with an Illumina HiSeq
+  2500.
+\item
+  Accession number GSE29231 - Visceral adipose biopsies were taken from
+  three female patients with type 2 diabetes, and three non-diabetic
+  female patients. Expression was measured with Illumina HumanHT-12 v3
+  Expression BeadChip arrays.
+\end{itemize}
+
+We downloaded each data set from GEO using the R package GEOquery
+{[}cite{]}. In each case, we verified that gene expression was log
+transdormed, and performed the transformation ourselves if it hadn't
+already been done. When covariates such as age and sex were available in
+the meta data files we regressed out these variables. We mean cetered
+and standardized gene expression across transcripts.
+
+We matched the human gene expression to the mouse gene expression by
+pairing orthologs as defined in The Jackson Laboratory's mouse genome
+informatics data base (MGI) {[}cite{]}. We multiplied each transcript in
+the human data by the adipose tissue loading of its ortholog in the DO
+mice. This resulted in a vector of weighted transcript values for each
+individual patient based on their own transcriptional profile and the
+obesity-related transcriptional signature from the DO analysis. The mean
+of this vector for an individual was the prediction of their obesity
+status. Higher values indicate a prediction of higher obesity or risk of
+metabolic disease based on adipose gene expression. We then compared the
+values across groups, either obese and non-obese, or diabetic and
+non-diabetic depending on the groups in each study.
+
+\subsection{Connectivity Map Queries}\label{connectivity-map-queries}
+
+The gene expression profiles in the Connectivity Map database are
+derived from human cell lines and human primary cultures, and are
+indexed by Entrez gene IDs. To query the CMAP database, we identified
+the Entrez gene IDs for the human orthologs of the mouse genes expressed
+in each tissue. Each CMAP query takes the 150 most up-regulated and the
+150 most down-regulated genes in a signature, however, not all human
+genes are included in their database. To ensure we had as many genes as
+possible in the query, we selected the top and bottom 200 genes with the
+most extreme positive and negative loadings respectively. We pasted
+these into the CLUE query application available at
+\url{https://clue.io/query}.
+
+To identify drugs that reversed the gene signatures in each tissue, we
+first filtered to an appropriate cell type: adipocytes (ASC) for the
+adipose tissue gene signature, and pancreatic cells (YAPC) for the islet
+gene signature. We sorted the results by the correlation score with the
+input signature, identifying compounds with large negative correlations
+to the input signature as potential drug candidates.
+
+\end{document}

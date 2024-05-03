@@ -3,11 +3,10 @@ title: "Detailed Methods for High Dimensional Mediation for Massively Polygenic 
 author: J. Matthew Mahoney and Anna L Tyler
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output: 
-  html_document:
-    code_folding: hide
-    collapsed: no
-    toc: yes
-    toc_float: yes
+  pdf_document:
+    keep_tex: true
+    includes:
+      in_header: header_simple.tex
 ---
 
 
@@ -108,7 +107,7 @@ as follows:
 
 \begin{equation*}
 K_t = \frac{Tr \times Tr^T}{n_{Tx}}
-\end{equation}
+\end{equation*}
 
 where $Tr$ is a matrix of transcript abundances with individuals 
 in rows and transcripts in columns, $Tr^T$ is $Tr$ transpose,
