@@ -362,3 +362,5 @@ for the islet gene signature. We sorted the results by the correlation
 score with the input signature, identifying compounds with large negative
 correlations to the input signature as potential drug candidates.
 
+\bibliographystyle{unsrt}
+\bibliography{islet.bib}
