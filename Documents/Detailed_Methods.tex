@@ -83,7 +83,7 @@
 \title{Detailed Methods for High Dimensional Mediation for Massively
 Polygenic Traits}
 \author{J. Matthew Mahoney and Anna L Tyler}
-\date{May 03, 2024}
+\date{May 13, 2024}
 
 \begin{document}
 \maketitle
@@ -209,15 +209,54 @@ impute missing values. We then used the above equation to generate the
 phenome kernel replacing the trancript matrix and number of transcripts
 with the phenotype matrix and number of phenotypes.
 
-\subsection{High-Dimensional Mediation
-Analysis}\label{high-dimensional-mediation-analysis}
+\subsection{High-dimensional mediation
+Aanalysis}\label{high-dimensional-mediation-aanalysis}
 
 Matt has text for this section.
 
-\subsection{Calculation of Loadings}\label{calculation-of-loadings}
+\subsection{Calculation of loadings}\label{calculation-of-loadings}
 
 Loadings onto transcripts and traits were calculated in the following
 way. calc\_loadings()
+
+\subsection{Enrichment of biological
+terms}\label{enrichment-of-biological-terms}
+
+We performed gene set enrichment analysis (GSEA) \cite{pmid16199517}
+using the transcript loadings in each tissue as gene weights. GSEA
+determines enrichment of pathways based on where the contained genes
+appear in a ranked list of genes. If the genes in the pathway are more
+concentrated near the top (or the bottom) of the list than expected by
+chance, the pathway can be interpreted as being enriched (or depleted)
+in the list. We used the R package fgsea \cite{fgsea} to calculate
+normalized enrichment scores for all GO terms and all KEGG pathways.
+
+We downloaded all KEGG \cite{pmid36300620} pathways for
+\textit{Mus musculus} using the R package clusterProfiler
+\cite{pmid36300620}. We then used fgsea to calculate enrichment scores
+in each tissue using the transcript loadings in each tissue as our
+ranked list of genes. We reported the normalized enrichment score (NES)
+for the 10 pathways with the largest positive NES and the 10 pathways
+with the largest negative NES.
+
+We also collected all loadings of transcripts for the genes in each
+pathway to compare loadings across all tissues (Supp. Fig. XXX). We used
+the R package pathview \cite{pmid23740750} to visualize the loadings
+from each tissue in interesting pathways. We scaled the loadings in each
+tissue by the maximum absolute value of loadings across all tissues to
+compare them across tissues.
+
+We downloaded GO term annotations from Mouse Genome Informatics at the
+Jackson Laboratory \cite{pmid33231642}
+\url{https://www.informatics.jax.org/downloads/reports/index.html} We
+removed gene-annotation pairs labeled with NOT, indicating that these
+genes were known not to be involved in these GO terms. We also limited
+our search to GO terms with between 80 and 3000 genes. We used the R
+package annotate \cite{R_annotate} to identify the ontology of each term
+and the R package pRoloc \cite{pmid24413670} to convert between GO terms
+and names. As with the KEGG pathways, we used fgsea to calculate a
+normalized enrichment score for each GO term and collected loadings for
+the transcripts in each term to compare across tissues.
 
 \subsection{TWAS in DO mice}\label{twas-in-do-mice}
 

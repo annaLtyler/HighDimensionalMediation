@@ -137,8 +137,41 @@ way. calc_loadings()
 ## Enrichment of biological terms
 
 We performed gene set enrichment analysis (GSEA) \cite{pmid16199517}
-using the transcript loadings in each tissue as gene weights. GSEA takes 
-a ranked list of genes and determines an enrichment score based 
+using the transcript loadings in each tissue as gene weights. GSEA 
+determines enrichment of pathways based on where the contained genes 
+appear in a ranked list of genes. If the genes in the pathway are 
+more concentrated near the top (or the bottom) of the list than expected
+by chance, the pathway can be interpreted as being enriched (or depleted)
+in the list. We used the R package fgsea \cite{fgsea} to calculate 
+normalized enrichment scores for all GO terms and all KEGG pathways.
+
+We downloaded all KEGG \cite{pmid36300620} pathways for 
+\textit{Mus musculus} using the R package clusterProfiler 
+\cite{pmid36300620}. We then used fgsea to calculate enrichment
+scores in each tissue using the transcript loadings in each
+tissue as our ranked list of genes. We reported the normalized
+enrichment score (NES) for the 10 pathways with the largest 
+positive NES and the 10 pathways with the largest negative NES.
+
+We also collected all loadings of transcripts for the genes
+in each pathway to compare loadings across all tissues 
+(Supp. Fig. XXX). We used the R package pathview \cite{pmid23740750}
+to visualize the loadings from each tissue in interesting pathways.
+We scaled the loadings in each tissue by the maximum absolute value
+of loadings across all tissues to compare them across tissues.
+
+We downloaded GO term annotations from Mouse Genome Informatics
+at the Jackson Laboratory \cite{pmid33231642}
+\url{https://www.informatics.jax.org/downloads/reports/index.html}
+We removed gene-annotation pairs labeled with NOT, indicating
+that these genes were known not to be involved in these
+GO terms. We also limited our search to GO terms with between
+80 and 3000 genes. We used the R package annotate \cite{R_annotate}
+to identify the ontology of each term and the R package pRoloc 
+\cite{pmid24413670} to convert between GO terms and names. As with
+the KEGG pathways, we used fgsea to calculate a normalized enrichment
+score for each GO term and collected loadings for the transcripts
+in each term to compare across tissues.
 
 ## TWAS in DO mice
 We performed a transcriptome-wide analysis (TWAS) [cite] in the 
