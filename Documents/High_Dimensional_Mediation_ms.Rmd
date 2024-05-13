@@ -322,8 +322,20 @@ metabolic disease on the high-fat diet) (Fig. \ref{fig:interpretation}C).
 We used GSEA to look for biological processes and pathways 
 that were enriched at the top and bottom of this list (methods). 
 
-Functional enrichments for the most highly correlated and 
-anti-correlated transcripts are shown in Supp. Fig. \ref{fig:top_enrich} 
+In adipose tissue, both GO processes and and KEGG pathway 
+enrichments pointed to an axis of inflammation and metabolism
+that was strongly related to metabolic index (Supp. Fig. 
+\ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}).
+Processes and pathways associated with inflammation, particularly 
+macrophage infiltration were positively associated with metabolic
+index, indicating that increased expression in inflammatory
+pathways was associated with a higher metabolic index. 
+
+The strongest
+negative enrichments in adipose tissue were related to mitochondial
+activity in general, and thermogenesis in particular.  
+
+  
 and represent known biology of obesity and diabetes. In adipose 
 tissue, for example, the transcripts most strongly correlated 
 with $T_C$ were enriched for immune system signaling and cell 
@@ -617,12 +629,27 @@ for individual tissues for easy of visualization.
 
 
 \begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_enrichments.pdf} 
-\caption{Tables showing top 10 functional enrichments for 
-the 150 transcripts with the largest positive and negative 
-loadings across all four tissues.
+\includegraphics[width=\textwidth]{Figures/Supp_Fig_enrichments_KEGG.pdf} 
+\caption{Bar plots showing normalized enrichment scores (NES) for KEGG 
+pathways as determined by fast gene score enrichment analysis (fgsea). 
+Only the top 10 positive and top 10 negative scores are shown. Colors 
+indicate tissue. The name beside each bar shows the name of each enriched 
+KEGG pathway.
 }
-\label{fig:top_enrich}
+\label{fig:top_enrich_kegg}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{Figures/Supp_Fig_enrichments_GO.pdf} 
+\caption{Bar plots showing normalized enrichment scores (NES) for GO 
+terms as determined by fast gene score enrichment analysis (fgsea). 
+Only the top 10 positive and top 10 negative scores are shown. Colors 
+indicate tissue. The name beside each bar shows the name of each enriched 
+GO term. The letters in parentheses indicate whether the term is from the 
+biological process ontology (BP), the molecular function ontology (MF), 
+or the cellular compartment ontology (CC).
+}
+\label{fig:top_enrich_go}
 \end{figure}
 
 

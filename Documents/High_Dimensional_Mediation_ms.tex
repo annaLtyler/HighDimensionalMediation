@@ -346,18 +346,16 @@ The loadings of each measured trait onto \(P_C\) indicate how much each
 contributed to \(P_C\). Final body weight contributed the most to
 \(P_C\) (Fig. \ref{fig:interpretation}), followed by homeostatic insulin
 resistance (HOMA\_IR) and fasting plasma insulin levels
-(Insulin\_Fasting). The high loadings of these traits indicate that
-these are the primary traits mediated by \(T_C\). Traits contributing
-the least to \(P_C\) were measures of cholesterol and pancreas
-composition. The smaller contributions of these traits indicate a weaker
-relationship with the heritable transcriptomic signature described by
-\(T_C\). Thus, when we interpret the transcriptomic signature identified
-by HDM, we are explaining primarily transcriptional mediation of body
-weight and insulin resistance, as opposed to cholesterol measurements.
-Because higher composite trait scores have large, positive contributions
-from body weight and insulin resistance, larger positive scores for
-individual mice indicate greater metabolic disease (Fig.
-\ref{fig:interpretation}B)
+(Insulin\_Fasting). We can thus interpret \(P_C\) as an index of
+metabolic disease (Fig. \ref{fig:interpretation}B). Individuals with
+high values of \(P_C\) have a higher metabolic index and greater
+metabolic disease, including higher body weight and higher insulin
+resistance. We refer to \(P_C\) as the metabolic index going forward.
+Traits contributing the least to the metabolic index were measures of
+cholesterol and pancreas composition. Thus, when we interpret the
+transcriptomic signature identified by HDM, we are explaining primarily
+transcriptional mediation of body weight and insulin resistance, as
+opposed to cholesterol measurements.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig4_interpretation.pdf} 
@@ -386,15 +384,28 @@ high distal heritability, and are linked mechanistically to
 obesity}\label{high-loading-transcripts-have-low-local-heritability-high-distal-heritability-and-are-linked-mechanistically-to-obesity}
 
 Transcripts that most strongly correlated with \(T_C\) were the best
-mediators of effect of genetics on \(P_C\). Large positive loadings
-indicate that inheriting higher expression was associated with a higher
-\(P_C\) (higher risk of obesity and metabolic disease on the high-fat
-diet) (Fig. \ref{fig:interpretation}C). Conversely, large negative
-loadings indicate that inheriting lower expression of these transcripts
-was associated with a lower \(P_C\) (lower risk of obesity and metabolic
+mediators of the effect of genetics on metabolic index. Large positive
+loadings indicate that inheriting higher expression was associated with
+a higher metabolic index (i.e.~higher risk of obesity and metabolic
 disease on the high-fat diet) (Fig. \ref{fig:interpretation}C).
-Functional enrichments for the most highly correlated and
-anti-correlated transcripts are shown in Supp. Fig. \ref{fig:top_enrich}
+Conversely, large negative loadings indicate that inheriting lower
+expression of these transcripts was associated with a lower metabolic
+index (i.e.~lower risk of obesity and metabolic disease on the high-fat
+diet) (Fig. \ref{fig:interpretation}C). We used GSEA to look for
+biological processes and pathways that were enriched at the top and
+bottom of this list (methods).
+
+In adipose tissue, both GO processes and and KEGG pathway enrichments
+pointed to an axis of inflammation and metabolism that was strongly
+related to metabolic index (Supp. Fig. \ref{fig:top_enrich_kegg} and
+\ref{fig:top_enrich_go}). Processes and pathways associated with
+inflammation, particularly macrophage infiltration were positively
+associated with metabolic index, indicating that increased expression in
+inflammatory pathways was associated with a higher metabolic index.
+
+The strongest negative enrichments in adipose tissue were related to
+mitochondial activity in general, and thermogenesis in particular.
+
 and represent known biology of obesity and diabetes. In adipose tissue,
 for example, the transcripts most strongly correlated with \(T_C\) were
 enriched for immune system signaling and cell motility. It is well
@@ -692,12 +703,27 @@ for individual tissues for easy of visualization.
 \end{figure}
 
 \begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_enrichments.pdf} 
-\caption{Tables showing top 10 functional enrichments for 
-the 150 transcripts with the largest positive and negative 
-loadings across all four tissues.
+\includegraphics[width=\textwidth]{Figures/Supp_Fig_enrichments_KEGG.pdf} 
+\caption{Bar plots showing normalized enrichment scores (NES) for KEGG 
+pathways as determined by fast gene score enrichment analysis (fgsea). 
+Only the top 10 positive and top 10 negative scores are shown. Colors 
+indicate tissue. The name beside each bar shows the name of each enriched 
+KEGG pathway.
 }
-\label{fig:top_enrich}
+\label{fig:top_enrich_kegg}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{Figures/Supp_Fig_enrichments_GO.pdf} 
+\caption{Bar plots showing normalized enrichment scores (NES) for GO 
+terms as determined by fast gene score enrichment analysis (fgsea). 
+Only the top 10 positive and top 10 negative scores are shown. Colors 
+indicate tissue. The name beside each bar shows the name of each enriched 
+GO term. The letters in parentheses indicate whether the term is from the 
+biological process ontology (BP), the molecular function ontology (MF), 
+or the cellular compartment ontology (CC).
+}
+\label{fig:top_enrich_go}
 \end{figure}
 
 \begin{figure}[ht!]
