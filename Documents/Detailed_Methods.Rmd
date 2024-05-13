@@ -125,14 +125,20 @@ missing values. We then used the above equation to generate the phenome
 kernel replacing the trancript matrix and number
 of transcripts with the phenotype matrix and number of phenotypes.
 
-## High-Dimensional Mediation Analysis
+## High-dimensional mediation Aanalysis
 
 Matt has text for this section.
 
-## Calculation of Loadings
+## Calculation of loadings
 
 Loadings onto transcripts and traits were calculated in the following
 way. calc_loadings()
+
+## Enrichment of biological terms
+
+We performed gene set enrichment analysis (GSEA) \cite{pmid16199517}
+using the transcript loadings in each tissue as gene weights. GSEA takes 
+a ranked list of genes and determines an enrichment score based 
 
 ## TWAS in DO mice
 We performed a transcriptome-wide analysis (TWAS) [cite] in the 
