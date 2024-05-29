@@ -98,65 +98,118 @@ variants affecting gene expression (expression quantiatitive trait loci
 \subsection{Introduction}\label{introduction}
 
 In the quest to understand genetic contributions to complex traits, gene
-expression is an important bridge between genotype and phenotype. The
-majority of variants identified in GWAS are in regulatory regions of the
-genome {[}cite{]}, suggesting that they influence clinical phenotypes
-through regulation of gene expression. Consistent with this idea,
-powerful insights into disease mechanism can be made by linking genetic
-variants affecting gene expression (expression quantitative trait loci -
-eQTLs) to phenotypes. In particular, mediation analysis has been used to
-identify transcripts that mediate the effect of genetic variants on
-phenotypes. In mice\ldots{}
-\cite{pmid29567659,pmid31465442,pmid35672473} (bmediatR)
-\cite{pmid35533209} In humans\ldots{} \cite{pmid25533967,pmid24232670}
+expression is an important bridge between genotype and phenotype. By
+identifying transcripts that mediate the effect of genetic loci on
+traits, we get one step closer to a mechanistic understanding of the
+influence of genetic variants on traits. There is evidence from
+genome-wide association studies (GWAS) that regulation of gene
+expression accounts for the bulk of the genetic effect on complex
+traits, as most trait-associated variants lie in gene regulatory regions
+\cite{pmid22955828, pmid25363779, pmid21617055, pmid19474294, 
+pmid24702953, pmid24316577, pmid27126046}. It is widely assumed that
+these variants influence local transcription, and methods such as
+transcription-wide association studies (TWAS)
+\cite{pmid26258848, pmid27019110, pmid26854917} summary data-based
+Mendelian randomization (SMR) \cite{pmid27019110}, and others {[}cite{]}
+have capitalized on this idea to identify genes associated with multiple
+disease traits {[}cite many{]}
 
-Thus far, the primary focus of expression mediated traits has been on
-local genetic variation; that is genetic variation that influences the
-transcription of local genes, thereby causing variation in traits.
-However, there is evidence that the bulk of disease heritability is
-mediated by the distal component of gene expression, rather than the
-local component \cite{pmid32424349}. Yao et al.~{[}cite{]} observed that
-genes with low local heritability explain more expression-mediated
-disease heritability than genes with high local heritability. We have
-observed a similar pattern in mice, which we describe here. Thus,
-identifying heritable components of complex traits that are mediated
-through distally regulated variation in gene expression may provide
-important insights into mechanisms regulating complex traits.
+Despite the great promise of these methods, however, they have not been
+as widely successful as it seemed they could have been, and the vast
+majority of complex trait heritability remains unexplained. Although
+trait-associated variants tend to lie in non-coding, putative regulatory
+regions, they often do not have detectable effects on gene expression
+\cite{pmid32912663} and do not tend to co-localize with eQTL
+\cite{pmid36515579, 
+pmid37857933}.
 
-Identification of distal factors influencing gene expression and traits
-is challenging, as the multiple testing corrections are much more severe
-for distal effects \cite{pmid24013639}. However, systems approaches that
-consider the entire transcriptome simultaneously and avoid univariate
-testing provide promising avenues for identification of broad
-transcriptomic patterns influencing complex traits that provide both
-biological insight and targets for therapeutics. Here we propose
-high-dimenaional mediation (HDM) as one such systems approach for
-identification of the heritable portion of the transcriptome that
-mediates the effect of the genome on phenome. HDM uses a regularized and
-generalized canonical correlation analysis (RGCCA) {[}cite{]}, which is
-an extension of canonical correlation analysis (CCA) that allows for
-more than two data sets with an arbitrary relationship among them. Thus,
-we can identify linear combinations of the genome, transcriptome, and
-phenome, that describe the mediation of the genetic effects on the
-phenome through the transcriptome. Because of the central dogma of
-molecular biology, information flow is directed out of the genome, and
-not back into it. Thus, the otherwise undirected relationships between
-genome, transcriptome, and phenome can be inferred as a causal mediation
-by the transcriptome of the effects of the genome on the phenome.
+One possible explanation for these observations is that we are not
+measuring gene expression in the appropriate cell types and are thus
+unable to detect true eQTLs influencing traits \cite{pmid32912663}. An
+alternative explanation that has been discussed in recent years is that
+heritability of these variants is mediated not through local regulation
+of gene expression, but through distal regulation
+\cite{pmid37857933, pmid32424349}. Yao \textit{et al.}
+\cite{pmid32424349} observed that genes with low local heritability
+explain more expression-mediated disease heritability than genes with
+high local heritability. This observation is consistent with principles
+of robustness in complex systems. If a transcript were both important to
+a trait and subject to strong local regulation, a population would be
+susceptible to extremes in phenotype that could be defined as disease.
+Indeed, strong disruption of trait-important genes is the cause of
+Mendelian disease. Instead, what has been observed is that genes that
+are near GWAS hits and have obvious functional relevance to a trait tend
+to have highly complex regulatory landscapes under strong selection
+pressures \cite{pmid37857933}. In contrast, genes with strong local
+regulation tend to be depleted of functional annotations and are under
+looser selection constraints \cite{pmid37857933}. These observations and
+others led Liu et al.~\cite{pmid31051098} to suggest that most
+heritability of complex traits is driven by weak trans-eQTLs. They
+proposed a framework of understanding heritability of complex traits in
+which massive polygenicity is distributed across common variants in both
+functional core genes, as well as more peripheral genes that may not
+seem obviously related to the trait.
 
-Here we apply HDM
+If this model is correct, it should be the case that\ldots{}
+
+With dense enough data, it should be possible to test this model.
+
+Here we investigated the roles of local and distal gene regulation on
+the heritability of complex metabolic traits in a population of
+diversity outbred (DO) mice. DO mice are derived from eight inbred
+founder mouse strains, five classical lab strains, and three strains
+more recently derived from wild mice \cite{pmid22892839}. They represent
+three subspecies of mouse \textit{Mus musculus domesticus},
+\textit{Mus musculus musculus}, and \textit{Mus musculus casteneus}, and
+capture 90\% of the known variation in laboratory mice {[}cite{]}. We
+placed a population of 500 mice, both male and female, on a high-fat,
+high-sugar diet \cite{pmid29567659} to induce diet-associated obesity
+and metabolic disease. Over 18 weeks multiple metabolic traits were
+measured, including body weight, plasma levels of insulin and glucose,
+and plasma lipids. At the end of the experiment, we used RNASeq to
+measure gene expression in 384 mice in four tissues relevant to
+metabolic disease: adipose tissue, pancreatic islets, liver, and
+skeletal muscle. The mice were also genotyped using the Mouse Universal
+Genotyping Array (GigaMUGA). The high dimensionality of phenotyping,
+genotyping, and transcriptome measurements in this large number of
+genetically diverse animals enabled thorough inquiry into the role of
+local and distal eQTL in the heritability of complex traits. Further,
+measuring gene expression in multiple tissues, enabled us to assess the
+importance of measuring gene expression in appropriate cell types.
+
+To investigate the extent to which local and distal gene regulation
+across multiple tissues mediate genetic effects on complex traits, we
+propose a systems approach called high-dimensional mediation (HDM). HDM
+uses a regularized and generalized canonical correlation analysis
+(RGCCA) {[}cite{]}, which is an extension of canonical correlation
+analysis (CCA) that allows for more than two data sets with arbitrary
+relationships among them. Thus, we can identify linear combinations of
+the genome, transcriptome, and phenome, that describe the mediation of
+the genetic effects on the phenome through the transcriptome. This
+systems approach, as opposed to a univariate approach, puts local and
+distal regulation on the same statistical level
+
+Because of the central dogma of molecular biology, information flow is
+directed out of the genome, and not back into it. Thus, the otherwise
+undirected relationships between genome, transcriptome, and phenome can
+be inferred as a causal mediation by the transcriptome of the effects of
+the genome on the phenome.
 
 \subsection{Results}\label{results}
 
 \subsubsection{Genetic variation contributes to wide phenotypic
 variation}\label{genetic-variation-contributes-to-wide-phenotypic-variation}
 
-A population of 500 diversity outbred mice (XXX male and XXX female),
-was placed on a high-fat (XXX/\%), high-sugar (XXX/\%) diet starting at
-XXX weeks of age as described previously {[}cite{]}. Each individual was
-assessed longitudinally for multiple metabolic measures including
-fasting glucose levels, glucose tolerance, insulin levels, body weight,
-and blood lipid levels (Methods).
+A population of 500 diversity outbred mice (split evenly between male
+and female) from generates 18, 19, and 21, was placed on a high-fat
+(44.6\% kcal fat), high-sugar (34\% carbohydrate), adequate protein
+(17.3 \% protein) diet from Envigo Teklad (catalog number TD.08811)
+starting at four weeks of age as described previously
+\cite{pmid29567659}.
+
+Each individual was assessed longitudinally for multiple metabolic
+measures including fasting glucose levels, glucose tolerance, insulin
+levels, body weight, and blood lipid levels (Methods).
 
 Although the environment was consistent across animals, the genetic
 diversity present in this population resulted in widely varying
@@ -164,7 +217,7 @@ distributions across physiological measurements (Fig.
 \ref{fig:trait_overview}). For example, body weights of adult
 individuals varied from less than the average adult B6 body weight to
 several times the body weight of a B6 adult in both sexes (Fig.
-\ref{fig:trait_overview}A). Fasting blood glucose also varied
+\ref{fig:trait_overview}A). Fasting blood glucose (FBG) also varied
 considerably (Fig. \ref{fig:trait_overview}B) although few of the
 animals had FBG levels that would indicate pre-diabetes ( animals, ), or
 diabetes (7 animals, 1.4) according to previously developed cutoffs
@@ -383,8 +436,8 @@ genetic effects on body weight and insulin resistance.
 high distal heritability, and are linked mechanistically to
 obesity}\label{high-loading-transcripts-have-low-local-heritability-high-distal-heritability-and-are-linked-mechanistically-to-obesity}
 
-Transcripts that most strongly correlated with \(T_C\) were the best
-mediators of the effect of genetics on metabolic index. Large positive
+We interpreted large loadings onto transcripts as indicating strong
+mediation of the effect of genetics on metabolic index. Large positive
 loadings indicate that inheriting higher expression was associated with
 a higher metabolic index (i.e.~higher risk of obesity and metabolic
 disease on the high-fat diet) (Fig. \ref{fig:interpretation}C).
@@ -393,34 +446,42 @@ expression of these transcripts was associated with a lower metabolic
 index (i.e.~lower risk of obesity and metabolic disease on the high-fat
 diet) (Fig. \ref{fig:interpretation}C). We used GSEA to look for
 biological processes and pathways that were enriched at the top and
-bottom of this list (methods).
+bottom of this list (Methods).
 
 In adipose tissue, both GO processes and and KEGG pathway enrichments
-pointed to an axis of inflammation and metabolism that was strongly
-related to metabolic index (Supp. Fig. \ref{fig:top_enrich_kegg} and
-\ref{fig:top_enrich_go}). Processes and pathways associated with
-inflammation, particularly macrophage infiltration were positively
-associated with metabolic index, indicating that increased expression in
-inflammatory pathways was associated with a higher metabolic index.
+pointed to an axis of inflammation and metabolism (Supp. Fig.
+\ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}). Processes and
+pathways associated with inflammation, particularly macrophage
+infiltration were positively associated with metabolic index, indicating
+that increased expression in inflammatory pathways was associated with a
+higher metabolic index. It is well established that adipose tissue in
+obese individuals is highly inflamed {[}cite{]} and infiltrated by
+macrophages {[}cite{]}, and the results here suggest that this may be a
+heritable component of metabolic disease.
 
 The strongest negative enrichments in adipose tissue were related to
-mitochondial activity in general, and thermogenesis in particular.
+mitochondial activity in general, and thermogenesis in particular (Supp.
+Fig. \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}). It has been
+shown mouse strains with greater thermogenic potential are also less
+susceptible to obesity on a high-fat diet.
 
-and represent known biology of obesity and diabetes. In adipose tissue,
-for example, the transcripts most strongly correlated with \(T_C\) were
-enriched for immune system signaling and cell motility. It is well
-established that adipose tissue in obese individuals is highly inflamed
-{[}cite{]} and infiltrated by macrophages {[}cite{]}. The transcripts
-most strongly negatively correlated with \(T_C\) were enriched for
-metabolism of the branched-chain amino acids (BCAA), valine, leuceine,
-and isoleucine. BCAA are used in adipose tissue in lipogenesis, and
-inhibiting BCAA catabolism inhibits adipogenesis \cite{pmid26571352}.
-BCAA levels are also related to insulin resistance and are elevated in
-insulin-resistant obese individuals relative to weight-matched
-non-insulin reisistand individuals \cite{pmid23512805}. In the DO mice
-studied here, inheriting reduced expression of genes involved in BCAA
-catabolism was associated with reduced body weight and insulin
-resistance.
+Transcripts associated with the citric acid (TCA) cycle as well as the
+catabolism of branched-chain amino acids (BCAA), valine, leuceine, and
+isoleucine also had strong negative enrichment in the adipose tissue
+(Supp. Fig. XXX). Expression of genes in both pathways (for which there
+is some overlap) has been previously associated with insulin sensitivity
+\cite{pmid29567659,pmid22560213,pmid19841271}, suggesting that
+impairment in these pathways may be associated with insulin resistance.
+Selective PPAR\(\gamma\) modulation by insulin-sensitizing
+thiazolidinedione drugs has further been shown to influence both
+inflammation and BCAA metabolism in obese rats suggesting a relationship
+between these pathways and insulin resistance \cite{pmid20959535}. BCAA
+levels are also related to insulin resistance in human subjects and are
+elevated in insulin-resistant obese individuals relative to
+weight-matched non-insulin reisistant individuals \cite{pmid23512805}.
+In the DO mice studied here, inheriting increased expression of genes
+involved in BCAA catabolism was associated with reduced body weight and
+insulin resistance.
 
 Transcripts in the adipose tissue had the largest loadings, both
 positive and negative, of all tissues, suggesting that much of the
@@ -659,9 +720,14 @@ another major class of drugs for type 2 diabetes.
 \subsection{Discussion}\label{discussion}
 
 \begin{itemize}
-\tightlist
 \item
   distal heritability correlates with phenotype relevance
+\item
+  others who use local eQTL to associate genotype with traits often say
+  ``we nominated this gene'' even though other nearby genes have higher
+  eQTL LOD scores (27019110, 31465442) Our method supports the idea that
+  the transcripts with the strongest local regulation are less likely to
+  be functionally related to the trait
 \end{itemize}
 
 \subsection{Data Availability}\label{data-availability}

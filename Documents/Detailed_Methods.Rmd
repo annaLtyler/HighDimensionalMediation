@@ -141,9 +141,10 @@ using the transcript loadings in each tissue as gene weights. GSEA
 determines enrichment of pathways based on where the contained genes 
 appear in a ranked list of genes. If the genes in the pathway are 
 more concentrated near the top (or the bottom) of the list than expected
-by chance, the pathway can be interpreted as being enriched (or depleted)
-in the list. We used the R package fgsea \cite{fgsea} to calculate 
-normalized enrichment scores for all GO terms and all KEGG pathways.
+by chance, the pathway can be interpreted as being enriched with positively
+(negatively) loaded transcripts. We used the R package fgsea \cite{fgsea} 
+to calculate normalized enrichment scores for all GO terms and all KEGG 
+pathways.
 
 We downloaded all KEGG \cite{pmid36300620} pathways for 
 \textit{Mus musculus} using the R package clusterProfiler 
