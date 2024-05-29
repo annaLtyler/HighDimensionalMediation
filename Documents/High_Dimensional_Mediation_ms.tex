@@ -526,24 +526,21 @@ traits}\label{tissue-specific-transriptional-programs-are-associated-with-metabo
 
 Clustering of transcripts with top loadings in each tissue shows
 tissue-specific functional modules associated with obesity and insuling
-resistance in the DO population (Fig. \ref{fig:toa}). Many of these
-modules, such as leptin signaling in adipose tissue {[}cite{]} and
-skeletal muscle {[}cite{]}, as well as apelin signaling {[}cite{]} have
-well established functional roles in diabetes and obesity.
+resistance in the DO population (Fig. \ref{fig:toa}).
+
+Many of these modules, such as leptin signaling in adipose tissue
+{[}cite{]} and skeletal muscle {[}cite{]}, as well as apelin signaling
+{[}cite{]} have well established functional roles in diabetes and
+obesity.
 
 \begin{figure}[ht!]
-\includegraphics[width=5in]{Figures/Fig6_TOA.pdf} 
+\includegraphics[width=4in]{Figures/Fig6_TOA.pdf} 
 \caption{Tissue-specific transcriptional programs are associated 
-with obesity and insulin resistance. \textbf{A.} Heat map showing 
-the loadings of all transcripts with loadings greater than 2.5 standard 
-deviations from the mean in any tissue. The heat map is hierarchically 
-clustered. Functional enrichment of each cluster is indicated by color. 
-An example cluster enriched for apelin signaling is highlighted. \textbf{B.} 
-The distribution of the loadings of the apelin cluster across all tissues. 
-These transcripts have positive loadings in the islet, and negative 
-loadings in all other tissues. \textbf{C.} Model showing the interactions 
-between glucose-stimulated insulin secretion by the pancreas and apelin 
-signaling in skeletal and adipose tissue.
+with obesity and insulin resistance. Heat map showing the loadings 
+of all transcripts with loadings greater than 2.5 standard deviations 
+from the mean in any tissue. The heat map was clustered using k medoid 
+clustering. Functional enrichments of each cluster are indicated 
+along the left margin.
 }
 \label{fig:toa}
 \end{figure}
@@ -560,20 +557,21 @@ We tested this hypothesis in an independent population of F1 mice
 generated through multiple pairings of Collaborative Cross (CC)
 {[}cite{]} strains (Fig. \ref{fig:cc_prediction}A) (Methods).
 
-\textbackslash begin\{figure\}{[}ht!{]}
-\includegraphics[width=\textwidth]{Figures/Fig7_CC_Prediction.pdf}
-\textbackslash caption\{Transcription, but not local genotype, predicts
-phenotype in the CC-RIX. \textbf{A.} Workflow showing procedure for
-translating HDM results to an independent population of mice.
-\textbf{B.} Relationships between the predicted metabolic index and
-measured body weight. The left column shows the predictions using
-measured transcripts. The right column shows the prediction using
-transcript levels imputed from local genotype. Gray boxes indicate
-measured quantities, and blue boxes indicate calculated quantities. The
-dots in each panel represent individual CC-RIX strains. The gray lines
-show the standard deviation on body weight for the strain.
-
-\} \label{fig:cc_prediction} \textbackslash end\{figure\}
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{Figures/Fig7_CC_Prediction.pdf} 
+\caption{Transcription, but not local genotype, predicts 
+phenotype in the CC-RIX. \textbf{A.} Workflow showing procedure 
+for translating HDM results to an independent population of mice. 
+\textbf{B.} Relationships between the predicted metabolic index 
+and measured body weight. The left column shows the predictions 
+using measured transcripts. The right column shows the prediction 
+using transcript levels imputed from local genotype. Gray boxes 
+indicate measured quantities, and blue boxes indicate calculated 
+quantities. The dots in each panel represent individual CC-RIX strains. 
+The gray lines show the standard deviation on body weight for the strain.
+}
+\label{fig:cc_prediction}
+\end{figure}
 
 We first tested whether the transcript loadings derived from HDM in the
 DO were relevant to the relationship between the transcriptome and the

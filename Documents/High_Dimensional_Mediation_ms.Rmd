@@ -464,28 +464,25 @@ largest local heritability (top 20) across all four tissues.
 
 Clustering of transcripts with top loadings in each tissue shows 
 tissue-specific functional modules associated with obesity and 
-insuling resistance in the DO population (Fig. \ref{fig:toa}). Many of 
+insuling resistance in the DO population (Fig. \ref{fig:toa}). 
+
+Many of 
 these modules, such as leptin signaling in adipose tissue [cite] and 
 skeletal muscle [cite], as well as apelin signaling [cite] have well
 established functional roles in diabetes and obesity. 
 
-
 \begin{figure}[ht!]
-\includegraphics[width=5in]{Figures/Fig6_TOA.pdf} 
+\includegraphics[width=4in]{Figures/Fig6_TOA.pdf} 
 \caption{Tissue-specific transcriptional programs are associated 
-with obesity and insulin resistance. \textbf{A.} Heat map showing 
-the loadings of all transcripts with loadings greater than 2.5 standard 
-deviations from the mean in any tissue. The heat map is hierarchically 
-clustered. Functional enrichment of each cluster is indicated by color. 
-An example cluster enriched for apelin signaling is highlighted. \textbf{B.} 
-The distribution of the loadings of the apelin cluster across all tissues. 
-These transcripts have positive loadings in the islet, and negative 
-loadings in all other tissues. \textbf{C.} Model showing the interactions 
-between glucose-stimulated insulin secretion by the pancreas and apelin 
-signaling in skeletal and adipose tissue.
+with obesity and insulin resistance. Heat map showing the loadings 
+of all transcripts with loadings greater than 2.5 standard deviations 
+from the mean in any tissue. The heat map was clustered using k medoid 
+clustering. Functional enrichments of each cluster are indicated 
+along the left margin.
 }
 \label{fig:toa}
 \end{figure}
+
 
 ### Gene expression, but not local eQTLs predict body weight in an independent population
 
@@ -512,7 +509,6 @@ using transcript levels imputed from local genotype. Gray boxes
 indicate measured quantities, and blue boxes indicate calculated 
 quantities. The dots in each panel represent individual CC-RIX strains. 
 The gray lines show the standard deviation on body weight for the strain.
-
 }
 \label{fig:cc_prediction}
 \end{figure}
