@@ -464,21 +464,50 @@ largest local heritability (top 20) across all four tissues.
 
 Clustering of transcripts with top loadings in each tissue shows 
 tissue-specific functional modules associated with obesity and 
-insuling resistance in the DO population (Fig. \ref{fig:toa}). 
+insulin resistance in the DO population (Fig. \ref{fig:toa}A). 
+In this figure, the importance of immune activation specifically
+in the adipose tissue is apparent. There are also other 
+tissue-specific processes. Positive loadings on lipid metabolism
+in liver suggest that inheriting high liver expression of genes 
+in this cluster is positively associated with metabolic disease.
+This cluster included the gene \textit{Pparg}, whose primary role
+is in the adipose tissue where it is considered a master regulator 
+of adipogenesis \cite{pmid17389767}. Agonists of \text{Pparg}, 
+such as Thiazolidinediones, which are FDA-approved to treat type 
+II diabetes, reduce inflammation and adipose hyptertrophy 
+\cite{pmid17389767}. Consistent with this role, the loading for 
+\textit{Pparg} in adipose tissue is slightly negative, suggesting 
+that upregulation is associated with leaner mice (Fig. \ref{fig:toa}B). 
+In contrast, \textit{Pparg} has a large positive loading in liver, 
+where it plays a role in the development of hepatic steatosis, or
+fatty liver. Mice that lack \textit{Pparg} specifically in the liver, 
+are protected from developing steatosis and show reduced expression
+of lipogenic genes \cite{pmid12805374, pmid12618528}. Overexpression
+of \textit{Pparg} in the livers of mice with a \textit{Ppara} knockout, 
+causes upregulation of genes involved in adipogenesis \cite{pmid16357043}.
+In the livers of both mice and humans \cite{pmid15644454, pmid16403437}
+High \textit{Pparg} expression is associated with hepatocytes that
+accumulate large lipid droplets and have gene expression profiles 
+similar to adipocytes.
 
-Many of 
-these modules, such as leptin signaling in adipose tissue [cite] and 
-skeletal muscle [cite], as well as apelin signaling [cite] have well
-established functional roles in diabetes and obesity. 
+The local and distal heritability of \textit{Pparg} is low in adipose tissue
+suggesting its expression in this tissue is highly constrained in the 
+population (Fig. \ref{fig:toa}B). However, the distal heritability of 
+\textit{Pparg} in liver is relatively high suggesting it is complexly 
+regulated and has sufficient variation in this population to drive 
+variation in phenotype.
+
 
 \begin{figure}[ht!]
 \includegraphics[width=4in]{Figures/Fig6_TOA.pdf} 
 \caption{Tissue-specific transcriptional programs are associated 
-with obesity and insulin resistance. Heat map showing the loadings 
-of all transcripts with loadings greater than 2.5 standard deviations 
-from the mean in any tissue. The heat map was clustered using k medoid 
-clustering. Functional enrichments of each cluster are indicated 
-along the left margin.
+with obesity and insulin resistance. \textbf{A} Heat map showing 
+the loadings of all transcripts with loadings greater than 2.5 
+standard deviations from the mean in any tissue. The heat map was 
+clustered using k medoid clustering. Functional enrichments of each 
+cluster are indicated along the left margin. \textbf{B} Loadings for 
+\textit{Pparg} in different tissues. \textbf{C} Local and distal of 
+\textit{Pparg} expression in different tissues.
 }
 \label{fig:toa}
 \end{figure}
