@@ -43,8 +43,8 @@ Despite the great promise of these methods, however, they
 have not been as widely successful as it seemed they could
 have been, and the vast majority of complex trait heritability 
 remains unexplained. Although trait-associated variants tend to 
-lie in non-coding, putative regulatory regions, they often do 
-not have detectable effects on gene expression \cite{pmid32912663} 
+lie in non-coding, regulatory regions, they often do not have 
+detectable effects on gene expression \cite{pmid32912663} 
 and tend not to co-localize with expression quantitative trait loci 
 (eQTLs) \cite{pmid36515579, pmid37857933}. 
 
@@ -54,16 +54,16 @@ thus are unable to detect true eQTLs influencing traits
 \cite{pmid32912663}. An alternative explanation that has been 
 discussed in recent years is that heritability of these variants 
 is mediated not through local regulation of gene expression, but 
-through distal regulation \cite{pmid37857933, pmid32424349}. Yao 
-\textit{et al.} \cite{pmid32424349} observed that genes with low 
-local heritability explain more expression-mediated disease 
-heritability than genes with high local heritability. This 
-observation is consistent with principles of robustness in complex 
-systems. If a transcript were both important to a trait and subject 
-to strong local regulation, a population would be susceptible to 
-extremes in phenotype that might frequently cross the threshold to
-disease. Indeed, strong disruption of highly trait-relevant genes 
-is the cause of Mendelian disease. 
+through distal regulation \cite{pmid37857933, pmid32424349, 
+pmid32831138, pmid30950127}. Yao \textit{et al.} \cite{pmid32424349} 
+observed that genes with low local heritability explained more 
+expression-mediated disease heritability than genes with high local 
+heritability. This observation is consistent with principles of 
+robustness in complex systems. If a transcript were both important 
+to a trait and subject to strong local regulation, a population would 
+be susceptible to extremes in phenotype that might frequently cross 
+the threshold to disease. Indeed, strong disruption of highly 
+trait-relevant genes is the cause of Mendelian disease. 
 
 Rather, observations suggest that genes near GWAS hits and have obvious 
 functional relevance to a trait tend to have highly complex regulatory 
@@ -85,36 +85,38 @@ population, and transcriptome-wide measurements of gene expression in
 multiple tissues. Measuring gene expression in multiple tissues is key to 
 adequately assess the extent to which local gene regulation varies across
 multiple tissues and whether such variablilty might account for previous
-failed attempts to identify trait-relevant eQTL. Thus to investigate further 
-the role of local and distal gene regulation on complex traits, we have 
-generated such a data set in a large population of diversity outbred (DO) 
-mice \cite{pmid22892839} in a population model of diet-induced obesity 
+failed attempts to identify trait-relevant local eQTL. Thus to investigate 
+further the role of local and distal gene regulation on complex traits, we 
+have generated such a data set in a large population of diversity outbred 
+(DO) mice \cite{pmid22892839} in a population model of diet-induced obesity 
 and metabolic disease.
 
-DO mice were derived from eight inbred founder mouse strains, five 
+The DO mice were derived from eight inbred founder mouse strains, five 
 classical lab strains, and three strains more recently derived from 
 wild mice \cite{pmid22892839}. They represent three subspecies of mouse 
 \textit{Mus musculus domesticus}, \textit{Mus musculus musculus}, and 
 \textit{Mus musculus casteneus}, and capture 90% of the known variation 
-in laboratory mice [cite]. We placed a population of 500 mice, both male 
-and female, on a high-fat, high-sugar diet to induce diet-associated 
-obesity and metabolic disease \cite{pmid29567659}. Over the experimental
-period of 18 weeks multiple metabolic traits were measured longitudinally, 
-including body weight, plasma levels of insulin and glucose, and plasma 
-lipids. At the end of the experiment, we used RNASeq to measure gene 
+in laboratory mice [cite]. They are maintained with a breeding scheme 
+that ensures equal contributions from each founder across the genome
+\cite{pmid22892839}. We placed a population of 500 male and female mice 
+from generations 18, 19, and 21 on a high-fat, high-sugar diet to induce 
+diet-associated obesity and metabolic disease \cite{pmid29567659}. Over 
+the experimental period of 18 weeks multiple metabolic traits were measured 
+longitudinally, including body weight, plasma levels of insulin and glucose, 
+and plasma lipids. At the end of the experiment, we used RNASeq to measure gene 
 expression in 384 mice in four tissues relevant to metabolic disease: 
 adipose tissue, pancreatic islets, liver, and skeletal muscle. The mice 
 were also genotyped using the Mouse Universal Genotyping Array (GigaMUGA).
 
 To assess the role of gene regulation in mediating variation in metabolic
 traits in this population, we propose a high-dimensional mediation (HDM)
-approach. Univariate versions of mediation analysis \cite{pmid16968208} 
-have been used extensively to identify trait relevant eQTLs 
-\cite{pmid29567659, pmid35533209, pmid28592500, pmid27309819, pmid30950127}, 
-and are the basis of TWAS, SMR, and other Mendelian randomization 
-approches. In these approaches each transcript is tested independently 
-for mediation of a local variant on a trait. Because genetic effects 
-on traits are widespread and small, we expect that any given 
+approach. This is in contrast to the univariate versions of mediation 
+analysis \cite{pmid16968208} that have been used previously to identify 
+trait relevant eQTLs \cite{pmid29567659, pmid35533209, pmid27309819, 
+pmid30950127}, and are the basis of TWAS, SMR, and other Mendelian 
+randomization approches. In these approaches each transcript is tested 
+independently for mediation of a local variant on a trait. Because genetic 
+effects on traits are widespread and small, we expect that any given 
 transcript may mediate a small amount of the genetic effect on 
 the trait. Transcripts that mediate more are more important to 
 the trait variation seen at the population level and may be 
@@ -122,19 +124,19 @@ candidates for intervention in the case of disease traits. In
 these univariate approaches local and distal regulation must be 
 treated separately with huge numbers of statistical tests, which 
 is compuatationally expensive, requires strict corrections for 
-multiple testing, and incorrectly assumes independence of genetic 
-variants and transcripts. Such methods are therefore limited to 
-detecting only the largest statistical effects and are biased
-toward local gene regulation. 
+multiple testing, and assumes independence of genetic variants and 
+transcripts. Such methods are therefore limited to detecting only 
+the largest statistical effects and are biased toward local gene 
+regulation. 
 
-The omnigenic model, in contrast, can be approached with a more 
-holistic hypothesis. This model posits that once the expression 
-of the core genes (i.e. trait-mediating genes) is accounted for, 
-there should be no residual correlation between the genome and 
-the phenome. This hypothesis lends itself well to systems approaches
-that can account for arbitrarily complex gene regulation, as well
-as the interconnectedness and redundancy of the transcriptome without 
-explicitly modeling them. The HDM approach we propose here tests
+We developed high-dimension mediation to test the omnigenic model 
+with a more holistic approach. This model posits that once the 
+expression of the core genes (i.e. trait-mediating genes) is 
+accounted for, there should be no residual correlation between the 
+genome and the phenome. This hypothesis lends itself well to systems 
+approaches that can account for arbitrarily complex gene regulation, 
+as well as the interconnectedness and redundancy of the transcriptome 
+without explicitly modeling them. The HDM approach we propose here tests
 the hypothesis of the omnigenic model using regularized and generalized 
 canonical correlation analysis (RGCCA) \cite{rgcca}, an extension of 
 canonical correlation analysis (CCA) [cite] that allows for more than 
