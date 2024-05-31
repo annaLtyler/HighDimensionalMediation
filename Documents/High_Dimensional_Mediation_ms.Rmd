@@ -34,7 +34,7 @@ regions \cite{pmid22955828, pmid25363779, pmid21617055, pmid19474294,
 pmid24702953, pmid24316577, pmid27126046}. It is widely assumed
 that these variants influence local transcription, and methods
 such as transcription-wide association studies (TWAS) 
-\cite{pmid26258848, pmid27019110, pmid26854917}
+\cite{pmid33020666, pmid26258848, pmid27019110, pmid26854917}
 summary data-based Mendelian randomization (SMR) \cite{pmid27019110}, 
 and others [cite] have capitalized on this idea to identify genes
 associated with multiple disease traits [cite many]
@@ -45,12 +45,12 @@ have been, and the vast majority of complex trait heritability
 remains unexplained. Although trait-associated variants tend to 
 lie in non-coding, putative regulatory regions, they often do 
 not have detectable effects on gene expression \cite{pmid32912663} 
-and do not tend to co-localize with eQTL \cite{pmid36515579, 
+and tend not to co-localize with eQTL \cite{pmid36515579, 
 pmid37857933}. 
 
 One possible explanation for these observations is that we are 
 not measuring gene expression in the appropriate cell types and 
-are thus unable to detect true eQTLs influencing traits 
+thus are unable to detect true eQTLs influencing traits 
 \cite{pmid32912663}. An alternative explanation that has been 
 discussed in recent years is that heritability of these variants 
 is mediated not through local regulation of gene expression, but 
@@ -61,24 +61,65 @@ heritability than genes with high local heritability. This
 observation is consistent with principles of robustness in complex 
 systems. If a transcript were both important to a trait and subject 
 to strong local regulation, a population would be susceptible to 
-extremes in phenotype that could be defined as disease. Indeed, 
-strong disruption of trait-important genes is the cause of 
-Mendelian disease. Instead, what has been observed is that genes
-that are near GWAS hits and have obvious functional relevance
-to a trait tend to have highly complex regulatory landscapes
-under strong selection pressures \cite{pmid37857933}. In contrast, 
-genes with strong local regulation tend to be depleted of 
-functional annotations and are under looser selection constraints
-\cite{pmid37857933}. These observations and others led Liu 
-et al. \cite{pmid31051098} to suggest that most heritability 
-of complex traits is driven by weak trans-eQTLs. They 
-proposed a framework of understanding heritability of complex 
-traits in which massive polygenicity is distributed across 
-common variants in both functional core genes, as well as 
-more peripheral genes that may not seem obviously related to 
-the trait. 
+extremes in phenotype that might frequently cross the threshold to
+disease. Indeed, strong disruption of highly trait-relevant genes 
+is the cause of Mendelian disease. 
 
-If this model is correct, it should be the case that...
+Instead, what has been observed is that genes that are near GWAS 
+hits and have obvious functional relevance to a trait tend to have 
+highly complex regulatory landscapes under strong selection pressures 
+\cite{pmid37857933}. In contrast, genes with strong local regulation 
+tend to be depleted of functional annotations and are under looser 
+selection constraints \cite{pmid37857933}. These observations and 
+others led Liu et al. \cite{pmid31051098} to suggest that most 
+heritability of complex traits is driven by weak trans-eQTLs. They 
+proposed a framework of understanding heritability of complex 
+traits in which massive polygenicity is distributed across common 
+variants in both functional core genes, as well as more peripheral 
+genes that may not seem obviously related to the trait. 
+
+Assessing the role of wide-spread distal gene regulation on complex
+traits requires a large dedicated data set that incorporates high-dimensional 
+phenotyping, dense genotyping in a highly recombined population, and 
+transcriptome-wide measurements of gene expression in multiple tissues 
+to adequately assess whether missing heritability can be explained through
+distal gene regulation or by identifying local gene regulation in multiple
+relevant cell types. 
+
+distinguish
+the roles of distal gene regulation and 
+
+Both the univariate and omnigenic approaches discussed above 
+posit causal mediation models whereby variation in gene expression 
+mediates the effect of genotype on phenotype. In the case of 
+the univariate approaches, like TWAS and SMR, each transcript 
+is tested independently for mediation of a local variant on a 
+trait. Because genetic effects on traits are widespread and small,
+we expect that any given transcript may mediate a small amount
+of the genetic effect on the trait. Transcripts that mediate
+more are more important to the trait variation seen at the 
+population level and may be candidates for intervention in
+the case of disease traits. In the univariate approach local
+and distal regulation must be treated separately with huge
+numbers of statistical tests, which is compuatationally 
+expensive, requires strict corrections for multiple testing,
+and incorrectly assumes independence of genetic variants
+and transcripts. Such methods are therefore limited to 
+detecting only the largest statistical effects and are biased
+toward local gene regulation. 
+
+
+The omnigenic model in contrast can be approached with a more 
+holistic hypothesis. This model posits that once the expression 
+of the core genes (i.e. trait-mediating genes) is accounted for, 
+there should be no residual correlation between the genome and 
+the phenome. This hypothesis lends itself well to systems approaches
+that can account for arbitrarily complex gene regulation, as well
+as the interconnectedness and redundancy of the transcriptome without 
+explicitly modeling them. 
+
+
+
 
 With dense enough data, it should be possible to test this
 model. 
@@ -460,9 +501,9 @@ largest local heritability (top 20) across all four tissues.
 \label{fig:loading_heritability}
 \end{figure}
 
-### Tissue-specific transriptional programs are associated with metabolic traits
+### Tissue-specific transriptional programs were associated with metabolic traits
 
-Clustering of transcripts with top loadings in each tissue shows 
+Clustering of transcripts with top loadings in each tissue showed 
 tissue-specific functional modules associated with obesity and 
 insulin resistance in the DO population (Fig. \ref{fig:toa}A). 
 In this figure, the importance of immune activation specifically
@@ -502,10 +543,11 @@ drive phenotypic variation. These results highlight the importance
 of tissue context when investigating the role of heritable transcript
 variability in driving phenotype.
 
+Gene lists for all clusters are available in Supplemental Files XXX.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig6_TOA.pdf} 
-\caption{Tissue-specific transcriptional programs are associated 
+\caption{Tissue-specific transcriptional programs were associated 
 with obesity and insulin resistance. \textbf{A} Heat map showing 
 the loadings of all transcripts with loadings greater than 2.5 
 standard deviations from the mean in any tissue. The heat map was 
@@ -518,7 +560,7 @@ cluster are indicated along the left margin. \textbf{B} Loadings for
 \end{figure}
 
 
-### Gene expression, but not local eQTLs predict body weight in an independent population
+### Gene expression, but not local eQTLs, predict body weight in an independent population
 
 The loading of each transcript indicates how inherited
 expression levels influence metabolic phenotypes. If 
@@ -663,14 +705,13 @@ Although high-loading transcripts are likely good candidates
 for understanding specific biology related to obesity, we 
 emphasize that the transcriptome overall is highly interconnected
 and redundant, and that focusing on individual transcripts for
-treatment may be less effective than using the transcriptomic
-signature as a whole. The ConnectivityMap (CMAP) database [cite] 
-developed by the Broad Institute allows us to query thousands of 
-compounds that reverse or enhance transcriptomic signatures as a 
-whole in multiple different cell types. By identifying drugs that 
-reverse pathogenic transcriptomic signatures as a whole rather than
-targeting individual genes, we can potentially increase efficacy
-of tested compounds.  
+treatment may be less effective than using a broader transcriptomic
+signature. The ConnectivityMap (CMAP) database [cite] developed by 
+the Broad Institute allows us to query thousands of compounds that 
+reverse or enhance transcriptomic signatures as a whole in multiple 
+different cell types. By identifying drugs that reverse pathogenic 
+transcriptomic signatures as a whole rather than targeting individual 
+genes, we can potentially increase efficacy of tested compounds.  
 
 We thus queried the CMAP database through the CLUE online
 query tool developed by The Broad Institute [cite] (Methods). 
