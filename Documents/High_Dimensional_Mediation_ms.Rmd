@@ -45,8 +45,8 @@ have been, and the vast majority of complex trait heritability
 remains unexplained. Although trait-associated variants tend to 
 lie in non-coding, putative regulatory regions, they often do 
 not have detectable effects on gene expression \cite{pmid32912663} 
-and tend not to co-localize with eQTL \cite{pmid36515579, 
-pmid37857933}. 
+and tend not to co-localize with expression quantitative trait loci 
+(eQTLs) \cite{pmid36515579, pmid37857933}. 
 
 One possible explanation for these observations is that we are 
 not measuring gene expression in the appropriate cell types and 
@@ -65,108 +65,107 @@ extremes in phenotype that might frequently cross the threshold to
 disease. Indeed, strong disruption of highly trait-relevant genes 
 is the cause of Mendelian disease. 
 
-Instead, what has been observed is that genes that are near GWAS 
-hits and have obvious functional relevance to a trait tend to have 
-highly complex regulatory landscapes under strong selection pressures 
-\cite{pmid37857933}. In contrast, genes with strong local regulation 
-tend to be depleted of functional annotations and are under looser 
-selection constraints \cite{pmid37857933}. These observations and 
-others led Liu et al. \cite{pmid31051098} to suggest that most 
-heritability of complex traits is driven by weak trans-eQTLs. They 
-proposed a framework of understanding heritability of complex 
-traits in which massive polygenicity is distributed across common 
-variants in both functional core genes, as well as more peripheral 
-genes that may not seem obviously related to the trait. 
+Rather, observations suggest that genes near GWAS hits and have obvious 
+functional relevance to a trait tend to have highly complex regulatory 
+landscapes under strong selection pressures \cite{pmid37857933}. In 
+contrast, genes with strong local regulation tend to be depleted of 
+functional annotations and are under looser selection constraints 
+\cite{pmid37857933}. These observations and others led Liu et al. 
+\cite{pmid31051098} to suggest that most heritability of complex 
+traits is driven by weak trans-eQTLs. They proposed a framework 
+of understanding heritability of complex traits in which massive 
+polygenicity is distributed across common variants in both functional 
+``core genes'', as well as more peripheral genes that may not seem 
+obviously related to the trait. 
 
 Assessing the role of wide-spread distal gene regulation on complex
-traits requires a large dedicated data set that incorporates high-dimensional 
-phenotyping, dense genotyping in a highly recombined population, and 
-transcriptome-wide measurements of gene expression in multiple tissues 
-to adequately assess whether missing heritability can be explained through
-distal gene regulation or by identifying local gene regulation in multiple
-relevant cell types. 
+traits requires a large, dedicated data set that includes high-dimensional 
+clinically relevant phenotyping, dense genotyping in a highly recombined 
+population, and transcriptome-wide measurements of gene expression in 
+multiple tissues. Measuring gene expression in multiple tissues is key to 
+adequately assess the extent to which local gene regulation varies across
+multiple tissues and whether such variablilty might account for previous
+failed attempts to identify trait-relevant eQTL. Thus to investigate further 
+the role of local and distal gene regulation on complex traits, we have 
+generated such a data set in a large population of diversity outbred (DO) 
+mice \cite{pmid22892839} in a population model of diet-induced obesity 
+and metabolic disease.
 
-distinguish
-the roles of distal gene regulation and 
+DO mice were derived from eight inbred founder mouse strains, five 
+classical lab strains, and three strains more recently derived from 
+wild mice \cite{pmid22892839}. They represent three subspecies of mouse 
+\textit{Mus musculus domesticus}, \textit{Mus musculus musculus}, and 
+\textit{Mus musculus casteneus}, and capture 90% of the known variation 
+in laboratory mice [cite]. We placed a population of 500 mice, both male 
+and female, on a high-fat, high-sugar diet to induce diet-associated 
+obesity and metabolic disease \cite{pmid29567659}. Over the experimental
+period of 18 weeks multiple metabolic traits were measured longitudinally, 
+including body weight, plasma levels of insulin and glucose, and plasma 
+lipids. At the end of the experiment, we used RNASeq to measure gene 
+expression in 384 mice in four tissues relevant to metabolic disease: 
+adipose tissue, pancreatic islets, liver, and skeletal muscle. The mice 
+were also genotyped using the Mouse Universal Genotyping Array (GigaMUGA).
 
-Both the univariate and omnigenic approaches discussed above 
-posit causal mediation models whereby variation in gene expression 
-mediates the effect of genotype on phenotype. In the case of 
-the univariate approaches, like TWAS and SMR, each transcript 
-is tested independently for mediation of a local variant on a 
-trait. Because genetic effects on traits are widespread and small,
-we expect that any given transcript may mediate a small amount
-of the genetic effect on the trait. Transcripts that mediate
-more are more important to the trait variation seen at the 
-population level and may be candidates for intervention in
-the case of disease traits. In the univariate approach local
-and distal regulation must be treated separately with huge
-numbers of statistical tests, which is compuatationally 
-expensive, requires strict corrections for multiple testing,
-and incorrectly assumes independence of genetic variants
-and transcripts. Such methods are therefore limited to 
+To assess the role of gene regulation in mediating variation in metabolic
+traits in this population, we propose a high-dimensional mediation (HDM)
+approach. Univariate versions of mediation analysis \cite{pmid16968208} 
+have been used extensively to identify trait relevant eQTLs 
+\cite{pmid29567659, pmid35533209, pmid28592500, pmid27309819, pmid30950127}, 
+and are the basis of TWAS, SMR, and other Mendelian randomization 
+approches. In these approaches each transcript is tested independently 
+for mediation of a local variant on a trait. Because genetic effects 
+on traits are widespread and small, we expect that any given 
+transcript may mediate a small amount of the genetic effect on 
+the trait. Transcripts that mediate more are more important to 
+the trait variation seen at the population level and may be 
+candidates for intervention in the case of disease traits. In 
+these univariate approaches local and distal regulation must be 
+treated separately with huge numbers of statistical tests, which 
+is compuatationally expensive, requires strict corrections for 
+multiple testing, and incorrectly assumes independence of genetic 
+variants and transcripts. Such methods are therefore limited to 
 detecting only the largest statistical effects and are biased
 toward local gene regulation. 
 
-
-The omnigenic model in contrast can be approached with a more 
+The omnigenic model, in contrast, can be approached with a more 
 holistic hypothesis. This model posits that once the expression 
 of the core genes (i.e. trait-mediating genes) is accounted for, 
 there should be no residual correlation between the genome and 
 the phenome. This hypothesis lends itself well to systems approaches
 that can account for arbitrarily complex gene regulation, as well
 as the interconnectedness and redundancy of the transcriptome without 
-explicitly modeling them. 
+explicitly modeling them. The HDM approach we propose here tests
+the hypothesis of the omnigenic model using regularized and generalized 
+canonical correlation analysis (RGCCA) \cite{rgcca}, an extension of 
+canonical correlation analysis (CCA) [cite] that allows for more than 
+two data sets with arbitrary relationships among them. Here we analyze
+the correlations among three data sets, genotype, transcriptome,
+and phenotype explicitly modeling mediation in which the transcriptome 
+(T) mediates the effect of the genome (G) on the phenome (P).
 
+\begin{equation*}
+G \rightarrow T \rightarrow P
+\end{equation*}
 
+Because the genome, transcriptome, and phenome had different dimensions,
+we kernelized each data set prior to running HDM. This step ensured that 
+each set will contribute equally to the solution. The result is a set of 
+three vectors representing a composite transcriptome ($T_C$) that perfectly 
+mediates the effect of the composite genome ($G_C$) on the composite 
+phenome ($P_C$). That is, the partial correlation between $G_C$ and $P_C$
+is 0 when $T_C$ is accounted for. Because of the central dogma of molecular 
+biology, information flow is directed out of the genome, and not back into 
+it. Thus, the otherwise undirected relationships between genome, transcriptome, 
+and phenome can be inferred as a causal mediation by the transcriptome of the 
+effects of the genome on the phenome. 
 
-
-With dense enough data, it should be possible to test this
-model. 
-
-Here we investigated the roles of local and distal gene regulation
-on the heritability of complex metabolic traits in a population of 
-diversity outbred (DO) mice. DO mice are derived from eight inbred 
-founder mouse strains, five classical lab strains, and three strains
-more recently derived from wild mice \cite{pmid22892839}. They 
-represent three subspecies of mouse \textit{Mus musculus domesticus}, 
-\textit{Mus musculus musculus}, and \textit{Mus musculus casteneus},
-and capture 90% of the known variation in laboratory mice [cite].
-We placed a population of 500 mice, both male and female, on a 
-high-fat, high-sugar diet \cite{pmid29567659} to induce diet-associated 
-obesity and metabolic disease. Over 18 weeks multiple metabolic 
-traits were measured, including body weight, plasma levels of insulin
-and glucose, and plasma lipids. At the end of the experiment, we 
-used RNASeq to measure gene expression in 384 mice in four tissues 
-relevant to metabolic disease: adipose tissue, pancreatic islets, 
-liver, and skeletal muscle. The mice were also genotyped using the 
-Mouse Universal Genotyping Array (GigaMUGA). The high dimensionality 
-of phenotyping, genotyping, and transcriptome measurements in this 
-large number of genetically diverse animals enabled thorough inquiry 
-into the role of local and distal eQTL in the heritability of complex 
-traits. Further, measuring gene expression in multiple tissues, 
-enabled us to assess the importance of measuring gene expression in 
-appropriate cell types.
-
-To investigate the extent to which local and distal gene regulation
-across multiple tissues mediate genetic effects on complex traits, 
-we propose a systems approach called high-dimensional mediation (HDM). 
-HDM uses a regularized and generalized canonical correlation 
-analysis (RGCCA) [cite], which is an extension of canonical correlation
-analysis (CCA) that allows for more than two data sets with arbitrary
-relationships among them. Thus, we can identify linear combinations of 
-the genome, transcriptome, and phenome, that describe the mediation of
-the genetic effects on the phenome through the transcriptome. This systems
-approach, as opposed to a univariate approach, puts local and distal 
-regulation on the same statistical level 
-
-
-Because 
-of the central dogma of molecular biology, information flow is directed 
-out of the genome, and not back into it. Thus, the otherwise undirected 
-relationships between genome, transcriptome, and phenome can be inferred
-as a causal mediation by the transcriptome of the effects of the genome
-on the phenome. 
+$P_C$ represents a highly heritable combination of traits that is mediated
+by a heritable combination of transcripts represented by $T_C$. The loadings 
+of each transcript and each trait on $T_C$ and $P_C$ respectively provide
+interpretable transcript-level and trait-level contributions to these composite 
+variables. We further combined HDM with heritability analysis in the traits and 
+transcripts to investigate whether the mediating transcripts were regulated 
+primarily locally or distally. 
 
 
 
@@ -179,7 +178,6 @@ male and female) from generates 18, 19, and 21, was placed on a
 high-fat (44.6% kcal fat), high-sugar (34% carbohydrate), adequate
 protein (17.3 % protein) diet from Envigo Teklad (catalog number TD.08811) 
 starting at four weeks of age as described previously \cite{pmid29567659}. 
-
 Each individual was assessed longitudinally for multiple metabolic measures 
 including fasting glucose levels, glucose tolerance, insulin levels, body 
 weight, and blood lipid levels (Methods).
