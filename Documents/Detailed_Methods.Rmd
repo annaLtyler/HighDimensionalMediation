@@ -12,16 +12,14 @@ output:
 
 ## Diversity Outbred Mice
 
-We placed a population of 500 male and female mice from generations 
-18, 19, and 21 on a high-fat, high-sugar diet to induce diet-associated 
-obesity and metabolic disease as described previously \cite{pmid29567659}. 
-Over the experimental period of 18 weeks multiple metabolic traits were 
-measured longitudinally, including body weight, plasma levels of insulin 
-and glucose, and plasma lipids. At the end of the experiment, we used 
-RNASeq to measure gene expression in 384 mice in four tissues relevant 
-to metabolic disease: adipose tissue, pancreatic islets, liver, and skeletal 
-muscle. The mice were also genotyped using the Mouse Universal Genotyping Array 
-(GigaMUGA).
+A population of 500 diversity outbred mice (split evenly between
+male and female) from generates 18, 19, and 21, was placed on a 
+high-fat (44.6% kcal fat), high-sugar (34% carbohydrate), adequate
+protein (17.3 % protein) diet from Envigo Teklad (catalog number TD.08811) 
+starting at four weeks of age as described previously \cite{pmid29567659}. 
+Each individual was assessed longitudinally for multiple metabolic measures 
+including fasting glucose levels, glucose tolerance, insulin levels, body 
+weight, and blood lipid levels.
 
 ## Trait measurements
 
@@ -29,10 +27,17 @@ also described in \cite{pmid29567659}
 briefly describe: oral glucose tolerance tests
 
 ## Genotyping
-also described in \cite{pmid29567659} 
+The mice were also genotyped using the Mouse Universal Genotyping Array 
+(GigaMUGA) \cite{pmid29567659} .
+
 briefly describe here.
 
 ## RNA Sequencing
+
+At the end of the experiment, we used RNASeq to measure gene expression in 
+384 mice in four tissues relevant 
+to metabolic disease: adipose tissue, pancreatic islets, liver, and skeletal 
+muscle.
 
 also described in \cite{pmid29567659} 
 describe islet picking, and how other organs were collected.

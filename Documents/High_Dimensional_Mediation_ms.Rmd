@@ -10,6 +10,7 @@ output:
 ```{r load_data, echo = FALSE, message = FALSE, warning = FALSE}
 library(here)
 pheno.stats <- readRDS(here("Data", "pheno_stats.RDS"))
+comp.trait.herit <- readRDS(here("Data", "Composite_Trait_Heritability.RDS"))
 ```
 
 ## Abstract
@@ -118,18 +119,9 @@ genome on complex traits.
 
 ### Genetic variation contributes to wide phenotypic variation
 
-A population of 500 diversity outbred mice (split evenly between
-male and female) from generates 18, 19, and 21, was placed on a 
-high-fat (44.6% kcal fat), high-sugar (34% carbohydrate), adequate
-protein (17.3 % protein) diet from Envigo Teklad (catalog number TD.08811) 
-starting at four weeks of age as described previously \cite{pmid29567659}. 
-Each individual was assessed longitudinally for multiple metabolic measures 
-including fasting glucose levels, glucose tolerance, insulin levels, body 
-weight, and blood lipid levels (Methods).
-
-Although the environment was consistent across animals, the genetic
-diversity present in this population resulted in widely varying
-distributions across physiological measurements (Fig.
+Although the environment was consistent across all animals, the 
+genetic diversity present in this population resulted in widely 
+varying distributions across physiological measurements (Fig.
 \ref{fig:trait_overview}). For example, body weights of adult 
 individuals varied from less than the average adult B6 body weight 
 to several times the body weight of a B6 adult in both sexes 
@@ -288,7 +280,8 @@ $G_C$ and $T_S$ was 0.46, and the partial correlation between $T_S$ and $P_S$
 was 0.78. However, when the transcriptome was taken into account, 
 the partial correlation between $G_S$ and $P_S$ was effectively 0 (-0.01).
 The estimated heritability of the composite phenome was heritability of 
-$0.71 \pm 0.08$, which was higher than any of the individual traits 
+`r signif(comp.trait.herit[1], 2)` $\pm$ `r signif(comp.trait.herit[2])`, 
+which was higher than any of the individual traits 
 (Fig. \ref{fig:trait_overview}F). Thus, we have identified a maximally 
 heritable metabolic trait that is perfectly mediated by a heritable 
 component of the transcriptome.
