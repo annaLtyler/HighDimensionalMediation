@@ -12,7 +12,31 @@ output:
 
 ## Diversity Outbred Mice
 
+We placed a population of 500 male and female mice from generations 
+18, 19, and 21 on a high-fat, high-sugar diet to induce diet-associated 
+obesity and metabolic disease as described previously \cite{pmid29567659}. 
+Over the experimental period of 18 weeks multiple metabolic traits were 
+measured longitudinally, including body weight, plasma levels of insulin 
+and glucose, and plasma lipids. At the end of the experiment, we used 
+RNASeq to measure gene expression in 384 mice in four tissues relevant 
+to metabolic disease: adipose tissue, pancreatic islets, liver, and skeletal 
+muscle. The mice were also genotyped using the Mouse Universal Genotyping Array 
+(GigaMUGA).
+
 ## Trait measurements
+
+also described in \cite{pmid29567659} 
+briefly describe: oral glucose tolerance tests
+
+## Genotyping
+also described in \cite{pmid29567659} 
+briefly describe here.
+
+## RNA Sequencing
+
+also described in \cite{pmid29567659} 
+describe islet picking, and how other organs were collected.
+mention details about GigaMUGA
 
 ## Trait selection
 
@@ -36,10 +60,6 @@ had the correct sign by correlating it with the average of the traits.
 For correlation coefficients (R) less than 0, we multiplied the principal 
 component by -1. The labels for these traits have the term "PC1" appended 
 to their name.
-
-## RNA Sequencing
-
-RNA sequencing was performed as described earlier [cite]. Briefly,...
 
 ## Processing of RNA sequencing data
 
@@ -82,6 +102,36 @@ of the transcript.
 We compared local and distal estimates of heritability to measures of trait
 relevance for each transcript. Trait relevance, was the Pearson correlation
 (R) between the transcript and the trait.
+
+## High-Dimensional Mediation Overview
+
+The goal of high-dimensional mediation is to identify a composite
+trait that is perfectly mediated by a composite transcriptome. To
+accomplis this, we usied regularized and generalized canonical 
+correlation analysis (RGCCA) \cite{rgcca}, an extension of canonical 
+correlation analysis (CCA) \cite{knapp1978canonical, hotelling1992relations} 
+that allows for more than two data sets with arbitrary relationships 
+among them. Here we analyzed the correlations among three data sets, 
+genotype, transcriptome, and phenotype explicitly modeling mediation 
+in which the transcriptome ($T$) mediates the effect of the genome ($G$) 
+on the phenome ($P$).
+
+\begin{equation*}
+G \rightarrow T \rightarrow P
+\end{equation*}
+
+Because the genome, transcriptome, and phenome had different dimensions,
+we kernelized each data set prior to running HDM. This step ensured that 
+each set will contribute equally to the solution. The result is a set of 
+three vectors representing a composite transcriptome ($T_C$) that perfectly 
+mediates the effect of the composite genome ($G_C$) on the composite 
+phenome ($P_C$). That is, the partial correlation between $G_C$ and $P_C$
+is 0 when $T_C$ is accounted for. Because of the central dogma of molecular 
+biology, information flow is directed out of the genome, and not back into 
+it. Thus, the otherwise undirected relationships between genome, transcriptome, 
+and phenome can be inferred as a causal mediation by the transcriptome of the 
+effects of the genome on the phenome. 
+
 
 ## Kernelization
 

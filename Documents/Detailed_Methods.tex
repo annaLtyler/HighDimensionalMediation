@@ -83,14 +83,37 @@
 \title{Detailed Methods for High Dimensional Mediation for Massively
 Polygenic Traits}
 \author{J. Matthew Mahoney and Anna L Tyler}
-\date{May 13, 2024}
+\date{June 03, 2024}
 
 \begin{document}
 \maketitle
 
 \subsection{Diversity Outbred Mice}\label{diversity-outbred-mice}
 
+We placed a population of 500 male and female mice from generations 18,
+19, and 21 on a high-fat, high-sugar diet to induce diet-associated
+obesity and metabolic disease as described previously
+\cite{pmid29567659}. Over the experimental period of 18 weeks multiple
+metabolic traits were measured longitudinally, including body weight,
+plasma levels of insulin and glucose, and plasma lipids. At the end of
+the experiment, we used RNASeq to measure gene expression in 384 mice in
+four tissues relevant to metabolic disease: adipose tissue, pancreatic
+islets, liver, and skeletal muscle. The mice were also genotyped using
+the Mouse Universal Genotyping Array (GigaMUGA).
+
 \subsection{Trait measurements}\label{trait-measurements}
+
+also described in \cite{pmid29567659} briefly describe: oral glucose
+tolerance tests
+
+\subsection{Genotyping}\label{genotyping}
+
+also described in \cite{pmid29567659} briefly describe here.
+
+\subsection{RNA Sequencing}\label{rna-sequencing}
+
+also described in \cite{pmid29567659} describe islet picking, and how
+other organs were collected. mention details about GigaMUGA
 
 \subsection{Trait selection}\label{trait-selection}
 
@@ -114,11 +137,6 @@ had the correct sign by correlating it with the average of the traits.
 For correlation coefficients (R) less than 0, we multiplied the
 principal component by -1. The labels for these traits have the term
 ``PC1'' appended to their name.
-
-\subsection{RNA Sequencing}\label{rna-sequencing}
-
-RNA sequencing was performed as described earlier {[}cite{]}.
-Briefly,\ldots{}
 
 \subsection{Processing of RNA sequencing
 data}\label{processing-of-rna-sequencing-data}
@@ -227,9 +245,10 @@ using the transcript loadings in each tissue as gene weights. GSEA
 determines enrichment of pathways based on where the contained genes
 appear in a ranked list of genes. If the genes in the pathway are more
 concentrated near the top (or the bottom) of the list than expected by
-chance, the pathway can be interpreted as being enriched (or depleted)
-in the list. We used the R package fgsea \cite{fgsea} to calculate
-normalized enrichment scores for all GO terms and all KEGG pathways.
+chance, the pathway can be interpreted as being enriched with positively
+(negatively) loaded transcripts. We used the R package fgsea
+\cite{fgsea} to calculate normalized enrichment scores for all GO terms
+and all KEGG pathways.
 
 We downloaded all KEGG \cite{pmid36300620} pathways for
 \textit{Mus musculus} using the R package clusterProfiler
