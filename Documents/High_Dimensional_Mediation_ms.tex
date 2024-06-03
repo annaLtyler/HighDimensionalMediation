@@ -213,8 +213,8 @@ thresholds for pre-diabetes and diabetes.
 Body weight was strongly positively correlated with food consumption
 (Fig. \ref{fig:trait_overview}D \(R^2 =\) 0.51, \(p=\)
 \ensuremath{1.5\times 10^{-75}}) and fasting blood glucose (FBG) (Fig.
-\ref{fig:trait_overview}E, \(R^2=\) 0.25, \(p =\)
-\ensuremath{2\times 10^{-32}}) suggesting a link between behavioral
+\ref{fig:trait_overview}E, \(R^2=\) 0.21, \(p =\)
+\ensuremath{1.4\times 10^{-26}}) suggesting a link between behavioral
 factors and metabolic disease. However, the heritability of this trait
 and others (Fig. \ref{fig:trait_overview}F) indicates that background
 genetics contribute substantially to correlates of metabolic disease in
@@ -248,24 +248,19 @@ glucose homeostasis, pancreatic composition and liver function.
 \subsubsection{Distal Heritability Correlates with Phenotype
 Relevance}\label{distal-heritability-correlates-with-phenotype-relevance}
 
-To elaborate the mechanistic details of genetic effects on metabolic
-phenotypes in the DO population, we also measured gene expression in
-four tissues known to be involved in metabolic disease: adipose,
-pancreatic islet, liver, and skeletal muscle. To confirm the
-heritability of transcript levels, we performed expression QTL analysis
-using R/qtl2 {[}cite{]} (Methods) and identified both local and distal
-eQTL for transcripts in each tissue (Supp. Fig \ref{fig:eQTL}).
-Significant local eQTLs far outnumbered distal eQTLs (Supp. Fig.
-\ref{fig:eQTL}F) and tended to be shared across tissues (Supp. Fig.
-\ref{fig:eQTL}G) whereas the few significant distal eQTL we identified
-tended to be tissue-specific (Supp. Fig. \ref{fig:eQTL}H)
+We performed eQTL analysis using R/qtl2 \cite{pmid30591514} (Methods)
+and identified both local and distal eQTL for transcripts in each of the
+four tissues (Supp. Fig \ref{fig:eQTL}). Significant local eQTLs far
+outnumbered distal eQTLs (Supp. Fig. \ref{fig:eQTL}F) and tended to be
+shared across tissues (Supp. Fig. \ref{fig:eQTL}G) whereas the few
+significant distal eQTL we identified tended to be tissue-specific
+(Supp. Fig. \ref{fig:eQTL}H)
 
-To better compare the relative contribution of local and distal genetics
-to transcript levels, we performed a heritability analysis for each
-transcript (Methods). Overall, local and distal factors contributed
-approximately equally to transcript abundance. In all tissues, both
-local and distal factors explained between 13 and 19\% of the variance
-in the median transcript (Fig \ref{fig:motivation}A).
+We calculated the heritability of each transcript in terms of local and
+distal genetic factors (Methods). Overall, local and distal genetic
+factors contributed approximately equally to transcript abundance. In
+all tissues, both local and distal factors explained between 8 and 18\%
+of the variance in the median transcript (Fig \ref{fig:motivation}A).
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig2_motivation.pdf} 
@@ -276,7 +271,7 @@ factors contribute equally to transcript heritability. The
 relationship between (\textbf{B.}) local and (\textbf{C.}) 
 distal heritability and trait relevance across all four tissues. 
 Here trait relevance is defined as the maximum correlation between 
-the transcript and all traits. Local heritability is negatively 
+the transcript and all traits. Local heritability was negatively 
 correlated with trait relevance, and distal heritability is 
 positively correlated with trait relevance. Pearson ($r$) and $p$ 
 values for each correlation are shown in the upper-right of each panel.}
@@ -287,7 +282,7 @@ Local heritability of transcripts was negatively correlated with their
 trait relevance, defined as the maximum correlation of a transcript
 across all traits (Fig. \ref{fig:motivation}B). This suggests that the
 more local genotype influenced transcript abundance, the less effect
-variation in transcript abundance was related to the measured traits.
+variation in transcript abundance had on the measured traits.
 Conversely, distal heritability of transcripts was positively correlated
 with trait relevance (Fig. \ref{fig:motivation}C). That is, transcripts
 that were more highly correlated with the measured traits tended to be
@@ -347,7 +342,7 @@ between \(G_C\) and \(T_S\) was 0.46, and the partial correlation
 between \(T_S\) and \(P_S\) was 0.78. However, when the transcriptome
 was taken into account, the partial correlation between \(G_S\) and
 \(P_S\) was effectively 0 (-0.01). The estimated heritability of the
-composite phenome was heritability of \(0.71 \pm 0.08\), which was
+composite phenome was heritability of 0.71 \(\pm\) 0.0837393, which was
 higher than any of the individual traits (Fig.
 \ref{fig:trait_overview}F). Thus, we have identified a maximally
 heritable metabolic trait that is perfectly mediated by a heritable
@@ -639,7 +634,7 @@ global patterns. We noted earlier that functional enrichments of
 transcripts with large positive loadings in the adipose tissue,
 suggested that the obese mice in the population had a genetic
 predisposition toward elevated macrophage infiltration into the adipose
-tissue. This suggests heritabl variability in cell-type composition of
+tissue. This suggests heritable variability in cell-type composition of
 the adipose tissue. We investigated this further bioinformatically by
 comparing the loadings of cell-type-specific transcripts (Methods). For
 adipose tissue we used a list of cell-type specific genes identified in

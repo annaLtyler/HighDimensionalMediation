@@ -11,6 +11,9 @@ output:
 library(here)
 pheno.stats <- readRDS(here("Data", "pheno_stats.RDS"))
 comp.trait.herit <- readRDS(here("Data", "Composite_Trait_Heritability.RDS"))
+local.distal.comp <- readRDS(here("Data", "Local_Distal_Comparison.RDS"))
+min.herit <- floor(min(sapply(lapply(local.distal.comp, function(x) apply(x, 2, median, na.rm = TRUE)), min))*100)
+max.herit <- ceiling(max(sapply(lapply(local.distal.comp, function(x) apply(x, 2, median, na.rm = TRUE)), max))*100)
 ```
 
 ## Abstract
@@ -183,24 +186,20 @@ glucose homeostasis, pancreatic composition and liver function.
 
 ### Distal Heritability Correlates with Phenotype Relevance
 
-To elaborate the mechanistic details of genetic effects on 
-metabolic phenotypes in the DO population, we also measured 
-gene expression in four tissues known to be involved in metabolic 
-disease: adipose, pancreatic islet, liver, and skeletal muscle. 
-To confirm the heritability of transcript levels, we performed 
-expression QTL analysis using R/qtl2 [cite] (Methods) and 
-identified both local and distal eQTL for transcripts in each
-tissue (Supp. Fig \ref{fig:eQTL}). Significant local eQTLs far 
-outnumbered distal eQTLs (Supp. Fig. \ref{fig:eQTL}F) and tended 
-to be shared across tissues (Supp. Fig. \ref{fig:eQTL}G) whereas 
-the few significant distal eQTL we identified tended to be 
+We performed eQTL analysis using R/qtl2 \cite{pmid30591514} 
+(Methods) and identified both local and distal eQTL for 
+transcripts in each of the four tissues (Supp. Fig \ref{fig:eQTL}). 
+Significant local eQTLs far outnumbered distal eQTLs 
+(Supp. Fig. \ref{fig:eQTL}F) and tended to be shared across 
+tissues (Supp. Fig. \ref{fig:eQTL}G) whereas the few 
+significant distal eQTL we identified tended to be 
 tissue-specific (Supp. Fig. \ref{fig:eQTL}H)
 
-To better compare the relative contribution of local and distal 
-genetics to transcript levels, we performed a heritability analysis 
-for each transcript (Methods). Overall, local and distal factors 
-contributed approximately equally to transcript abundance. In all 
-tissues, both local and distal factors explained between 13 and 19\% 
+We calculated the heritability of each transcript in terms of 
+local and distal genetic factors (Methods). Overall, local and 
+distal genetic factors contributed approximately equally to 
+transcript abundance. In all tissues, both local and distal 
+factors explained between `r min.herit` and `r max.herit`\% 
 of the variance in the median transcript (Fig \ref{fig:motivation}A). 
 
 \begin{figure}[ht!]
@@ -212,7 +211,7 @@ factors contribute equally to transcript heritability. The
 relationship between (\textbf{B.}) local and (\textbf{C.}) 
 distal heritability and trait relevance across all four tissues. 
 Here trait relevance is defined as the maximum correlation between 
-the transcript and all traits. Local heritability is negatively 
+the transcript and all traits. Local heritability was negatively 
 correlated with trait relevance, and distal heritability is 
 positively correlated with trait relevance. Pearson ($r$) and $p$ 
 values for each correlation are shown in the upper-right of each panel.}
@@ -222,9 +221,9 @@ values for each correlation are shown in the upper-right of each panel.}
 Local heritability of transcripts was negatively correlated with
 their trait relevance, defined as the maximum correlation of a 
 transcript across all traits (Fig. \ref{fig:motivation}B). This 
-suggests that the more local genotype influenced transcript abundance, 
-the less effect variation in transcript abundance was related to 
-the measured traits. Conversely, distal heritability of transcripts 
+suggests that the more local genotype influenced transcript 
+abundance, the less effect variation in transcript abundance had
+on the measured traits. Conversely, distal heritability of transcripts 
 was positively correlated with trait relevance (Fig. \ref{fig:motivation}C). 
 That is, transcripts that were more highly correlated with the 
 measured traits tended to be distally, rather than locally, 
@@ -238,15 +237,13 @@ which genetic regulation of transcripts may influence traits.
 
 ### High-Dimensional Mediation identifies composite transcript that perfectly mediates composite trait
 
-To identify mechanisms through which genetic regulation of transcripts
-influences heritable traits, we propose high-dimensional mediation (HDM)
-(Fig. \ref{fig:workflow}). In this process we kernelize each of the genome, 
-transcriptome, and phenome, and perform regularized and sparse generalized
-canonical correlation analysis (RGCCA) [cite] in which we explicitly
-model the mediation by the transcriptome of the effect of the genome 
-on the phenome (Methods, Fig. \ref{fig:workflow}). RGCCA is an extended 
-form of canonical correlation analysis (CCA) [cite] in which multiple 
-data sets can be analyzed simultaneously with explicit relationships. 
+We used high-dimensional mediation to identify the major axis of variation 
+in the transcriptome that mediated the effects of the genome on metabolic
+traits (Fig. \ref{fig:workflow}). We kernelized the genome, phenome, and 
+transcriptome matrices and used generalized canonical correlation analysis
+(RGCCA) \cite{rgcca} to identify a composite transcript $T_C$ that perfectly
+mediated the effect of the composite genome ($G_C$) on the composite phenome
+($P_C$).
 
 \begin{figure}[ht!]
 \includegraphics[width=5in]{Figures/Fig3_workflow.pdf} 
@@ -270,12 +267,8 @@ correlation vs. the $T_C$-$P_C$ correlation compared with the observed value
 \label{fig:workflow}
 \end{figure}
 
-The result of this process is three vectors representing the composite 
-genome ($G_C$), composite transcriptome ($T_C$) and the composite 
-phenome ($P_C$) where $T_C$ perfectly mediates the effect of $G_C$ 
-on $P_C$. Each vector is of length $n$ where $n$ is the number of 
-individual mice. Fig. \ref{fig:workflow}A shows the partial correlations 
-between all pairs of composite vectors. The partial correlation $r$ between 
+Fig. \ref{fig:workflow}A shows the partial correlations between the pairs 
+of these composite vectors. The partial correlation $r$ between 
 $G_C$ and $T_S$ was 0.46, and the partial correlation between $T_S$ and $P_S$ 
 was 0.78. However, when the transcriptome was taken into account, 
 the partial correlation between $G_S$ and $P_S$ was effectively 0 (-0.01).
@@ -574,7 +567,7 @@ at global patterns. We noted earlier that functional enrichments of
 transcripts with large positive loadings in the adipose tissue, suggested 
 that the obese mice in the population had a genetic predisposition toward 
 elevated macrophage infiltration into the adipose tissue. This suggests
-heritabl variability in cell-type composition of the adipose tissue. We 
+heritable variability in cell-type composition of the adipose tissue. We 
 investigated this further bioinformatically by comparing the loadings of 
 cell-type-specific transcripts (Methods). For adipose tissue we used 
 a list of cell-type specific genes identified in human adipose tissue
