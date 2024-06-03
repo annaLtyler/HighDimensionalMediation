@@ -14,6 +14,7 @@ comp.trait.herit <- readRDS(here("Data", "Composite_Trait_Heritability.RDS"))
 local.distal.comp <- readRDS(here("Data", "Local_Distal_Comparison.RDS"))
 min.herit <- floor(min(sapply(lapply(local.distal.comp, function(x) apply(x, 2, median, na.rm = TRUE)), min))*100)
 max.herit <- ceiling(max(sapply(lapply(local.distal.comp, function(x) apply(x, 2, median, na.rm = TRUE)), max))*100)
+var.pcor <- readRDS(here("Data", "Pcor.RDS"))
 ```
 
 ## Abstract
@@ -241,7 +242,7 @@ We used high-dimensional mediation to identify the major axis of variation
 in the transcriptome that mediated the effects of the genome on metabolic
 traits (Fig. \ref{fig:workflow}). We kernelized the genome, phenome, and 
 transcriptome matrices and used generalized canonical correlation analysis
-(RGCCA) \cite{rgcca} to identify a composite transcript $T_C$ that perfectly
+(RGCCA) \cite{rgcca} to identify a composite transcript ($T_C$) that perfectly
 mediated the effect of the composite genome ($G_C$) on the composite phenome
 ($P_C$).
 
@@ -267,13 +268,15 @@ correlation vs. the $T_C$-$P_C$ correlation compared with the observed value
 \label{fig:workflow}
 \end{figure}
 
-Fig. \ref{fig:workflow}A shows the partial correlations between the pairs 
-of these composite vectors. The partial correlation $r$ between 
-$G_C$ and $T_S$ was 0.46, and the partial correlation between $T_S$ and $P_S$ 
-was 0.78. However, when the transcriptome was taken into account, 
-the partial correlation between $G_S$ and $P_S$ was effectively 0 (-0.01).
+Fig. \ref{fig:workflow}A shows the partial correlations ($\rho$) between 
+the pairs of these composite vectors. The partial correlation between 
+$G_C$ and $T_S$ was `r signif(var.pcor["Causal", "Mediator"], 2)`, 
+and the partial correlation between $T_S$ and $P_S$ 
+was `r signif(var.pcor["Mediator", "Outcome"], 2)`. However, when the 
+transcriptome was taken into account, the partial correlation between 
+$G_S$ and $P_S$ was effectively 0 (`r signif(var.pcor["Causal", "Outcome"], 2)`).
 The estimated heritability of the composite phenome was heritability of 
-`r signif(comp.trait.herit[1], 2)` $\pm$ `r signif(comp.trait.herit[2])`, 
+`r signif(comp.trait.herit[1], 2)` $\pm$ `r signif(comp.trait.herit[2], 2)`, 
 which was higher than any of the individual traits 
 (Fig. \ref{fig:trait_overview}F). Thus, we have identified a maximally 
 heritable metabolic trait that is perfectly mediated by a heritable 

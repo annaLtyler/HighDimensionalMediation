@@ -299,16 +299,13 @@ transcripts may influence traits.
 transcript that perfectly mediates composite
 trait}\label{high-dimensional-mediation-identifies-composite-transcript-that-perfectly-mediates-composite-trait}
 
-To identify mechanisms through which genetic regulation of transcripts
-influences heritable traits, we propose high-dimensional mediation (HDM)
-(Fig. \ref{fig:workflow}). In this process we kernelize each of the
-genome, transcriptome, and phenome, and perform regularized and sparse
-generalized canonical correlation analysis (RGCCA) {[}cite{]} in which
-we explicitly model the mediation by the transcriptome of the effect of
-the genome on the phenome (Methods, Fig. \ref{fig:workflow}). RGCCA is
-an extended form of canonical correlation analysis (CCA) {[}cite{]} in
-which multiple data sets can be analyzed simultaneously with explicit
-relationships.
+We used high-dimensional mediation to identify the major axis of
+variation in the transcriptome that mediated the effects of the genome
+on metabolic traits (Fig. \ref{fig:workflow}). We kernelized the genome,
+phenome, and transcriptome matrices and used generalized canonical
+correlation analysis (RGCCA) \cite{rgcca} to identify a composite
+transcript (\(T_C\)) that perfectly mediated the effect of the composite
+genome (\(G_C\)) on the composite phenome (\(P_C\)).
 
 \begin{figure}[ht!]
 \includegraphics[width=5in]{Figures/Fig3_workflow.pdf} 
@@ -332,17 +329,13 @@ correlation vs. the $T_C$-$P_C$ correlation compared with the observed value
 \label{fig:workflow}
 \end{figure}
 
-The result of this process is three vectors representing the composite
-genome (\(G_C\)), composite transcriptome (\(T_C\)) and the composite
-phenome (\(P_C\)) where \(T_C\) perfectly mediates the effect of \(G_C\)
-on \(P_C\). Each vector is of length \(n\) where \(n\) is the number of
-individual mice. Fig. \ref{fig:workflow}A shows the partial correlations
-between all pairs of composite vectors. The partial correlation \(r\)
-between \(G_C\) and \(T_S\) was 0.46, and the partial correlation
+Fig. \ref{fig:workflow}A shows the partial correlations (\(\rho\))
+between the pairs of these composite vectors. The partial correlation
+between \(G_C\) and \(T_S\) was 0.42, and the partial correlation
 between \(T_S\) and \(P_S\) was 0.78. However, when the transcriptome
 was taken into account, the partial correlation between \(G_S\) and
-\(P_S\) was effectively 0 (-0.01). The estimated heritability of the
-composite phenome was heritability of 0.71 \(\pm\) 0.0837393, which was
+\(P_S\) was effectively 0 (0.039). The estimated heritability of the
+composite phenome was heritability of 0.71 \(\pm\) 0.084, which was
 higher than any of the individual traits (Fig.
 \ref{fig:trait_overview}F). Thus, we have identified a maximally
 heritable metabolic trait that is perfectly mediated by a heritable
