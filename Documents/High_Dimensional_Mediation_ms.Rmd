@@ -122,7 +122,7 @@ genome on complex traits.
 
 ## Results
 
-### Genetic variation contributes to wide phenotypic variation
+### Genetic variation contributed to wide phenotypic variation
 
 Although the environment was consistent across all animals, the 
 genetic diversity present in this population resulted in widely 
@@ -186,7 +186,7 @@ This low level of redundancy suggests a broad sampling of multiple
 heritable aspects of metabolic disease including overall body weight, 
 glucose homeostasis, pancreatic composition and liver function.
 
-### Distal Heritability Correlates with Phenotype Relevance
+### Distal Heritability Correlated with Phenotype Relevance
 
 We performed eQTL analysis using R/qtl2 \cite{pmid30591514} 
 (Methods) and identified both local and distal eQTL for 
@@ -237,7 +237,7 @@ the positive relationship between trait correlation and distal
 heritability suggests that there are alternative mechanisms through 
 which genetic regulation of transcripts may influence traits.
 
-### High-Dimensional Mediation identifies composite transcript that perfectly mediates composite trait
+### High-Dimensional Mediation identified a high-heritability composite trait that was perfectly mediated by a composite transcript
 
 We used high-dimensional mediation to identify the major axis of variation 
 in the transcriptome that mediated the effects of the genome on metabolic
@@ -346,7 +346,7 @@ genetic effects on body weight and insulin resistance.
 \end{figure}
 
 
-### High-loading transcripts have low local heritability, high distal heritability, and are linked mechanistically to obesity
+### High-loading transcripts have low local heritability, high distal heritability, and were linked mechanistically to obesity
 
 We interpreted large loadings onto transcripts as indicating
 strong mediation of the effect of genetics on metabolic 
@@ -500,7 +500,7 @@ cluster are indicated along the left margin. \textbf{B} Loadings for
 \end{figure}
 
 
-### Gene expression, but not local eQTLs, predict body weight in an independent population
+### Gene expression, but not local eQTLs, predicted body weight in an independent population
 
 To test whether the transcript loadings identified in the DO could 
 be translated to another population, we tested whether they could 
@@ -552,27 +552,24 @@ the CC-RIX when weighted with the loadings from HDM. (Fig.
 that local regulation of gene expression is not the primary 
 factor driving heritability of complex traits. 
 
-### Distally heritable transcriptomic signatures reflect variation in composition of adipose tissue and islets
+### Distally heritable transcriptomic signatures reflected variation in composition of adipose tissue and islets
 
-Interpretation of global distal genetic influences on gene expression 
-and phenotype is potentially more challenging than interpretation and 
-translation of local genetic influences. Effects can not be located to 
-individual gene variants or transcripts, but because we have a measure
-of importance across all transcripts in multiple tissues, we can look 
-at global patterns. We noted earlier that functional enrichments of 
-transcripts with large positive loadings in the adipose tissue, suggested 
-that the obese mice in the population had a genetic predisposition toward 
-elevated macrophage infiltration into the adipose tissue. This suggests
-heritable variability in cell-type composition of the adipose tissue. We 
-investigated this further bioinformatically by comparing the loadings of 
-cell-type-specific transcripts (Methods). For adipose tissue we used 
-a list of cell-type specific genes identified in human adipose tissue
-
-In adipose tissue, the mean loading of 
-macrophage-specific genes was substantially greater than 0 (Fig. 
-\ref{fig:human_translation}A), indicating that obese mice were 
-genetically predisposed to have high levels of macrophage infiltration 
-in adipose tissue in response to the high-fat, high-sugar diet. 
+Interpretation of global genetic influences on gene expression and 
+phenotype is potentially more challenging than interpretation and 
+translation of local genetic influences, as genetic effects cannot 
+be localized to individual gene variants or transcripts. However, 
+there are global patterns across the loadings that can inform 
+mechanism. For example, heritable variation in cell type 
+composition can be derived from transcript loadings. We noted 
+earlier that immune activation in the adipose tissues was an 
+important driver of obesity in the DO population. To determine
+whether this is reflected as an increase in macrophages in adipose
+tissue, we compared loadings of cell-type specific genes in adipose
+tissue (Methods). The mean loading of macrophage-specific genes was 
+substantially greater than 0 (Fig. \ref{fig:human_translation}A), 
+indicating that obese mice were genetically predisposed to have high 
+levels of macrophage infiltration in adipose tissue in response to 
+the high-fat, high-sugar diet. 
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig8_Human_Translation.pdf} 
@@ -590,27 +587,24 @@ patients based on the HDM results from DO mice.
 \label{fig:human_translation}
 \end{figure}
 
-
-In islet, the mean loadings for alpha-cell specific transcripts were 
-significantly positive, while the mean loadings for delta- and 
-endothelial-cell specific genes were significantly negative 
-(Fig. \ref{fig:human_translation}B). 
-These results suggest that obese mice had inherited higher proportions 
-of alpha cells, and lower proportions of endothelial and delta cells
-in their pancreatic islets. 
+We also compared loadings of cell-type specific transcripts in islet 
+(Methods). The mean loadings for alpha-cell specific transcripts were 
+significantly greater than 0, while the mean loadings for delta- and 
+endothelial-cell specific genes were significantly less than 0
+(Fig. \ref{fig:human_translation}B). These results suggest that obese 
+mice had inherited higher proportions of alpha cells, and lower 
+proportions of endothelial and delta cells in their pancreatic islets. 
 
 The loadings for pancreatic beta cell-type specific loadings was 
-not significantly different from zero. This does not reflect on the
-function of the beta cells in the obese mice, but rather suggests
-that mice prone to obesity were not obese because they inherited 
-fewer beta cells than non-obese mice.
+not significantly different from zero. This is not necessarily 
+reflective of the function of the beta cells in the obese mice, 
+but rather suggests that any variation in the number of beta cells 
+in these mice was unrelated to obesity and insulin resistance. 
 
-Biological interpretation of alpha, endothelial, delta cells??
+### Heritable transcriptomic signatures translated to human disease
 
-### Distally heritable transcriptomic signatures translate to human disease
-
-Ultimately, the distally heritable transcriptomic signatures 
-that we identified in DO mice will be useful if they inform
+Ultimately, the heritable transcriptomic signatures that we 
+identified in DO mice will be useful if they inform
 pathogenicity and treatment of human disease. To investigate 
 the potential for translation of the gene signatures identified
 in DO mice, we compared them to transcriptional profiles in 
@@ -625,33 +619,29 @@ expression (Methods) and compared the predicted scores for
 obese and non-obese groups as well as diabetic and non-diabetic
 groups. In all cases, the predicted obesity scores were higher
 on average for individuals in the obese and diabetic groups
-compared with the lean and non-diabetic groups, indicating
-that the distally heritable signature of obesity identified
-in DO mice is relevant to obesity and diabetes in human subjects.
+compared with the lean and non-diabetic groups (Fig. 
+\ref{fig:human_translation}D). This indicates that the heritable 
+signature of obesity identified in DO mice is relevant to obesity 
+and diabetes in human subjects.
 
 ### Targeting gene signatures
-Although high-loading transcripts are likely good candidates
-for understanding specific biology related to obesity, we 
-emphasize that the transcriptome overall is highly interconnected
-and redundant, and that focusing on individual transcripts for
-treatment may be less effective than using a broader transcriptomic
-signature. The ConnectivityMap (CMAP) database [cite] developed by 
-the Broad Institute allows us to query thousands of compounds that 
-reverse or enhance transcriptomic signatures as a whole in multiple 
-different cell types. By identifying drugs that reverse pathogenic 
-transcriptomic signatures as a whole rather than targeting individual 
-genes, we can potentially increase efficacy of tested compounds.  
+Another global view of the transcript loading landscape is in 
+ranking potential drug candidates for the treatment of metabolic
+disease. Although high-loading transcripts may be good candidates 
+for understanding specific biology related to obesity, the 
+transcriptome overall is highly interconnected and redundant, and 
+focusing on individual transcripts for treatment may be less 
+effective than using a broader transcriptomic signatures. The 
+ConnectivityMap (CMAP) database [cite] developed by the Broad 
+Institute allows us to query thousands of compounds that 
+reverse or enhance the extreme ends of transcriptomic signatures
+in multiple different cell types. By identifying drugs that reverse 
+pathogenic transcriptomic signatures, we can potentially identify
+compounds that have favorable effects on gene expression.
 
-We thus queried the CMAP database through the CLUE online
-query tool developed by The Broad Institute [cite] (Methods). 
+To test this hypothesis we queried the CMAP database through the 
+CLUE online query tool [cite] (Methods). 
 
-Alternatively, we can target the gene signature as a whole 
-using CMAP. Identifying drugs to target gene signatures is 
-possible through CMAP. We put our loadings from islet into 
-CMAP. The top hit was PPAR receptor agonist. Rosiglitazone,
-a widely used diabetes drug, is a PPAR receptor agonist.
-Another class of drugs on the list was sufonylureas, which
-are another major class of drugs for type 2 diabetes.
 
 * **Supplemental Table** results from CMAP
 
