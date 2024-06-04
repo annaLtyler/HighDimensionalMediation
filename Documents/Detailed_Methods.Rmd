@@ -317,7 +317,7 @@ eQTL LOD score of the transcript (Supp. Fig. XXXB).
 ## Prediction of CC-RIX traits
 
 We used both measured expression and imputed expression
-combined with the results from HDMA in the to predict
+combined with the results from HDM in the to predict
 phenotype in the CC-RIX. The traits measured in the DO
 and the CC-RIX were not identical, so we limited our
 prediction to body weight, which was measured in both
@@ -326,7 +326,7 @@ phenotype score in the DO.
 
 For each CC-RIX individual, we multiplied the transcript
 abundaces across the transcriptome by the loadings derived
-from the HDMA in the DO population (Fig. XXXA). This resulted 
+from the HDM in the DO population (Fig. XXXA). This resulted 
 in a vector with $n$ elements, where $n$ is the number of 
 transcripts in the trancriptome. Each element was a weigted 
 value that combined the relative abundance of the transcript 
@@ -340,7 +340,7 @@ each tissue with measured body weight (Fig. XXXB).
 
 ## Cell type specificity
 
-We investigated whether the loadings derived from HDMA reflected
+We investigated whether the loadings derived from HDM reflected
 tissue composition changes in the DO mice prone to obesity on the
 high-fat diet. To do this, we acquired lists of cell-type specific
 transcripts from the literature. In adipose tissue, we looked

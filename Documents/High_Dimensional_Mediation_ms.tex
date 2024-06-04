@@ -541,7 +541,7 @@ phenotypic variation. These results highlight the importance of tissue
 context when investigating the role of heritable transcript variability
 in driving phenotype.
 
-Gene lists for all clusters are available in Supplemental Files XXX.
+Gene lists for all clusters are available in Supplemental File XXX.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig6_TOA.pdf} 
@@ -561,13 +561,23 @@ cluster are indicated along the left margin. \textbf{B} Loadings for
 in an independent
 population}\label{gene-expression-but-not-local-eqtls-predict-body-weight-in-an-independent-population}
 
-The loading of each transcript indicates how inherited expression levels
-influence metabolic phenotypes. If local regulation is the predominant
-factor influencing gene expression, we should be able to predict an
-individual's phenotype based on their genotypes across all local eQTLs.
-We tested this hypothesis in an independent population of F1 mice
-generated through multiple pairings of Collaborative Cross (CC)
-{[}cite{]} strains (Fig. \ref{fig:cc_prediction}A) (Methods).
+To test whether the transcript loadings identified in the DO could be
+translated to another population, we tested whether they could predict
+metaoblic a phenotype in an independent population of CC-RIX mice, which
+were F1 mice derived from multiple pairings of Collaborative Cross (CC)
+{[}cite{]} strains (Fig. \ref{fig:cc_prediction}) (Methods). We tested
+two questions. First, we asked whether the loadings identified in the DO
+mice were relevant to the relationship between the transcriptome and the
+phenome in the CC-RIX. We predicted body weight in each CC-RIX
+individual using measured gene expression in each tissue and the
+transcript loadings identified in the DO (Methods). The predicted body
+weight and acutal body weight were highly correlated in all tissues
+(Fig. \ref{fig:cc_prediction}B left column). The best prediction was
+achieved for adipose tissue, which supports the observation in the DO
+that adipose expression was the strongest mediator of the genetic effect
+on metabolic index. This result also confirms the validity and
+translatability of the transcript loadings and their relationship to
+metabolic disease.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig7_CC_Prediction.pdf} 
@@ -585,38 +595,19 @@ The gray lines show the standard deviation on body weight for the strain.
 \label{fig:cc_prediction}
 \end{figure}
 
-We first tested whether the transcript loadings derived from HDM in the
-DO were relevant to the relationship between the transcriptome and the
-phenome in the CC-RIX. To do this, we multiplied the transcript loadings
-derived from HDM in the DO mice by transcript measurements in the CC-RIX
-standardized across individuals. This created a transcript vector
-weighted by importance to metabolic disease as determined in the DO. The
-mean of this vector was the predicted metabolic index for the animal
-based on its transcription in either adipose tissue, liver, or skeletal
-muscle. Across all three tissues, weighted transcription values were
-significantly correlated with metabolic index in the CC-RIX population
-measured as body weight (Fig. \ref{fig:cc_prediction}B left column).
-Adipose tissue transcription yielded the most accurate prediction
-(stats). This result confirms the validity and translatability of the
-transcript loadings determined in the DO population and their
-relationship to metabolic disease. It also supports the observation that
-transcription in adipose tissue is the strongest mediator of genetic
-effects on metabolic index.
-
-We then tested whether this mediation signal was encoded by local
-genotype. To do this, we imputed gene expression in the CC-RIX using
-local genotype. We were able to estimate variation in gene transcription
-robustly. The correlation between measured gene expression and imputed
-gene expression across all tissues was close to \(R = 0.5\), and the
-variance explained by local genotype was comparable in the DO and CC-RIX
-(Supp. Fig. \ref{fig:cc_imputation}). However, when weighted with the
-loadings derived from HDM in the DO population, these imputed
-transcripts across all tissues failed to predict metabolic index in the
-CC-RIX (Fig. \ref{fig:cc_prediction}B right column).
-
-Taken together, these results support the hypothesis that distal, rather
-than local genetic factors are primarily driving complex-trait related
-variation in gene expression.
+The second question related to the source of the relevant variation in
+gene expression. If local regulation was the predominant factor
+influencing gene expression, we should be able to predict phenotype in
+the CC-RIX using transcripts imputed from local genotype (Fig.
+\ref{fig:cc_prediction}A). The DO and the CC-RIX were derived from the
+same eight founder strains and so carry the same alleles throughout the
+genome. We imputed gene expression in the CC-RIX using local genotype
+and were able to estimate variation in gene transcription robustly
+(Supp. Fig. \ref{fig:cc_imputation}). However, these imputed values
+failed to predict body weight in the CC-RIX when weighted with the
+loadings from HDM. (Fig. \ref{fig:cc_prediction}B right column). This
+result suggests that local regulation of gene expression is not the
+primary factor driving heritability of complex traits.
 
 \subsubsection{Distally heritable transcriptomic signatures reflect
 variation in composition of adipose tissue and
