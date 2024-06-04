@@ -443,31 +443,33 @@ largest local heritability (top 20) across all four tissues.
 
 Clustering of transcripts with top loadings in each tissue showed 
 tissue-specific functional modules associated with obesity and 
-insulin resistance in the DO population (Methods) (Fig. \ref{fig:toa}A). 
-The clustering highlights the makes apparent the importance of 
-immune activation particularly in adipose tissue. are also other 
-tissue-specific processes. Positive loadings on lipid metabolism
-in liver suggest that inheriting high liver expression of genes 
-in this cluster is positively associated with metabolic disease.
-This cluster included the gene \textit{Pparg}, whose primary role
-is in the adipose tissue where it is considered a master regulator 
-of adipogenesis \cite{pmid17389767}. Agonists of \text{Pparg}, 
-such as Thiazolidinediones, which are FDA-approved to treat type 
-II diabetes, reduce inflammation and adipose hyptertrophy 
+insulin resistance (Fig. \ref{fig:toa}A) (Methods). 
+The clustering highlights the importance of immune activation 
+particularly in adipose tissue. Except fo the "mitosis" cluster,
+which had large positive loadings in three of the four tissues,
+all clusters were strongly loaded in only one or two tissues. 
+For example, the lipid metabolism cluster was loaded most heavily
+in liver. The positive loadings suggest that high expression of
+these genes particualarly in the liver was associated with increased
+metabolic disease. This cluster included the gene \textit{Pparg}, 
+whose primary role is in the adipose tissue where it is considered 
+a master regulator of adipogenesis \cite{pmid17389767}. Agonists of 
+\textit{Pparg}, such as Thiazolidinediones, which are FDA-approved to 
+treat type II diabetes, reduce inflammation and adipose hyptertrophy 
 \cite{pmid17389767}. Consistent with this role, the loading for 
-\textit{Pparg} in adipose tissue is slightly negative, suggesting 
-that upregulation is associated with leaner mice (Fig. \ref{fig:toa}B). 
-In contrast, \textit{Pparg} has a large positive loading in liver, 
-where it plays a role in the development of hepatic steatosis, or
-fatty liver. Mice that lack \textit{Pparg} specifically in the liver, 
+\textit{Pparg} in adipose tissue was negative, suggesting 
+that higher expression was associated with leaner mice (Fig. \ref{fig:toa}B). 
+In contrast, \textit{Pparg} had a large positive loading in liver, 
+where it is known to play a role in the development of hepatic steatosis, 
+or fatty liver. Mice that lack \textit{Pparg} specifically in the liver, 
 are protected from developing steatosis and show reduced expression
 of lipogenic genes \cite{pmid12805374, pmid12618528}. Overexpression
 of \textit{Pparg} in the livers of mice with a \textit{Ppara} knockout, 
 causes upregulation of genes involved in adipogenesis \cite{pmid16357043}.
-In the livers of both mice and humans \cite{pmid15644454, pmid16403437}
-High \textit{Pparg} expression is associated with hepatocytes that
+In the livers of both mice and humans
+high \textit{Pparg} expression is associated with hepatocytes that
 accumulate large lipid droplets and have gene expression profiles 
-similar to adipocytes.
+similar to adipocytes \cite{pmid15644454, pmid16403437}.
 
 The local and distal heritability of \textit{Pparg} is low in adipose tissue
 suggesting its expression in this tissue is highly constrained in the 
@@ -481,7 +483,7 @@ drive phenotypic variation. These results highlight the importance
 of tissue context when investigating the role of heritable transcript
 variability in driving phenotype.
 
-Gene lists for all clusters are available in Supplemental Files XXX.
+Gene lists for all clusters are available in Supplemental File XXX.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig6_TOA.pdf} 
@@ -500,10 +502,16 @@ cluster are indicated along the left margin. \textbf{B} Loadings for
 
 ### Gene expression, but not local eQTLs, predict body weight in an independent population
 
-The loading of each transcript indicates how inherited
-expression levels influence metabolic phenotypes. If 
-local regulation is the predominant factor influencing
-gene expression, we should be able to predict an individual's
+The loading of each transcript indicates how expression 
+levels influence metabolic phenotypes. For transcripts with 
+positive loadings, expression was positively correlated with 
+metabolic index, whereas for transcripts with negative loadings,
+expression was negatively correlted with metabolic index. 
+If local regulation is the predominant factor influencing
+gene expression, we should be able to combine loadings and 
+eQTLs to predict metabolic index in another population.
+
+ predict an individual's
 phenotype based on their genotypes across all local eQTLs.
 We tested this hypothesis in an independent population of 
 F1 mice generated through multiple pairings of Collaborative 
