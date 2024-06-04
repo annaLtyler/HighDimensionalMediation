@@ -83,23 +83,21 @@
 \title{Detailed Methods for High Dimensional Mediation for Massively
 Polygenic Traits}
 \author{J. Matthew Mahoney and Anna L Tyler}
-\date{June 03, 2024}
+\date{June 04, 2024}
 
 \begin{document}
 \maketitle
 
 \subsection{Diversity Outbred Mice}\label{diversity-outbred-mice}
 
-We placed a population of 500 male and female mice from generations 18,
-19, and 21 on a high-fat, high-sugar diet to induce diet-associated
-obesity and metabolic disease as described previously
-\cite{pmid29567659}. Over the experimental period of 18 weeks multiple
-metabolic traits were measured longitudinally, including body weight,
-plasma levels of insulin and glucose, and plasma lipids. At the end of
-the experiment, we used RNASeq to measure gene expression in 384 mice in
-four tissues relevant to metabolic disease: adipose tissue, pancreatic
-islets, liver, and skeletal muscle. The mice were also genotyped using
-the Mouse Universal Genotyping Array (GigaMUGA).
+A population of 500 diversity outbred mice (split evenly between male
+and female) from generates 18, 19, and 21, was placed on a high-fat
+(44.6\% kcal fat), high-sugar (34\% carbohydrate), adequate protein
+(17.3 \% protein) diet from Envigo Teklad (catalog number TD.08811)
+starting at four weeks of age as described previously
+\cite{pmid29567659}. Each individual was assessed longitudinally for
+multiple metabolic measures including fasting glucose levels, glucose
+tolerance, insulin levels, body weight, and blood lipid levels.
 
 \subsection{Trait measurements}\label{trait-measurements}
 
@@ -108,9 +106,16 @@ tolerance tests
 
 \subsection{Genotyping}\label{genotyping}
 
-also described in \cite{pmid29567659} briefly describe here.
+The mice were also genotyped using the Mouse Universal Genotyping Array
+(GigaMUGA) \cite{pmid29567659} .
+
+briefly describe here.
 
 \subsection{RNA Sequencing}\label{rna-sequencing}
+
+At the end of the experiment, we used RNASeq to measure gene expression
+in 384 mice in four tissues relevant to metabolic disease: adipose
+tissue, pancreatic islets, liver, and skeletal muscle.
 
 also described in \cite{pmid29567659} describe islet picking, and how
 other organs were collected. mention details about GigaMUGA
@@ -185,6 +190,37 @@ is the distal heritability of the transcript.
 We compared local and distal estimates of heritability to measures of
 trait relevance for each transcript. Trait relevance, was the Pearson
 correlation (R) between the transcript and the trait.
+
+\subsection{High-Dimensional Mediation
+Overview}\label{high-dimensional-mediation-overview}
+
+The goal of high-dimensional mediation is to identify a composite trait
+that is perfectly mediated by a composite transcriptome. To accomplis
+this, we usied regularized and generalized canonical correlation
+analysis (RGCCA) \cite{rgcca}, an extension of canonical correlation
+analysis (CCA) \cite{knapp1978canonical, hotelling1992relations} that
+allows for more than two data sets with arbitrary relationships among
+them. Here we analyzed the correlations among three data sets, genotype,
+transcriptome, and phenotype explicitly modeling mediation in which the
+transcriptome (\(T\)) mediates the effect of the genome (\(G\)) on the
+phenome (\(P\)).
+
+\begin{equation*}
+G \rightarrow T \rightarrow P
+\end{equation*}
+
+Because the genome, transcriptome, and phenome had different dimensions,
+we kernelized each data set prior to running HDM. This step ensured that
+each set will contribute equally to the solution. The result is a set of
+three vectors representing a composite transcriptome (\(T_C\)) that
+perfectly mediates the effect of the composite genome (\(G_C\)) on the
+composite phenome (\(P_C\)). That is, the partial correlation between
+\(G_C\) and \(P_C\) is 0 when \(T_C\) is accounted for. Because of the
+central dogma of molecular biology, information flow is directed out of
+the genome, and not back into it. Thus, the otherwise undirected
+relationships between genome, transcriptome, and phenome can be inferred
+as a causal mediation by the transcriptome of the effects of the genome
+on the phenome.
 
 \subsection{Kernelization}\label{kernelization}
 
@@ -307,17 +343,17 @@ genes}\label{literature-support-for-genes}
 
 To determine whether each gene among those with large loadings or large
 heritability had a supported connection to obesity or diabetes in the
-literature, we used the R package easyPubMed {[}cite{]}. We searched for
-the terms (``diabetes'' OR ``obesity'') along with the tissue name
-(adipose, islet, liver, or muscle), and the gene name. We restricted the
-gene name to appear in the title or abstract as some short names
-appeared at random in contact information. We checked each gene with
-apparent literature support by hand to verify that support, and we
-removed spurious associations. For example, FAU is used as an acronym
-for fatty acid uptake and CAD is used as an acronym for coronary artery
-disease. Both terms co-occur with the terms diabetes and obesity in a
-manner independent of the genes \textit{Fau} and \textit{Cad}. Other
-genes that co-occurred with diabetes and obesity, but not as a
+literature, we used the R package easyPubMed \cite{easyPubMed}. We
+searched for the terms (``diabetes'' OR ``obesity'') along with the
+tissue name (adipose, islet, liver, or muscle), and the gene name. We
+restricted the gene name to appear in the title or abstract as some
+short names appeared at random in contact information. We checked each
+gene with apparent literature support by hand to verify that support,
+and we removed spurious associations. For example, FAU is used as an
+acronym for fatty acid uptake and CAD is used as an acronym for coronary
+artery disease. Both terms co-occur with the terms diabetes and obesity
+in a manner independent of the genes \textit{Fau} and \textit{Cad}.
+Other genes that co-occurred with diabetes and obesity, but not as a
 functional connection were similarly removed. For example, the gene
 \textit{Rpl27} is used as a reference gene for quantification of the
 expression of other genes, and co-occurrence with diabetes and obesity
@@ -325,6 +361,19 @@ is a coincidence. We counted the abstracts associated with diabetes or
 obesity and each gene name, and determined that a gene had literature
 support when it had at least two abstracts linking it to the terms
 diabetes or obesity in the respective tissue.
+
+\subsection{Tissue-specific clusters}\label{tissue-specific-clusters}
+
+To compare the top loading genes across tissues, we selected genes with
+a loading at least 2.5 standard deviations from the mean across all
+tissues. We made a matrix consisting of the union of these sets
+populated with the tissue-specific loading for each gene. We used the
+pam() function in the R package cluster \cite{Rcluster} to cluster the
+loading profiles around \(k\) medoids. We tested \(k = 2\) through 20
+and used silhouette andlysis to compare the separation of the clusters.
+The best separation was achieved with \(k = 12\) clusters. For each
+cluster we used the R package gprofiler2 \cite{Rgprofiler2} to enriched
+GO terms and KEGG pathways for the genes in each cluster.
 
 \subsection{CC-RIX mice}\label{cc-rix-mice}
 

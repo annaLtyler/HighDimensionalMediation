@@ -15,6 +15,7 @@ local.distal.comp <- readRDS(here("Data", "Local_Distal_Comparison.RDS"))
 min.herit <- floor(min(sapply(lapply(local.distal.comp, function(x) apply(x, 2, median, na.rm = TRUE)), min))*100)
 max.herit <- ceiling(max(sapply(lapply(local.distal.comp, function(x) apply(x, 2, median, na.rm = TRUE)), max))*100)
 var.pcor <- readRDS(here("Data", "Pcor.RDS"))
+lit.enrich <- readRDS(here("Data", "Lit_enrich.RDS"))
 ```
 
 ## Abstract
@@ -349,22 +350,23 @@ genetic effects on body weight and insulin resistance.
 
 We interpreted large loadings onto transcripts as indicating
 strong mediation of the effect of genetics on metabolic 
-index. Large positive loadings indicate that inheriting 
-higher expression was associated with a higher metabolic
+index. Large positive loadings indicate that higher 
+expression was associated with a higher metabolic
 index (i.e. higher risk of obesity and metabolic disease 
 on the high-fat diet) (Fig. \ref{fig:interpretation}C). 
-Conversely, large negative loadings indicate that inheriting 
-lower expression of these transcripts was associated with a 
+Conversely, large negative loadings indicate that high
+expression of these transcripts was associated with a 
 lower metabolic index (i.e. lower risk of obesity and 
 metabolic disease on the high-fat diet) (Fig. \ref{fig:interpretation}C). 
-We used GSEA to look for biological processes and pathways 
+We used gene set enrichment analysis (GSEA) \cite{fgsea, 
+pmid16199517} to look for biological processes and pathways 
 that were enriched at the top and bottom of this list (Methods). 
 
-In adipose tissue, both GO processes and and KEGG pathway 
+In adipose tissue, both GO processes and KEGG pathway 
 enrichments pointed to an axis of inflammation and metabolism
 (Supp. Fig. \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}).
-Processes and pathways associated with inflammation, particularly 
-macrophage infiltration were positively associated with metabolic
+GP terms and KEGG pathways associated with inflammation, particularly 
+macrophage infiltration, were positively associated with metabolic
 index, indicating that increased expression in inflammatory
 pathways was associated with a higher metabolic index. It is well 
 established that adipose tissue in obese individuals is highly 
@@ -376,49 +378,49 @@ The strongest negative enrichments in adipose tissue were related
 to mitochondial activity in general, and thermogenesis in particular
 (Supp. Fig. \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}).
 It has been shown mouse strains with greater thermogenic potential
-are also less susceptible to obesity on a high-fat diet.
-
+are also less susceptible to obesity on a high-fat diet [cite].
 
 Transcripts associated with the citric acid (TCA) cycle as well
 as the catabolism of branched-chain amino acids (BCAA), valine, 
-leuceine, and isoleucine also had strong negative enrichment in 
-the adipose tissue (Supp. Fig. XXX). Expression of genes in both 
-pathways (for which there is some overlap) has been previously 
-associated with insulin sensitivity \cite{pmid29567659,pmid22560213,pmid19841271}, 
-suggesting that impairment in these pathways may be associated 
-with insulin resistance. Selective PPAR$\gamma$ modulation by 
-insulin-sensitizing thiazolidinedione drugs has further been 
-shown to influence both inflammation and BCAA metabolism in 
-obese rats suggesting a relationship between these pathways 
-and insulin resistance \cite{pmid20959535}. BCAA levels are 
-also related to insulin resistance in human subjects and are 
-elevated in insulin-resistant obese individuals relative to 
-weight-matched non-insulin reisistant individuals \cite{pmid23512805}. 
-In the DO mice studied here, inheriting increased expression 
-of genes involved in BCAA catabolism was associated with 
-reduced body weight and insulin resistance. 
+leuceine, and isoleucine were strongly enriched with negative 
+loadings in adipose tissue (Supp. Fig. XXX). Expression of genes 
+in both pathways (for which there is some overlap) has been 
+previously associated with insulin sensitivity \cite{pmid29567659, 
+pmid22560213, pmid19841271}, suggesting that heritable variation
+in regulation of these pathways may influence risk of insulin 
+resistance.
 
-Transcripts in the adipose tissue had the largest loadings,
-both positive and negative, of all tissues, suggesting that much
-of the effect of genetics on body weight and insulin reisistance
-is mediated through gene expression in adipose tissue 
-(Fig. \ref{fig:loading_heritability}A).
-The loadings in liver and pancreas were comparable, and those
-in skeletal muscle were the weakest (Fig. \ref{fig:loading_heritability}A), 
-suggesting that less of the genetic effects were mediated through 
-transcription in skeletal muscle. Across all tissues, trahscripts 
+Looking a the 10 strongest positive and negative loaded 
+transcripts from each tissue, is is apparent that transcripts 
+in the adipose tissue had the largest loadings, both positive 
+and negative, of all tissues (Fig. \ref{fig:loading_heritability}A
+bar plot) This suggesting that much of the effect of genetics on 
+body weight and insulin reisistance is mediated through gene 
+expression in adipose tissue. The strongest loadings in liver and 
+pancreas were comparable, and those in skeletal muscle were the 
+weakest (Fig. \ref{fig:loading_heritability}A), suggesting that 
+less of the genetic effects were mediated through transcription 
+in skeletal muscle. Heritability analysis showed that trahscripts 
 with the largest loadings tended to have relatively high distal 
-heritability compared with local heritability 
-(Fig. \ref{fig:loading_heritability}A). Transcripts with the highest 
-local heritability tended to have very weak loadings and were 3.6 
-times less likely to be associated with 
-diabetes and obesity in the literature than transcripts with high 
-loadings (Fig. fig:loading_heritabilityB, Methods). TWAS-nominated 
-transcripts also had relatively weak loadings and high local heritabilty 
-(Fig. \ref{fig:interpretation}C). They were half as likely as transcripts 
-with the highest loadings to be associated with diabetes and obesity in 
-the literature (Fig. \ref{fig:interpretation}C).
+heritability compared with local heritability (Fig. 
+\ref{fig:loading_heritability}A heat map and box plot). This pattern
+contrasts with transcripts nominated by TWAS (Fig. 
+\ref{fig:loading_heritability}B), which tended to have lower loadings,
+higher local heritability and lower distal heritability. Transcripts
+with the highest local heritability in each tissue  (Fig. 
+\ref{fig:loading_heritability}C) had the lowest loadings.
 
+We performed a literature search for the genes in each of these groups
+along with the terms "diabetes", "obesity", and the name of the 
+expressing tissue to determine whether any of these genes had previous 
+associations with metabolic disease in the literature (Methods). Multiple 
+genes in each group had been previously associated with obesity and 
+diabetes (Fig. \ref{fig:loading_heritability} bolded gene names). Genes 
+with high loadings were most highly enriched for previous literature 
+support. They were `r lit.enrich["loading.twas.enrich"]` more likely 
+than TWAS hits and `r lit.enrich["loading.herit.enrich"]` times more 
+likely than genes with high local heritability to be previously 
+associated with obesity or diabetes.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig5_loading_heritability.pdf} 
@@ -441,9 +443,9 @@ largest local heritability (top 20) across all four tissues.
 
 Clustering of transcripts with top loadings in each tissue showed 
 tissue-specific functional modules associated with obesity and 
-insulin resistance in the DO population (Fig. \ref{fig:toa}A). 
-In this figure, the importance of immune activation specifically
-in the adipose tissue is apparent. There are also other 
+insulin resistance in the DO population (Methods) (Fig. \ref{fig:toa}A). 
+The clustering highlights the makes apparent the importance of 
+immune activation particularly in adipose tissue. are also other 
 tissue-specific processes. Positive loadings on lipid metabolism
 in liver suggest that inheriting high liver expression of genes 
 in this cluster is positively associated with metabolic disease.
@@ -697,6 +699,20 @@ approaches that can account for arbitrarily complex gene regulation,
 as well as the interconnectedness and redundancy of the transcriptome 
 without explicitly modeling them. The HDM approach we propose here tests
 the hypothesis of the omnigenic model
+
+Discussion about biological relevance of high-loading transcripts
+in adipose tissue. TCA cycle and BCAA catabolism:
+Selective 
+PPAR$\gamma$ modulation by insulin-sensitizing thiazolidinedione 
+drugs has further been shown to influence both inflammation and 
+BCAA metabolism in obese rats suggesting a relationship between 
+these pathways and insulin resistance \cite{pmid20959535}. BCAA 
+levels are also related to insulin resistance in human subjects 
+and are elevated in insulin-resistant obese individuals relative 
+to weight-matched non-insulin reisistant individuals \cite{pmid23512805}. 
+In the DO mice studied here, inheriting increased expression 
+of genes involved in BCAA catabolism was associated with 
+reduced body weight and insulin resistance. 
 
 * distal heritability correlates with phenotype relevance
 

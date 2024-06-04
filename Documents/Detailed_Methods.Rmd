@@ -255,23 +255,36 @@ level and the trait, but does not identify a direction of causation.
 ## Literature support for genes
 To determine whether each gene among those with large loadings or
 large heritability had a supported connection to obesity or diabetes
-in the literature, we used the R package easyPubMed [cite]. We searched
-for the terms ("diabetes" OR "obesity") along with the tissue name (adipose,
-islet, liver, or muscle), and the gene name. We restricted the gene name
-to appear in the title or abstract as some short names appeared at random
-in contact information. We checked each gene with apparent literature
-support by hand to verify that support, and we removed spurious associations.
-For example, FAU is used as an acronym for fatty acid uptake and CAD is 
-used as an acronym for coronary artery disease. Both terms co-occur with 
-the terms diabetes and obesity in a manner independent of the genes 
-\textit{Fau} and \textit{Cad}. Other genes that co-occurred with
-diabetes and obesity, but not as a functional connection were similarly
-removed. For example, the gene \textit{Rpl27} is used as a reference gene 
-for quantification of the expression of other genes, and co-occurrence with
-diabetes and obesity is a coincidence. We counted the abstracts associated
-with diabetes or obesity and each gene name, and determined that a gene
-had literature support when it had at least two abstracts linking it to
-the terms diabetes or obesity in the respective tissue. 
+in the literature, we used the R package easyPubMed \cite{easyPubMed}. 
+We searched for the terms ("diabetes" OR "obesity") along with the 
+tissue name (adipose, islet, liver, or muscle), and the gene name. 
+We restricted the gene name to appear in the title or abstract as some 
+short names appeared at random in contact information. We checked each 
+gene with apparent literature support by hand to verify that support, 
+and we removed spurious associations. For example, FAU is used as an 
+acronym for fatty acid uptake and CAD is used as an acronym for coronary 
+artery disease. Both terms co-occur with the terms diabetes and obesity 
+in a manner independent of the genes \textit{Fau} and \textit{Cad}. Other 
+genes that co-occurred with diabetes and obesity, but not as a functional 
+connection were similarly removed. For example, the gene \textit{Rpl27} is 
+used as a reference gene for quantification of the expression of other 
+genes, and co-occurrence with diabetes and obesity is a coincidence. We 
+counted the abstracts associated with diabetes or obesity and each gene 
+name, and determined that a gene had literature support when it had at 
+least two abstracts linking it to the terms diabetes or obesity in the 
+respective tissue. 
+
+## Tissue-specific clusters
+
+To compare the top loading genes across tissues, we selected genes with
+a loading at least 2.5 standard deviations from the mean across all tissues.
+We made a matrix consisting of the union of these sets populated with the
+tissue-specific loading for each gene. We used the pam() function in the R 
+package cluster \cite{Rcluster} to cluster the loading profiles around $k$
+medoids. We tested $k = 2$ through 20 and used silhouette andlysis to compare
+the separation of the clusters. The best separation was achieved with $k = 12$
+clusters. For each cluster we used the R package gprofiler2 \cite{Rgprofiler2}
+to enriched GO terms and KEGG pathways for the genes in each cluster. 
 
 ## CC-RIX mice
 
