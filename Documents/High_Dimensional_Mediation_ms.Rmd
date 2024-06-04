@@ -299,7 +299,7 @@ correlations between $G_C$ and $T_C$, and modest correlations between
 $T_C$ and $P_C$ in the null data (Fig \ref{fig:workflow}C), these two 
 values could not be maximized simultaneously. The red dot shows that in 
 the real data both the $G_C$-$T_C$ correlation and the $T_C$-$P_C$ correlation 
-could be maximized simultaneously suggesting that that path from genotype 
+could be maximized simultaneously suggesting that the path from genotype 
 to phenotype through transcriptome is highly non-trivial and identifiable in 
 this case. These results suggest that these composite vectors represent 
 genetically determined variation in phenotype that is mediated through 
@@ -308,17 +308,17 @@ genetically determined variation in transcription.
 ### Body weight and insulin resistance were highly represented in the expression-mediated composite trait
 
 The loadings of each measured trait onto $P_C$ indicate how much 
-each contributed to $P_C$. Final body weight contributed the most 
-to $P_C$ (Fig. \ref{fig:interpretation}), followed by homeostatic 
-insulin resistance (HOMA_IR) and fasting plasma insulin levels 
-(Insulin_Fasting). We can thus interpret $P_C$ as an index of 
-metabolic disease (Fig. \ref{fig:interpretation}B). Individuals 
-with high values of $P_C$ have a higher metabolic index and greater 
-metabolic disease, including higher body weight and higher insulin 
-resistance. We refer to $P_C$ as the metabolic index going forward. 
-Traits contributing the least to the metabolic index were measures 
-of cholesterol and pancreas composition. Thus, when we interpret 
-the transcriptomic signature identified by HDM, we are explaining 
+each contributed to the composite phenotype. Final body weight 
+contributed the most (Fig. \ref{fig:interpretation}), followed 
+by homeostatic insulin resistance (HOMA_IR) and fasting plasma 
+insulin levels (Insulin_Fasting). We can thus interpret $P_C$ 
+as an index of metabolic disease (Fig. \ref{fig:interpretation}B). 
+Individuals with high values of $P_C$ have a higher metabolic index 
+and greater metabolic disease, including higher body weight and higher 
+insulin resistance. We refer to $P_C$ as the metabolic index going 
+forward. Traits contributing the least to the metabolic index were 
+measures of cholesterol and pancreas composition. Thus, when we 
+interpret the transcriptomic signature identified by HDM, we are explaining 
 primarily transcriptional mediation of body weight and insulin 
 resistance, as opposed to cholesterol measurements.
 
