@@ -83,7 +83,7 @@
 \title{Detailed Methods for High Dimensional Mediation for Massively
 Polygenic Traits}
 \author{J. Matthew Mahoney and Anna L Tyler}
-\date{June 04, 2024}
+\date{June 05, 2024}
 
 \begin{document}
 \maketitle
@@ -407,14 +407,14 @@ LOD score of the transcript (Supp. Fig. XXXB).
 traits}\label{prediction-of-cc-rix-traits}
 
 We used both measured expression and imputed expression combined with
-the results from HDMA in the to predict phenotype in the CC-RIX. The
+the results from HDM in the to predict phenotype in the CC-RIX. The
 traits measured in the DO and the CC-RIX were not identical, so we
 limited our prediction to body weight, which was measured in both
 populations, and was the largest contributor to the phenotype score in
 the DO.
 
 For each CC-RIX individual, we multiplied the transcript abundaces
-across the transcriptome by the loadings derived from the HDMA in the DO
+across the transcriptome by the loadings derived from the HDM in the DO
 population (Fig. XXXA). This resulted in a vector with \(n\) elements,
 where \(n\) is the number of transcripts in the trancriptome. Each
 element was a weigted value that combined the relative abundance of the
@@ -428,7 +428,7 @@ measured body weight (Fig. XXXB).
 
 \subsection{Cell type specificity}\label{cell-type-specificity}
 
-We investigated whether the loadings derived from HDMA reflected tissue
+We investigated whether the loadings derived from HDM reflected tissue
 composition changes in the DO mice prone to obesity on the high-fat
 diet. To do this, we acquired lists of cell-type specific transcripts
 from the literature. In adipose tissue, we looked at cell-type specific
@@ -506,6 +506,10 @@ non-diabetic depending on the groups in each study.
 
 \subsection{Connectivity Map Queries}\label{connectivity-map-queries}
 
+We queried the transcript loading signatures from adipose tissue and
+pancreatic islets with the CMAP database. These tissues are the most
+related to metabolic disease and diabetes respectively.
+
 The gene expression profiles in the Connectivity Map database are
 derived from human cell lines and human primary cultures, and are
 indexed by Entrez gene IDs. To query the CMAP database, we identified
@@ -518,12 +522,14 @@ most extreme positive and negative loadings respectively. We pasted
 these into the CLUE query application available at
 \url{https://clue.io/query}.
 
-To identify drugs that reversed the gene signatures in each tissue, we
-first filtered to an appropriate cell type: adipocytes (ASC) for the
-adipose tissue gene signature, and pancreatic cells (YAPC) for the islet
-gene signature. We sorted the results by the correlation score with the
-input signature, identifying compounds with large negative correlations
-to the input signature as potential drug candidates.
+We filtered the results in two ways: First, we looked at the most
+significantly anti-correlated (\(-log_{10}(p) > 15\)) hits across all
+cell types. Second, we looked at the most anti-correlated within the
+most related cell type to the query and considered hits regardless of
+\(-log_{10}(p)\). For adipose tissue we looked in normal adipocytes,
+abbreviated ASC in the CMAP database, and for pancreatic islets we
+looked in pancreatic cancer cells, abbreviated YAPC in the CMAP
+database.
 
 \bibliographystyle{unsrt}
 \bibliography{islet.bib}

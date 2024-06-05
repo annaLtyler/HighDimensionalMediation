@@ -640,7 +640,30 @@ pathogenic transcriptomic signatures, we can potentially identify
 compounds that have favorable effects on gene expression.
 
 To test this hypothesis we queried the CMAP database through the 
-CLUE online query tool [cite] (Methods). 
+CLUE online query tool [cite] (Methods). We identified top 
+anti-correlated hits both across all cell types, as well as in 
+adipocytes and pancreatic tumor cells (Supplemental Figure XXX 
+and XXX). 
+
+Looking broadly across cell types, the notable top hits from the 
+adipose tissue loadings included mTOR inhibitors and glucocorticoid 
+agonists (Supplemental Figure XXX). It is thought that metformin, 
+which is commonly used to improve glycemic control, acts, at least 
+in part, by inhibiting mTOR signaling \cite{pmid30290005, 
+pmid30034573}. However, long-term use of other mTOR inhibitors, such 
+as rapamycin, are known to cause insulin resistance and $\beta$-cell
+toxicity \cite{pmid30034573, pmid23881200, pmid21266327}. 
+Glucocorticoids are used to reduce inflammation, which was a 
+prominent siganture in the adipose tissues, but these drugs also 
+promote hyperglycemia and diabetes \cite{pmid24582093, pmid35585199}.
+Accute treatment with glucocorticoids has further been shown to reduce 
+thermogenesis in rodent adipocytes \cite{pmid30310815, pmid11254472, 
+pmid23197361}, but increase thermogenesis in human adipocytes 
+\cite{pmid27411014, pmid25385872}. Thus, the pathways identified by 
+CMAP across all cell types were highly related to the transcript 
+loading profiles, but 
+
+\cite{pmid34450194 }
 
 
 * **Supplemental Table** results from CMAP

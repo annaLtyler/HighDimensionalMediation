@@ -413,6 +413,10 @@ depending on the groups in each study.
 
 ## Connectivity Map Queries
 
+We queried the transcript loading signatures from adipose tissue and 
+pancreatic islets with the CMAP database. These tissues are the most
+related to metabolic disease and diabetes respectively. 
+
 The gene expression profiles in the Connectivity Map database are derived
 from human cell lines and human primary cultures, and are indexed by 
 Entrez gene IDs. To query the CMAP database, we identified the Entrez
@@ -424,12 +428,14 @@ in the query, we selected the top and bottom 200 genes with the most extreme
 positive and negative loadings respectively. We pasted these into the CLUE
 query application available at \url{https://clue.io/query}.
 
-To identify drugs that reversed the gene signatures in each tissue,
-we first filtered to an appropriate cell type: adipocytes (ASC)
-for the adipose tissue gene signature, and pancreatic cells (YAPC)
-for the islet gene signature. We sorted the results by the correlation
-score with the input signature, identifying compounds with large negative
-correlations to the input signature as potential drug candidates.
+We filtered the results in two ways: First, we looked at the most 
+significantly anti-correlated ($-log_{10}(\mathrm{FDR} q) > 15$) 
+hits across all cell types. Second, we looked at the most 
+anti-correlated within the most related cell type to the query 
+and considered hits regardless of $-log_{10}(\mathfm{FDR} p)$. 
+For adipose tissue we looked in normal adipocytes, abbreviated 
+ASC in the CMAP database, and for pancreatic islets we looked in 
+pancreatic cancer cells, abbreviated YAPC in the CMAP database. 
 
 \bibliographystyle{unsrt}
 \bibliography{islet.bib}
