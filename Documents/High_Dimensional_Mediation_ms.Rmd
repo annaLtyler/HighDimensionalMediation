@@ -661,12 +661,39 @@ thermogenesis in rodent adipocytes \cite{pmid30310815, pmid11254472,
 pmid23197361}, but increase thermogenesis in human adipocytes 
 \cite{pmid27411014, pmid25385872}. Thus, the pathways identified by 
 CMAP across all cell types were highly related to the transcript 
-loading profiles, but 
+loading profiles, but the relationship was not a simple reversal.
 
-\cite{pmid34450194 }
+The top hit in adipocytes was a PARP inhibitor (Supplemental Figure 
+XXXB). PARPs play a role in lipid metabolism and are involved in the
+development of obesity and diabetes \cite{pmid34450194}. PARP1 
+inhibition increases mitochondrial biogenesis \cite{pmid21459330}.
+Inihibition of PARP1 activity can further prevent necrosis in favor
+of the less inflammatory apoptosis \cite{pmid12114611}, thereby potentially 
+reducing inflammation in stressed adipocytes. Other notable hits in the
+top 20 were BTK inhibitors, which have been observed to suppress inflammation
+and improve insulin resistance \cite{pmid33648925} as well as to reduce 
+insulin antibodies in type I diabetes \cite{pmid28753229}. Similarly,
+IKK has been shown to be associated with insulin resistance \cite{pmid15685170}, 
+and inhibitors have been shown to improve glucose control in type II
+diabetes \cite{pmid28683283}. 
 
+Among the top hits for the query with transcript loadings from pancreatic
+islets (Fig. XXX), was suppression of T cell receptor signaling, which is 
+known to be involved in Type 1 diabetes \cite{pmid33603744}, as well as TNFR1, 
+which has been associated with mortality in diabetes patients \cite{pmid32281000}. 
+Suppression of NOD1/2 signaling was also among the top hits. NOD1 and 2 sense ER 
+stress \cite{pmid27007849, pmid28823510}, which is associated with $\beta$-cell 
+death in type 1 and type 2 diabetes \cite{pmid24520198}. This cell death process
+is dependent on NOD1/2 signaling \cite{pmid27007849}, although the specifics have
+not yet been worked out.
 
-* **Supplemental Table** results from CMAP
+Among the top hits in pancreatic tumor cells were known diabetes drugs,
+including sulfonylureas, PPAR receptor agonists, and insulin sensitizers.
+Rosiglitazone is a PPAR-$\gamma$ agonist and was one of the most prescribed
+drugs for type 2 diabetes before its use was reduced due to cardiac 
+side-effects \cite{pmid21190462}. Sulfonylureas are another commonly prescribed
+drug class for type 2 diabetes, but also have notable side effects including
+hypoglycemia and accellerated $\beta$-cell death \cite{pmid16631807}.
 
 
 ## Discussion
