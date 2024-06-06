@@ -790,27 +790,28 @@ obviously related to the trait.
 
 Here, we used a large, comprehensive, and purpose-built data set to
 investigate the roles of local and distal gene regulation in mediating
-complex traits related to metabolic disease in mice. We propose a method
-called high-dimension mediation (HDM) that approaches this question at a
-systems level. With this method we tested the hypothesis of the
-omnigenic model directly, while allowing for the contributions of both
-local and distal gene regulation. The omnigenic model posits that once
-the expression of the core genes (i.e.~ trait-mediating genes) is
-accounted for, there should be no residual correlation between the
-genome and the phenome. This hypothesis lends itself well to systems
-approaches, such as HDM, that can account for arbitrarily complex gene
-regulation, as well as the interconnectedness and redundancy of the
-transcriptome without explicitly modeling them.
+complex traits related to metabolic disease in mice. We propose a
+systems-level method called high-dimension mediation (HDM). With this
+method we tested the hypothesis of the omnigenic model directly, while
+allowing for the contributions of both local and distal gene regulation.
+The omnigenic model posits that once the expression of the core genes
+(i.e.~trait-mediating genes) is accounted for, there should be no
+residual correlation between the genome and the phenome. This hypothesis
+lends itself well to systems approaches, such as HDM, that can account
+for arbitrarily complex gene regulation, as well as the
+interconnectedness and redundancy of the transcriptome without
+explicitly modeling them.
 
 Using HDM, we identified a highly heritable comopsite trait (71\%
-heritable) that was perfectly mediated by a composite transcript in each
-of four tissues known to be involved in metabolic disease. Gene
-expression in adipose tissue was the strongest mediator of genotype on
-phenotype. Further analysis of the composite transcriptomes in each
-tissue revealed tissue-specific transcriptional programs that are known
-to be involved in pathogenesis of metabolic disease. We show here that
-regulation of these programs is heritable and explains a large
-proportion of disease risk.
+heritable) that was perfectly mediated by a composite transcript that
+included expression from four tissues known to be involved in metabolic
+disease. Gene expression in adipose tissue was the strongest mediator of
+genetic effects on metabolic disease. Further analysis of the loadings
+onto transcripts in each tissue revealed that the mediating signatures
+were tissue-specific transcriptional programs many of which were
+previously known to be involved in the pathogenesis of metabolic
+disease. We showed here that regulation of these programs is heritable
+and explains a large proportion of disease risk.
 
 We did not see evidence of distinct classes of core genes and peripheral
 genes. Rather, loadings on transcripts were smoothly distributed across
@@ -821,16 +822,32 @@ and positively correlated with distal heritability, suggesting that
 distal gene regulation is the dominant mode through which gene
 expression mediates the effect of genotype on phenotype. This pattern
 also suggests that distal regulation may be quite strong for many
-mediating genes, although it may still have a complex pattern and may
-not localize to a single distal eQTL. For example, \text{Nucb2}, was a
-strongly mediating gene in islet and was also strongly distally
-regulated. This gene is expressed in pancreatic \(\beta\) cells and is
-involved in insulin and glucagon release
+mediating genes. For example, \text{Nucb2}, was a strongly mediating
+gene in islet and was also strongly distally regulated (66\% distal
+heritability). This gene is expressed in pancreatic \(\beta\) cells and
+is involved in insulin and glucagon release
 \cite{pmid22108805, pmid23537085, pmid24993278}. Although it was
 strongly distally regulated in islets, the regulation was distributed
 across the genome, with no clear distal eQTL (Supplemental Figure XXX).
 Thus, although distal regulation of some genes may be strong, this
 regulation is likely to be highly complex and not easily localized.
+
+The high complexity of gene regulation combined with a systems-level
+analysis yields vague, continuous results that do not implicate
+individual transcripts or genetic loci in disease pathogenesis.
+Historically, geneticists have been interested in pinpointing individual
+loci whose mechanistic roles can be dissected through further
+experiments. The continuous results, can also be quite informative,
+however, and paired with increasing amounts of high-dimensional data in
+public data bases can be useful for generating hypotheses and potential
+drug treatments. We showed that ranked lists of genes can be analyzed
+for enriched meaningfuil biological functions and pathways using GSEA.
+These lists can be paired with information about cell-type specific
+genes to generate hypotheses about cell composition in individual
+tissues. Finally, we used the CMAP database to show that the
+transcriptomic signatures we identified in mice could be translated into
+human drug targets, as currently used diabetes drugs were among the top
+hits for reversing the disease-associated signatures.
 
 Discussion about biological relevance of high-loading transcripts in
 adipose tissue. TCA cycle and BCAA catabolism: Selective PPAR\(\gamma\)
