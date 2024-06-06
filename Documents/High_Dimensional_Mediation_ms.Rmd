@@ -698,15 +698,24 @@ hypoglycemia and accellerated $\beta$-cell death \cite{pmid16631807}.
 
 ## Discussion
 
-Yao \textit{et al.} \cite{pmid32424349} 
-observed that genes with low local heritability explained more 
-expression-mediated disease heritability than genes with high local 
-heritability. This observation is consistent with principles of 
-robustness in complex systems. If a transcript were both important 
-to a trait and subject to strong local regulation, a population would 
-be susceptible to extremes in phenotype that might frequently cross 
-the threshold to disease. Indeed, strong disruption of highly 
-trait-relevant genes is the cause of Mendelian disease. 
+It is thought that the bulk of the effect of genomic variation 
+on complex traits is mediated through regulation of gene expression.
+It has widely been assumed that this regulation is largely in \textit{cis},
+but attempts to use local gene regulation to explain phenotypic variation
+have yet to explain very much trait heritability. In recent years, 
+the discussion has turned to distal gene regulation. Although, distal 
+gene regulation is more complex to identify, evidence suggests that it 
+is an important component of trait heritability. 
+
+Yao \textit{et al.} \cite{pmid32424349} observed that genes with 
+low local heritability explained more expression-mediated disease 
+heritability than genes with high local heritability. This observation 
+is consistent with principles of robustness in complex systems. If a 
+transcript were both important to a trait and subject to strong local 
+regulation, a population would be susceptible to extremes in phenotype 
+that might frequently cross the threshold to disease. Indeed, strong 
+disruption of highly trait-relevant genes is the cause of Mendelian 
+disease. 
 
 Rather, observations suggest that genes near GWAS hits and have obvious 
 functional relevance to a trait tend to have highly complex regulatory 
@@ -721,15 +730,19 @@ polygenicity is distributed across common variants in both functional
 ``core genes'', as well as more peripheral genes that may not seem 
 obviously related to the trait. 
 
-We developed high-dimension mediation to test the omnigenic model 
-with a more holistic approach. This model posits that once the 
-expression of the core genes (i.e. trait-mediating genes) is 
-accounted for, there should be no residual correlation between the 
+Here, we used a large, comprehensive, and purpose-built data set
+to investigate the roles of local and distal gene regulation in 
+mediating complex traits related to metabolic disease in mice. We 
+propose a method called high-dimension mediation (HDM) that approaches 
+this question at a systems level. With this method we tested the hypotheses 
+of the omnigenic model directly, while allowing for the contributions 
+of both local and distal gene regulation. The omnigenic model posits 
+that once the expression of the core genes (i.e. trait-mediating genes) 
+is accounted for, there should be no residual correlation between the 
 genome and the phenome. This hypothesis lends itself well to systems 
-approaches that can account for arbitrarily complex gene regulation, 
-as well as the interconnectedness and redundancy of the transcriptome 
-without explicitly modeling them. The HDM approach we propose here tests
-the hypothesis of the omnigenic model
+approaches, such as HDM, that can account for arbitrarily complex gene 
+regulation, as well as the interconnectedness and redundancy of the 
+transcriptome without explicitly modeling them. 
 
 Discussion about biological relevance of high-loading transcripts
 in adipose tissue. TCA cycle and BCAA catabolism:
