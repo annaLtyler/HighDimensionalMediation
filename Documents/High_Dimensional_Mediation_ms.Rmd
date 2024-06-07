@@ -788,8 +788,9 @@ heritability). This gene is expressed in pancreatic $\beta$ cells and is
 involved in insulin and glucagon release \cite{pmid22108805, pmid23537085, 
 pmid24993278}. Although its transcription was highly heritable in islets, 
 that regulation was distributed across the genome, with no clear distal eQTL 
-(Supplemental Figure XXX). Thus, although distal regulation of some genes may 
-be strong, this regulation is likely to be highly complex and not easily localized.
+(Supp. Fig. \ref{fig:Nucb2_eqtl}). Thus, although distal regulation of some 
+genes may be strong, this regulation is likely to be highly complex and not easily 
+localized.
 
 The high complexity of gene regulation combined with a systems-level
 analysis yields vague, continuous results that do not implicate individual
@@ -895,6 +896,17 @@ All distributions were skewed toward positive correlations and had
 \label{fig:cc_imputation}
 \end{figure}
 
+
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{Figures/Supplemental_FigX_Nucb2_eQTL.pdf} 
+\caption{Regulation of \textit{Nucb2} expression in islet. \textit{Nucb2} 
+is encoded on mouse chromosome 7 at 116.5 Mb (red line). In islets the 
+heritability of \textit{Nucb2} expression levels is 66% heritable. This 
+LOD score trace shows that there is no local eQTL at that position, nor 
+any strong distal eQTL anywhere else in the genome. 
+}
+\label{fig:Nucb2_eqtl}
+\end{figure}
 \pagebreak
 
 \bibliographystyle{unsrt}
