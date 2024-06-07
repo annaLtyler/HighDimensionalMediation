@@ -84,7 +84,7 @@ The DO mice were derived from eight inbred founder mouse strains, five
 classical lab strains, and three strains more recently derived from 
 wild mice \cite{pmid22892839}. They represent three subspecies of mouse 
 \textit{Mus musculus domesticus}, \textit{Mus musculus musculus}, and 
-\textit{Mus musculus casteneus}, and capture 90% of the known variation 
+\textit{Mus musculus casteneus}, and capture 90\% of the known variation 
 in laboratory mice [cite]. They are maintained with a breeding scheme 
 that ensures equal contributions from each founder across the genome
 thus rendering almost the whole genome visible to genetic inquiry
@@ -752,7 +752,7 @@ model which posits that once the expression of the core genes (i.e.
 trait-mediating genes) is accounted for, there should be no residual 
 correlation between the genome and the phenome. 
 
-Using HDM, we identified a highly heritable comopsite trait (71% 
+Using HDM, we identified a highly heritable comopsite trait (71\% 
 heritable) that was perfectly mediated by a composite transcript 
 that included expression from four tissues known to be involved 
 in metabolic disease. Gene expression in adipose tissue was the 
@@ -783,7 +783,7 @@ heritability is mediated through weak distal eQTLs. Most strongly mediating
 transcripts have modest distal heritability, and even for those whose 
 expression is strongly regulated by distal factors, these factors are multiple
 and spread across the genome. For example, \text{Nucb2}, was a strongly mediating 
-transcript in islet and was also strongly distally regulated (66% distal 
+transcript in islet and was also strongly distally regulated (66\% distal 
 heritability). This gene is expressed in pancreatic $\beta$ cells and is 
 involved in insulin and glucagon release \cite{pmid22108805, pmid23537085, 
 pmid24993278}. Although its transcription was highly heritable in islets, 
@@ -901,7 +901,7 @@ All distributions were skewed toward positive correlations and had
 \includegraphics[width=\textwidth]{Figures/Supplemental_FigX_Nucb2_eQTL.pdf} 
 \caption{Regulation of \textit{Nucb2} expression in islet. \textit{Nucb2} 
 is encoded on mouse chromosome 7 at 116.5 Mb (red line). In islets the 
-heritability of \textit{Nucb2} expression levels is 66% heritable. This 
+heritability of \textit{Nucb2} expression levels is 66\% heritable. This 
 LOD score trace shows that there is no local eQTL at that position, nor 
 any strong distal eQTL anywhere else in the genome. 
 }
