@@ -765,17 +765,18 @@ discussion has turned to distal gene regulation. Although, distal gene
 regulation is more complex to identify, evidence suggests that it is an
 important component of trait heritability.
 
-Yao \textit{et al.} \cite{pmid32424349} observed that transcripts with
-low local heritability explained more expression-mediated disease
-heritability than transcripts with high local heritability. We observed
-the same trend here. This observation is consistent with principles of
-robustness in complex systems. If a transcript were both important to a
-trait and subject to strong local regulation, a population would be
-susceptible to extremes in phenotype that might frequently cross the
-threshold to disease. Indeed, strong disruption of highly trait-relevant
-genes is the cause of Mendelian disease.
+Yao \textit{et al.} \cite{pmid32424349} observed that in humans,
+transcripts with low local heritability explained more
+expression-mediated disease heritability than transcripts with high
+local heritability. We observed the same trend here in mice. This
+pattern is consistent with principles of robustness in complex systems
+\cite{pmid29782925, pmid12082173, pmid27304973}. If a transcript were
+both important to a trait and subject to strong local regulation, a
+population would be susceptible to extremes in phenotype that might
+frequently cross the threshold to disease. Indeed, strong disruption of
+highly trait-relevant genes is the cause of Mendelian disease.
 
-Rather, observations suggest that genes that are near GWAS hits and have
+Rather, studies suggest that genes that are near GWAS hits and have
 obvious functional relevance to a trait tend to have highly complex
 regulatory landscapes under strong selection pressures
 \cite{pmid37857933}. In contrast, genes with strong local regulation
@@ -789,19 +790,24 @@ polygenicity is distributed across common variants in both functional
 obviously related to the trait.
 
 Here, we used a large, comprehensive, and purpose-built data set to
-investigate the roles of local and distal gene regulation in mediating
-complex traits related to metabolic disease in mice. We propose a method
-called high-dimension mediation (HDM) to investigate the roles of local
-and distal gene regulation in complex trait variation. In contrast to
-univariate approaches, HDM assumes that genetic loci influencing traits
-have weak effects and are distributed across the genome. Because this is
-a systems-level approach, we allow for arbitrarily complex gene
-regulation, as well as the interconnectedness and redundancy of the
-transcriptome without explicitly modeling them. HDM fits the
-high-dimensional mediation proposed in the omnigenic model, which posits
-that once the expression of the core genes (i.e.~trait-mediating genes)
-is accounted for, there should be no residual correlation between the
-genome and the phenome.
+investigate the genetic architecture of complex traits related to
+metabolic disease in mice as well as the roles of local and distal gene
+regulation in mediating these traits. We presented a systems-level
+method called high-dimension mediation (HDM). This approach contrasts
+with traditional univariate approaches in several important respects.
+First, in contrast to univariate approaches, which assume independence
+of genetic variants and transcripts, HDM allows for arbitrarily complex
+gene regulation, as well as the interconnectedness and redundancy of the
+transcriptome. Second, rather than assuming a single, large genetic
+effect as univariate approaches do, HDM assumes that traits are highly
+polygenic, and that genetic effects are weak and are distributed across
+the genome. HDM does not use statistical threholds to identify true
+positive effects, but generates a weighted vector of transcripts that
+can be analyzed as a whole, or dissected to analyze transcripts with
+stronger and weaker effects. This method explicitly models a central
+proposal of the omnigenic model which posits that once the expression of
+the core genes (i.e.~ trait-mediating genes) is accounted for, there
+should be no residual correlation between the genome and the phenome.
 
 Using HDM, we identified a highly heritable comopsite trait (71\%
 heritable) that was perfectly mediated by a composite transcript that
@@ -811,30 +817,17 @@ genetic effects on metabolic disease. Further analysis of the loadings
 onto transcripts in each tissue revealed that the mediating signatures
 were tissue-specific transcriptional programs many of which were
 previously known to be involved in the pathogenesis of metabolic
-disease. For example, the primary axis of
-
-in adipose tissue. TCA cycle and BCAA catabolism: Selective
-PPAR\(\gamma\) modulation by insulin-sensitizing thiazolidinedione drugs
-has further been shown to influence both inflammation and BCAA
-metabolism in obese rats suggesting a relationship between these
-pathways and insulin resistance \cite{pmid20959535}. BCAA levels are
-also related to insulin resistance in human subjects and are elevated in
-insulin-resistant obese individuals relative to weight-matched
-non-insulin reisistant individuals \cite{pmid23512805}. In the DO mice
-studied here, inheriting increased expression of genes involved in BCAA
-catabolism was associated with reduced body weight and insulin
-resistance.
-
-We showed here that regulation of these programs is heritable and
-mediates a large proportion of disease risk.
+disease. We showed here that regulation of these programs is heritable
+and mediated a large proportion of disease risk.
 
 The transcripts with the highest loadings are similar to the core genes
 of the omnigenic model. These are transcripts of moderate heritability
 that are highly functionally related to the traits. Transcripts with
 small loadings are more peripheral to the traits measured in this
-experiment. There is no clear demarcation between the core and
-peripheral genes as far as loading, but that isn't necessarily expected
-given the complexity of gene regulation and the genotype-phenotype map.
+experiment. There was no clear demarcation between the core and
+peripheral genes as far as loading, but that should not necessarily be
+expected given the complexity of gene regulation and the
+genotype-phenotype map.
 
 The strength of mediation (transcript loading) was negatively correlated
 with local heritability and positively correlated with distal
@@ -847,14 +840,15 @@ through weak distal eQTLs. Most strongly mediating transcripts have
 modest distal heritability, and even for those whose expression is
 strongly regulated by distal factors, these factors are multiple and
 spread across the genome. For example, \text{Nucb2}, was a strongly
-mediating gene in islet and was also strongly distally regulated (66\%
-distal heritability). This gene is expressed in pancreatic \(\beta\)
-cells and is involved in insulin and glucagon release
-\cite{pmid22108805, pmid23537085, pmid24993278}. Although it was
-strongly distally regulated in islets, the regulation was distributed
-across the genome, with no clear distal eQTL (Supplemental Figure XXX).
-Thus, although distal regulation of some genes may be strong, this
-regulation is likely to be highly complex and not easily localized.
+mediating transcript in islet and was also strongly distally regulated
+(66\% distal heritability). This gene is expressed in pancreatic
+\(\beta\) cells and is involved in insulin and glucagon release
+\cite{pmid22108805, pmid23537085, 
+pmid24993278}. Although its transcription was highly heritable in
+islets, that regulation was distributed across the genome, with no clear
+distal eQTL (Supplemental Figure XXX). Thus, although distal regulation
+of some genes may be strong, this regulation is likely to be highly
+complex and not easily localized.
 
 The high complexity of gene regulation combined with a systems-level
 analysis yields vague, continuous results that do not implicate
