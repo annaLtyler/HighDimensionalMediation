@@ -803,7 +803,7 @@ effect as univariate approaches do, HDM assumes that traits are highly
 polygenic, and that genetic effects are weak and are distributed across
 the genome. HDM does not use statistical threholds to identify true
 positive effects, but generates a weighted vector of transcripts that
-can be analyzed as a whole, or dissected to analyze transcripts with
+can be analyzed as a whole, or dissected to identify transcripts with
 stronger and weaker effects. This method explicitly models a central
 proposal of the omnigenic model which posits that once the expression of
 the core genes (i.e.~ trait-mediating genes) is accounted for, there
@@ -815,30 +815,30 @@ included expression from four tissues known to be involved in metabolic
 disease. Gene expression in adipose tissue was the strongest mediator of
 genetic effects on metabolic disease. Further analysis of the loadings
 onto transcripts in each tissue revealed that the mediating signatures
-were tissue-specific transcriptional programs many of which were
+were tissue-specific transcriptional programs, many of which were
 previously known to be involved in the pathogenesis of metabolic
 disease. We showed here that regulation of these programs is heritable
 and mediated a large proportion of disease risk.
 
 The transcripts with the highest loadings are similar to the core genes
-of the omnigenic model. These are transcripts of moderate heritability
-that are highly functionally related to the traits. Transcripts with
+of the omnigenic model. These were transcripts of moderate heritability
+that were highly functionally related to the traits. Transcripts with
 small loadings are more peripheral to the traits measured in this
 experiment. There was no clear demarcation between the core and
-peripheral genes as far as loading, but that should not necessarily be
+peripheral genes as far as loading, but a clear separation should not be
 expected given the complexity of gene regulation and the
 genotype-phenotype map.
 
 The strength of mediation (transcript loading) was negatively correlated
 with local heritability and positively correlated with distal
-heritability, suggesting that distal gene regulation is the dominant
-mode through which gene expression mediates the effect of genotype on
-phenotype. We see further that the distal heritability is weak and
+heritability, suggesting that distal gene regulation was the dominant
+mode through which gene expression mediated the effect of genotype on
+phenotype. We saw further that the distal heritability was weak and
 spread across the genome, consistent with the prediction by Liu
 \textit{et al.} \cite{pmid31051098} that trait heritability is mediated
-through weak distal eQTLs. Most strongly mediating transcripts have
-modest distal heritability, and even for those whose expression is
-strongly regulated by distal factors, these factors are multiple and
+through weak distal eQTLs. Most strongly mediating transcripts had
+modest distal heritability, and even for those whose expression was
+strongly regulated by distal factors, these factors were multiple and
 spread across the genome. For example, \text{Nucb2}, was a strongly
 mediating transcript in islet and was also strongly distally regulated
 (66\% distal heritability). This gene is expressed in pancreatic
@@ -851,29 +851,44 @@ regulation of some genes may be strong, this regulation is likely to be
 highly complex and not easily localized.
 
 The high complexity of gene regulation combined with a systems-level
-analysis yields vague, continuous results that do not implicate
-individual transcripts or genetic loci in disease pathogenesis. In many
-cases, studies have been focused on pinpointing individual loci whose
-mechanistic roles can be clearly dissected through further experiments.
-It is possible in this analysis to focus on individual genes and their
+analysis yields continuous results that do not necessarily implicate
+individual transcripts or genetic loci in disease pathogenesis. Most
+studies have focused on pinpointing individual loci whose mechanistic
+roles can be clearly dissected through further experiments. In this
+analysis, too, it is possible to focus on individual genes and their
 context in both tissues and pathways. For example, we showed that the
 loadings on \textit{Pparg} were tissue-specific in a way that comports
 with known biology, i.e.~it is known to be protective in adipose tissue
 where it was negatively loaded, and harmful in the liver, where it was
-positively loaded. However, continuous results, can also be quite
-informative. And combined with increasing amounts of high-dimensional
-data in public data bases can be useful for generating hypotheses and
-potential drug treatments. We showed that ranked lists of genes can be
-analyzed for enriched meaningful biological functions and pathways using
-GSEA. These lists can be paired with data about cell-type specific genes
-to generate hypotheses about cell composition in individual tissues.
-Gene expression derived from patient biopsies confirmed that the
-transcriptional signatures we identified in mice predict obesity status
-in humans, further supporting the translatability of these results.
-Finally, we used the CMAP database to show that the transcriptomic
-signatures we identified in mice could be translated into human drug
-targets, as currently used diabetes drugs were among the top hits for
-reversing the disease-associated signatures.
+positively loaded. However, continuous results can also be quite
+informative in their own right. Combined with increasing amounts of
+high-dimensional data in public databases, weighted vectors can be
+useful for generating hypotheses and potential drug treatments. We
+showed that weighted vectors of genes can be analyzed for enriched
+biological functions and pathways using GSEA. These vectors can also be
+paired with data about cell-type specific genes to generate hypotheses
+about cell composition in individual tissues. Gene expression derived
+from patient biopsies confirmed that the transcriptional signatures we
+identified in mice predict obesity status in humans, further supporting
+the translatability of these results. Finally, we used the CMAP database
+to show that the transcriptomic signatures we identified in mice could
+be translated into human drug targets, as currently used diabetes drugs
+were among the top hits for reversing the disease-associated signatures.
+That these drugs are known to reverse diabetes pathogenesis supports the
+causal role of these gene signatures in disease risk as modeled by
+high-dimensional mediation.
+
+In conclusion, we have shown that both tissue specificity and distal
+gene regulation are critically important to understanding the genetic
+architecture of complex traits. Although our systems approach does not
+identify individal genetic loci conferring risk of metabolic disease, we
+identified important genes and gene signatures that were heritable,
+causal of disease, and translatable to other mouse populations and to
+humans. Finally, we have shown that by directly acknowledging the
+complexity of both gene regulation and the genotype-to-phenotype map, we
+can gain a new perspective on disease pathogenesis and develop
+actionable hypotheses about pathogenic mechanisms and potential
+treatments.
 
 \subsection{Data Availability}\label{data-availability}
 
