@@ -782,7 +782,7 @@ regulatory landscapes under strong selection pressures
 tend to be depleted of functional annotations and are under looser
 selection constraints \cite{pmid37857933}. These observations and others
 led Liu et al.~\cite{pmid31051098} to suggest that most heritability of
-complex traits is driven by weak trans-eQTLs. They proposed a framework
+complex traits is driven by weak distal eQTLs. They proposed a framework
 of understanding heritability of complex traits in which massive
 polygenicity is distributed across common variants in both functional
 ``core genes'', as well as more peripheral genes that may not seem
@@ -810,22 +810,45 @@ genetic effects on metabolic disease. Further analysis of the loadings
 onto transcripts in each tissue revealed that the mediating signatures
 were tissue-specific transcriptional programs many of which were
 previously known to be involved in the pathogenesis of metabolic
-disease. We showed here that regulation of these programs is heritable
-and explains a large proportion of disease risk.
+disease. For example, the primary axis of
 
-We did not see evidence of distinct classes of core genes and peripheral
-genes. Rather, loadings on transcripts were smoothly distributed across
-the whole transcriptome with genes more functionally related to
-metabolic disease receiving larger loadings. The strength of mediation
-(transcript loading) was negatively correlated with local heritability
-and positively correlated with distal heritability, suggesting that
-distal gene regulation is the dominant mode through which gene
-expression mediates the effect of genotype on phenotype. This pattern
-also suggests that distal regulation may be quite strong for many
-mediating genes. For example, \text{Nucb2}, was a strongly mediating
-gene in islet and was also strongly distally regulated (66\% distal
-heritability). This gene is expressed in pancreatic \(\beta\) cells and
-is involved in insulin and glucagon release
+in adipose tissue. TCA cycle and BCAA catabolism: Selective
+PPAR\(\gamma\) modulation by insulin-sensitizing thiazolidinedione drugs
+has further been shown to influence both inflammation and BCAA
+metabolism in obese rats suggesting a relationship between these
+pathways and insulin resistance \cite{pmid20959535}. BCAA levels are
+also related to insulin resistance in human subjects and are elevated in
+insulin-resistant obese individuals relative to weight-matched
+non-insulin reisistant individuals \cite{pmid23512805}. In the DO mice
+studied here, inheriting increased expression of genes involved in BCAA
+catabolism was associated with reduced body weight and insulin
+resistance.
+
+We showed here that regulation of these programs is heritable and
+mediates a large proportion of disease risk.
+
+The transcripts with the highest loadings are similar to the core genes
+of the omnigenic model. These are transcripts of moderate heritability
+that are highly functionally related to the traits. Transcripts with
+small loadings are more peripheral to the traits measured in this
+experiment. There is no clear demarcation between the core and
+peripheral genes as far as loading, but that isn't necessarily expected
+given the complexity of gene regulation and the genotype-phenotype map.
+
+The strength of mediation (transcript loading) was negatively correlated
+with local heritability and positively correlated with distal
+heritability, suggesting that distal gene regulation is the dominant
+mode through which gene expression mediates the effect of genotype on
+phenotype. We see further that the distal heritability is weak and
+spread across the genome, consistent with the prediction by Liu
+\textit{et al.} \cite{pmid31051098} that trait heritability is mediated
+through weak distal eQTLs. Most strongly mediating transcripts have
+modest distal heritability, and even for those whose expression is
+strongly regulated by distal factors, these factors are multiple and
+spread across the genome. For example, \text{Nucb2}, was a strongly
+mediating gene in islet and was also strongly distally regulated (66\%
+distal heritability). This gene is expressed in pancreatic \(\beta\)
+cells and is involved in insulin and glucagon release
 \cite{pmid22108805, pmid23537085, pmid24993278}. Although it was
 strongly distally regulated in islets, the regulation was distributed
 across the genome, with no clear distal eQTL (Supplemental Figure XXX).
@@ -834,43 +857,28 @@ regulation is likely to be highly complex and not easily localized.
 
 The high complexity of gene regulation combined with a systems-level
 analysis yields vague, continuous results that do not implicate
-individual transcripts or genetic loci in disease pathogenesis.
-Historically, geneticists have been interested in pinpointing individual
-loci whose mechanistic roles can be dissected through further
-experiments. The continuous results, can also be quite informative,
-however, and paired with increasing amounts of high-dimensional data in
-public data bases can be useful for generating hypotheses and potential
-drug treatments. We showed that ranked lists of genes can be analyzed
-for enriched meaningfuil biological functions and pathways using GSEA.
-These lists can be paired with information about cell-type specific
-genes to generate hypotheses about cell composition in individual
-tissues. Finally, we used the CMAP database to show that the
-transcriptomic signatures we identified in mice could be translated into
-human drug targets, as currently used diabetes drugs were among the top
-hits for reversing the disease-associated signatures.
-
-Discussion about biological relevance of high-loading transcripts in
-adipose tissue. TCA cycle and BCAA catabolism: Selective PPAR\(\gamma\)
-modulation by insulin-sensitizing thiazolidinedione drugs has further
-been shown to influence both inflammation and BCAA metabolism in obese
-rats suggesting a relationship between these pathways and insulin
-resistance \cite{pmid20959535}. BCAA levels are also related to insulin
-resistance in human subjects and are elevated in insulin-resistant obese
-individuals relative to weight-matched non-insulin reisistant
-individuals \cite{pmid23512805}. In the DO mice studied here, inheriting
-increased expression of genes involved in BCAA catabolism was associated
-with reduced body weight and insulin resistance.
-
-\begin{itemize}
-\item
-  distal heritability correlates with phenotype relevance
-\item
-  others who use local eQTL to associate genotype with traits often say
-  ``we nominated this gene'' even though other nearby genes have higher
-  eQTL LOD scores (27019110, 31465442) Our method supports the idea that
-  the transcripts with the strongest local regulation are less likely to
-  be functionally related to the trait
-\end{itemize}
+individual transcripts or genetic loci in disease pathogenesis. In many
+cases, studies have been focused on pinpointing individual loci whose
+mechanistic roles can be clearly dissected through further experiments.
+It is possible in this analysis to focus on individual genes and their
+context in both tissues and pathways. For example, we showed that the
+loadings on \textit{Pparg} were tissue-specific in a way that comports
+with known biology, i.e.~it is known to be protective in adipose tissue
+where it was negatively loaded, and harmful in the liver, where it was
+positively loaded. However, continuous results, can also be quite
+informative. And combined with increasing amounts of high-dimensional
+data in public data bases can be useful for generating hypotheses and
+potential drug treatments. We showed that ranked lists of genes can be
+analyzed for enriched meaningful biological functions and pathways using
+GSEA. These lists can be paired with data about cell-type specific genes
+to generate hypotheses about cell composition in individual tissues.
+Gene expression derived from patient biopsies confirmed that the
+transcriptional signatures we identified in mice predict obesity status
+in humans, further supporting the translatability of these results.
+Finally, we used the CMAP database to show that the transcriptomic
+signatures we identified in mice could be translated into human drug
+targets, as currently used diabetes drugs were among the top hits for
+reversing the disease-associated signatures.
 
 \subsection{Data Availability}\label{data-availability}
 
