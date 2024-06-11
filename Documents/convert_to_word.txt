@@ -1,1 +1,4 @@
 pandoc --bibliography=islet.bib -o High_Dimensional_Mediation_ms.docx High_Dimensional_Mediation_ms.tex --citeproc --csl=nature.csl
+
+#this gives an error, but it does work
+pandoc --bibliography=islet.bib -o test.pdf High_Dimensional_Mediation_ms.tex --citeproc --csl=nature.csl

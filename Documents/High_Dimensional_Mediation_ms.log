@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.7)  7 JUN 2024 15:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.7)  11 JUN 2024 11:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -519,23 +519,24 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 89.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [1
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 109.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 109.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 109.
+[1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 206.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 206.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 206.
-<Figures/Fig1_trait_overview.pdf, id=77, 585.82579pt x 509.08998pt>
+<Figures/Fig1_trait_overview.pdf, id=59, 585.82579pt x 509.08998pt>
 File: Figures/Fig1_trait_overview.pdf Graphic file (type pdf)
 <use Figures/Fig1_trait_overview.pdf>
 Package pdftex.def Info: Figures/Fig1_trait_overview.pdf  used on input line 22
 4.
 (pdftex.def)             Requested size: 469.76076pt x 408.228pt.
-<Figures/Fig2_motivation.pdf, id=85, 742.30186pt x 584.74539pt>
+<Figures/Fig2_motivation.pdf, id=67, 742.30186pt x 584.74539pt>
 File: Figures/Fig2_motivation.pdf Graphic file (type pdf)
 <use Figures/Fig2_motivation.pdf>
 Package pdftex.def Info: Figures/Fig2_motivation.pdf  used on input line 266.
@@ -544,39 +545,39 @@ Package pdftex.def Info: Figures/Fig2_motivation.pdf  used on input line 266.
 cal/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texliv
 e/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] [4 <./Figures/Fig1_trait_overv
 iew.pdf>]
-<Figures/Fig3_workflow.pdf, id=167, 471.9762pt x 491.94771pt>
+<Figures/Fig3_workflow.pdf, id=150, 471.9762pt x 491.94771pt>
 File: Figures/Fig3_workflow.pdf Graphic file (type pdf)
 <use Figures/Fig3_workflow.pdf>
 Package pdftex.def Info: Figures/Fig3_workflow.pdf  used on input line 311.
 (pdftex.def)             Requested size: 361.34868pt x 376.63902pt.
 [5 <./Figures/Fig2_motivation.pdf>] [6 <./Figures/Fig3_workflow.pdf>]
-<Figures/Fig4_interpretation.pdf, id=308, 763.78691pt x 476.49785pt>
+<Figures/Fig4_interpretation.pdf, id=291, 763.78691pt x 476.49785pt>
 File: Figures/Fig4_interpretation.pdf Graphic file (type pdf)
 <use Figures/Fig4_interpretation.pdf>
 Package pdftex.def Info: Figures/Fig4_interpretation.pdf  used on input line 38
 8.
 (pdftex.def)             Requested size: 469.7553pt x 293.06262pt.
 [7] [8 <./Figures/Fig4_interpretation.pdf>]
-<Figures/Fig5_loading_heritability.pdf, id=484, 574.93788pt x 590.3421pt>
+<Figures/Fig5_loading_heritability.pdf, id=466, 574.93788pt x 590.3421pt>
 File: Figures/Fig5_loading_heritability.pdf Graphic file (type pdf)
 <use Figures/Fig5_loading_heritability.pdf>
 Package pdftex.def Info: Figures/Fig5_loading_heritability.pdf  used on input l
 ine 483.
 (pdftex.def)             Requested size: 469.7765pt x 482.36316pt.
 [9] [10 <./Figures/Fig5_loading_heritability.pdf>]
-<Figures/Fig6_TOA.pdf, id=535, 572.53983pt x 426.5826pt>
+<Figures/Fig6_TOA.pdf, id=518, 572.53983pt x 426.5826pt>
 File: Figures/Fig6_TOA.pdf Graphic file (type pdf)
 <use Figures/Fig6_TOA.pdf>
 Package pdftex.def Info: Figures/Fig6_TOA.pdf  used on input line 547.
 (pdftex.def)             Requested size: 469.75652pt x 350.00177pt.
-<Figures/Fig7_CC_Prediction.pdf, id=538, 675.32918pt x 430.15788pt>
+<Figures/Fig7_CC_Prediction.pdf, id=521, 675.32918pt x 430.15788pt>
 File: Figures/Fig7_CC_Prediction.pdf Graphic file (type pdf)
 <use Figures/Fig7_CC_Prediction.pdf>
 Package pdftex.def Info: Figures/Fig7_CC_Prediction.pdf  used on input line 583
 .
 (pdftex.def)             Requested size: 469.75946pt x 299.21812pt.
 [11] [12 <./Figures/Fig6_TOA.pdf>]
-<Figures/Fig8_Human_Translation.pdf, id=579, 753.03697pt x 400.90567pt>
+<Figures/Fig8_Human_Translation.pdf, id=562, 753.03697pt x 400.90567pt>
 File: Figures/Fig8_Human_Translation.pdf Graphic file (type pdf)
 <use Figures/Fig8_Human_Translation.pdf>
 Package pdftex.def Info: Figures/Fig8_Human_Translation.pdf  used on input line
@@ -584,36 +585,36 @@ Package pdftex.def Info: Figures/Fig8_Human_Translation.pdf  used on input line
 (pdftex.def)             Requested size: 469.7507pt x 250.08827pt.
 [13 <./Figures/Fig7_CC_Prediction.pdf>] [14 <./Figures/Fig8_Human_Translation.p
 df>] [15] [16] [17] [18] [19]
-<Figures/Supp_Fig1_eQTL.pdf, id=760, 747.90518pt x 500.0683pt>
+<Figures/Supp_Fig1_eQTL.pdf, id=735, 747.90518pt x 500.0683pt>
 File: Figures/Supp_Fig1_eQTL.pdf Graphic file (type pdf)
 <use Figures/Supp_Fig1_eQTL.pdf>
 Package pdftex.def Info: Figures/Supp_Fig1_eQTL.pdf  used on input line 906.
 (pdftex.def)             Requested size: 469.76767pt x 314.09853pt.
-<Figures/Supp_Fig_enrichments_KEGG.pdf, id=761, 794.97pt x 614.295pt>
+<Figures/Supp_Fig_enrichments_KEGG.pdf, id=736, 794.97pt x 614.295pt>
 File: Figures/Supp_Fig_enrichments_KEGG.pdf Graphic file (type pdf)
 <use Figures/Supp_Fig_enrichments_KEGG.pdf>
 Package pdftex.def Info: Figures/Supp_Fig_enrichments_KEGG.pdf  used on input l
 ine 932.
 (pdftex.def)             Requested size: 469.76819pt x 363.00267pt.
-<Figures/Supp_Fig_enrichments_GO.pdf, id=762, 794.97pt x 614.295pt>
+<Figures/Supp_Fig_enrichments_GO.pdf, id=737, 794.97pt x 614.295pt>
 File: Figures/Supp_Fig_enrichments_GO.pdf Graphic file (type pdf)
 <use Figures/Supp_Fig_enrichments_GO.pdf>
 Package pdftex.def Info: Figures/Supp_Fig_enrichments_GO.pdf  used on input lin
 e 943.
 (pdftex.def)             Requested size: 469.76819pt x 363.00267pt.
-<Figures/Supp_Fig_CC-RIX_Imputation.pdf, id=763, 747.51555pt x 494.45384pt>
+<Figures/Supp_Fig_CC-RIX_Imputation.pdf, id=738, 747.51555pt x 494.45384pt>
 File: Figures/Supp_Fig_CC-RIX_Imputation.pdf Graphic file (type pdf)
 <use Figures/Supp_Fig_CC-RIX_Imputation.pdf>
 Package pdftex.def Info: Figures/Supp_Fig_CC-RIX_Imputation.pdf  used on input 
 line 956.
 (pdftex.def)             Requested size: 469.76245pt x 310.73045pt.
-<Figures/Supplemental_FigX_Nucb2_eQTL.pdf, id=764, 725.02454pt x 247.9919pt>
+<Figures/Supplemental_FigX_Nucb2_eQTL.pdf, id=739, 725.02454pt x 247.9919pt>
 File: Figures/Supplemental_FigX_Nucb2_eQTL.pdf Graphic file (type pdf)
 <use Figures/Supplemental_FigX_Nucb2_eQTL.pdf>
 Package pdftex.def Info: Figures/Supplemental_FigX_Nucb2_eQTL.pdf  used on inpu
 t line 972.
 (pdftex.def)             Requested size: 469.76686pt x 160.68196pt.
-[20 <./Figures/Supp_Fig1_eQTL.pdf>] (./High_Dimensional_Mediation_ms.bbl [21 <.
+(./High_Dimensional_Mediation_ms.bbl [20 <./Figures/Supp_Fig1_eQTL.pdf>] [21 <.
 /Figures/Supp_Fig_enrichments_KEGG.pdf>] [22 <./Figures/Supp_Fig_enrichments_GO
 .pdf>]
 
@@ -623,13 +624,13 @@ LaTeX Warning: Text page 23 contains only floats.
 b2_eQTL.pdf>] [24] [25] [26] [27] [28]) [29] (./High_Dimensional_Mediation_ms.a
 ux) ) 
 Here is how much of TeX's memory you used:
- 14626 strings out of 476025
- 233596 string characters out of 5790017
+ 14631 strings out of 476025
+ 233654 string characters out of 5790017
  1864388 words of memory out of 5000000
- 34498 multiletter control sequences out of 15000+600000
- 578274 words of font info for 179 fonts, out of 8000000 for 9000
+ 34500 multiletter control sequences out of 15000+600000
+ 581349 words of font info for 181 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,6n,81p,1533b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,6n,81p,1533b,815s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
 pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pf
 b></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb>
@@ -646,10 +647,10 @@ texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist
 /texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/20
 23/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-d
 ist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on High_Dimensional_Mediation_ms.pdf (29 pages, 7261553 bytes).
+Output written on High_Dimensional_Mediation_ms.pdf (29 pages, 7263260 bytes).
 PDF statistics:
- 1033 PDF objects out of 1200 (max. 8388607)
- 756 compressed objects within 8 object streams
+ 1022 PDF objects out of 1200 (max. 8388607)
+ 744 compressed objects within 8 object streams
  127 named destinations out of 1000 (max. 500000)
- 32970 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 35018 words of extra memory for PDF output out of 35830 (max. 10000000)
 

@@ -920,7 +920,8 @@ any strong distal eQTL anywhere else in the genome.
 }
 \label{fig:Nucb2_eqtl}
 \end{figure}
-\pagebreak
+
+\medskip
 
 \bibliographystyle{unsrt}
 \bibliography{islet.bib}
