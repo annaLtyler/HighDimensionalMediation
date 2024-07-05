@@ -11,6 +11,7 @@ output:
 library(here)
 pheno.stats <- readRDS(here("Data", "pheno_stats.RDS"))
 comp.trait.herit <- readRDS(here("Data", "Composite_Trait_Heritability.RDS"))
+comp.trait.exp <- readRDS(here("Data", "Model_Variance_Explained.RDS"))
 local.distal.comp <- readRDS(here("Data", "Local_Distal_Comparison.RDS"))
 min.herit <- floor(min(sapply(lapply(local.distal.comp, function(x) apply(x, 2, median, na.rm = TRUE)), min))*100)
 max.herit <- ceiling(max(sapply(lapply(local.distal.comp, function(x) apply(x, 2, median, na.rm = TRUE)), max))*100)
@@ -103,8 +104,8 @@ classical lab strains, and three strains more recently derived from
 wild mice \cite{pmid22892839}. They represent three subspecies of mouse 
 \textit{Mus musculus domesticus}, \textit{Mus musculus musculus}, and 
 \textit{Mus musculus casteneus}, and capture 90\% of the known variation 
-in laboratory mice [cite]. They are maintained with a breeding scheme 
-that ensures equal contributions from each founder across the genome
+in laboratory mice \cite{pmid31133439}. They are maintained with a breeding 
+scheme that ensures equal contributions from each founder across the genome
 thus rendering almost the whole genome visible to genetic inquiry
 \cite{pmid22892839}. We measured clinically relevant metabolic traits, 
 including body weight, plasma levels of insulin and glucose, and plasma 
@@ -321,12 +322,12 @@ between $G_C$ and $T_C$ was `r signif(var.pcor["Causal", "Mediator"], 2)`,
 and the partial correlation between $T_C$ and $P_C$ 
 was `r signif(var.pcor["Mediator", "Outcome"], 2)`. However, when the 
 transcriptome was taken into account, the partial correlation between 
-$G_S$ and $P_S$ was effectively 0 (`r signif(var.pcor["Causal", "Outcome"], 2)`).
-The estimated heritability of the composite phenome was heritability of 
-`r signif(comp.trait.herit[1], 2)` $\pm$ `r signif(comp.trait.herit[2], 2)`, 
-which was higher than any of the individual traits 
-(Fig. \ref{fig:trait_overview}F). Thus, HDMA identified a maximally 
-heritable metabolic trait that is perfectly mediated by a highly heritable 
+$G_C$ and $P_C$ was effectively 0 (`r signif(var.pcor["Causal", "Outcome"], 2)`).
+$P_C$ captured `r signif(comp.trait.exp[[1]], 2)`\% of the overall trait variance,
+and its estimated heritability was `r signif(comp.trait.herit[1], 2)` $\pm$ 
+`r signif(comp.trait.herit[2], 2)`, which was higher than any of the individual 
+traits (Fig. \ref{fig:trait_overview}F). Thus, HDMA identified a maximally 
+heritable metabolic trait that was perfectly mediated by a highly heritable 
 component of the transcriptome.
 
 Standard CCA is prone to over-fitting because in any two large matrices
@@ -813,25 +814,26 @@ model which posits that once the expression of the core genes (i.e.
 trait-mediating genes) is accounted for, there should be no residual 
 correlation between the genome and the phenome. 
 
-Using HDMA, we identified a highly heritable comopsite trait (71\% 
-heritable) that was perfectly mediated by a composite transcript 
-that included expression from four tissues known to be involved 
-in metabolic disease. Gene expression in adipose tissue was the 
-strongest mediator of genetic effects on metabolic disease. Further 
-analysis of the loadings onto transcripts in each tissue revealed
-that the mediating signatures were tissue-specific transcriptional 
-programs, many of which were previously known to be involved in the 
-pathogenesis of metabolic disease. We showed here that regulation of 
-these programs is heritable and mediated a large proportion of disease
-risk.
+Using HDMA, we identified a highly heritable comopsite trait 
+(`r signif(comp.trait.herit[1], 2)`\% heritable) that explained 
+`r signif(comp.trait.exp[[1]], 2)`\% of overall trait variance, and was 
+perfectly mediated by a composite transcript that included expression 
+from four tissues known to be involved in metabolic disease. Gene 
+expression in adipose tissue was the strongest mediator of genetic 
+effects on metabolic disease. Further analysis of the loadings onto 
+transcripts in each tissue revealed that the mediating signatures 
+were tissue-specific transcriptional programs, many of which were 
+previously known to be involved in the pathogenesis of metabolic 
+disease. We showed here that regulation of these programs is 
+heritable and mediated a large proportion of disease risk.
 
 The transcripts with the highest loadings are similar to the core genes
-of the omnigenic model. These were transcripts of moderate heritability
-that were highly functionally related to the traits. Transcripts with 
-small loadings are more peripheral to the traits measured in this 
-experiment. There was no clear demarcation between the core and 
-peripheral genes as far as loading, but a clear separation should not 
-be expected given the complexity of gene regulation and the 
+of the omnigenic model. These were transcripts of moderate local 
+heritability that were highly functionally related to the traits. 
+Transcripts with small loadings are more peripheral to the traits 
+measured in this experiment. There was no clear demarcation between 
+the core and peripheral genes as far as loading, but a clear separation 
+should not be expected given the complexity of gene regulation and the 
 genotype-phenotype map \cite{pmid29906445}. 
 
 The strength of mediation (transcript loading) was negatively correlated 
@@ -891,10 +893,13 @@ genotype-to-phenotype map, we can gain a new perspective on disease
 pathogenesis and develop actionable hypotheses about pathogenic mechanisms 
 and potential treatments. 
 
-* how much trait variance does composite trait explain?
-  sum over correlations with all PCs
-* Make sure we cite Visscher paper
-* endophenotypes don't need to be gene expression. Can be anything you 
+Potentially comment on:
+  1)	Mediating on other endophenotypes
+  2)	Limitation that we only find signatures “consistent with” mediation 
+    and that our approach is hypothesis generating
+  3) Is the kinship matrix the sum of all local QTLs, or is it something
+    more inclusive, including distal regulation, development, etc.
+  4) endophenotypes don't need to be gene expression. Can be anything you 
   think is causally related to phenotype and can be manipulated
 
 ## Data Availability

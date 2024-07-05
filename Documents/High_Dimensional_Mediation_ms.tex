@@ -170,16 +170,16 @@ classical lab strains, and three strains more recently derived from wild
 mice \cite{pmid22892839}. They represent three subspecies of mouse
 \textit{Mus musculus domesticus}, \textit{Mus musculus musculus}, and
 \textit{Mus musculus casteneus}, and capture 90\% of the known variation
-in laboratory mice {[}cite{]}. They are maintained with a breeding
-scheme that ensures equal contributions from each founder across the
-genome thus rendering almost the whole genome visible to genetic inquiry
-\cite{pmid22892839}. We measured clinically relevant metabolic traits,
-including body weight, plasma levels of insulin and glucose, and plasma
-lipids in 500 DO mice. We further measured transcriptome-wide gene
-expression in four tissues related to metabolic disease: adipose tissue,
-pancreatic islets, liver, and skeletal muscle. Taken together, these
-data enable a comprehensive view into the genetic architecture of
-metabolic disease.
+in laboratory mice \cite{pmid31133439}. They are maintained with a
+breeding scheme that ensures equal contributions from each founder
+across the genome thus rendering almost the whole genome visible to
+genetic inquiry \cite{pmid22892839}. We measured clinically relevant
+metabolic traits, including body weight, plasma levels of insulin and
+glucose, and plasma lipids in 500 DO mice. We further measured
+transcriptome-wide gene expression in four tissues related to metabolic
+disease: adipose tissue, pancreatic islets, liver, and skeletal muscle.
+Taken together, these data enable a comprehensive view into the genetic
+architecture of metabolic disease.
 
 To assess the role of gene regulation in mediating variation in
 metabolic traits in this population, we propose a novel high-dimensional
@@ -381,11 +381,11 @@ shows the partial correlations (\(\rho\)) between the pairs of these
 composite vectors. The partial correlation between \(G_C\) and \(T_C\)
 was 0.42, and the partial correlation between \(T_C\) and \(P_C\) was
 0.78. However, when the transcriptome was taken into account, the
-partial correlation between \(G_S\) and \(P_S\) was effectively 0
-(0.039). The estimated heritability of the composite phenome was
-heritability of 0.71 \(\pm\) 0.084, which was higher than any of the
-individual traits (Fig. \ref{fig:trait_overview}F). Thus, HDMA
-identified a maximally heritable metabolic trait that is perfectly
+partial correlation between \(G_C\) and \(P_C\) was effectively 0
+(0.039). \(P_C\) captured 30\% of the overall trait variance, and its
+estimated heritability was 0.71 \(\pm\) 0.084, which was higher than any
+of the individual traits (Fig. \ref{fig:trait_overview}F). Thus, HDMA
+identified a maximally heritable metabolic trait that was perfectly
 mediated by a highly heritable component of the transcriptome.
 
 Standard CCA is prone to over-fitting because in any two large matrices
@@ -872,24 +872,25 @@ proposal of the omnigenic model which posits that once the expression of
 the core genes (i.e.~ trait-mediating genes) is accounted for, there
 should be no residual correlation between the genome and the phenome.
 
-Using HDMA, we identified a highly heritable comopsite trait (71\%
-heritable) that was perfectly mediated by a composite transcript that
-included expression from four tissues known to be involved in metabolic
-disease. Gene expression in adipose tissue was the strongest mediator of
-genetic effects on metabolic disease. Further analysis of the loadings
-onto transcripts in each tissue revealed that the mediating signatures
-were tissue-specific transcriptional programs, many of which were
-previously known to be involved in the pathogenesis of metabolic
-disease. We showed here that regulation of these programs is heritable
-and mediated a large proportion of disease risk.
+Using HDMA, we identified a highly heritable comopsite trait (0.71\%
+heritable) that explained 30\% of overall trait variance, and was
+perfectly mediated by a composite transcript that included expression
+from four tissues known to be involved in metabolic disease. Gene
+expression in adipose tissue was the strongest mediator of genetic
+effects on metabolic disease. Further analysis of the loadings onto
+transcripts in each tissue revealed that the mediating signatures were
+tissue-specific transcriptional programs, many of which were previously
+known to be involved in the pathogenesis of metabolic disease. We showed
+here that regulation of these programs is heritable and mediated a large
+proportion of disease risk.
 
 The transcripts with the highest loadings are similar to the core genes
-of the omnigenic model. These were transcripts of moderate heritability
-that were highly functionally related to the traits. Transcripts with
-small loadings are more peripheral to the traits measured in this
-experiment. There was no clear demarcation between the core and
-peripheral genes as far as loading, but a clear separation should not be
-expected given the complexity of gene regulation and the
+of the omnigenic model. These were transcripts of moderate local
+heritability that were highly functionally related to the traits.
+Transcripts with small loadings are more peripheral to the traits
+measured in this experiment. There was no clear demarcation between the
+core and peripheral genes as far as loading, but a clear separation
+should not be expected given the complexity of gene regulation and the
 genotype-phenotype map \cite{pmid29906445}.
 
 The strength of mediation (transcript loading) was negatively correlated
@@ -917,17 +918,17 @@ The high complexity of gene regulation combined with a systems-level
 analysis yields continuous results that do not necessarily implicate
 individual transcripts or genetic loci in disease pathogenesis. Most
 studies have focused on pinpointing individual loci whose mechanistic
-roles can be clearly dissected through further experiments. In this
-analysis, too, it is possible to focus on individual genes and their
-context in both tissues and pathways. For example, we showed that the
-loadings on \textit{Pparg} were tissue-specific in a way that comports
-with known biology, i.e.~it is known to be protective in adipose tissue
-where it was negatively loaded, and harmful in the liver, where it was
-positively loaded. However, continuous results can also be quite
-informative in their own right. Combined with increasing amounts of
-high-dimensional data in public databases, weighted vectors can be
-useful for generating hypotheses and potential drug treatments. We
-showed that weighted vectors of genes can be analyzed for enriched
+roles can be clearly dissected through further experiments and exploited
+at therapeutic targets. In this analysis, too, it is possible to focus
+on individual genes and their context in both tissues and pathways. For
+example, the loadings on \textit{Pparg} were tissue-specific in a way
+that comports with known biology, i.e.~it is known to be protective in
+adipose tissue where it was negatively loaded, and harmful in the liver,
+where it was positively loaded. However, whole transcriptomic signatures
+can also be informative in their own right. Combined with increasing
+amounts of high-dimensional data in public databases, weighted vectors
+can be useful for generating hypotheses and potential drug treatments.
+We showed that weighted vectors of genes can be analyzed for enriched
 biological functions and pathways using GSEA. These vectors can also be
 paired with data about cell-type specific genes to generate hypotheses
 about cell composition in individual tissues. Gene expression derived
@@ -936,34 +937,28 @@ identified in mice predict obesity status in humans, further supporting
 the translatability of these results. Finally, we used the CMAP database
 to show that the transcriptomic signatures we identified in mice could
 be translated into human drug targets, as currently used diabetes drugs
-were among the top hits for reversing the disease-associated signatures.
-That these drugs are known to reverse diabetes pathogenesis supports the
-causal role of these gene signatures in disease risk as modeled by
-high-dimensional mediation.
+and targets were among the top hits for reversing the disease-associated
+signatures. That these drugs are known to reverse diabetes pathogenesis
+supports the causal role of these gene signatures in disease risk as
+modeled by high-dimensional mediation.
 
 In conclusion, we have shown that both tissue specificity and distal
 gene regulation are critically important to understanding the genetic
-architecture of complex traits. Although our systems approach does not
-identify individal genetic loci conferring risk of metabolic disease, we
-identified important genes and gene signatures that were heritable,
-causal of disease, and translatable to other mouse populations and to
-humans. Finally, we have shown that by directly acknowledging the
-complexity of both gene regulation and the genotype-to-phenotype map, we
-can gain a new perspective on disease pathogenesis and develop
-actionable hypotheses about pathogenic mechanisms and potential
-treatments.
+architecture of complex traits. We identified important genes and gene
+signatures that were heritable, causal of disease, and translatable to
+other mouse populations and to humans. Finally, we have shown that by
+directly acknowledging the complexity of both gene regulation and the
+genotype-to-phenotype map, we can gain a new perspective on disease
+pathogenesis and develop actionable hypotheses about pathogenic
+mechanisms and potential treatments.
 
-\begin{itemize}
-\tightlist
-\item
-  how much trait variance does composite trait explain? sum over
-  correlations with all PCs
-\item
-  Make sure we cite Visscher paper
-\item
-  endophenotypes don't need to be gene expression. Can be anything you
-  think is causally related to phenotype and can be manipulated
-\end{itemize}
+Potentially comment on: 1) Mediating on other endophenotypes 2)
+Limitation that we only find signatures ``consistent with'' mediation
+and that our approach is hypothesis generating 3) Is the kinship matrix
+the sum of all local QTLs, or is it something more inclusive, including
+distal regulation, development, etc. 4) endophenotypes don't need to be
+gene expression. Can be anything you think is causally related to
+phenotype and can be manipulated
 
 \subsection{Data Availability}\label{data-availability}
 
