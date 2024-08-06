@@ -95,92 +95,6 @@ Powerful insights into disease mechanism can be made by linking genetic
 variants affecting gene expression (expression quantiatitive trait loci
 - eQTLs) to phenotypes.
 
-\subsection{Introduction}\label{introduction}
-
-In the quest to understand the genetic architecture of complex traits,
-gene expression is an important bridge between genotype and phenotype.
-By identifying transcripts that mediate the effect of genetic variants
-on traits, we get one step closer to elaborating a complete molecular
-understanding of the genotype-phenotype map. Moreover, there is ample
-evidence from genome-wide association studies (GWAS) that regulation of
-gene expression accounts for the bulk of the genetic effect on complex
-traits, as most trait-associated variants lie in gene regulatory regions
-\cite{pmid22955828, 
-pmid25363779, pmid21617055, pmid19474294, pmid24702953, 
-pmid24316577, pmid27126046}. It is widely assumed that these variants
-influence local transcription, and methods such as transcriptome-wide
-association studies (TWAS)
-\cite{pmid33020666, pmid26258848, pmid27019110, pmid26854917}, summary
-data-based Mendelian randomization (SMR) \cite{pmid27019110}, and others
-capitalize on this idea to identify genes associated with multiple
-disease traits \cite{pmid29567659, pmid35533209, pmid27309819, 
-pmid30950127}
-
-Despite the great promise of these methods, however, they have not been
-as widely successful as it seemed they could have been, and the vast
-majority of complex trait heritability remains unexplained {[}REF{]},
-implicating a subtler genetic architecture than assumed by popular
-methods. Ineed, although trait-associated variants tend to lie in
-non-coding, regulatory regions, they often do not have detectable
-effects on gene expression \cite{pmid32912663} and tend not to
-co-localize with expression quantitative trait loci (eQTLs)
-\cite{pmid36515579, pmid37857933}.
-
-One possible explanation for these observations is that gene expression
-is not being measured in the appropriate cell types and thus true eQTLs
-influencing traits cannot be detected \cite{pmid32912663}. An
-alternative explanation that has been discussed in recent years is that
-effects of these variants are mediated not through local regulation of
-gene expression, but through distal regulation
-\cite{pmid37857933, pmid32424349, 
-pmid32831138, pmid30950127}.
-
-In this model, a gene's expression is influenced by potentially many
-variants throughout the genome through their cumulative effects on the
-regulatory network targeting that gene. In other words, the heritable
-component of the transcriptome is an emergent state arising from the
-myriad molecular interactions defining and constraining gene expression.
-
-To assess the role of wide-spread distal gene regulation on complex
-traits, we studied diet-induced obesity and metabolic disease as an
-archetypal example. Diet-induced obesity and metabolic disease are
-genetically complex with hundreds of variants mapped through GWAS
-{[}REFS{]}. These variants are known to act through multiple tissues
-{[}REFS{]}, including adipose tissue, pancreatic islets, liver, and
-skeletal muscle, that interact dynamically with each other. The
-multi-system etiology of metabolic disease complicates mechanistic
-dissection of the genetic architecture, requiring large, dedicated data
-sets that include high-dimensional, clinically relevant phenotyping,
-dense genotyping in a highly recombined population, and
-transcriptome-wide measurements of gene expression in multiple tissues.
-Measuring gene expression in multiple tissues is critical to adequately
-assess the extent to which local gene regulation varies across multiple
-tissues and whether such variablilty might account for previous failed
-attempts to identify trait-relevant local eQTL. Such data sets are
-extremely difficult to obtain in human populations, particularly in the
-large numbers of subjects required for statistical testing. Thus, to
-investigate further the role of local and distal gene regulation on
-complex traits, we have generated an appropriate data set in a large
-population of diversity outbred (DO) mice \cite{pmid22892839} in a
-population model of diet-induced obesity and metabolic disease
-\cite{pmid29567659}.
-
-The DO mice were derived from eight inbred founder mouse strains, five
-classical lab strains, and three strains more recently derived from wild
-mice \cite{pmid22892839}. They represent three subspecies of mouse
-\textit{Mus musculus domesticus}, \textit{Mus musculus musculus}, and
-\textit{Mus musculus casteneus}, and capture 90\% of the known variation
-in laboratory mice \cite{pmid31133439}. They are maintained with a
-breeding scheme that ensures equal contributions from each founder
-across the genome thus rendering almost the whole genome visible to
-genetic inquiry \cite{pmid22892839}. We measured clinically relevant
-metabolic traits, including body weight, plasma levels of insulin and
-glucose, and plasma lipids in 500 DO mice. We further measured
-transcriptome-wide gene expression in four tissues related to metabolic
-disease: adipose tissue, pancreatic islets, liver, and skeletal muscle.
-Taken together, these data enable a comprehensive view into the genetic
-architecture of metabolic disease.
-
 To assess the role of gene regulation in mediating variation in
 metabolic traits in this population, we propose a novel high-dimensional
 mediation analysis (HDMA) that uses the theory of causal modeling to
@@ -196,19 +110,100 @@ detecting only the largest statistical effects and are biased toward
 local gene regulation. In contrast, HDMA assesses genome-,
 transcriptome-, and phenome-wide relationships as a whole and, in
 particular, identifies a highly heritable trait profile that is
-perfectly mediated by a transcriptomic signature. We showed these
+perfectly mediated by a transcriptomic signature. We found these
 transcriptomic signatures are tissue-specific and highly interpretable
 in terms of biological processes as well as cell type composition.
 Heritability analysis of the transcripts showed that the strongest
 transcriptional mediators of metabolic disease had low local
 heritability and high distal heritability. Finally, we showed that the
-transcriptomic signatures identified in the DO population predicted
-obesity in an independent population of Collaborative Cross recombinant
-inbred (CC-RIX) mice and in human subjects. In contrast, local eQTL were
-unable to predict obesity in the CC-RIX mice. Together our results
-suggest that both the tissue used for gene expression analysis as well
-as distal gene regulation are critically important in identifying
-transcriptional mediators of the genome on complex traits.
+HDMA transcriptomic signatures predicted obesity in an independent
+population of Collaborative Cross recombinant inbred (CC-RIX) mice and
+in human subjects. In contrast, local eQTL were unable to predict
+obesity in the CC-RIX mice. Together our results suggest that both the
+tissue used for gene expression analysis as well as distal gene
+regulation are critically important in identifying transcriptional
+mediators of the genome on complex traits.
+
+\subsection{Introduction}\label{introduction}
+
+In the quest to understand the genetic architecture of complex traits,
+gene expression is an important mediator between genotype and phenotype.
+There is ample evidence from genome-wide association studies (GWAS) that
+regulation of gene expression accounts for the bulk of the genetic
+effect on complex traits, as most trait-associated variants lie in gene
+regulatory regions \cite{pmid22955828, 
+pmid25363779, pmid21617055, pmid19474294, pmid24702953, 
+pmid24316577, pmid27126046}. It is widely assumed that these variants
+influence local transcription, and methods such as transcriptome-wide
+association studies (TWAS)
+\cite{pmid33020666, pmid26258848, pmid27019110, pmid26854917}, summary
+data-based Mendelian randomization (SMR) \cite{pmid27019110}, and others
+capitalize on this idea to identify genes associated with multiple
+disease traits \cite{pmid29567659, pmid35533209, pmid27309819, 
+pmid30950127}
+
+Despite the great promise of these methods, their efficacy has been
+limited. The vast majority of complex trait heritability remains
+unexplained {[}REF{]}, implicating a subtler genetic architecture than
+assumed. Ineed, although trait-associated variants tend to lie in
+non-coding, regulatory regions, they often do not have detectable
+effects on gene expression \cite{pmid32912663} and tend not to
+co-localize with expression quantitative trait loci (eQTLs)
+\cite{pmid36515579, pmid37857933}.
+
+One possible explanation for these observations is that gene expression
+is not being measured in the appropriate cell types and thus true eQTLs
+influencing traits cannot be detected \cite{pmid32912663}. An
+alternative explanation that has been discussed in recent years is that
+effects of these variants are mediated not through local regulation of
+gene expression, but through distal regulation
+\cite{pmid37857933, pmid32424349, 
+pmid32831138, pmid30950127}.
+
+In this model, a gene's expression is influenced by many variants
+throughout the genome through their cumulative effects on a broader
+regulatory network. In other words, the heritable component of the
+transcriptome is an emergent state arising from the myriad molecular
+interactions defining and constraining gene expression.
+
+To assess the role of wide-spread distal gene regulation on complex
+traits, we have studied diet-induced obesity and metabolic disease as an
+archetypal example. Diet-induced obesity and metabolic disease are
+genetically complex with hundreds of variants mapped through GWAS
+{[}REFS{]}. These variants are known to act through multiple tissues
+that interact dynamically with each other {[}REFS{]}, including adipose
+tissue, pancreatic islets, liver, and skeletal muscle. The multi-system
+etiology of metabolic disease complicates mechanistic dissection of the
+genetic architecture, requiring large, dedicated data sets that include
+high-dimensional, clinically relevant phenotyping, dense genotyping in a
+highly recombined population, and transcriptome-wide measurements of
+gene expression in multiple tissues. Measuring gene expression in
+multiple tissues is critical to adequately assess the extent to which
+local gene regulation varies across multiple tissues and whether such
+variablilty might account for previous failed attempts to identify
+trait-relevant local eQTL. Such data sets are extremely difficult to
+obtain in human populations, particularly in the large numbers of
+subjects required for adequate statistical power. Thus, to investigate
+further the role of local and distal gene regulation on complex traits,
+we have generated an appropriate data set in a large population of
+diversity outbred (DO) mice \cite{pmid22892839} in a population model of
+diet-induced obesity and metabolic disease \cite{pmid29567659}.
+
+The DO mice were derived from eight inbred founder mouse strains, five
+classical lab strains, and three strains more recently derived from wild
+mice \cite{pmid22892839}. They represent three subspecies of mouse
+\textit{Mus musculus domesticus}, \textit{Mus musculus musculus}, and
+\textit{Mus musculus casteneus}, and capture 90\% of the known variation
+in laboratory mice \cite{pmid31133439}. They are maintained with a
+breeding scheme that ensures equal contributions from each founder
+across the genome thus rendering almost the whole genome visible to
+genetic inquiry \cite{pmid22892839}. We paired clinically relevant
+metabolic traits from 500 DO mice {[}REF{]}, including body weight,
+plasma levels of insulin and glucose and plasma lipids,
+withtranscriptome-wide gene expression in four tissues related to
+metabolic disease: adipose tissue, pancreatic islets, liver, and
+skeletal muscle. Taken together, these data enable a comprehensive view
+into the genetic architecture of metabolic disease.
 
 \subsection{Results}\label{results}
 
@@ -220,23 +215,24 @@ diversity present in this population resulted in widely varying
 distributions across physiological measurements (Fig.
 \ref{fig:trait_overview}). For example, body weights of adult
 individuals varied from less than the average adult B6 body weight to
-several times the body weight of a B6 adult in both sexes (Fig.
-\ref{fig:trait_overview}A). Fasting blood glucose (FBG) also varied
-considerably (Fig. \ref{fig:trait_overview}B) although few of the
-animals had FBG levels that would indicate pre-diabetes (19 animals,
-3.8\%), or diabetes (7 animals, 1.4\%) according to previously developed
-cutoffs (pre-diabetes: FBG \(\geq\) 250 mg/dL, diabetes: FBG \(\geq\)
-300, mg/dL) \cite{pmid17018838}. Males had higher FBG than females on
-average (Fig. \ref{fig:trait_overview}C) as has been observed before
-suggesting either that males were more susceptible to metabolic disease
-on the high-fat diet, or that males and females may require different
-thresholds for pre-diabetes and diabetes.
+several times the body weight of a B6 adult in both sexes (Males: 18.5 -
+69.1g, Females: 16.0 - 54.8g) (Fig. \ref{fig:trait_overview}A). Fasting
+blood glucose (FBG) also varied considerably (Fig.
+\ref{fig:trait_overview}B) although few of the animals had FBG levels
+that would indicate pre-diabetes (19 animals, 3.8\%), or diabetes (7
+animals, 1.4\%) according to previously developed cutoffs (pre-diabetes:
+FBG \(\geq\) 250 mg/dL, diabetes: FBG \(\geq\) 300, mg/dL)
+\cite{pmid17018838}. Males had higher FBG than females on average (Fig.
+\ref{fig:trait_overview}C) as has been observed before suggesting either
+that males were more susceptible to metabolic disease on the high-fat
+diet, or that males and females may require different thresholds for
+pre-diabetes and diabetes.
 
 Body weight was strongly positively correlated with food consumption
-(Fig. \ref{fig:trait_overview}D \(R^2 =\) 0.51, \(p=\)
-\ensuremath{1.5\times 10^{-75}}) and fasting blood glucose (FBG) (Fig.
-\ref{fig:trait_overview}E, \(R^2=\) 0.21, \(p =\)
-\ensuremath{1.4\times 10^{-26}}) suggesting a link between behavioral
+(Fig. \ref{fig:trait_overview}D \(R^2 =\) 0.51, \(p<\)
+\ensuremath{2.2\times 10^{-16}}) and fasting blood glucose (FBG) (Fig.
+\ref{fig:trait_overview}E, \(R^2=\) 0.21, \(p <\)
+\ensuremath{2.2\times 10^{-16}}) suggesting a link between behavioral
 factors and metabolic disease. However, the heritability of this trait
 and others (Fig. \ref{fig:trait_overview}F) indicates that background
 genetics contribute substantially to correlates of metabolic disease in
@@ -260,23 +256,22 @@ structure between pairs of physiological traits.}
 \label{fig:trait_overview}
 \end{figure}
 
-The landscape of trait correlations (Fig. \ref{fig:trait_overview}G)
-shows that most of the metabolic trait pairs were relatively weakly
-correlated indicating complex relationships among the measured traits.
-This low level of redundancy suggests a broad sampling of multiple
-heritable aspects of metabolic disease including overall body weight,
-glucose homeostasis, pancreatic composition and liver function.
+The trait correlations (Fig. \ref{fig:trait_overview}G) shows that most
+of the metabolic trait pairs were weakly correlated indicating complex
+relationships among the measured traits. This low level of redundancy
+suggests a broad sampling of multiple heritable aspects of metabolic
+disease including overall body weight, glucose homeostasis, pancreatic
+composition and liver function.
 
 \subsubsection{Distal Heritability Correlated with Phenotype
 Relevance}\label{distal-heritability-correlated-with-phenotype-relevance}
 
 We performed eQTL analysis using R/qtl2 \cite{pmid30591514} (Methods)
 and identified both local and distal eQTLs for transcripts in each of
-the four tissues (Supp. Fig \ref{fig:eQTL}). Significant local eQTLs far
-outnumbered distal eQTLs (Supp. Fig. \ref{fig:eQTL}F) and tended to be
-shared across tissues (Supp. Fig. \ref{fig:eQTL}G) whereas the few
-significant distal eQTLs we identified tended to be tissue-specific
-(Supp. Fig. \ref{fig:eQTL}H)
+the four tissues (Supp. Fig 1). Significant local eQTLs far outnumbered
+distal eQTLs (Supp. Fig. 1F) and tended to be shared across tissues
+(Supp. Fig. 1G) whereas the few significant distal eQTLs we identified
+tended to be tissue-specific (Supp. Fig. 1H)
 
 We calculated the heritability of each transcript in terms of local and
 distal genetic factors (Methods). Overall, local and distal genetic
@@ -381,12 +376,12 @@ shows the partial correlations (\(\rho\)) between the pairs of these
 composite vectors. The partial correlation between \(G_C\) and \(T_C\)
 was 0.42, and the partial correlation between \(T_C\) and \(P_C\) was
 0.78. However, when the transcriptome was taken into account, the
-partial correlation between \(G_C\) and \(P_C\) was effectively 0
+partial correlation between \(G_C\) and \(P_C\) was effectively zero
 (0.039). \(P_C\) captured 30\% of the overall trait variance, and its
 estimated heritability was 0.71 \(\pm\) 0.084\%, which was higher than
-any of the individual traits (Fig. \ref{fig:trait_overview}F). Thus,
-HDMA identified a maximally heritable metabolic trait that was perfectly
-mediated by a highly heritable component of the transcriptome.
+any of the measured traits (Fig. \ref{fig:trait_overview}F). Thus, HDMA
+identified a maximally heritable metabolic composite trait that was
+perfectly mediated by a highly heritable component of the transcriptome.
 
 Standard CCA is prone to over-fitting because in any two large matrices
 it can be trivial to identify highly correlated composite vectors
@@ -476,33 +471,33 @@ pmid16199517} to look for biological processes and pathways that were
 enriched at the top and bottom of this list (Methods).
 
 In adipose tissue, both GO processes and KEGG pathway enrichments
-pointed to an axis of inflammation and metabolism (Supp. Fig.
-\ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}). GO terms and
-KEGG pathways associated with inflammation, particularly macrophage
-infiltration, were positively associated with metabolic index,
-indicating that increased expression in inflammatory pathways was
-associated with a higher metabolic index. It is well established that
-adipose tissue in obese individuals is highly inflamed {[}cite{]} and
-infiltrated by macrophages {[}cite{]}, and the results here suggest that
-this may be a heritable component of metabolic disease.
+pointed to an axis of inflammation and metabolism (Supp. Fig. 2 and Fig.
+\ref{fig:top_enrich_go}). GO terms and KEGG pathways associated with
+inflammation, particularly macrophage infiltration, were positively
+associated with metabolic index, indicating that increased expression in
+inflammatory pathways was associated with a higher metabolic index. It
+is well established that adipose tissue in obese individuals is inflamed
+{[}cite{]} and infiltrated by macrophages {[}cite{]}, and the results
+here suggest that this may be a heritable component of metabolic
+disease.
 
 The strongest negative enrichments in adipose tissue were related to
 mitochondial activity in general, and thermogenesis in particular (Supp.
-Fig. \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}). It has been
-shown mouse strains with greater thermogenic potential are also less
-susceptible to obesity on a high-fat diet {[}cite{]}.
+Fig. 2 and Fig. \ref{fig:top_enrich_go}). It has been shown mouse
+strains with greater thermogenic potential are also less susceptible to
+obesity on a high-fat diet {[}cite{]}.
 
 Transcripts associated with the citric acid (TCA) cycle as well as the
 catabolism of the branched-chain amino acids (BCAA) (valine, leuceine,
 and isoleucine) were strongly enriched with negative loadings in adipose
-tissue (Supp. Fig. XXX). Expression of genes in both pathways (for which
+tissue (Supp. Fig. 3). Expression of genes in both pathways (for which
 there is some overlap) has been previously associated with insulin
 sensitivity \cite{pmid29567659, 
 pmid22560213, pmid19841271}, suggesting that heritable variation in
 regulation of these pathways may influence risk of insulin resistance.
 
 Looking a the 10 most positively and negatively loaded transcripts from
-each tissue, is is apparent that transcripts in the adipose tissue had
+each tissue, it is apparent that transcripts in the adipose tissue had
 the largest loadings, both positive and negative, of all tissues (Fig.
 \ref{fig:loading_heritability}A bar plot) This suggests that much of the
 effect of genetics on body weight and insulin reisistance is mediated
@@ -510,13 +505,13 @@ through gene expression in adipose tissue. The strongest loadings in
 liver and pancreas were comparable, and those in skeletal muscle were
 the weakest (Fig. \ref{fig:loading_heritability}A), suggesting that less
 of the genetic effects were mediated through transcription in skeletal
-muscle. Heritability analysis showed that trahscripts with the largest
-loadings tended to have relatively high distal heritability compared
-with local heritability (Fig. \ref{fig:loading_heritability}A heat map
-and box plot). This pattern contrasts with transcripts nominated by TWAS
-(Fig. \ref{fig:loading_heritability}B), which tended to have lower
-loadings, higher local heritability and lower distal heritability.
-Transcripts with the highest local heritability in each tissue (Fig.
+muscle. Heritability analysis showed that transcripts with the largest
+loadings had higher distal heritability than local heritability (Fig.
+\ref{fig:loading_heritability}A heat map and box plot). This pattern
+contrasts with transcripts nominated by TWAS (Fig.
+\ref{fig:loading_heritability}B), which tended to have lower loadings,
+higher local heritability and lower distal heritability. Transcripts
+with the highest local heritability in each tissue (Fig.
 \ref{fig:loading_heritability}C) had the lowest loadings.
 
 We performed a literature search for the genes in each of these groups
@@ -559,7 +554,7 @@ Except for the ``mitosis'' cluster, which had large positive loadings in
 three of the four tissues, all clusters were strongly loaded in only one
 or two tissues. For example, the lipid metabolism cluster was loaded
 most heavily in liver. The positive loadings suggest that high
-expression of these genes particualarly in the liver was associated with
+expression of these genes particularly in the liver was associated with
 increased metabolic disease. This cluster included the gene
 \textit{Pparg}, whose primary role is in the adipose tissue where it is
 considered a master regulator of adipogenesis \cite{pmid17389767}.
@@ -654,14 +649,14 @@ the CC-RIX using transcripts imputed from local genotype (Fig.
 same eight founder strains and so carry the same alleles throughout the
 genome. We imputed gene expression in the CC-RIX using local genotype
 and were able to estimate variation in gene transcription robustly
-(Supp. Fig. \ref{fig:cc_imputation}). However, these imputed values
-failed to predict body weight in the CC-RIX when weighted with the
-loadings from HDMA. (Fig. \ref{fig:cc_prediction}B right column). This
-result suggests that local regulation of gene expression is not the
-primary factor driving heritability of complex traits, consistent with
-our findings in the DO population that distal heritability was a major
-driver of trait-relevant variation and that high-loading transcripts had
-comparatively high distal and low local heritability.
+(Supp. Fig. 4). However, these imputed values failed to predict body
+weight in the CC-RIX when weighted with the loadings from HDMA. (Fig.
+\ref{fig:cc_prediction}B right column). This result suggests that local
+regulation of gene expression is not the primary factor driving
+heritability of complex traits, consistent with our findings in the DO
+population that distal heritability was a major driver of trait-relevant
+variation and that high-loading transcripts had comparatively high
+distal and low local heritability.
 
 \subsubsection{Distally heritable transcriptomic signatures reflected
 variation in composition of adipose tissue and
@@ -818,12 +813,12 @@ have notable side effects including hypoglycemia and accellerated
 
 It is thought that the bulk of the effect of genomic variation on
 complex traits is mediated through regulation of gene expression. It has
-widely been assumed that this regulation is largely in \textit{cis}, but
-attempts to use local gene regulation to explain phenotypic variation
-have yet to explain much trait heritability. In recent years, the
-discussion has turned to distal gene regulation. Although, distal gene
-regulation is more complex to identify, evidence suggests that it is an
-important component of trait heritability.
+frequently been assumed that this regulation is largely in \textit{cis},
+but attempts to use local gene regulation to explain phenotypic
+variation have yet to explain much trait heritability. In recent years,
+the discussion has turned to distal gene regulation. Although, distal
+gene regulation is more complex to identify, evidence suggests that it
+is an important component of trait heritability.
 
 Yao \textit{et al.} \cite{pmid32424349} observed that in humans,
 transcripts with low local heritability explained more
@@ -872,21 +867,21 @@ proposal of the omnigenic model which posits that once the expression of
 the core genes (i.e.~ trait-mediating genes) is accounted for, there
 should be no residual correlation between the genome and the phenome.
 
-Using HDMA, we identified a highly heritable comopsite trait (0.71\%
-heritable) that explained 30\% of overall trait variance, and was
-perfectly mediated by a composite transcript that included expression
-from four tissues known to be involved in metabolic disease. Gene
-expression in adipose tissue was the strongest mediator of genetic
-effects on metabolic disease. Further analysis of the loadings onto
-transcripts in each tissue revealed that the mediating signatures were
-tissue-specific transcriptional programs, many of which were previously
-known to be involved in the pathogenesis of metabolic disease. We showed
-here that regulation of these programs is heritable and mediated a large
+Using HDMA, we identified a highly heritable composite trait (\(h^2=\)
+0.71) that explained 30\% of overall trait variance, and was perfectly
+mediated by a composite transcript that included expression from four
+tissues known to be involved in metabolic disease. Gene expression in
+adipose tissue was the strongest mediator of genetic effects on
+metabolic disease. Further analysis of the loadings onto transcripts in
+each tissue revealed that the mediating signatures were tissue-specific
+transcriptional programs, many of which were previously known to be
+involved in the pathogenesis of metabolic disease. We showed here that
+regulation of these programs is heritable and mediated a large
 proportion of disease risk.
 
 The transcripts with the highest loadings are similar to the core genes
-of the omnigenic model. These were transcripts of moderate local
-heritability that were highly functionally related to the traits.
+of the omnigenic model {[}REF{]}. These were transcripts of moderate
+local heritability that were highly functionally related to the traits.
 Transcripts with small loadings are more peripheral to the traits
 measured in this experiment. There was no clear demarcation between the
 core and peripheral genes as far as loading, but a clear separation
@@ -910,9 +905,9 @@ mediating transcript in islet and was also strongly distally regulated
 \cite{pmid22108805, pmid23537085, 
 pmid24993278}. Although its transcription was highly heritable in
 islets, that regulation was distributed across the genome, with no clear
-distal eQTL (Supp. Fig. \ref{fig:Nucb2_eqtl}). Thus, although distal
-regulation of some genes may be strong, this regulation is likely to be
-highly complex and not easily localized.
+distal eQTL (Supp. Fig. 5). Thus, although distal regulation of some
+genes may be strong, this regulation is likely to be highly complex and
+not easily localized.
 
 The high complexity of gene regulation combined with a systems-level
 analysis yields continuous results that do not necessarily implicate
