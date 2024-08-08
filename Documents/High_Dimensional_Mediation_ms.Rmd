@@ -65,12 +65,12 @@ in large part through regulation of gene expression. However
 there has been limited success in explaining variant-trait 
 associations with regulation of locally encoded genes. There 
 is emerging evidence that distal gene regulation may play an 
-important role in mediating the effect of genotype on phenotype. 
-Here we investigated the roles of local and distal gene regulation 
-on complex traits in a mouse model of diet-induced obesity and 
-metabolic disease. We measured longitudinal metabolic phenotypes
-in a population of 500 diversity outbred (DO) mice along with 
-transcriptome-wide gene expression in four disease-relevant 
+important role in mediating the effect of genetic background 
+on phenotype. Here we investigated the roles of local and distal 
+gene regulation on complex traits in a mouse model of diet-induced 
+obesity and metabolic disease. We measured longitudinal metabolic 
+phenotypes in a population of 500 diversity outbred (DO) mice along 
+with transcriptome-wide gene expression in four disease-relevant 
 tissues: adipose, pancreatic islets, liver, and skeletal muscle. 
 We developed a novel high-dimensional mediation analysis (HDMA)
 to model emergent transcriptomic states mediating genetic effects
@@ -840,50 +840,125 @@ hypoglycemia and accellerated $\beta$-cell death \cite{pmid16631807}.
 
 Here we used a novel high-dimensional mediation analysis (HDMA)
 to investigate the relative contributions of local and distal
-gene regulation to trait variation in a genetically diverse 
-mouse model of diet-induced obesity and metabolic disease. It 
-has frequently been assumed that gene regulation in \textit{cis} 
-is the primary driver of trait variation, but attempts to use 
-local gene regulation to explain phenotypic variation have had 
-limited success \cite{pmid32912663, pmid36515579}. In recent 
-years, the discussion has turned to distal gene regulation 
-\cite{pmid32424349, pmid37857933, pmid31051098}, which is more 
-complex to identify, but may be an important component of trait 
-heritability. 
+gene regulation to heritable trait variation in a genetically 
+diverse mouse model of diet-induced obesity and metabolic 
+disease. We found that distally heritable transcripts dominated 
+the composite transcripts mediating the effect of genetic background
+on metabolic traits, and that the composite transcripts, but 
+not local eQTL, were able to predict obesity in an independent
+mouse population with divergent allelic structure. Moreover,
+the composite transcript from adipose tissue predicted obesity 
+and diabetes status in human cohorts with measured adipose gene 
+expression. Taken together, these results support the hypothesis 
+that gene expression mediating the effect of genetic background 
+on phenotype are primarily distally regulated, and that the gene 
+regulatory networks influencing metabolic disease are conserved 
+across mice and humans.
 
-With HDMA we identified tissue-specific composite transcripts 
-that mediated the effects of genetic background on trait variation 
-in the DO mice. The transcripts that contributed the most to the
+It has frequently been assumed that gene regulation in 
+\textit{cis} is the primary driver of genetically associated 
+trait variation, but attempts to use local gene regulation 
+to explain phenotypic variation have had limited success 
+\cite{pmid32912663, pmid36515579}. In recent years, evidence
+has mounted that distal gene regulation may be an important
+mediator of trait heritability \cite{pmid32424349, 
+pmid37857933, pmid31051098}. It has been observed
+that transcripts with high local heritability explain less
+expression-mediated disease heritability than transcripts
+with low local heritability \cite{pmid32424349}. Consistent with
+this observation, genes located near GWAS hits tend to be 
+complexly regulated \cite{pmid37857933}. They also tend to be
+enriched with functional annotations, in contrast to genes with
+simple local regulation, which tend to be depleted of functional 
+annotations suggesting they are less likely to be directly involved 
+in disease traits \cite{pmid37857933}.
+
+Our findings were consistent with these observations. The composite
+transcripts we identified were highly heritable and explained
+a high proportion of disease risk. Transcript contributions to 
+the composite transcripts were negatively correlated
+with local heritability and positively correlated with distal 
+heritability. These strongly contributing genes were also 
+enriched for functional annotations associated with metabolic
+disease. The composite transcripts were moreover able to predict
+obesity in an independent cohort of mice whereas models using 
+local eQTL only could not. Together these observations suggest 
+that distal gene regulation was the dominant mode through which 
+gene expression mediated the effect of genetic background on 
+complex traits. 
+
+The method of HDMA allowed us to take the complexity of gene regulation into
+account. In contrast to univariate approaches, which assume 
+independence of genetic variants and transcripts, HDMA allows for 
+arbitrarily complex gene regulation, as well as the interconnectedness 
+and redundancy of the transcriptome. Second, rather than assuming a 
+single, large genetic effect as univariate approaches do, HDMA assumes 
+that traits are highly polygenic, and that genetic effects are weak and 
+are distributed across the genome. 
+
+These observations and others led Liu et al. \cite{pmid31051098} 
+to suggest that most heritability of complex traits is driven 
+by weak distal eQTLs. They proposed a framework of understanding 
+heritability of complex traits in which massive polygenicity is 
+distributed across common variants in both functional "core genes", 
+as well as more peripheral genes that may not seem obviously related 
+to the trait. 
+
+
+The transcripts that contributed the most to the
 composite transcripts were strongly distally regulated and only
 weakly locally regulated, suggesting that distal gene regulation
 plays a primary role in driving heritable trait variation. In support
 of this hypothesis, we demonstrated that the transcriptomic 
 signatures we identified predicted obesity in an independent 
 population of CC-RIX mice and in humans, whereas a model using 
-local gene regulation alone was unable to predict obsesity in 
+local gene regulation alone was unable to predict obesity in 
 the mice. Finally, we showed that these transcriptomic signatures 
 have multiple applications, including analyses of tissue composition 
 from bulk RNA-Seq and drug prioritization.
 
-The observation that distal gene regulation is primarily 
-responsible for expression-mediated trait variation is supported
-in human studies. Transcripts with low local heritability have
-been shown to explain more expression-mediated disease heritability 
-than transcripts with high local heritability \cite{pmid32424349}.
-Further, studies suggest that genes that are near GWAS hits and 
-have obvious functional relevance to a trait tend to have highly 
-complex regulatory landscapes under strong selection pressures 
-\cite{pmid37857933}. In contrast, genes with strong local regulation 
-tend to be depleted of functional annotations and are under looser 
-selection constraints \cite{pmid37857933}. These observations and 
-others led Liu et al. \cite{pmid31051098} to suggest that most 
-heritability of complex traits is driven by weak distal eQTLs. They 
-proposed a framework of understanding heritability of complex traits 
-in which massive polygenicity is distributed across common variants 
-in both functional "core genes", as well as more peripheral genes 
-that may not seem obviously related to the trait. 
 
-This pattern is consistent with principles of robustness in complex 
+
+The mediating composite transcript included 
+expression from four tissues known to be involved in metabolic disease. Gene 
+expression in adipose tissue was the strongest mediator of genetic 
+effects on metabolic disease. Further analysis of the loadings onto 
+transcripts in each tissue revealed that the mediating signatures 
+were tissue-specific transcriptional programs, many of which were 
+previously known to be involved in the pathogenesis of metabolic 
+disease. We showed here that regulation of these programs is 
+heritable and mediated a large proportion of disease risk.
+
+
+
+This approach contrasts 
+with traditional univariate approaches in several important 
+respects. First, in contrast to univariate approaches, which assume 
+independence of genetic variants and transcripts, HDMA allows for 
+arbitrarily complex gene regulation, as well as the interconnectedness 
+and redundancy of the transcriptome. Second, rather than assuming a 
+single, large genetic effect as univariate approaches do, HDMA assumes 
+that traits are highly polygenic, and that genetic effects are weak and 
+are distributed across the genome. HDMA generates a weighted vector of 
+transcripts that can be analyzed as a whole, or dissected to identify 
+transcripts with stronger and weaker effects. 
+
+
+
+
+This method explicitly 
+models a central proposal of the omnigenic model which posits that 
+once the expression of the core genes (i.e. trait-mediating genes) 
+is accounted for, there should be no residual correlation between 
+the genome and the phenome. 
+
+
+
+
+
+
+
+These ideas are consistent with principles of robustness in complex 
 systems \cite{pmid29782925, pmid12082173, pmid27304973}. If a 
 transcript were both important to a trait and subject to strong 
 local regulation, a population would be susceptible to extremes 
@@ -893,41 +968,8 @@ cause of Mendelian disease.
 
 
 
-Here, we used large, comprehensive, and purpose-built data sets
-to investigate the genetic architecture of complex traits related 
-to metabolic disease in mice as well as the roles of local and distal 
-gene regulation in mediating these traits. We presented a systems-level
-method called high-dimension mediation analysis (HDMA) to specifically
-identify the distally regulated transcriptomic signature mediating the
-effect of the genotype on phenotype. This approach contrasts
-with traditional univariate approaches in several important respects.
-First, in contrast to univariate approaches, which assume independence 
-of genetic variants and transcripts, HDMA allows for arbitrarily complex 
-gene regulation, as well as the interconnectedness and redundancy of 
-the transcriptome. Second, rather than assuming a single, large genetic 
-effect as univariate approaches do, HDMA assumes that traits are highly 
-polygenic, and that genetic effects are weak and are distributed across 
-the genome. HDMA generates a weighted vector of transcripts that can be 
-analyzed as a whole, or dissected to identify transcripts with stronger 
-and weaker effects. This method explicitly models a central proposal of 
-the omnigenic model which posits that once the expression of the core 
-genes (i.e. trait-mediating genes) is accounted for, there should be no 
-residual correlation between the genome and the phenome. 
 
-Using HDMA, we identified a highly heritable composite trait 
-($h^2=$ `r signif(comp.trait.herit[1], 2)`) that explained 
-`r signif(comp.trait.exp[[1]], 2)`\% of overall trait variance, and was 
-perfectly mediated by a composite transcript that included expression 
-from four tissues known to be involved in metabolic disease. Gene 
-expression in adipose tissue was the strongest mediator of genetic 
-effects on metabolic disease. Further analysis of the loadings onto 
-transcripts in each tissue revealed that the mediating signatures 
-were tissue-specific transcriptional programs, many of which were 
-previously known to be involved in the pathogenesis of metabolic 
-disease. We showed here that regulation of these programs is 
-heritable and mediated a large proportion of disease risk.
-
-The transcripts with the highest loadings are similar to the core 
+The transcripts with the highest loadings are like the core 
 genes of the omnigenic model [REF]. These were transcripts of moderate 
 local heritability that were highly functionally related to the traits. 
 Transcripts with small loadings are more peripheral to the traits 
@@ -948,10 +990,7 @@ fig.counter <- ref_fig(fig.counter, fig.label)
 nucb2.eqtl.label <- fig.counter[fig.label]
 ```
 
-The strength of mediation (transcript loading) was negatively correlated 
-with local heritability and positively correlated with distal heritability, 
-suggesting that distal gene regulation was the dominant mode through which 
-gene expression mediated the effect of genotype on phenotype. We saw further
+We saw further
 that the distal heritability was weak and spread across the genome, consistent
 with the prediction by Liu \textit{et al.} \cite{pmid31051098} that trait 
 heritability is mediated through weak distal eQTLs. Most strongly mediating
