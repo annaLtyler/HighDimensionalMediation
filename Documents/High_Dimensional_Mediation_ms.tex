@@ -808,61 +808,53 @@ have notable side effects including hypoglycemia and accellerated
 \subsection{Discussion}\label{discussion}
 
 Here we used a novel high-dimensional mediation analysis (HDMA) to
-identify tissue-specific transcriptomic signatures that mediated the
-effects of genetic background on metabolic traits in a large population
-of diversity outbred (DO) mice. The signatures we identified explained
-about 30\% of overall trait variation and were highly interpretable in
-terms of enriched biological processes. The transcripts with the largest
-contributions to these signatures tended to have high distal
-heritability and low local heritability suggesting that many
-trait-associated variants may be regulating gene expression in
-\textit{trans}, rather than \textit{cis}. Combining the loadings from
-the transcript signatures with gene expression in an independent mouse
-population with divergent allele structure predicted obesity in these
-mice with high accuracy. A similar analysis was further able to predict
-obesity and diabetes in human cohorts with measured gene expression in
-adipose tissue. However, models using local eQTL alone were unable to
-predict obesity in the second mouse population. These results further
-support the hypothesis that the effects of genetic background on traits
-are mediated primarily through distal gene regulation. Finally, we
-showed that these transcriptomic signatures have multiple applications,
-including analyses of tissue composition from bulk RNA-Seq and drug
-prioritization.
+investigate the relative contributions of local and distal gene
+regulation to trait variation in a genetically diverse mouse model of
+diet-induced obesity and metabolic disease. It has frequently been
+assumed that gene regulation in \textit{cis} is the primary driver of
+trait variation, but attempts to use local gene regulation to explain
+phenotypic variation have had limited success
+\cite{pmid32912663, pmid36515579}. In recent years, the discussion has
+turned to distal gene regulation
+\cite{pmid32424349, pmid37857933, pmid31051098}, which is more complex
+to identify, but may be an important component of trait heritability.
 
-It is thought that the bulk of the effect of genomic variation on
-complex traits is mediated through regulation of gene expression. It has
-frequently been assumed that this regulation is largely in \textit{cis},
-but attempts to use local gene regulation to explain phenotypic
-variation have yet to explain much trait heritability {[}REF{]}. In
-recent years, the discussion has turned to distal gene regulation
-{[}REF{]}. Although, distal gene regulation is more complex to identify,
-evidence suggests that it is an important component of trait
-heritability.
+With HDMA we identified tissue-specific composite transcripts that
+mediated the effects of genetic background on trait variation in the DO
+mice. The transcripts that contributed the most to the composite
+transcripts were strongly distally regulated and only weakly locally
+regulated, suggesting that distal gene regulation plays a primary role
+in driving heritable trait variation. In support of this hypothesis, we
+demonstrated that the transcriptomic signatures we identified predicted
+obesity in an independent population of CC-RIX mice and in humans,
+whereas a model using local gene regulation alone was unable to predict
+obsesity in the mice. Finally, we showed that these transcriptomic
+signatures have multiple applications, including analyses of tissue
+composition from bulk RNA-Seq and drug prioritization.
 
-Yao \textit{et al.} \cite{pmid32424349} observed that in humans,
-transcripts with low local heritability explained more
+The observation that distal gene regulation is primarily responsible for
+expression-mediated trait variation is supported in human studies.
+Transcripts with low local heritability have been shown to explain more
 expression-mediated disease heritability than transcripts with high
-local heritability. We observed the same trend here in mice in a
-well-powered study of all major tissues of action simultaneously. This
-pattern is consistent with principles of robustness in complex systems
-\cite{pmid29782925, pmid12082173, pmid27304973}. If a transcript were
-both important to a trait and subject to strong local regulation, a
+local heritability \cite{pmid32424349}. Further, studies suggest that
+genes that are near GWAS hits and have obvious functional relevance to a
+trait tend to have highly complex regulatory landscapes under strong
+selection pressures \cite{pmid37857933}. In contrast, genes with strong
+local regulation tend to be depleted of functional annotations and are
+under looser selection constraints \cite{pmid37857933}. These
+observations and others led Liu et al.~\cite{pmid31051098} to suggest
+that most heritability of complex traits is driven by weak distal eQTLs.
+They proposed a framework of understanding heritability of complex
+traits in which massive polygenicity is distributed across common
+variants in both functional ``core genes'', as well as more peripheral
+genes that may not seem obviously related to the trait.
+
+This pattern is consistent with principles of robustness in complex
+systems \cite{pmid29782925, pmid12082173, pmid27304973}. If a transcript
+were both important to a trait and subject to strong local regulation, a
 population would be susceptible to extremes in phenotype that might
 frequently cross the threshold to disease. Indeed, strong disruption of
 highly trait-relevant genes is the cause of Mendelian disease.
-
-Rather, studies suggest that genes that are near GWAS hits and have
-obvious functional relevance to a trait tend to have highly complex
-regulatory landscapes under strong selection pressures
-\cite{pmid37857933}. In contrast, genes with strong local regulation
-tend to be depleted of functional annotations and are under looser
-selection constraints \cite{pmid37857933}. These observations and others
-led Liu et al.~\cite{pmid31051098} to suggest that most heritability of
-complex traits is driven by weak distal eQTLs. They proposed a framework
-of understanding heritability of complex traits in which massive
-polygenicity is distributed across common variants in both functional
-``core genes'', as well as more peripheral genes that may not seem
-obviously related to the trait.
 
 Here, we used large, comprehensive, and purpose-built data sets to
 investigate the genetic architecture of complex traits related to
