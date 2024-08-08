@@ -55,41 +55,38 @@ ref_fig <- function(fig.vector, fig.ref){
 }
 ```
 
+Anna L Tyler, J Matthew Mahoney, Mark P Keller, Candice N. Baker, Anuj Srivastava,
+Isabela Gerdes Gyuricza, [Other Churchill people? Jeff Harder?], Nadia A Rosenthal,
+Alan D Attie, Gary A Churchill and Gregory W Carter
 
 ## Abstract
-
-The transcriptome is increasingly viewed as a bridge between genetic 
-risk factors for complex disease and their associated pathophysiology.
-Powerful insights into disease mechanism can be made by linking genetic
-variants affecting gene expression (expression quantiatitive trait loci - 
-eQTLs) to phenotypes. 
-
-To assess the role of gene regulation in mediating variation in metabolic
-traits in this population, we propose a novel high-dimensional mediation
-analysis (HDMA) that uses the theory of causal modeling to explicitly 
-model the emergent transcriptomic state mediating the distal effects 
-driving trait-relevant gene expression. In univariate approaches, such 
-as TWAS, SMR, and other Mendelian randomization approaches, each transcript 
-is tested independently for mediation of a local variant on a trait. This 
-process requires huge numbers of statistical tests, which is compuatationally 
-expensive, requires strict corrections for multiple testing, and assumes 
-independence of genetic variants and transcripts. Such methods are therefore 
-limited to detecting only the largest statistical effects and are biased 
-toward local gene regulation. In contrast, HDMA assesses genome-, 
-transcriptome-, and phenome-wide relationships as a whole and, in particular, 
-identifies a highly heritable trait profile that is perfectly mediated by a 
-transcriptomic signature. We found these transcriptomic signatures are
-tissue-specific and highly interpretable in terms of biological processes 
-as well as cell type composition. Heritability analysis of the transcripts 
-showed that the strongest transcriptional mediators of metabolic disease 
-had low local heritability and high distal heritability. Finally, we showed 
-that the HDMA transcriptomic signatures predicted 
-obesity in an independent population of Collaborative Cross recombinant 
-inbred (CC-RIX) mice and in human subjects. In contrast, local eQTL were 
-unable to predict obesity in the CC-RIX mice. Together our results suggest 
-that both the tissue used for gene expression analysis as well as distal 
-gene regulation are critically important in identifying transcriptional 
-mediators of the genome on complex traits.
+The effects of genetic variants on complex traits are mediated
+in large part through regulation of gene expression. However 
+there has been limited success in explaining variant-trait 
+associations with regulation of locally encoded genes. There 
+is emerging evidence that distal gene regulation may play an 
+important role in mediating the effect of genotype on phenotype. 
+Here we investigated the roles of local and distal gene regulation 
+on complex traits in a mouse model of diet-induced obesity and 
+metabolic disease. We measured longitudinal metabolic phenotypes
+in a population of 500 diversity outbred (DO) mice along with 
+transcriptome-wide gene expression in four disease-relevant 
+tissues: adipose, pancreatic islets, liver, and skeletal muscle. 
+We developed a novel high-dimensional mediation analysis (HDMA)
+to model emergent transcriptomic states mediating genetic effects
+on traits. We identified a set of tissue-specific composite 
+transcriptomic signatures that were heritable and trait-related.
+These transcriptomic signatures were highly interpretable in terms 
+of biological processes as well as cell type composition in islets
+and adipose tissue. The transcripts that contributed most strongly 
+to the composite transcriptomic signatures had low local heritability
+and high distal heritability and predicted obesity in an independent
+population of mice and in human study populations with high accuracy. 
+In contrast, local expression quantitative trait loci (eQTL) alone were 
+unable to predict obesity in an independent population. Together these 
+results suggest that both the tissue used for gene expression analysis 
+as well as distal gene regulation are critically important in identifying 
+transcriptional mediators of the genome on complex traits.
 
 ## Introduction
 
@@ -109,19 +106,17 @@ and others capitalize on this idea to identify genes associated
 with multiple disease traits \cite{pmid29567659, pmid35533209, pmid27309819, 
 pmid30950127}
 
-Despite the great promise of these methods, their efficacy
-has been limited. The vast majority of complex trait heritability 
-remains unexplained [REF], implicating a subtler genetic 
-architecture than assumed. Ineed, although 
+Despite the great promise of these methods, explaining trait 
+effects with local gene regulation has been more difficult than
+initially assumed \cite{pmid32912663, pmid36515579}. Although 
 trait-associated variants tend to lie in non-coding, regulatory 
-regions, they often do not have detectable effects on gene 
-expression \cite{pmid32912663} and tend not to co-localize 
-with expression quantitative trait loci (eQTLs) 
-\cite{pmid36515579, pmid37857933}. 
+regions, they often do not have detectable effects on gene expression 
+\cite{pmid32912663} and tend not to co-localize with expression 
+quantitative trait loci (eQTLs) \cite{pmid36515579, pmid37857933}. 
 
 One possible explanation for these observations is that gene 
 expression is not being measured in the appropriate cell types 
-and thus true eQTLs influencing traits cannot be detected 
+and thus local eQTLs influencing traits cannot be detected 
 \cite{pmid32912663}. An alternative explanation that has been 
 discussed in recent years is that effects of these variants 
 are mediated not through local regulation of gene expression, 
@@ -136,7 +131,7 @@ state arising from the myriad molecular interactions defining and
 constraining gene expression. 
 
 To assess the role of wide-spread distal gene regulation 
-on complex traits, we have studied diet-induced obesity and 
+on complex traits, we investigated diet-induced obesity and 
 metabolic disease as an archetypal example. Diet-induced 
 obesity and metabolic disease are genetically complex with 
 hundreds of variants mapped through GWAS [REFS]. These variants 
@@ -374,7 +369,7 @@ transcriptome was taken into account, the partial correlation between
 $G_C$ and $P_C$ was effectively zero (`r signif(var.pcor["Causal", "Outcome"], 2)`).
 $P_C$ captured `r signif(comp.trait.exp[[1]], 2)`\% of the overall trait variance,
 and its estimated heritability was `r signif(comp.trait.herit[1], 2)` $\pm$ 
-`r signif(comp.trait.herit[2], 2)`\%, which was higher than any of the measured 
+`r signif(comp.trait.herit[2], 2)`, which was higher than any of the measured 
 traits (Fig. \ref{fig:trait_overview}F). Thus, HDMA identified a maximally 
 heritable metabolic composite trait that was perfectly mediated by a highly 
 heritable component of the transcriptome.

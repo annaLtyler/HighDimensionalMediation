@@ -87,39 +87,36 @@ on complex traits}
 \begin{document}
 \maketitle
 
+Anna L Tyler, J Matthew Mahoney, Mark P Keller, Candice N. Baker, Anuj
+Srivastava, Isabela Gerdes Gyuricza, {[}Other Churchill people? Jeff
+Harder?{]}, Nadia A Rosenthal, Alan D Attie, Gary A Churchill and
+Gregory W Carter
+
 \subsection{Abstract}\label{abstract}
 
-The transcriptome is increasingly viewed as a bridge between genetic
-risk factors for complex disease and their associated pathophysiology.
-Powerful insights into disease mechanism can be made by linking genetic
-variants affecting gene expression (expression quantiatitive trait loci
-- eQTLs) to phenotypes.
-
-To assess the role of gene regulation in mediating variation in
-metabolic traits in this population, we propose a novel high-dimensional
-mediation analysis (HDMA) that uses the theory of causal modeling to
-explicitly model the emergent transcriptomic state mediating the distal
-effects driving trait-relevant gene expression. In univariate
-approaches, such as TWAS, SMR, and other Mendelian randomization
-approaches, each transcript is tested independently for mediation of a
-local variant on a trait. This process requires huge numbers of
-statistical tests, which is compuatationally expensive, requires strict
-corrections for multiple testing, and assumes independence of genetic
-variants and transcripts. Such methods are therefore limited to
-detecting only the largest statistical effects and are biased toward
-local gene regulation. In contrast, HDMA assesses genome-,
-transcriptome-, and phenome-wide relationships as a whole and, in
-particular, identifies a highly heritable trait profile that is
-perfectly mediated by a transcriptomic signature. We found these
-transcriptomic signatures are tissue-specific and highly interpretable
-in terms of biological processes as well as cell type composition.
-Heritability analysis of the transcripts showed that the strongest
-transcriptional mediators of metabolic disease had low local
-heritability and high distal heritability. Finally, we showed that the
-HDMA transcriptomic signatures predicted obesity in an independent
-population of Collaborative Cross recombinant inbred (CC-RIX) mice and
-in human subjects. In contrast, local eQTL were unable to predict
-obesity in the CC-RIX mice. Together our results suggest that both the
+The effects of genetic variants on complex traits are mediated in large
+part through regulation of gene expression. However there has been
+limited success in explaining variant-trait associations with regulation
+of locally encoded genes. There is emerging evidence that distal gene
+regulation may play an important role in mediating the effect of
+genotype on phenotype. Here we investigated the roles of local and
+distal gene regulation on complex traits in a mouse model of
+diet-induced obesity and metabolic disease. We measured longitudinal
+metabolic phenotypes in a population of 500 diversity outbred (DO) mice
+along with transcriptome-wide gene expression in four disease-relevant
+tissues: adipose, pancreatic islets, liver, and skeletal muscle. We
+developed a novel high-dimensional mediation analysis (HDMA) to model
+emergent transcriptomic states mediating genetic effects on traits. We
+identified a set of tissue-specific composite transcriptomic signatures
+that were heritable and trait-related. These transcriptomic signatures
+were highly interpretable in terms of biological processes as well as
+cell type composition in islets and adipose tissue. The transcripts that
+contributed most strongly to the composite transcriptomic signatures had
+low local heritability and high distal heritability and predicted
+obesity in an independent population of mice and in human study
+populations with high accuracy. In contrast, local expression
+quantitative trait loci (eQTL) alone were unable to predict obesity in
+an independent population. Together these results suggest that both the
 tissue used for gene expression analysis as well as distal gene
 regulation are critically important in identifying transcriptional
 mediators of the genome on complex traits.
@@ -142,17 +139,16 @@ capitalize on this idea to identify genes associated with multiple
 disease traits \cite{pmid29567659, pmid35533209, pmid27309819, 
 pmid30950127}
 
-Despite the great promise of these methods, their efficacy has been
-limited. The vast majority of complex trait heritability remains
-unexplained {[}REF{]}, implicating a subtler genetic architecture than
-assumed. Ineed, although trait-associated variants tend to lie in
-non-coding, regulatory regions, they often do not have detectable
-effects on gene expression \cite{pmid32912663} and tend not to
-co-localize with expression quantitative trait loci (eQTLs)
+Despite the great promise of these methods, explaining trait effects
+with local gene regulation has been more difficult than initially
+assumed \cite{pmid32912663, pmid36515579}. Although trait-associated
+variants tend to lie in non-coding, regulatory regions, they often do
+not have detectable effects on gene expression \cite{pmid32912663} and
+tend not to co-localize with expression quantitative trait loci (eQTLs)
 \cite{pmid36515579, pmid37857933}.
 
 One possible explanation for these observations is that gene expression
-is not being measured in the appropriate cell types and thus true eQTLs
+is not being measured in the appropriate cell types and thus local eQTLs
 influencing traits cannot be detected \cite{pmid32912663}. An
 alternative explanation that has been discussed in recent years is that
 effects of these variants are mediated not through local regulation of
@@ -167,7 +163,7 @@ transcriptome is an emergent state arising from the myriad molecular
 interactions defining and constraining gene expression.
 
 To assess the role of wide-spread distal gene regulation on complex
-traits, we have studied diet-induced obesity and metabolic disease as an
+traits, we investigated diet-induced obesity and metabolic disease as an
 archetypal example. Diet-induced obesity and metabolic disease are
 genetically complex with hundreds of variants mapped through GWAS
 {[}REFS{]}. These variants are known to act through multiple tissues
@@ -378,8 +374,8 @@ was 0.42, and the partial correlation between \(T_C\) and \(P_C\) was
 0.78. However, when the transcriptome was taken into account, the
 partial correlation between \(G_C\) and \(P_C\) was effectively zero
 (0.039). \(P_C\) captured 30\% of the overall trait variance, and its
-estimated heritability was 0.71 \(\pm\) 0.084\%, which was higher than
-any of the measured traits (Fig. \ref{fig:trait_overview}F). Thus, HDMA
+estimated heritability was 0.71 \(\pm\) 0.084, which was higher than any
+of the measured traits (Fig. \ref{fig:trait_overview}F). Thus, HDMA
 identified a maximally heritable metabolic composite trait that was
 perfectly mediated by a highly heritable component of the transcriptome.
 
@@ -738,19 +734,19 @@ obesity and diabetes in human subjects.
 \subsubsection{Targeting gene
 signatures}\label{targeting-gene-signatures}
 
-Another global view of the transcript loading landscape is in ranking
-potential drug candidates for the treatment of metabolic disease.
-Although high-loading transcripts may be good candidates for
+Another potential application of the transcript loading landscape is in
+ranking potential drug candidates for the treatment of metabolic
+disease. Although high-loading transcripts may be good candidates for
 understanding specific biology related to obesity, the transcriptome
 overall is highly interconnected and redundant, and focusing on
 individual transcripts for treatment may be less effective than using
-broader transcriptomic signatures that capture the emergent biology. The
-ConnectivityMap (CMAP) database {[}cite{]} developed by the Broad
-Institute allows us to query thousands of compounds that reverse or
-enhance the extreme ends of transcriptomic signatures in multiple
-different cell types. By identifying drugs that reverse pathogenic
-transcriptomic signatures, we can potentially identify compounds that
-have favorable effects on gene expression.
+broader transcriptomic signatures that capture the emergent biology
+{[}cite or remove{]}. The ConnectivityMap (CMAP) database {[}cite{]}
+developed by the Broad Institute allows us to query thousands of
+compounds that reverse or enhance the extreme ends of transcriptomic
+signatures in multiple different cell types. By identifying drugs that
+reverse pathogenic transcriptomic signatures, we can potentially
+identify compounds that have favorable effects on gene expression.
 
 To test this hypothesis, we queried the CMAP database through the CLUE
 online query tool {[}cite{]} (Methods). We identified top
@@ -811,14 +807,17 @@ have notable side effects including hypoglycemia and accellerated
 
 \subsection{Discussion}\label{discussion}
 
+summarize main findings.
+
 It is thought that the bulk of the effect of genomic variation on
 complex traits is mediated through regulation of gene expression. It has
 frequently been assumed that this regulation is largely in \textit{cis},
 but attempts to use local gene regulation to explain phenotypic
-variation have yet to explain much trait heritability. In recent years,
-the discussion has turned to distal gene regulation. Although, distal
-gene regulation is more complex to identify, evidence suggests that it
-is an important component of trait heritability.
+variation have yet to explain much trait heritability {[}REF{]}. In
+recent years, the discussion has turned to distal gene regulation
+{[}REF{]}. Although, distal gene regulation is more complex to identify,
+evidence suggests that it is an important component of trait
+heritability.
 
 Yao \textit{et al.} \cite{pmid32424349} observed that in humans,
 transcripts with low local heritability explained more
@@ -845,7 +844,7 @@ polygenicity is distributed across common variants in both functional
 ``core genes'', as well as more peripheral genes that may not seem
 obviously related to the trait.
 
-Here, we used a large, comprehensive, and purpose-built data set to
+Here, we used large, comprehensive, and purpose-built data sets to
 investigate the genetic architecture of complex traits related to
 metabolic disease in mice as well as the roles of local and distal gene
 regulation in mediating these traits. We presented a systems-level
@@ -859,13 +858,12 @@ gene regulation, as well as the interconnectedness and redundancy of the
 transcriptome. Second, rather than assuming a single, large genetic
 effect as univariate approaches do, HDMA assumes that traits are highly
 polygenic, and that genetic effects are weak and are distributed across
-the genome. HDMA does not use statistical threholds to identify true
-positive effects, but generates a weighted vector of transcripts that
-can be analyzed as a whole, or dissected to identify transcripts with
-stronger and weaker effects. This method explicitly models a central
-proposal of the omnigenic model which posits that once the expression of
-the core genes (i.e.~ trait-mediating genes) is accounted for, there
-should be no residual correlation between the genome and the phenome.
+the genome. HDMA generates a weighted vector of transcripts that can be
+analyzed as a whole, or dissected to identify transcripts with stronger
+and weaker effects. This method explicitly models a central proposal of
+the omnigenic model which posits that once the expression of the core
+genes (i.e.~trait-mediating genes) is accounted for, there should be no
+residual correlation between the genome and the phenome.
 
 Using HDMA, we identified a highly heritable composite trait (\(h^2=\)
 0.71) that explained 30\% of overall trait variance, and was perfectly
