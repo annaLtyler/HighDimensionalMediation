@@ -62,20 +62,19 @@ Alan D Attie, Gary A Churchill and Gregory W Carter
 ## Abstract
 Variation in gene expression is an important mediator of the effect of 
 genetic variation on phenotypes. Although many genes are subject to 
-simple, local regulation, recent evidence suggests that more complex
-distal regulation may be more important to trait variability. To investigate
+simple, local regulation, recent evidence suggests that complex distal 
+regulation may be more important to trait variability. To investigate
 this possibility, we combined two large, purpose-built data sets modeling
 diet-induced obesity and metabolic disease in genetically diverse mice.
 Using a novel high-dimensional mediation analysis, we identified a heritable 
-composite transcript that explained 30% of trait variation in a genetically diverse 
-mouse model of diet-induced obesity and metabolic disease. The composite 
-transcript was interpretable in terms of enriched biological processes, 
-and predicted obesity status in an independent mouse cohort as well as 
-human cohorts with measured gene expression. Transcripts contributing 
-most strongly to this mediator tended to have complex, distal regulation 
-distributed throughout the genome. These results suggest that the majority 
-of heritable transcript variation mediating trait variation is regulated 
-in a complex manner, but is nonetheless translatable across species.
+composite transcript that explained 30% of variation across the metabolic traits. 
+The composite transcript was interpretable in terms of enriched biological 
+processes and predicted obesity status in an independent mouse cohort as 
+well as human cohorts with measured gene expression. Transcripts contributing 
+most strongly to this composite mediator tended to have complex, distal 
+regulation distributed throughout the genome. These results suggest that 
+trait-relevant variation in transcription is largely distally regulated, but is 
+nonetheless identifiable, interpretable, and translatable across species.
 
 
 
