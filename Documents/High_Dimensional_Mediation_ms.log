@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.7)  13 AUG 2024 09:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.7)  13 AUG 2024 13:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -521,11 +521,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 123.
+(Font)              <10> on input line 122.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 123.
+(Font)              <7> on input line 122.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 123.
+(Font)              <5> on input line 122.
 [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
@@ -534,7 +534,7 @@ al/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2]
 File: Figures/Fig1_trait_overview.pdf Graphic file (type pdf)
 <use Figures/Fig1_trait_overview.pdf>
 Package pdftex.def Info: Figures/Fig1_trait_overview.pdf  used on input line 22
-8.
+7.
 (pdftex.def)             Requested size: 469.7773pt x 402.86118pt.
 [3{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
 cal/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texliv
@@ -542,39 +542,39 @@ e/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
 <Figures/Fig2_motivation.pdf, id=83, 742.30186pt x 584.74539pt>
 File: Figures/Fig2_motivation.pdf Graphic file (type pdf)
 <use Figures/Fig2_motivation.pdf>
-Package pdftex.def Info: Figures/Fig2_motivation.pdf  used on input line 269.
+Package pdftex.def Info: Figures/Fig2_motivation.pdf  used on input line 268.
 (pdftex.def)             Requested size: 469.7594pt x 370.05112pt.
 [4 <./Figures/Fig1_trait_overview.pdf>] [5 <./Figures/Fig2_motivation.pdf>]
 <Figures/Fig3_workflow.pdf, id=187, 471.9762pt x 491.94771pt>
 File: Figures/Fig3_workflow.pdf Graphic file (type pdf)
 <use Figures/Fig3_workflow.pdf>
-Package pdftex.def Info: Figures/Fig3_workflow.pdf  used on input line 337.
+Package pdftex.def Info: Figures/Fig3_workflow.pdf  used on input line 336.
 (pdftex.def)             Requested size: 361.34868pt x 376.63902pt.
 [6] [7 <./Figures/Fig3_workflow.pdf>]
 <Figures/Fig4_interpretation.pdf, id=296, 763.78691pt x 476.49785pt>
 File: Figures/Fig4_interpretation.pdf Graphic file (type pdf)
 <use Figures/Fig4_interpretation.pdf>
 Package pdftex.def Info: Figures/Fig4_interpretation.pdf  used on input line 42
-1.
+0.
 (pdftex.def)             Requested size: 469.7553pt x 293.06262pt.
 [8] [9 <./Figures/Fig4_interpretation.pdf>]
 <Figures/Fig5_loading_heritability.pdf, id=467, 720.73404pt x 584.78528pt>
 File: Figures/Fig5_loading_heritability.pdf Graphic file (type pdf)
 <use Figures/Fig5_loading_heritability.pdf>
 Package pdftex.def Info: Figures/Fig5_loading_heritability.pdf  used on input l
-ine 515.
+ine 514.
 (pdftex.def)             Requested size: 469.75829pt x 381.14992pt.
 [10] [11 <./Figures/Fig5_loading_heritability.pdf>]
 <Figures/Fig6_TOA.pdf, id=531, 572.53983pt x 426.5826pt>
 File: Figures/Fig6_TOA.pdf Graphic file (type pdf)
 <use Figures/Fig6_TOA.pdf>
-Package pdftex.def Info: Figures/Fig6_TOA.pdf  used on input line 579.
+Package pdftex.def Info: Figures/Fig6_TOA.pdf  used on input line 578.
 (pdftex.def)             Requested size: 469.75652pt x 350.00177pt.
 [12 <./Figures/Fig6_TOA.pdf>]
 <Figures/Fig7_CC_Prediction.pdf, id=559, 675.32918pt x 430.15788pt>
 File: Figures/Fig7_CC_Prediction.pdf Graphic file (type pdf)
 <use Figures/Fig7_CC_Prediction.pdf>
-Package pdftex.def Info: Figures/Fig7_CC_Prediction.pdf  used on input line 615
+Package pdftex.def Info: Figures/Fig7_CC_Prediction.pdf  used on input line 614
 .
 (pdftex.def)             Requested size: 469.75946pt x 299.21812pt.
 [13 <./Figures/Fig7_CC_Prediction.pdf>]
@@ -582,37 +582,37 @@ Package pdftex.def Info: Figures/Fig7_CC_Prediction.pdf  used on input line 615
 File: Figures/Fig8_Human_Translation.pdf Graphic file (type pdf)
 <use Figures/Fig8_Human_Translation.pdf>
 Package pdftex.def Info: Figures/Fig8_Human_Translation.pdf  used on input line
- 668.
+ 667.
 (pdftex.def)             Requested size: 469.7507pt x 250.08827pt.
 [14] [15 <./Figures/Fig8_Human_Translation.pdf>] [16] [17] [18] [19] [20]
 <Figures/Supp_Fig1_eQTL.pdf, id=760, 747.90518pt x 500.0683pt>
 File: Figures/Supp_Fig1_eQTL.pdf Graphic file (type pdf)
 <use Figures/Supp_Fig1_eQTL.pdf>
-Package pdftex.def Info: Figures/Supp_Fig1_eQTL.pdf  used on input line 979.
+Package pdftex.def Info: Figures/Supp_Fig1_eQTL.pdf  used on input line 978.
 (pdftex.def)             Requested size: 469.76767pt x 314.09853pt.
 <Figures/Supp_Fig_enrichments_KEGG.pdf, id=761, 794.97pt x 614.295pt>
 File: Figures/Supp_Fig_enrichments_KEGG.pdf Graphic file (type pdf)
 <use Figures/Supp_Fig_enrichments_KEGG.pdf>
 Package pdftex.def Info: Figures/Supp_Fig_enrichments_KEGG.pdf  used on input l
-ine 1005.
+ine 1004.
 (pdftex.def)             Requested size: 469.76819pt x 363.00267pt.
 <Figures/Supp_Fig_enrichments_GO.pdf, id=762, 794.97pt x 614.295pt>
 File: Figures/Supp_Fig_enrichments_GO.pdf Graphic file (type pdf)
 <use Figures/Supp_Fig_enrichments_GO.pdf>
 Package pdftex.def Info: Figures/Supp_Fig_enrichments_GO.pdf  used on input lin
-e 1016.
+e 1015.
 (pdftex.def)             Requested size: 469.76819pt x 363.00267pt.
 <Figures/Supp_Fig_CC-RIX_Imputation.pdf, id=763, 747.51555pt x 494.45384pt>
 File: Figures/Supp_Fig_CC-RIX_Imputation.pdf Graphic file (type pdf)
 <use Figures/Supp_Fig_CC-RIX_Imputation.pdf>
 Package pdftex.def Info: Figures/Supp_Fig_CC-RIX_Imputation.pdf  used on input 
-line 1029.
+line 1028.
 (pdftex.def)             Requested size: 469.76245pt x 310.73045pt.
 <Figures/Supplemental_FigX_Nucb2_eQTL.pdf, id=764, 725.02454pt x 247.9919pt>
 File: Figures/Supplemental_FigX_Nucb2_eQTL.pdf Graphic file (type pdf)
 <use Figures/Supplemental_FigX_Nucb2_eQTL.pdf>
 Package pdftex.def Info: Figures/Supplemental_FigX_Nucb2_eQTL.pdf  used on inpu
-t line 1045.
+t line 1044.
 (pdftex.def)             Requested size: 469.76686pt x 160.68196pt.
 (./High_Dimensional_Mediation_ms.bbl [21 <./Figures/Supp_Fig1_eQTL.pdf>] [22 <.
 /Figures/Supp_Fig_enrichments_KEGG.pdf>] [23 <./Figures/Supp_Fig_enrichments_GO
@@ -647,7 +647,7 @@ texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist
 /texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/20
 23/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-d
 ist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on High_Dimensional_Mediation_ms.pdf (30 pages, 6940371 bytes).
+Output written on High_Dimensional_Mediation_ms.pdf (30 pages, 6940391 bytes).
 PDF statistics:
  1051 PDF objects out of 1200 (max. 8388607)
  775 compressed objects within 8 object streams
