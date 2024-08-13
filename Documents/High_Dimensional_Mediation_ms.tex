@@ -338,9 +338,10 @@ HDMA are available in \textbf{Supp. Methods XXX}.
 \includegraphics[width=5in]{Figures/Fig3_workflow.pdf} 
 \caption{High-dimensional mediation. \textbf{A.} Workflow indicating 
 major steps of high-dimensional mediation. The genotype, transcriptome, 
-and phenotype matrices were kernelized to yield single matrices representing 
-the relationships between all individuals for each data modality ($G_K$ = 
-genome kernel, $T_K$ = transcriptome kernel; $P_K$ = phenome kernel). 
+and phenotype matrices were independently normalized and converted to 
+kernel matrices representing the pairwise relationships between 
+individuals for each data modality ($K_G$ = genome kernel, $K_T$ = 
+transcriptome kernel; $K_P$ = phenome kernel). 
 High-dimensional mediation was applied to these matrices to maximize the 
 direct path $G \rightarrow T \rightarrow P$, the mediating pathway (arrows), 
 while simultaneously minimizing the direct $G \rightarrow P$ pathway (dotted 
