@@ -61,13 +61,13 @@ Alan D Attie, Gary A Churchill and Gregory W Carter
 
 ## Abstract
 Variation in gene expression is an important mediator of the effect of 
-genotype on phenotype. Evidence suggests that local gene regulation may 
-play only a minor role in trait-relevant variation in gene expression. 
-Here we combined two large, purpose-built data sets to investigate the 
-relative contributions of local and distal gene regulation in mediating 
-the connection between genotype and phenotype. Using a novel 
-high-dimensional mediation analysis, we identified a heritable composite 
-transcript that explained 30% of trait variation in a genetically diverse 
+genetic variation on phenotypes. Although many genes are subject to 
+simple, local regulation, recent evidence suggests that more complex
+distal regulation may be more important to trait variability. To investigate
+this possibility, we combined two large, purpose-built data sets modeling
+diet-induced obesity and metabolic disease in genetically diverse mice.
+Using a novel high-dimensional mediation analysis, we identified a heritable 
+composite transcript that explained 30% of trait variation in a genetically diverse 
 mouse model of diet-induced obesity and metabolic disease. The composite 
 transcript was interpretable in terms of enriched biological processes, 
 and predicted obesity status in an independent mouse cohort as well as 
@@ -76,6 +76,7 @@ most strongly to this mediator tended to have complex, distal regulation
 distributed throughout the genome. These results suggest that the majority 
 of heritable transcript variation mediating trait variation is regulated 
 in a complex manner, but is nonetheless translatable across species.
+
 
 
 
