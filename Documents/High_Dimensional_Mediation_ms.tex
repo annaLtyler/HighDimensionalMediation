@@ -87,9 +87,10 @@ on complex traits}
 \begin{document}
 \maketitle
 
-Anna L Tyler, J Matthew Mahoney, Mark P Keller, Candice N. Baker, Anuj
-Srivastava, Isabela Gerdes Gyuricza, Nadia A Rosenthal, Alan D Attie,
-Gary A Churchill and Gregory W Carter
+Anna L Tyler, J Matthew Mahoney, Mark P Keller, Candice N. Baker,
+Margaret Gaca, Anuj Srivastava, Isabela Gerdes Gyuricza, Madeleine
+Braun, Nadia A Rosenthal, Alan D Attie, Gary A Churchill and Gregory W
+Carter
 
 \subsection{Abstract}\label{abstract}
 
@@ -281,25 +282,26 @@ values for each correlation are shown in the upper-right of each panel.}
 \end{figure}
 
 The local heritability of transcripts was negatively correlated with
-their trait relevance, defined as the maximum correlation of a
-transcript across all traits (Fig. \ref{fig:motivation}B). This suggests
-that the more local genotype influenced transcript abundance, the less
-effect this variation had on the measured traits. Conversely, the distal
-heritability of transcripts was positively correlated with trait
-relevance (Fig. \ref{fig:motivation}C). That is, transcripts that were
-more highly correlated with the measured traits tended to be distally,
-rather than locally, heritable. Importantly, this pattern was consistent
-across all tissues, strongly suggesting that this is a generic finding.
-This finding is consistent with previous observations that
-low-heritability transcripts explain more expression-mediated disease
-heritability than high-heritability transcripts \cite{pmid32424349}.
-However, the positive relationship between trait correlation and distal
-heritability demonstrated further that there are diffuse genetic effects
-throughout the genome converging on trait-related transcripts.
+their trait relevance. We defined trait relevance as the maximum
+correlation of a transcript across all traits (Fig.
+\ref{fig:motivation}B). This suggests that the more local genotype
+influenced transcript abundance, the less effect this variation had on
+the measured traits. Conversely, the distal heritability of transcripts
+was positively correlated with trait relevance (Fig.
+\ref{fig:motivation}C). That is, transcripts that were more highly
+correlated with the measured traits tended to be distally, rather than
+locally, heritable. Importantly, this pattern was consistent across all
+tissues, strongly suggesting that this is a generic finding. This
+finding is consistent with previous observations that low-heritability
+transcripts explain more expression-mediated disease heritability than
+high-heritability transcripts \cite{pmid32424349}. However, the positive
+relationship between trait correlation and distal heritability
+demonstrated further that there are diffuse genetic effects throughout
+the genome converging on trait-related transcripts.
 
 \subsubsection{High-Dimensional Mediation identified a high-heritability
-composite trait that was perfectly mediated by a composite
-transcript}\label{high-dimensional-mediation-identified-a-high-heritability-composite-trait-that-was-perfectly-mediated-by-a-composite-transcript}
+composite trait that was mediated by a composite
+transcript}\label{high-dimensional-mediation-identified-a-high-heritability-composite-trait-that-was-mediated-by-a-composite-transcript}
 
 The above univariate analyses establish the importance of distal
 heritability for trait-relevant transcripts. However, the number of
@@ -338,11 +340,11 @@ HDMA are available in \textbf{Supp. Methods XXX}.
 major steps of high-dimensional mediation. The genotype, transcriptome, 
 and phenotype matrices were kernelized to yield single matrices representing 
 the relationships between all individuals for each data modality ($G_K$ = 
-genome kernel, $T_K$ = transcriptome kernel; $P_K$ = phenome kernel). High-dimensional 
-mediation was applied to these matrices to maximize the direct path 
-$G \rightarrow T \rightarrow P$, the mediating pathway (arrows), while 
-simultaneously minimizing the direct $G \rightarrow P$ pathway (dotted line). 
-The composite vectors that resulted from high-dimensional mediation were 
+genome kernel, $T_K$ = transcriptome kernel; $P_K$ = phenome kernel). 
+High-dimensional mediation was applied to these matrices to maximize the 
+direct path $G \rightarrow T \rightarrow P$, the mediating pathway (arrows), 
+while simultaneously minimizing the direct $G \rightarrow P$ pathway (dotted 
+line). The composite vectors that resulted from high-dimensional mediation were 
 $G_c$, $T_C$, and $P_C$. The partial correlations $\rho$ between these vectors 
 indicated perfect mediation. Transcript and trait loadings were calculated 
 as described in the methods. \textbf{B.} The null distribution of the path 
@@ -432,8 +434,8 @@ large negative loadings, higher expression was associated with
 lower phenotype scores. \textbf{D.} Distribution of absolute 
 value of transcript loadings across tissues. Transcripts in 
 adipose tissue had the largest loadings indicating that 
-transcripts in adipose tissue were the best mediators of the 
-genetic effects on body weight and insulin resistance.
+adipose tissue gene expression was a strong mediator of 
+genotype on body weight and insulin resistance.
 }
 \label{fig:interpretation}
 \end{figure}
@@ -534,31 +536,32 @@ traits}\label{tissue-specific-transriptional-programs-were-associated-with-metab
 Clustering of transcripts with top loadings in each tissue showed
 tissue-specific functional modules associated with obesity and insulin
 resistance (Fig. \ref{fig:toa}A) (Methods). The clustering highlights
-the importance of immune activation particularly in adipose tissue.
-Except for the ``mitosis'' cluster, which had large positive loadings in
-three of the four tissues, all clusters were strongly loaded in only one
-or two tissues. For example, the lipid metabolism cluster was loaded
-most heavily in liver. The positive loadings suggest that high
-expression of these genes particularly in the liver was associated with
-increased metabolic disease. This cluster included the gene
-\textit{Pparg}, whose primary role is in the adipose tissue where it is
-considered a master regulator of adipogenesis \cite{pmid17389767}.
-Agonists of \textit{Pparg}, such as thiazolidinediones, are FDA-approved
-to treat type II diabetes, and reduce inflammation and adipose
-hyptertrophy \cite{pmid17389767}. Consistent with this role, the loading
-for \textit{Pparg} in adipose tissue was negative, suggesting that
-higher expression was associated with leaner mice (Fig. \ref{fig:toa}B).
-In contrast, \textit{Pparg} had a large positive loading in liver, where
-it is known to play a role in the development of hepatic steatosis, or
-fatty liver. Mice that lack \textit{Pparg} specifically in the liver,
-are protected from developing steatosis and show reduced expression of
-lipogenic genes \cite{pmid12805374, pmid12618528}. Overexpression of
-\textit{Pparg} in the livers of mice with a \textit{Ppara} knockout,
-causes upregulation of genes involved in adipogenesis
-\cite{pmid16357043}. In the livers of both mice and humans high
-\textit{Pparg} expression is associated with hepatocytes that accumulate
-large lipid droplets and have gene expression profiles similar to
-adipocytes \cite{pmid15644454, pmid16403437}.
+the importance of immune activation particularly in adipose tissue. The
+``mitosis'' cluster had large positive loadings in three of the four
+tissues potentially suggesting system-wide hyptertrophy. Otherwise, all
+clusters were strongly loaded in only one or two tissues. For example,
+the lipid metabolism cluster was loaded most heavily in liver. The
+positive loadings suggest that high expression of these genes
+particularly in the liver was associated with increased metabolic
+disease. This cluster included the gene \textit{Pparg}, whose primary
+role is in the adipose tissue where it is considered a master regulator
+of adipogenesis \cite{pmid17389767}. Agonists of \textit{Pparg}, such as
+thiazolidinediones, are FDA-approved to treat type II diabetes, and
+reduce inflammation and adipose hyptertrophy \cite{pmid17389767}.
+Consistent with this role, the loading for \textit{Pparg} in adipose
+tissue was negative, suggesting that higher expression was associated
+with leaner mice (Fig. \ref{fig:toa}B). In contrast, \textit{Pparg} had
+a large positive loading in liver, where it is known to play a role in
+the development of hepatic steatosis, or fatty liver. Mice that lack
+\textit{Pparg} specifically in the liver, are protected from developing
+steatosis and show reduced expression of lipogenic genes
+\cite{pmid12805374, pmid12618528}. Overexpression of \textit{Pparg} in
+the livers of mice with a \textit{Ppara} knockout, causes upregulation
+of genes involved in adipogenesis \cite{pmid16357043}. In the livers of
+both mice and humans high \textit{Pparg} expression is associated with
+hepatocytes that accumulate large lipid droplets and have gene
+expression profiles similar to adipocytes
+\cite{pmid15644454, pmid16403437}.
 
 The local and distal heritability of \textit{Pparg} is low in adipose
 tissue suggesting its expression in this tissue is highly constrained in
@@ -792,7 +795,8 @@ This cell death process is dependent on NOD1/2 signaling
 out.
 
 We also looked specifically at hits in pancreatic tumor cells (YAPC)
-regardless of significance level. Hits in this list included widely used
+regardless of significance level to get a transcriptional response more
+specific to the pancreas. Hits in this list included widely used
 diabetes drugs, such as sulfonylureas, PPAR receptor agonists, and
 insulin sensitizers. Rosiglitazone is a PPAR-\(\gamma\) agonist and was
 one of the most prescribed drugs for type 2 diabetes before its use was
