@@ -124,40 +124,57 @@ on complex traits, we investigated diet-induced obesity and
 metabolic disease as an archetypal example. Diet-induced 
 obesity and metabolic disease are genetically complex with 
 hundreds of variants mapped through GWAS [REFS]. These variants 
-are known to act through multiple tissues that interact dynamically
-with each other [REFS], including 
-adipose tissue, pancreatic islets, liver, and skeletal muscle. 
-The multi-system etiology of metabolic disease complicates 
-mechanistic dissection of the genetic architecture, requiring large, 
-dedicated data sets that include high-dimensional, clinically relevant 
-phenotyping, dense genotyping in a highly recombined population, and 
-transcriptome-wide measurements of gene expression in multiple tissues. 
-Measuring gene 
-expression in multiple tissues is critical to adequately assess the extent 
-to which local gene regulation varies across multiple tissues and whether 
-such variablilty might account for previous failed attempts to identify 
-trait-relevant local eQTL. Such data sets are extremely difficult to 
-obtain in human populations, particularly in the large numbers of 
-subjects required for adequate statistical power. Thus, to investigate 
-further the role of local and distal gene regulation on complex traits, 
-we have generated an appropriate data set in a large population of 
-diversity outbred (DO) mice \cite{pmid22892839} in a population model 
-of diet-induced obesity and metabolic disease \cite{pmid29567659}.
+are known to act through multiple tissues that interact 
+dynamically with each other [REFS], including 
+adipose tissue, pancreatic islets, liver, and skeletal 
+muscle. The multi-system etiology of metabolic disease 
+complicates mechanistic dissection of the genetic architecture, 
+requiring large, dedicated data sets that include high-dimensional, 
+clinically relevant phenotyping, dense genotyping in a highly 
+recombined population, and transcriptome-wide measurements of 
+gene expression in multiple tissues. 
 
-The DO mice were derived from eight inbred founder mouse strains, five 
-classical lab strains, and three strains more recently derived from 
-wild mice \cite{pmid22892839}. They represent three subspecies of mouse 
-\textit{Mus musculus domesticus}, \textit{Mus musculus musculus}, and 
-\textit{Mus musculus casteneus}, and capture 90\% of the known variation 
-in laboratory mice \cite{pmid31133439}. They are maintained with a breeding 
-scheme that ensures equal contributions from each founder across the genome
-thus rendering almost the whole genome visible to genetic inquiry
-\cite{pmid22892839}. We paired clinically relevant metabolic traits
-from 500 DO mice [REF], including body weight, plasma levels of insulin
-and glucose and plasma lipids, withtranscriptome-wide gene expression 
-in four tissues related to metabolic disease: adipose tissue, pancreatic islets, 
-liver, and skeletal muscle. Taken together, these data enable a comprehensive 
-view into the genetic architecture of metabolic disease.
+Measuring gene expression 
+in multiple tissues is critical to adequately assess the extent 
+to which local gene regulation varies across the tissues and 
+whether such variablilty might account for previous failed attempts 
+to identify trait-relevant local eQTL. Such data sets are extremely 
+difficult to obtain in human populations, particularly in the large 
+numbers of subjects required for adequate statistical power. Thus, 
+to further investigate the role of local and distal gene regulation 
+on complex traits, we generated two complementary data sets: A discovery
+data set in a large population of diversity outbred (DO) mice 
+\cite{pmid22892839}, and an independent validation data set derived
+by crossing inbred strains from the Collaborative Cross (CC) 
+mice \cite{pmid18716833} to form CC F1 mice (CC-RIX). Both populations
+modeled diet-induced obesity and metabolic disease \cite{pmid29567659}
+
+Both the DO and CC mice were derived from eight inbred founder mouse 
+strains, five classical lab strains, and three strains more recently 
+derived from wild mice \cite{pmid22892839}. They represent three 
+subspecies of mouse \textit{Mus musculus domesticus}, 
+\textit{Mus musculus musculus}, and \textit{Mus musculus casteneus}, 
+and capture 90\% of the known variation in laboratory mice \cite{pmid31133439}. 
+The DO mice are maintained with a breeding scheme that ensures equal 
+contributions from each founder across the genome thus rendering almost 
+the whole genome visible to genetic inquiry \cite{pmid22892839}. The 
+CC mice were initially outbred to recombine the genomes from all eight
+founders, and then inbred for at least 20 generations to generate multiple 
+inbred lines.
+
+In the DO population, we paired clinically relevant metabolic traits 
+from 500 mice [REF], including body weight, plasma levels of insulin 
+and glucose and plasma lipids, with transcriptome-wide gene expression 
+in four tissues related to metabolic disease: adipose tissue, pancreatic 
+islets, liver, and skeletal muscle. We measured similar metabolic traits 
+in the CC-RIX and gene expression from three of the four tissues used
+in the DO: adipose tissue, liver, and skeletal muscle. Because the CC-RIX 
+carry the same founder alleles as the DO, local gene regulation is expected 
+to match between the populations, but because the alleles are recombined 
+through the genome, distal effects are expected to vary from those in the 
+DO, allowing us to directly assess the role of local gene regulation in 
+driving trait-associated transcript variation. Together, these data enable 
+a comprehensive view into the genetic architecture of metabolic disease.
 
 ## Results
 
