@@ -1064,8 +1064,9 @@ hypotheses about changes in cell composition in individual tissues.
 Combining the multi-tissue, transcriptome-wide weighted vectors 
 with public databases and data sets thus provides a path for 
 generating a wide range of testable hypotheses. Moreover, each 
-data set presented here was derived from human tissues or cell 
-lines, thus demonstrating the translatability of these results. 
+publically available data set we used for interpretation of the
+HDMA results was derived from human tissues or cell lines, thus 
+demonstrating the translatability of the HDMA results to humans. 
 That the mouse-derived adipose composite transcript was able to 
 classify human adipose gene expression in terms of obesity 
 and diabetes status further supports the direct translatablility 
@@ -1145,8 +1146,6 @@ or the cellular compartment ontology (CC).
 }
 \label{fig:top_enrich_go}
 \end{figure}
-
-
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_OxPhos.png} 
@@ -1251,7 +1250,7 @@ any strong distal eQTL anywhere else in the genome.
 \label{fig:Nucb2_eqtl}
 \end{figure}
 
-\medskip
+\clearpage
 
 \bibliographystyle{unsrt}
 \bibliography{islet.bib}
