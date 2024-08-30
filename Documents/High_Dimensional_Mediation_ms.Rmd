@@ -584,8 +584,9 @@ associations with metabolic disease in the literature (Methods). Multiple
 genes in each group had been previously associated with obesity and 
 diabetes (Fig. \ref{fig:loading_heritability} bolded gene names). Genes 
 with high loadings were most highly enriched for previous literature 
-support. They were `r lit.enrich["loading.twas.enrich"]` more likely 
-than TWAS hits and `r lit.enrich["loading.herit.enrich"]` times more 
+support. They were `r signif(lit.enrich["loading.twas.enrich"], 2)` 
+more likely than TWAS hits and 
+`r signif(lit.enrich["loading.herit.enrich"], 2)` times more 
 likely than genes with high local heritability to be previously 
 associated with obesity or diabetes.
 
