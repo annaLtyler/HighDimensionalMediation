@@ -90,10 +90,10 @@ pmid24316577, pmid27126046}. It is widely assumed that these
 variants influence local transcription, and methods such as 
 transcriptome-wide association studies (TWAS) 
 \cite{pmid33020666, pmid26258848, pmid27019110, pmid26854917},
-summary data-based Mendelian randomization (SMR) \cite{pmid27019110}, 
-and others capitalize on this idea to identify genes associated 
-with multiple disease traits \cite{pmid29567659, pmid35533209, pmid27309819, 
-pmid30950127}
+summary data-based Mendelian randomization (SMR) \cite{pmid27019110}
+capitalize on this idea to identify genes associated 
+with multiple disease traits \cite{pmid29567659, pmid35533209, 
+pmid27309819, pmid30950127}
 
 Despite the great promise of these methods, explaining trait 
 effects with local gene regulation has been more difficult than
@@ -123,10 +123,11 @@ To assess the role of wide-spread distal gene regulation
 on complex traits, we investigated diet-induced obesity and 
 metabolic disease as an archetypal example. Diet-induced 
 obesity and metabolic disease are genetically complex with 
-hundreds of variants mapped through GWAS [REFS]. These variants 
+hundreds of variants mapped through GWAS \cite{pmid36350656, 
+pmid34556834}. These variants 
 are known to act through multiple tissues that interact 
-dynamically with each other [REFS], including 
-adipose tissue, pancreatic islets, liver, and skeletal 
+dynamically with each other \cite{pmid28089486, pmid10889786}, 
+including adipose tissue, pancreatic islets, liver, and skeletal 
 muscle. The multi-system etiology of metabolic disease 
 complicates mechanistic dissection of the genetic architecture, 
 requiring large, dedicated data sets that include high-dimensional, 
@@ -168,18 +169,19 @@ whole-transcriptome level while varying the population structure
 driving distal regulation.
 
 In the DO population, we paired clinically relevant metabolic traits 
-from 500 mice [REF], including body weight, plasma levels of insulin 
-and glucose and plasma lipids, with transcriptome-wide gene expression 
-in four tissues related to metabolic disease: adipose tissue, pancreatic 
-islets, liver, and skeletal muscle. We measured similar metabolic traits 
-in the CC-RIX and gene expression from three of the four tissues used
-in the DO: adipose tissue, liver, and skeletal muscle. Because the CC-RIX 
-carry the same founder alleles as the DO, local gene regulation is expected 
-to match between the populations, but because the alleles are recombined 
-through the genome, distal effects are expected to vary from those in the 
-DO, allowing us to directly assess the role of local gene regulation in 
-driving trait-associated transcript variation. Together, these data enable 
-a comprehensive view into the genetic architecture of metabolic disease.
+from 500 mice \cite{pmid29567659}, including body weight, plasma levels 
+of insulin and glucose and plasma lipids, with transcriptome-wide gene 
+expression in four tissues related to metabolic disease: adipose tissue, 
+pancreatic islets, liver, and skeletal muscle. We measured similar 
+metabolic traits in the CC-RIX and gene expression from three of the four 
+tissues used in the DO: adipose tissue, liver, and skeletal muscle. Because 
+the CC-RIX carry the same founder alleles as the DO, local gene regulation 
+is expected to match between the populations, but because the alleles are 
+recombined through the genome, distal effects are expected to vary from 
+those in the DO, allowing us to directly assess the role of local gene 
+regulation in driving trait-associated transcript variation. Together, 
+these data enable a comprehensive view into the genetic architecture of 
+metabolic disease.
 
 ## Results
 
@@ -412,19 +414,19 @@ traits (Fig. \ref{fig:trait_overview}F). Thus, HDMA identified a maximally
 heritable metabolic composite trait and a highly heritable component of the 
 transcriptome that are correlated as expected in the perfectly mediated model.
 
-As discussed in Supp. Methods XXX, HDMA is related to a generalized form of CCA.
+As discussed in Supp. Methods, HDMA is related to a generalized form of CCA.
 Standard CCA is prone to over-fitting because in any two large matrices
-it can be trivial to identify highly correlated composite vectors [REF]. To
-assess whether our implementation of HDMA was similarly prone to over-fitting 
-in a high-dimensional space, we performed permutation testing. We permuted 
-the individual labels on the transcriptome matrix 1000 times and recalculated 
-the path coefficient, which is the partial correlation of $G_C$ and $T_C$ 
-multiplied by the partial correlation of $T_C$ and $P_C$. This represents 
-the strenght of the path from $G_C$ to $P_C$ that is putatively mediated 
-through $T_C$. The null distribution of the path coefficient is shown in Fig. 
-\ref{fig:workflow}B, and the observed path coefficient from the original data 
-is indicated by a red line. The observed path coefficient was well outside 
-the null distribution generated by permutations ($p < 10^{-16}$). 
+it can be trivial to identify highly correlated composite vectors 
+\cite{pmid38383808}. To assess whether our implementation of HDMA was 
+similarly prone to over-fitting in a high-dimensional space, we performed 
+permutation testing. We permuted the individual labels on the transcriptome 
+matrix 1000 times and recalculated the path coefficient, which is the partial 
+correlation of $G_C$ and $T_C$ multiplied by the partial correlation of $T_C$ 
+and $P_C$. This represents the strenght of the path from $G_C$ to $P_C$ that 
+is putatively mediated through $T_C$. The null distribution of the path coefficient 
+is shown in Fig. \ref{fig:workflow}B, and the observed path coefficient from 
+the original data is indicated by a red line. The observed path coefficient was 
+well outside the null distribution generated by permutations ($p < 10^{-16}$). 
 Fig. \ref{fig:workflow}C illustrates this observation in more detail. 
 Although we identified high correlations between $G_C$ and $T_C$, and modest 
 correlations between $T_C$ and $P_C$ in the null data (Fig \ref{fig:workflow}C), 
@@ -518,7 +520,8 @@ macrophage infiltration, were positively associated with metabolic
 index, indicating that increased expression in inflammatory
 pathways was associated with a higher metabolic index. It is well 
 established that adipose tissue in obese individuals is 
-inflamed [cite] and infiltrated by macrophages [cite], and the 
+inflamed and infiltrated by macrophages \cite{pmid19133410, 
+pmid28955384, pmid28912810, pmid28901330, pmid24969772}, and the 
 results here suggest that this may be a dominant heritable component 
 of metabolic disease. 
 
@@ -675,7 +678,8 @@ To test whether the transcript loadings identified in the DO could
 be translated to another population, we tested whether they could 
 predict metabolic phenotype in an independent population of
 CC-RIX mice, which were F1 mice derived from multiple pairings of 
-Collaborative Cross (CC) [cite] strains (Fig. \ref{fig:cc_prediction}) 
+Collaborative Cross (CC) \cite{pmid28592495, pmid21411855, 
+pmid17674098, pmid15514660} strains (Fig. \ref{fig:cc_prediction}) 
 (Methods). We tested two questions. First, we asked whether the 
 loadings identified in the DO mice were relevant to the relationship 
 between the transcriptome and the phenome in the CC-RIX. We predicted
@@ -749,11 +753,11 @@ above that immune activation in the adipose tissues was a highly
 enriched process correlating with obesity in the DO population. 
 For example, in humans, it has been extensively observed that 
 macrophage infiltration in adipose tissue is a marker of obesity
-and metabolic disease [REF]. To determine whether the immune 
-activation reflected a heritable change in cell composition in
-adipose tissue in DO mice, we compared loadings of cell-type 
-specific genes in adipose tissue (Methods). Consistent with 
-human results, the mean loading of macrophage-specific genes 
+and metabolic disease \cite{pmid24781408}. To determine whether 
+the immune activation reflected a heritable change in cell 
+composition in adipose tissue in DO mice, we compared loadings 
+of cell-type specific genes in adipose tissue (Methods). Consistent 
+with human results, the mean loading of macrophage-specific genes 
 was significantly greater than 0 (Fig. \ref{fig:human_translation}A), 
 indicating that obese mice were genetically predisposed to have high 
 levels of macrophage infiltration in adipose tissue in response to 
@@ -827,15 +831,12 @@ is in ranking potential drug candidates for the treatment of
 metabolic disease. Although high-loading transcripts may be 
 good candidates for understanding specific biology related to 
 obesity, the transcriptome overall is highly interconnected and 
-redundant, and focusing on individual transcripts for treatment 
-may be less effective than using broader transcriptomic signatures 
-that capture the emergent biology [cite or remove]. The ConnectivityMap 
-(CMAP) database \cite{pmid17008526} developed by the Broad Institute 
-allows querying thousands of compounds that reverse or enhance the 
-extreme ends of transcriptomic signatures in multiple different cell 
-types. By identifying drugs that reverse pathogenic transcriptomic 
-signatures, we can potentially identify compounds that have favorable 
-effects on gene expression.
+redundant. The ConnectivityMap (CMAP) database \cite{pmid17008526} 
+developed by the Broad Institute allows querying thousands of compounds 
+that reverse or enhance the extreme ends of transcriptomic signatures 
+in multiple different cell types. By identifying drugs that reverse 
+pathogenic transcriptomic signatures, we can potentially identify 
+compounds that have favorable effects on gene expression.
 
 To test this hypothesis, we queried the CMAP database through the 
 CLUE online query tool (\url{https://clue.io/query/}, version 
@@ -931,8 +932,8 @@ for the development of therapies for these diseases.
 
 Genetics is indispensable for the dissection of disease mechanisms 
 because it is one of the only data modalities that supports causal 
-inferences about molecules and disease outcomes [REF]. It has 
-frequently been assumed that gene regulation in 
+inferences about molecules and disease outcomes \cite{pmid38632401, 
+pmid27855690}. It has frequently been assumed that gene regulation in 
 \textit{cis} is the primary driver of genetically associated 
 trait variation, but attempts to use local gene regulation 
 to explain phenotypic variation have had limited success 
@@ -1015,13 +1016,13 @@ We stress that HDMA is a method for causal hypothesis generation. As
 with any causal inference approach, the output of HDMA can only be 
 said to be consistent with causal mediation but does not prove it. 
 Proving causality requires experimentation with direct control over 
-the mediating variable [REF]. The issue of experimentation, however, 
-is subtle. The dimension-reduction in HDMA is distinguished by the 
-fact that the putative causal intermediates can be emergent states 
-defined by the expression of thousands of genes. This is a strength, 
-because the mediating variable can be a higher-order process such as 
-“macrophage activation and infiltration”, but, in contrast to 
-univariate hypotheses at the level of individual transcripts, the 
+the mediating variable \cite{pearl2009causality}. The issue of 
+experimentation, however, is subtle. The dimension-reduction in HDMA 
+is distinguished by the fact that the putative causal intermediates 
+can be emergent states defined by the expression of thousands of genes. 
+This is a strength, because the mediating variable can be a higher-order 
+process such as “macrophage activation and infiltration”, but, in contrast 
+to univariate hypotheses at the level of individual transcripts, the 
 relevant validation experiment may be technologically infeasible, 
 unknowable a priori, or both. Nevertheless, downstream analyses 
 of the composite transcripts strongly supports a causal interpretation. 
