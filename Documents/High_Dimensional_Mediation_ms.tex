@@ -687,14 +687,14 @@ the CC-RIX using transcripts imputed from local genotype (Fig.
 same eight founder strains and so carry the same alleles throughout the
 genome. We imputed gene expression in the CC-RIX using local genotype
 and were able to estimate variation in gene transcription robustly
-(Supp. Fig. 5). However, these imputed values failed to predict body
-weight in the CC-RIX when weighted with the loadings from HDMA. (Fig.
-\ref{fig:cc_prediction}B right column). This result suggests that local
-regulation of gene expression is not the primary factor driving
-heritability of complex traits, consistent with our findings in the DO
-population that distal heritability was a major driver of trait-relevant
-variation and that high-loading transcripts had comparatively high
-distal and low local heritability.
+(Supp. Fig. \ref{fig:cc_imputation}). However, these imputed values
+failed to predict body weight in the CC-RIX when weighted with the
+loadings from HDMA. (Fig. \ref{fig:cc_prediction}B right column). This
+result suggests that local regulation of gene expression is not the
+primary factor driving heritability of complex traits, consistent with
+our findings in the DO population that distal heritability was a major
+driver of trait-relevant variation and that high-loading transcripts had
+comparatively high distal and low local heritability.
 
 \subsubsection{Distally heritable transcriptomic signatures reflected
 variation in composition of adipose tissue and
@@ -800,17 +800,19 @@ expression.
 
 To test this hypothesis, we queried the CMAP database through the CLUE
 online query tool (\url{https://clue.io/query/}, version 1.1.1.43)
-(Methods). We identified top anti-correlated hits across all cell types.
-To get more tissue-specific results, we also looked at top results in
-cell types that most closely resembled our tissues. We looked at results
-in adipocytes (ASC) as well as pancreatic tumor cells (YAPC) regardless
-of \(p\) value (Supplemental Figure XXX and XXX).
+(Methods). We identified top anti-correlated hits across all cell types
+(Supp. Figs \ref{fig:clue_adipose_all} and \ref{fig:clue_islet_all}). To
+get more tissue-specific results, we also looked at top results in cell
+types that most closely resembled our tissues. We looked at results in
+adipocytes (ASC) as well as pancreatic tumor cells (YAPC) regardless of
+\(p\) value (Supp. Figs \ref{fig:clue_adipose_asc} and
+\ref{fig:clue_islet_yapc}).
 
 Looking across all cell types, the notable top hits from the adipose
 tissue loadings included mTOR inhibitors and glucocorticoid agonists
-(Supplemental Figure XXX). It is thought that metformin, which is
-commonly used to improve glycemic control, acts, at least in part, by
-inhibiting mTOR signaling \cite{pmid30290005, 
+(Supp. Fig. \ref{fig:clue_adipose_all}). It is thought that metformin,
+which is commonly used to improve glycemic control, acts, at least in
+part, by inhibiting mTOR signaling \cite{pmid30290005, 
 pmid30034573}. However, long-term use of other mTOR inhibitors, such as
 rapamycin, are known to cause insulin resistance and \(\beta\)-cell
 toxicity \cite{pmid30034573, pmid23881200, pmid21266327}.
@@ -826,13 +828,13 @@ transcript loading profiles, but the relationship was not a simple
 reversal.
 
 The top hit for the adipose composite transcript in CMAP adipocytes was
-a PARP inhibitor (Supplemental Figure XXXB). PARPs play a role in lipid
-metabolism and are involved in the development of obesity and diabetes
-\cite{pmid34450194}. PARP1 inhibition increases mitochondrial biogenesis
-\cite{pmid21459330}. Inihibition of PARP1 activity can further prevent
-necrosis in favor of the less inflammatory apoptosis
-\cite{pmid12114611}, thereby potentially reducing inflammation in
-stressed adipocytes. Other notable hits among the top 20 were BTK
+a PARP inhibitor (Supp. Fig. \ref{fig:clue_adipose_asc}). PARPs play a
+role in lipid metabolism and are involved in the development of obesity
+and diabetes \cite{pmid34450194}. PARP1 inhibition increases
+mitochondrial biogenesis \cite{pmid21459330}. Inihibition of PARP1
+activity can further prevent necrosis in favor of the less inflammatory
+apoptosis \cite{pmid12114611}, thereby potentially reducing inflammation
+in stressed adipocytes. Other notable hits among the top 20 were BTK
 inhibitors, which have been observed to suppress inflammation and
 improve insulin resistance \cite{pmid33648925} as well as to reduce
 insulin antibodies in type I diabetes \cite{pmid28753229}. IKK
@@ -840,27 +842,27 @@ inhibitors have been shown to improve glucose control in type II
 diabetes \cite{pmid28683283, pmid15685170}.
 
 Among the top most significant hits for the transcript loadings from
-pancreatic islets (Fig. XXX), was suppression of T cell receptor
-signaling, which is known to be involved in Type 1 diabetes
-\cite{pmid33603744}, as well as TNFR1, which has been associated with
-mortality in diabetes patients \cite{pmid32281000}. Suppression of
-NOD1/2 signaling was also among the top hits. NOD1 and 2 sense ER stress
-\cite{pmid27007849, pmid28823510}, which is associated with
-\(\beta\)-cell death in type 1 and type 2 diabetes \cite{pmid24520198}.
-This cell death process is dependent on NOD1/2 signaling
-\cite{pmid27007849}, although the specifics have not yet been worked
-out.
+pancreatic islets (Supp. Fig. \ref{fig:clue_islet_all}), was suppression
+of T cell receptor signaling, which is known to be involved in Type 1
+diabetes \cite{pmid33603744}, as well as TNFR1, which has been
+associated with mortality in diabetes patients \cite{pmid32281000}.
+Suppression of NOD1/2 signaling was also among the top hits. NOD1 and 2
+sense ER stress \cite{pmid27007849, pmid28823510}, which is associated
+with \(\beta\)-cell death in type 1 and type 2 diabetes
+\cite{pmid24520198}. This cell death process is dependent on NOD1/2
+signaling \cite{pmid27007849}, although the specifics have not yet been
+worked out.
 
 We also looked specifically at hits in pancreatic tumor cells (YAPC)
 regardless of significance level to get a transcriptional response more
-specific to the pancreas. Hits in this list included widely used
-diabetes drugs, such as sulfonylureas, PPAR receptor agonists, and
-insulin sensitizers. Rosiglitazone is a PPAR-\(\gamma\) agonist and was
-one of the most prescribed drugs for type 2 diabetes before its use was
-reduced due to cardiac side-effects \cite{pmid21190462}. Sulfonylureas
-are another commonly prescribed drug class for type 2 diabetes, but also
-have notable side effects including hypoglycemia and accellerated
-\(\beta\)-cell death \cite{pmid16631807}.
+specific to the pancreas (Supp. Fig. \ref{fig:clue_islet_yapc}). Hits in
+this list included widely used diabetes drugs, such as sulfonylureas,
+PPAR receptor agonists, and insulin sensitizers. Rosiglitazone is a
+PPAR-\(\gamma\) agonist and was one of the most prescribed drugs for
+type 2 diabetes before its use was reduced due to cardiac side-effects
+\cite{pmid21190462}. Sulfonylureas are another commonly prescribed drug
+class for type 2 diabetes, but also have notable side effects including
+hypoglycemia and accellerated \(\beta\)-cell death \cite{pmid16631807}.
 
 \subsection{Discussion}\label{discussion}
 
@@ -949,9 +951,9 @@ expressed in pancreatic \(\beta\) cells and is involved in insulin and
 glucagon release \cite{pmid22108805, pmid23537085, pmid24993278}.
 Although its transcription was highly heritable in islets, that
 regulation was distributed across the genome, with no clear distal eQTL
-(Supp. Fig. 6). Thus, although distal regulation of some genes may be
-strong, this regulation is likely to be highly complex and not easily
-localized.
+(Supp. Fig. \ref{fig:Nucb2_eqtl}). Thus, although distal regulation of
+some genes may be strong, this regulation is likely to be highly complex
+and not easily localized.
 
 We stress that HDMA is a method for causal hypothesis generation. As
 with any causal inference approach, the output of HDMA can only be said
@@ -1138,6 +1140,40 @@ All distributions were skewed toward positive correlations and had
  DO and CC-RIX. 
 }
 \label{fig:cc_imputation}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{Figures/Supp_Fig_Adipose_all_cell_types.png} 
+\caption{Clue.io results using the adipose tissue composite transcript as 
+an input. All results with a $-log_{10}(q) > 15$ across all cell types are shown.
+}
+\label{fig:clue_adipose_all}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{Figures/Supp_Fig_Islet_all_cell_types.png} 
+\caption{Clue.io results using the pancreatic islet composite transcript as 
+an input. All results with a $-log_{10}(q) > 15$ across all cell types are shown.
+}
+\label{fig:clue_islet_all}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{Figures/Supp_Fig_Adipose_ASC.png} 
+\caption{Clue.io results using the adipose tissue composite transcript as 
+an input. Results are limited to the 30 most negatively correlated signals
+from normal adipocytes.
+}
+\label{fig:clue_adipose_asc}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{Figures/Supp_Fig_Islet_YAPC.png} 
+\caption{Clue.io results using the pancreatic islet composite transcript as 
+an input. Results are limited to the 30 most negatively correlated signals
+from YAPC cells, which were derived from a pancreatic carcinoma cells.
+}
+\label{fig:clue_islet_yapc}
 \end{figure}
 
 \begin{figure}[ht!]
