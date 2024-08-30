@@ -42,7 +42,7 @@ threshold_p <- function(p, thresh = 2.2e-16){
 #paper
 
 #create a vector of reference numbers for each figure
-sup_labels <- c("fig:eQTL", "fig:top_enrich_kegg", 
+sup_labels <- c("fig:eQTL", "fig:top_enrich_kegg", "fig:top_enrich_go",
   "fig:cc_imputation", "fig:kegg_highlights", "fig:Nucb2_eqtl")
 fig.counter <- rep(0, length(sup_labels))
 names(fig.counter)  <- sup_labels
@@ -274,12 +274,12 @@ in metabolic disease we assayed adipose, islet, liver, and
 skeletal muscle gene expression in the DO cohort. We performed 
 eQTL analysis using R/qtl2 \cite{pmid30591514} 
 (Methods) and identified both local and distal eQTLs for 
-transcripts in each of the four tissues (Supp. Fig `r fig.eqtl.label`). 
+transcripts in each of the four tissues (Fig. \ref{fig:eQTL}). 
 Significant local eQTLs far outnumbered distal eQTLs 
-(Supp. Fig. `r fig.eqtl.label`F) and tended to be shared across 
-tissues (Supp. Fig. `r fig.eqtl.label`G) whereas the few 
+(Fig. \ref{fig:eQTL}F) and tended to be shared across 
+tissues (Fig. \ref{fig:eQTL}G) whereas the few 
 significant distal eQTLs we identified tended to be 
-tissue-specific (Supp. Fig. `r fig.eqtl.label`H)
+tissue-specific (Fig. \ref{fig:eQTL}H)
 
 We calculated the heritability of each transcript in terms of 
 local and distal genetic factors (Methods). Overall, local and 
@@ -504,11 +504,15 @@ that were enriched at the top and bottom of this list (Methods).
 fig.label <- "fig:top_enrich_kegg"
 fig.counter <- ref_fig(fig.counter, fig.label)
 kegg.enrich.label <- fig.counter[fig.label]
+
+fig.label <- "fig:top_enrich_go"
+fig.counter <- ref_fig(fig.counter, fig.label)
+go.enrich.label <- fig.counter[fig.label]
 ```
 
 In adipose tissue, both GO processes and KEGG pathway 
 enrichments pointed to an axis of inflammation and metabolism
-(Supp. Fig. `r kegg.enrich.label` and Fig. \ref{fig:top_enrich_go}).
+(Figs. \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}).
 GO terms and KEGG pathways associated with inflammation, particularly 
 macrophage infiltration, were positively associated with metabolic
 index, indicating that increased expression in inflammatory
@@ -520,9 +524,14 @@ of metabolic disease.
 
 The strongest negative enrichments in adipose tissue were related 
 to mitochondial activity in general, and thermogenesis in particular
-(Supp. Fig. `r kegg.enrich.label` and Fig. \ref{fig:top_enrich_go}).
-It has been shown mouse strains with greater thermogenic potential
-are also less susceptible to obesity on a high-fat diet [cite].
+(Figs. \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_kegg}).
+Genes in the KEGG oxidative phosphorylation pathway in mice were 
+almost universally negatively loaded in adipose tissue, suggesting
+that increased expression of these genes was associated with reduced
+metabolic index (Supp. Fig. \ref{fig:oxPhos}). Consistent with
+this observations, it has been shown previously that mouse strains 
+with greater thermogenic potential are also less susceptible to obesity 
+on a high-fat diet \cite{pmid18492779}.
 
 
 ```{r, echo = FALSE}
@@ -536,13 +545,13 @@ fig.counter <- ref_fig(fig.counter, fig.label)
 kegg.highlight.label <- fig.counter[fig.label]
 ```
 
-
 Transcripts associated with the citric acid (TCA) cycle as well
 as the catabolism of the branched-chain amino acids (BCAA) (valine, 
 leuceine, and isoleucine) were strongly enriched with negative 
-loadings in adipose tissue (Supp. Fig. `r kegg.highlight.label`). 
-Expression of genes in both pathways (for which there is some overlap) 
-has been previously associated with insulin sensitivity \cite{pmid29567659, 
+loadings in adipose tissue (Supp. Figs. \ref{fig:top_enrich_kegg},
+\ref{fig:TCA_cycle} and \ref{fig:bcaa_degrataion}). Expression of genes in both pathways 
+(for which there is some overlap) has been previously associated 
+with insulin sensitivity \cite{pmid29567659, 
 pmid22560213, pmid19841271}, suggesting that heritable variation
 in regulation of these pathways may influence risk of insulin 
 resistance.
@@ -1080,6 +1089,7 @@ Here we tell people where to find the data
 Here we thank people
 
 \pagebreak
+\beginsupplement
 
 ## Supplemental Figures
 
@@ -1132,6 +1142,48 @@ biological process ontology (BP), the molecular function ontology (MF),
 or the cellular compartment ontology (CC).
 }
 \label{fig:top_enrich_go}
+\end{figure}
+
+
+
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{Figures/Supp_Fig_OxPhos.png} 
+\caption{The KEGG pathway for oxidative phosphorylation in 
+mice. Each element is colored based on its HDMA loading from adipose
+tissue normalized to run from -1 to 1. Genes highlighted in green had 
+negative loadings, and those highlighted in red had positive loadings. 
+Almost the entire pathway was strongly negatively loaded indicating 
+that increased expression of genes involved in oxidative phosphorylation
+was associated with reduced metabolic index.
+}
+\label{fig:oxPhos}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{Figures/Supp_Fig_TCA.png} 
+\caption{The KEGG pathway for the TCA (citric acid) cycle in 
+mice. Each element is colored based on its HDMA loading from adipose
+tissue normalized to run from -1 to 1. Genes highlighted in green had 
+negative loadings, and those highlighted in red had positive loadings. 
+Many genes in the cycle were strongly negatively loaded indicating 
+that increased expression of genes involved in branched-chain amino acid 
+degradation was associated with reduced metabolic index.
+}
+\label{fig:TCA_cycle}
+\end{figure}
+
+
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{Figures/Supp_Fig_Branched_Chain.png} 
+\caption{The KEGG pathway for branched-chain amino acid degradation in 
+mice. Each element is colored based on its HDMA loading from adipose
+tissue normalized to run from -1 to 1. Genes highlighted in green had 
+negative loadings, and those highlighted in red had positive loadings. 
+Almost the entire pathway was strongly negatively loaded indicating 
+that increased expression of genes involved in branched-chain amino acid 
+degradation was associated with reduced metabolic index.
+}
+\label{fig:bcaa_degrataion}
 \end{figure}
 
 

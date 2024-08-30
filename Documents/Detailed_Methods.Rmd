@@ -209,9 +209,7 @@ tissue as our ranked list of genes. We reported the normalized
 enrichment score (NES) for the 10 pathways with the largest 
 positive NES and the 10 pathways with the largest negative NES.
 
-We also collected all loadings of transcripts for the genes
-in each pathway to compare loadings across all tissues 
-(Supp. Fig. XXX). We used the R package pathview \cite{pmid23740750}
+We used the R package pathview \cite{pmid23740750}
 to visualize the loadings from each tissue in interesting pathways.
 We scaled the loadings in each tissue by the maximum absolute value
 of loadings across all tissues to compare them across tissues.
@@ -432,7 +430,7 @@ We filtered the results in two ways: First, we looked at the most
 significantly anti-correlated ($-log_{10}(\mathrm{FDR} q) > 15$) 
 hits across all cell types. Second, we looked at the most 
 anti-correlated within the most related cell type to the query 
-and considered hits regardless of $-log_{10}(\mathfm{FDR} p)$. 
+and considered hits regardless of $-log_{10}(\mathrm{FDR} p)$. 
 For adipose tissue we looked in normal adipocytes, abbreviated 
 ASC in the CMAP database, and for pancreatic islets we looked in 
 pancreatic cancer cells, abbreviated YAPC in the CMAP database. 
