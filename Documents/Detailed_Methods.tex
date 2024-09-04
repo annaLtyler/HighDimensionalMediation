@@ -68,6 +68,8 @@
 \usepackage[compress, super]{natbib}
 
 \usepackage{setspace} \doublespacing
+
+\usepackage{siunitx}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -83,12 +85,17 @@
 \title{Detailed Methods for High Dimensional Mediation for Massively
 Polygenic Traits}
 \author{J. Matthew Mahoney and Anna L Tyler}
-\date{August 30, 2024}
+\date{September 04, 2024}
 
 \begin{document}
 \maketitle
 
 \subsection{Diversity Outbred Mice}\label{diversity-outbred-mice}
+
+Mice were maintained and treated in accordance with the guidelines
+approved by the Department of Biochemistry animal vivarium at the
+University of Wisconsin. Animal husbandry and in vivo phenotyping
+methods were previously published \cite{pmid31343992, pmid29567659}.
 
 A population of 500 diversity outbred mice (split evenly between male
 and female) from generates 18, 19, and 21, was placed on a high-fat
@@ -101,26 +108,155 @@ tolerance, insulin levels, body weight, and blood lipid levels.
 
 \subsection{Trait measurements}\label{trait-measurements}
 
-also described in \cite{pmid29567659} briefly describe: oral glucose
-tolerance tests
+Trait measurements were described previously in \cite{pmid29567659}.
+Briefly, body weight was measured every two weeks, and 4-hour fasting
+plasma samples were collected to measure insulin, glucose, and
+triglycerides (TG). At around 18 weeks of age, an oral glucose tolerance
+test (oGTT) was conducted on 4-hour fasted mice to assess changes in
+plasma insulin and glucose. Glucose (2 g/kg) was given via oral gavage.
+Blood samples were taken from a retro-orbital bleed before glucose
+administration, and at 5, 15, 30, 60, and 120 minutes afterward. The
+area under the curve (AUC) was calculated for glucose and insulin.
+Glucose was measured using the glucose oxidase method, and insulin was
+measured by radioimmunoassay.
+
+HOMA-IR and HOMA-B, which are homeostatic model assessments of insulin
+resistance (IR) and pancreatic islet function (B), were calculated using
+fasting plasma glucose and insulin values at the start of the oGTT.
+HOMA-IR = (glucose \(\times\) insulin) / 405 and HOMA-B = (360
+\(\times\) insulin) / (glucose - 63). Plasma glucose and insulin units
+are mg/dL and mU/L, respectively.
 
 \subsection{Genotyping}\label{genotyping}
 
-The mice were also genotyped using the Mouse Universal Genotyping Array
-(GigaMUGA) \cite{pmid29567659} .
+Genotypes at 143,259 markers was performed using the Mouse Universal
+Genotyping Array (GigaMUGA) \cite{pmid26684931} at Neogen (Lincoln, NE)
+as described previously \cite{pmid29567659, pmid22345611}. Genotypes
+were converted to founder strain-haplotype reconstructions using the
+R/DOQTL software \cite{pmid25237114} and interpolated onto a grid with
+0.02-cM spacing to yield 69,005 pseudomarkers. Individual chromosome
+(Chr) haplotypes were reconstructed from RNA-seq data using a hidden
+Markov model (GBRS, \url{https://github.com/churchill-lab/gbrs}).
 
-briefly describe here.
+\subsection{Collaborative cross recombinant inbred
+mice}\label{collaborative-cross-recombinant-inbred-mice}
 
-\subsection{RNA Sequencing}\label{rna-sequencing}
+Mice were cared for and treated following the guidelines approved by the
+Association for Assessment and Accreditation of Laboratory Animal Care
+at The Jackson Laboratory. All animals were obtained from The Jackson
+Laboratory. The mice were kept in a pathogen-free room at a temperature
+ranging from 20 to 22°C with a 12-hour light/dark cycle. Starting at 6
+weeks of age, they were fed either a custom-designed high-fat,
+high-sugar (HFHS) diet (Research Diets D19070208) or a control diet
+(Research Diets D19072203) \textit{ad libitum}. Body weight was measured
+weekly until the mice were about 16 weeks old, after which measurements
+were taken every other week. Food intake measurements were collected at
+14 weeks, 23 weeks (for 6-month cohorts), 26 weeks (for 12-month
+cohorts), 38 weeks, and 51 weeks by weighing the grain contents in the
+cage over a three-day period. Fasted serum was collected at 14 weeks, 28
+weeks (for 6-month cohorts), 26 weeks (for 12-month cohorts), 38 weeks,
+and 56 weeks of age via retro-orbital or submental vein. In a subset of
+the 12-month cohort, metformin (5 mg/mL) was administered
+\textit{ad libitum} in the drinking water. The first two weeks of
+treatment included monitoring water intake to ensure consumption.
+Metformin treatment continued for the duration of the experiment.
 
-At the end of the experiment, we used RNASeq to measure gene expression
-in 384 mice in four tissues relevant to metabolic disease: adipose
-tissue, pancreatic islets, liver, and skeletal muscle.
+\subsection{Clinical chemistries}\label{clinical-chemistries}
 
-also described in \cite{pmid29567659} describe islet picking, and how
-other organs were collected. mention details about GigaMUGA
+CC-RIX animals were fasted for four hours before serum collection via
+the retro-orbital or submental vein. Whole blood was left at room
+temperature for 30-60 minutes before being centrifuged for 5 minutes at
+12,500 RPM. The serum was then tested for glucose (Beckman Coulter;
+OSR6121), cholesterol (Beckman Coulter; OSR6116), triglycerides (Beckman
+Coulter; OSR60118), insulin (MSD; K152BZC-1), or c-peptide (MSD;
+K1526JK-1).
 
-\subsection{Trait selection}\label{trait-selection}
+\subsection{Intraperitoneal glucose tolerance
+testing}\label{intraperitoneal-glucose-tolerance-testing}
+
+After a fasting period of 4-6 hours, baseline glucose measurements were
+taken from CC-RIX mice using an AlphaTrak2 glucometer and test strips
+(Zoetis) by making a small nick in the tail tip. A bolus intraperitoneal
+injection of 20\% glucose (1g/kg) was then administered, and additional
+tail tip nicks were performed at 15, 30, 60, and 120 minutes
+post-injection to measure glucose levels.
+
+\subsection{Dual Energy X-ray Absorptiometry
+(DEXA)}\label{dual-energy-x-ray-absorptiometry-dexa}
+
+To assess bone mineral density in the CC-RIX population at either 27
+weeks of age (6-month cohorts) or 55 weeks of age (12-month cohorts),
+the mice were weighed and anesthetized through continuous inhalation of
+isoflurane. The Faxitron UltraFocus DXA system was used to emit two
+energy levels, 40 kV and 80 kV, for capturing images of bone and soft
+tissue.
+
+\subsection{Bulk tissue collection}\label{bulk-tissue-collection}
+
+At either 28 weeks of age (for the 6-month cohort) or 56 weeks of age
+(for the 12-month cohort), CC-RIX animals were humanely euthanized by
+cervical dislocation. Tissues, including adipose, gastrocnemius, and the
+left liver lobe, were harvested and flash-frozen in liquid nitrogen for
+RNA sequencing.
+
+\subsection{Whole Pancreas Insulin
+Content}\label{whole-pancreas-insulin-content}
+
+The animals were humanely euthanized at 16 weeks of age and the entire
+pancreas was removed, ensuring no excess fat or mesentery tissue was
+included. The pancreas tissue was placed in a pre-weighed 20 mL glass
+scintillation vial containing acid ethanol (75\% HPLC grade ethanol
+(ThermoFisher; A995-4), 1.\textbackslash5\% concentrated hydrochloric
+acid (ThermoFisher; A144-212) in distilled water). The weight of the
+pancreas was measured for normalization. Using curved scissors, the
+pancreas was chopped for four minutes, and the samples were stored at
+\(-20^{\circ}\)C until all animals were harvested. For insulin
+measurements, the contents of the scintillation vials were rinsed with 4
+mL PBS (Roche; 1666789) with 1\% BSA (Sigma; A7888), neutralized with 65
+\si{\micro\liter} 10N NaOH (Fisher; SS255-1), and vortexed for 30
+seconds. The samples were then centrifuged at \(4^{\circ}\)C for 5
+minutes at 2,000 RPM. The samples were diluted 5000X in PBS with 1\%
+BSA, and insulin was measured (MSD; K152BZC-1).
+
+\subsection{RNA isolation and QC}\label{rna-isolation-and-qc}
+
+RNA from both DO and CC-RIX adipose, gastrocnemius, and left liver lobe
+tissues was isolated using the MagMAX mirVana Total RNA Isolation Kit
+(ThermoFisher; A27828) and the KingFisher Flex purification system
+(ThermoFisher; 5400610). The frozen tissues were pulverized with a
+Bessman Tissue Pulverizer (Spectrum Chemical) and homogenized in TRIzol™
+Reagent (ThermoFisher; 15596026) using a gentleMACS dissociator
+(Miltenyi Biotec Inc). After adding chloroform to the TRIzol homogenate,
+the RNA-containing aqueous layer was extracted for RNA isolation,
+following the manufacturer's protocol, starting with the RNA bead
+binding step using the RNeasy Mini kit (Qiagen; 74104). RNA
+concentrations and quality were assessed using the Nanodrop 8000
+spectrophotometer (Thermo Scientific) and the RNA 6000 Pico or RNA
+ScreenTape assay (Agilent Technologies).
+
+\subsection{Library construction}\label{library-construction}
+
+Before library construction, 2 \si{\micro\liter} of diluted (1:1000)
+ERCC Spike-in Control Mix 1 (ThermoFisher; 4456740) was added to 100 ng
+of each RNA sample. Libraries were then constructed using the KAPA mRNA
+HyperPrep Kit (Roche Sequencing Store; KK8580) following the
+manufacturer's protocol. The process involves isolating polyA-containing
+mRNA using oligo-dT magnetic beads, fragmenting the RNA, synthesizing
+the first and second strands of cDNA, ligating Illumina-specific
+adapters with unique barcode sequences for each library, and performing
+PCR amplification. The quality and concentration of the libraries were
+evaluated using the D5000 ScreenTape (Agilent Technologies) and the
+Qubit dsDNA HS Assay (ThermoFisher; Q32851), respectively, according to
+the manufacturers' instructions.
+
+\subsection{Sequencing}\label{sequencing}
+
+Libraries were sequenced on an Illumina NovaSeq 6000 using the S4
+Reagent Kit (Illumina; 20028312). All tissues underwent 100 bp
+paired-end sequencing, aiming for a target read depth of 30 million read
+pairs.
+
+\subsection{Trait selectionin DO}\label{trait-selectionin-do}
 
 We filtered the measured traits in this study to a set of relatively
 non-redundant measures that were well-represented in the population
@@ -147,13 +283,13 @@ principal component by -1. The labels for these traits have the term
 data}\label{processing-of-rna-sequencing-data}
 
 We used the Expectation-Maximization algorithm for Allele Specific
-Expression (EMASE) {[}cite{]} to quantify multi-parent allele-specific
-and total expression from RNA-seq data for each tissue. EMASE was
-performed by the Genotype by RNA-seq (GBRS) software package
-(\url{https://gbrs.readthedocs.io/en/latest/}). In the process, R1 and
-R2 FASTQ files were combined and aligned to a hybridized (8-way)
-transcriptome generated for the 8 DO founder strains as single-ended
-reads. GBRS was also used to reconstruct the mouse genotype
+Expression (EMASE) \cite{pmid29444201, pmid25236449} to quantify
+multi-parent allele-specific and total expression from RNA-seq data for
+each tissue. EMASE was performed by the Genotype by RNA-seq (GBRS)
+software package (\url{https://gbrs.readthedocs.io/en/latest/}). In the
+process, R1 and R2 FASTQ files were combined and aligned to a hybridized
+(8-way) transcriptome generated for the 8 DO founder strains as
+single-ended reads. GBRS was also used to reconstruct the mouse genotype
 probabilities along \textasciitilde69K markers, which was used for
 confirming genotypes in the quality control (QC) process. For the QC
 process, we used a Euclidean distances method (developed by Greg Keele -
@@ -167,22 +303,26 @@ were normalized relative to total read counts using the variance
 stabilizing transform (VST) as implemented in DESeq2 and using rank
 normal score.
 
-We used R/qtl2 {[}cite{]} to perform eQTL analysis. We used the rank
-normal score data and used sex and DO generation as additive covariates.
-We also used kinship as a random effect. We used permutations to find a
-LOD threshold of 8 for significant QTLs which corresponded to a \(p\)
-value of 0.05.
+\subsection{eQTL analysis}\label{eqtl-analysis}
 
-To assess whether eQTL were shared across tissues, we compared eQTLs for
-each transcript across tissues. Significant eQTLs within 4Mb of each
-other were considered overlapping. We considered local and distal eQTLs
-separately.
+We used R/qtl2 \cite{pmid30591514} to perform eQTL analysis. We used the
+rank normal score data and used sex and DO generation as additive
+covariates. We also used kinship as a random effect. We used
+permutations to find a LOD threshold of 8 for significant QTLs which
+corresponded to a \(p\) value of 0.05.
+
+To assess whether eQTL were shared across tissues, we considered
+significant eQTLs within 4Mb of each other to be overlapping. We
+considered local and distal eQTLs separately.
+
+\subsection{Local and distal heritability of
+transcripts}\label{local-and-distal-heritability-of-transcripts}
 
 To estimate local and distal heritability of each transcript, we scaled
 each normalized transcript to have a variance of 1. We then modeled this
 transcript with the local genotype using the fit1() function in R/qtl
 with a kinship correction. We used the resulting model to predict the
-transcript values. The variance of the predicted transcript its local
+transcript values. The variance of the predicted transcript is its local
 heribatility. We then estimated the heritability of the residual of the
 model fit. The variance of the residual multiplied by its heritability
 is the distal heritability of the transcript.

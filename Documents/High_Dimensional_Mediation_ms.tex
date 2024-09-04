@@ -87,27 +87,28 @@ on complex traits}
 \begin{document}
 \maketitle
 
-Anna L Tyler, J Matthew Mahoney, Mark P Keller, Candice N. Baker,
+Anna L. Tyler, J. Matthew Mahoney, Mark P. Keller, Candice N. Baker,
 Margaret Gaca, Anuj Srivastava, Isabela Gerdes Gyuricza, Madeleine
-Braun, Nadia A Rosenthal, Alan D Attie, Gary A Churchill and Gregory W
-Carter
+Braun, Nadia A. Rosenthal, Alan D. Attie, Gary A. Churchill and Gregory
+W. Carter
 
 \subsection{Abstract}\label{abstract}
 
-Gene expression is an important mediator of genetic effects on
-phenotype. Although many genes are subject to simple, local regulation,
-recent evidence suggests that complex distal regulation may be more
-important in mediating trait variability. To investigate this
-possibility, we combined two large, data sets modeling diet-induced
-obesity and metabolic disease in genetically diverse mice. Using a novel
-high-dimensional mediation analysis, we identified a heritable composite
-transcript that explained 30\% of the variation across all metabolic
-traits. The composite transcript was interpretable in terms of enriched
-biological processes and predicted obesity status in an independent
-mouse cohort as well as in human cohorts with measured gene expression.
-Transcripts contributing most strongly to this composite mediator tended
-to have complex, distal regulation distributed throughout the genome.
-These results suggest that trait-relevant variation in transcription is
+Although many genes are subject to local regulation, recent evidence
+suggests that complex distal regulation may be more important in
+mediating phenotypic variability. To assess the role of distal gene
+regulation in complex traits, we combined multi-tissue transcriptomes
+with physiological outcomes to model diet-induced obesity and metabolic
+disease in a population of 500 Diversity Outbred mice. Using a novel
+high-dimensional mediation analysis, we identified a composite
+transcriptome signature that summarized genetic effects on gene
+expression and explained 30\% of the variation across all metabolic
+traits. The signature was heritable, interpretable in biological terms,
+and predicted obesity status from gene expression in an independently
+derived mouse cohort and multiple human studies. Transcripts
+contributing most strongly to this composite mediator frequently had
+complex, distal regulation distributed throughout the genome. These
+results suggest that trait-relevant variation in transcription is
 largely distally regulated, but is nonetheless identifiable,
 interpretable, and translatable across species.
 
@@ -1031,11 +1032,30 @@ about pathogenic mechanisms and potential treatments.
 
 \subsection{Data Availability}\label{data-availability}
 
-Here we tell people where to find the data
+Genotypes: Sequence data for the DO mice used here are available from
+the Sequence Read Archive \url{https://www.ncbi.nlm.nih.gov/sra/} (study
+number SRP125176). Genotype data for the CC mice are available from
+University of North Carolina Computational Systems Biology
+(\url{http://www.csbio.unc.edu/CCstatus/CCGenomes/}).
+
+Gene expression: Data can be found at the Gene Expression Omnibus
+url\{\url{https://www.ncbi.nlm.nih.gov/geo/}\} with the following
+accession numbers: DO adipose tissue - GSE266549; DO liver tissue -
+GSE266569; DO skeletal muscle - GSE266567; CC-RIX adipose tissue -
+GSE237737; CC-RIX liver tissue - GSE237743; CC-RIX skeletal muscle -
+GSE237747. Quantified pancreatic islet gene expression for the DO mice,
+along with their genotypes and phenotypes can be found on Dryad
+\url{https://datadryad.org/stash/dataset/doi:10.5061/dryad.pj105}.
+
+Phenotypes: Metabolic phenotypes for the DO mice along with genotypes
+and quantified gene expression area available from
+\url{https://datadryad.org/stash/dataset/doi:10.5061/dryad.pj105}
+
+Metabolic phenotypes for the CC-RIX mice are available from XXX
 
 \subsection{Acknowledgements}\label{acknowledgements}
 
-Here we thank people
+Here we thank people and cite funding sources.
 
 \pagebreak
 \beginsupplement
@@ -1149,34 +1169,36 @@ All distributions were skewed toward positive correlations and had
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Adipose_all_cell_types.png} 
-\caption{Clue.io results using the adipose tissue composite transcript as 
-an input. All results with a $-log_{10}(q) > 15$ across all cell types are shown.
+\caption{CMAP results using the adipose tissue composite transcript as 
+an input. All query results with a $-log_{10}(q) > 15$ across all cell types are 
+shown.
 }
 \label{fig:clue_adipose_all}
 \end{figure}
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Islet_all_cell_types.png} 
-\caption{Clue.io results using the pancreatic islet composite transcript as 
-an input. All results with a $-log_{10}(q) > 15$ across all cell types are shown.
+\caption{CMAP results using the pancreatic islet composite transcript as 
+an input. All query results with a $-log_{10}(q) > 15$ across all cell types 
+are shown.
 }
 \label{fig:clue_islet_all}
 \end{figure}
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Adipose_ASC.png} 
-\caption{Clue.io results using the adipose tissue composite transcript as 
-an input. Results are limited to the 30 most negatively correlated signals
-from normal adipocytes.
+\caption{CMAP results using the adipose tissue composite transcript as 
+an input. Query results are limited to the 30 most negatively correlated 
+signals from normal adipocytes.
 }
 \label{fig:clue_adipose_asc}
 \end{figure}
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Islet_YAPC.png} 
-\caption{Clue.io results using the pancreatic islet composite transcript as 
-an input. Results are limited to the 30 most negatively correlated signals
-from YAPC cells, which were derived from a pancreatic carcinoma cells.
+\caption{CMAP results using the pancreatic islet composite transcript as 
+an input. Query results are limited to the 30 most negatively correlated 
+signals from YAPC cells, which were derived from a pancreatic carcinoma cells.
 }
 \label{fig:clue_islet_yapc}
 \end{figure}
