@@ -1,7 +1,5 @@
 ---
-title: "Detailed Methods for High Dimensional Mediation for Massively Polygenic Traits"
-author: J. Matthew Mahoney and Anna L Tyler
-date: '`r format(Sys.Date(), "%B %d, %Y")`'
+title: "Detailed Methods for Transcripts with high distal heritability mediate genetic effects on complex traits"
 output: 
   pdf_document:
     keep_tex: true
@@ -307,9 +305,20 @@ missing values. We then used the above equation to generate the phenome
 kernel replacing the trancript matrix and number
 of transcripts with the phenotype matrix and number of phenotypes.
 
-## High-dimensional mediation Aanalysis
+## High-dimensional mediation analysis
 
-Matt has text for this section.
+Here we derive the objective function for high-dimensional mediation 
+analysis (HDMA) and present an iterative algorithm to optimize this 
+objective function. Our starting point is the univariate case, where 
+we describe perfect mediation as a constraint on the covariance matrix 
+among variables. We then leverage this constraint to define projections 
+of multivariate data that are maximally consistent with perfect mediation 
+(HDMA). Next, we demonstrate how to {\it kernelize} HDMA to limit 
+dimensionality of the model and enable non-linear HDMA models. Finally, 
+we discuss the connection between HDMA and related {\it multiblock} 
+methods, including canonical correlation analyssis (CCA) and partial 
+least squares path modeling (PLS-PM).
+
 
 ## Calculation of loadings
 

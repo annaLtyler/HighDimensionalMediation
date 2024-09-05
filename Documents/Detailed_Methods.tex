@@ -77,15 +77,14 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Detailed Methods for High Dimensional Mediation for Massively Polygenic Traits},
-  pdfauthor={J. Matthew Mahoney and Anna L Tyler},
+  pdftitle={Detailed Methods for Transcripts with high distal heritability mediate genetic effects on complex traits},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{Detailed Methods for High Dimensional Mediation for Massively
-Polygenic Traits}
-\author{J. Matthew Mahoney and Anna L Tyler}
-\date{September 04, 2024}
+\title{Detailed Methods for Transcripts with high distal heritability
+mediate genetic effects on complex traits}
+\author{}
+\date{\vspace{-2.5em}}
 
 \begin{document}
 \maketitle
@@ -404,9 +403,19 @@ phenome kernel replacing the trancript matrix and number of transcripts
 with the phenotype matrix and number of phenotypes.
 
 \subsection{High-dimensional mediation
-Aanalysis}\label{high-dimensional-mediation-aanalysis}
+analysis}\label{high-dimensional-mediation-analysis}
 
-Matt has text for this section.
+Here we derive the objective function for high-dimensional mediation
+analysis (HDMA) and present an iterative algorithm to optimize this
+objective function. Our starting point is the univariate case, where we
+describe perfect mediation as a constraint on the covariance matrix
+among variables. We then leverage this constraint to define projections
+of multivariate data that are maximally consistent with perfect
+mediation (HDMA). Next, we demonstrate how to \{\it kernelize\} HDMA to
+limit dimensionality of the model and enable non-linear HDMA models.
+Finally, we discuss the connection between HDMA and related
+\{\it multiblock\} methods, including canonical correlation analyssis
+(CCA) and partial least squares path modeling (PLS-PM).
 
 \subsection{Calculation of loadings}\label{calculation-of-loadings}
 
