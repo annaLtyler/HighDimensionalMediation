@@ -233,78 +233,6 @@ We compared local and distal estimates of heritability to measures of trait
 relevance for each transcript. Trait relevance, was the Pearson correlation
 (R) between the transcript and the trait.
 
-## High-Dimensional Mediation Overview
-
-The goal of high-dimensional mediation is to identify a composite
-trait that is perfectly mediated by a composite transcriptome. To
-accomplis this, we usied regularized and generalized canonical 
-correlation analysis (RGCCA) \cite{rgcca}, an extension of canonical 
-correlation analysis (CCA) \cite{knapp1978canonical, hotelling1992relations} 
-that allows for more than two data sets with arbitrary relationships 
-among them. Here we analyzed the correlations among three data sets, 
-genotype, transcriptome, and phenotype explicitly modeling mediation 
-in which the transcriptome ($T$) mediates the effect of the genome ($G$) 
-on the phenome ($P$).
-
-\begin{equation*}
-G \rightarrow T \rightarrow P
-\end{equation*}
-
-Because the genome, transcriptome, and phenome had different dimensions,
-we kernelized each data set prior to running HDM. This step ensured that 
-each set will contribute equally to the solution. The result is a set of 
-three vectors representing a composite transcriptome ($T_C$) that perfectly 
-mediates the effect of the composite genome ($G_C$) on the composite 
-phenome ($P_C$). That is, the partial correlation between $G_C$ and $P_C$
-is 0 when $T_C$ is accounted for. Because of the central dogma of molecular 
-biology, information flow is directed out of the genome, and not back into 
-it. Thus, the otherwise undirected relationships between genome, transcriptome, 
-and phenome can be inferred as a causal mediation by the transcriptome of the 
-effects of the genome on the phenome. 
-
-
-## Kernelization
-
-Before running high-dimensional mediation analysis, we kernelized the 
-genotype, transcriptomic, and phenotype data sets to generate $n \times n$
-matrices in where $n$ is the number of individual mice. Each matrix described
-the relationships among individuals based on their genome, transcriptome, or 
-phenome. Each matrix was generated as follows:
-
-### Kernelizing the genome
-
-The kernel matrix of the genome is the overall kinship matrix as 
-calculated by calc_kinship() in the R package qtl2 [cite]. We further 
-mean-centered this matrix based on DO generation. 
-
-### Kernelizing the transcriptome
-
-Prior to kernelizing the transcriptome, we regressed out the
-effects of sex and DO generation. We then mean centered and 
-standardized transcripts across individuals. The kernel matrix
-($K_t$) for the transcriptome of each tissue was calculated 
-as follows:
-
-\begin{equation*}
-K_t = \frac{Tr \times Tr^T}{n_{Tx}}
-\end{equation*}
-
-where $Tr$ is a matrix of transcript abundances with individuals 
-in rows and transcripts in columns, $Tr^T$ is $Tr$ transpose,
-and $n_{Tx}$ is the number of transcripts in the matrix.
-We kernelized each tissue's transcriptome and then averaged
-across all tissues to generate a single transcriptome kernel
-for all tissues.
-
-### Kernelizing the phenome
-
-The phenome kernel was constructed the same way as the transcriptome
-kernel. We regressed out sex and DO generation and then mean centered
-and standardized the phenotypes. We used knn.impute() [cite] to impute
-missing values. We then used the above equation to generate the phenome 
-kernel replacing the trancript matrix and number
-of transcripts with the phenotype matrix and number of phenotypes.
-
 ## High-dimensional mediation analysis
 
 Here we derive the objective function for high-dimensional mediation 
@@ -313,17 +241,267 @@ objective function. Our starting point is the univariate case, where
 we describe perfect mediation as a constraint on the covariance matrix 
 among variables. We then leverage this constraint to define projections 
 of multivariate data that are maximally consistent with perfect mediation 
-(HDMA). Next, we demonstrate how to {\it kernelize} HDMA to limit 
+(HDMA). Next, we demonstrate how to \textit{kernelize} HDMA to limit 
 dimensionality of the model and enable non-linear HDMA models. Finally, 
-we discuss the connection between HDMA and related {\it multiblock} 
+we discuss the connection between HDMA and related \textit{multiblock} 
 methods, including canonical correlation analyssis (CCA) and partial 
 least squares path modeling (PLS-PM).
 
 
-## Calculation of loadings
+### Perfect mediation as a constraint on covariance matrices
 
-Loadings onto transcripts and traits were calculated in the following
-way. calc_loadings()
+Suppose we have three random variables $x$, $m$, and $y$. Assume they 
+each have unit variance and that they satisfy the following structural
+equation model (SEM) such that $m$ perfectly mediates the effect of $x$ 
+on $y$:
+
+\begin{align}
+    m &= \alpha x + \epsilon_m \label{eqn:perfect_mediation1}\\ 
+    y &= \beta m + \epsilon_y  \label{eqn:perfect_mediation2}
+\end{align}
+
+From these structural equations, we have the \textit{model-implied covariance 
+matrix}, $S$, given by
+
+\begin{align}
+\label{eqn:model_implied_covariance}
+S = 
+\begin{bmatrix}
+    1 & \alpha & \alpha \beta \\
+    \alpha & 1 & \beta \\
+    \alpha \beta & \beta & 1
+\end{bmatrix}
+\end{align}
+
+Note that the assumption of perfect mediation forces the covariance 
+between $x$ and $y$ to be $\alpha \beta$. In any finite data set, 
+however, the observed covariance matrix, $\Sigma = [\Sigma_{ij}]$, 
+will not typically satisfy this constraint.
+
+The general log-likelihood function for an SEM is given by
+
+\begin{align}
+\label{eq:loglikelihood}
+    L = -\log\left|S\right| - {\rm tr}\left(\Sigma S^{-1}\right),
+\end{align}
+
+where $|\cdot|$ denotes the determinant of a matrix and ${\rm tr}(\cdot)$ 
+denotes the trace. For the perfect-mediation model, these values are
+
+\begin{align}
+    \left|S\right| &= (1-\alpha^2)(1-\beta^2) \\
+    %S^{-1} &= 
+    %\begin{bmatrix}
+    %\frac{1}{1-\alpha^2} & \frac{-\alpha}{1-\alpha^2} & 0 \\
+    %\frac{-\alpha}{1-\alpha^2} & \frac{1-\alpha^2\beta^2}{(1-\alpha^2)(1-%\beta^2} & \frac{-\beta}{1-\beta^2} \\
+    %0 & \frac{-\beta}{1-\beta^2} & \frac{1}{1-\beta^2}
+    %\end{bmatrix}\\ 
+    S^{-1} &= 
+    \begin{bmatrix}
+    1/(1-\alpha^2) & -\alpha/(1-\alpha^2) & 0 \\
+    -\alpha/(1-\alpha^2) & (1-\alpha^2\beta^2)/\left((1-\alpha^2)(1-\beta^2)\right) & -\beta/(1-\beta^2) \\
+    0 & -\beta/(1-\beta^2) & 1/(1-\beta^2)
+    \end{bmatrix}
+\end{align}
+
+Plugging these into the likelihood function, we get
+
+\begin{align}
+\label{eqn:mediation_loglikelihood}
+    L = &-\log\left((1-\alpha^2)(1-\beta^2)\right)\\
+    &+ \frac{2\alpha^2\beta^2}{(1-\alpha^2)(1-\beta^2)}\\
+    &+ \frac{2\alpha}{1-\alpha^2} \Sigma_{12} + \frac{2\beta}{1-\beta^2} \Sigma_{23} - 1
+\end{align}
+
+To simplify notation, we define
+$$F(\alpha,\beta) = -\log\left((1-\alpha^2)(1-\beta^2)\right) + \frac{2\alpha^2\beta^2}{(1-\alpha^2)(1-\beta^2)} + \frac{2\beta}{1-\beta^2} - 1,$$ so the likelihood function is now
+
+
+\begin{align}
+\label{eqn:mediation_loglikelihood_simple}
+    L = F(\alpha, \beta) + \frac{2\alpha}{1-\alpha^2} \Sigma_{12} + \frac{2\beta}{1-\beta^2} \Sigma_{23}
+\end{align}
+
+This likelihood is maximized by fitting regression coefficients 
+$\alpha$ and $\beta$ between $x$ and $m$ and $m$ and $y$, respectively.
+
+### Projecting multivariate data to identify latent mediators
+
+Suppose now that we have three data matrices, $X$, $M$, and $Y$ 
+(individuals by variables) that are mean centered by column. 
+The central assumption of HDMA is that these multivariate data 
+encode \textit{latent variables} that are causally linked according 
+to the perfect-mediation model, in a sense made precise as follows.
+
+We use the log-likelihood function (Eqn. \ref{eqn:mediation_loglikelihood}) 
+of the perfect mediation model as an objective function to identify 
+latent variables, $l_X$, $l_M$, and $l_Y$, that are are correlated as 
+closely as possible to the constraints of the perfect mediation model, 
+Eqn. (\ref{eqn:model_implied_covariance}). We estimate these latent 
+variables as linear combinations of the measured variables
+
+\begin{align}
+    l_X &= Xa \\
+    l_M &= Mb \\
+    l_Y &= Yc
+\end{align}
+
+The coefficient vectors $a$, $b$, and $c$, are called \textit{loadings}, 
+analogous to the terminology in PCA and CCA. Because the data matrices 
+are mean centered, we have
+
+\begin{equation*}
+    {\rm mean}(l_X) = {\rm mean}(l_M) = {\rm mean}(l_Y) = 0,
+\end{equation*}
+
+and we assume the loadings are scaled so that each latent variable 
+has unit variance
+
+\begin{equation*}
+    {\rm var}(l_X) = {\rm var}(l_M) = {\rm var}(l_Y) = 1.
+\end{equation*}
+
+Plugging these formulae into the objective function 
+(Eqn. \ref{eqn:mediation_loglikelihood_simple}), we have 
+
+\begin{align}
+    \Sigma_{12} &= {\rm corr}\left(l_X, l_M\right)\\
+    \Sigma_{23} &= {\rm corr}\left(l_M, l_Y\right)\\
+    \label{eqn:gcca_mediation}
+    L(\alpha, \beta, a,b,c) &= F(\alpha, \beta) + \frac{2\alpha}{1-\alpha^2} {\rm corr}\left(l_X, l_M\right) + \frac{2\beta}{1-\beta^2} {\rm corr}\left(l_M, l_Y\right) \\ 
+    &= F(\alpha, \beta) + \frac{2\alpha}{1-\alpha^2} {\rm corr}\left(Xa, Mb\right) + \frac{2\beta}{1-\beta^2} {\rm corr}\left(Mb, Yc\right)
+\end{align}
+
+This yields an objective function of two sets of parameters: 
+the \textit{structural parameters} $\alpha$ and $\beta$ that define 
+the causal model among latent variables, and the loading vectors $a$, 
+$b$, and $c$, that define the latent variables in terms of the measured 
+variables. The goal of HDMA is to optimize $L$ as a function of all 
+parameters simultaneously. The form of the objective function, 
+Eqn. \ref{eqn:gcca_mediation}, is effectively a weighted sum of 
+correlation coefficients, connecting it to so-called 
+\textit{sum-of-correlation}, or SUMCOR, optimization problems 
+[REF], which we discuss further below.
+
+### An algorithm for HDMA
+
+The global optimization of \ref{eqn:gcca_mediation} is challenging 
+because it is not a convex problem. However, the decomposition of 
+the variables into structural and loading variables suggests an 
+iterative algorithm, similar to the expectation-maximization algorithm, 
+that converges at least to a stationary point. The overall idea is to 
+use block-coordinate-ascent strategy that iterates between optimizing 
+$a$, $b$, and $c$, then optimizing $\alpha$ and $\beta$. 
+
+For fixed $a$, $b$, and $c$, the optimal $\alpha$ and $\beta$ are 
+simply given by regression coefficients between $l_X$ and $l_M$ and 
+$l_M$ and $l_Y$, respectively. Given these regression coefficients, 
+$\alpha$ and $\beta$,  we then optimize $a$, $b$, and $c$. For fixed 
+$\alpha$ and $\beta$, the term $F(\alpha, \beta)$ is irrelevant, so 
+our objective function reduces to
+
+\begin{align}
+        L_{red}(a,b,c) = \frac{2\alpha}{1-\alpha^2} {\rm corr}\left(Xa, Mb\right) + \frac{2\beta}{1-\beta^2} {\rm corr}\left(Mb, Yc\right),
+\end{align}
+
+which is a weighted sum of correlation coefficients. This is exactly 
+a (weighted) SUMCOR optimization problem [REF]. These optimization 
+problems are still not convex, but Tenenhaus \textit{et al.} have 
+recently proved convergence for iterative algorithms that optimize 
+weighted SUMCOR problems [REF]. These algorithms only guarantee 
+convergence to a stationary point not necessarily a maximum, as is 
+common in other non-convex problems, but this can be overcome with 
+multiple random restarts, if needed. Thus, we have a sub-routine 
+$\texttt{wSUMCOR}(X, M, Y, w_1, w_2)$ that solves the weighted SUMCOR 
+problem 
+
+\begin{align}
+        L_{wSUMCOR}(a,b,c, w_1, w_2) = w_1 {\rm corr}\left(Xa, Mb\right) + w_2 {\rm corr}\left(Mb, Yc\right),
+\end{align}.
+
+
+We summarize our optimization procedure in Algorithm \ref{alg:hdma}.
+
+\begin{algorithm}
+\caption{High-dimensional mediation analysis}\label{alg:hdma}
+\begin{algorithmic}
+\Require $X$, $M$, $Y$ \Comment{Data matrices}
+\Ensure $\alpha$, $\beta$, $a$, $b$, $c$, $l_X$, $l_M$, $l_Y$ \Comment{Structural parameters, loadings, scores}
+%\begin{itemize}
+%    \item $\alpha$, $\beta$ \Comment{Structural parameters}
+%    \item $a$, $b$, $c$ \Comment{Loadings}
+%    \item $l_X = Xa$, $l_M = Mb$, $l_Y = Yc$ \Comment{Scores}
+%\end{itemize}
+\State $\alpha \gets 0.5$, $\beta \gets 0.5$ \Comment{Initialize structural parameters}
+\While{$converge \neq TRUE$}
+\State $d \gets \frac{2\alpha}{1-\alpha^2} + \frac{2\alpha}{1-\alpha^2}$ \Comment{Normalization constant for weights}
+\State $w_1 \gets \frac{1}{d}\frac{2\alpha}{1-\alpha^2}$, $w_2 \gets \frac{1}{d}\frac{2\beta}{1-\beta^2}$ \Comment{Set weights (sum to one)}
+\State $(a,b,c) \gets \texttt{wSUMCOR}(X, M, Y, w_1, w_2)$  \Comment{Compute loadings}
+\State $l_X \gets Xa$, $l_M \gets Mb$, $l_Y \gets Yc$ \Comment{Compute scores}
+\State $\alpha \gets {\rm corr}(l_X, l_M)$, $\beta \gets {\rm corr}(l_M, l_Y)$ \Comment{Update structural parameters}
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+### Kernel HDMA
+
+For large data matrices $X$, $M$, and $Y$, especially with high 
+correlation among variables, as is common for high-throughput 
+biological assays (\textit{e.g.}, ~1M alleles for genotypes, ~20k 
+transcripts), we can further reduce the dimensionality of the HDMA 
+model by requiring that loading vectors lie in the span of the the 
+measured individuals, namely
+
+\begin{align}
+a &= X^T \tilde{a} \\
+b &= M^T \tilde{b} \\
+c &= Y^T \tilde{c}.
+\end{align}
+
+This replaces the full feature data, say $X$, with the covariances 
+among individuals, $C_X = XX^T$, and reduces the dimensionality 
+from the number of measured variables down to the number of individuals
+
+\begin{align}
+l_x &= XX^T \tilde{a} = C_X \tilde{a} \\
+l_M &= MM^T \tilde{b} = C_M \tilde{b} \\
+l_M &= YY^T \tilde{c} = C_Y \tilde{c}.
+\end{align}
+
+This reduction is called \textit{kernelization} and is widely applied to 
+other linear models, including CCA \cite{}, linear regression [REF], and 
+classification [REF].
+
+It is interesting to note that kernelization is often used to convert a 
+linear model to a non-linear model by replacing the covariance matrices, 
+\textit{e.g.} $C_X$, with more complex \textit{kernel matrices} $K_X$ 
+that encode similarity measures among individuals that are non-linear 
+functions of the measured variables. Promoting a linear model to a 
+non-linear model in this way is called the \textit{kernel trick} and is 
+widely used in the machine learning field. The above considerations 
+show that HDMA is kernelizable in the same way as other linear models, 
+although the exploration of non-linear models is outside the scope of 
+this study.
+
+### Implementation details
+
+We have implemented HDMA (Algortihm \ref{alg:hdma}) in the R programming 
+language. Tenenhaus \textit{et al.} have implemented their optimizers in 
+the Regularized Generalized Canonical Correlation Analysis (RGCCA) R 
+package [REF], which we use as the subroutine \texttt{wSUMCOR}. As 
+Tenenhaus \textit{et al.} discuss [REF] optimizing the empirical
+correlation coefficient \textit{per se} is numerically unstable due 
+to the inversion of the covariance matrices of the measured variables 
+(\textit{e.g.}, the transcript-transcript covariance matrix). To overcome 
+this, the RGCCA package uses a regularized form of the covariance matrix 
+developed by Schaeffer and Strimmer [REF], which can be estimated 
+rapidly using an analytic formula.
+
+ As a convergence criterion, we stop the iterations when both $\alpha$ 
+ and $\beta$ change by less than $10^{-6}$ from their previous value 
+ in one iteration.
+
+ All code required to run HDMA is available at XXX.
 
 ## Enrichment of biological terms
 
