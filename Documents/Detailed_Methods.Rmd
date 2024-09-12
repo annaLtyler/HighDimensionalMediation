@@ -1,5 +1,5 @@
 ---
-title: "Detailed Methods for Transcripts with high distal heritability mediate genetic effects on complex traits"
+title: "Online methods for: Transcripts with high distal heritability mediate genetic effects on complex traits"
 output: 
   pdf_document:
     keep_tex: true
@@ -166,12 +166,12 @@ Kit (Illumina; 20028312). All tissues underwent 100 bp paired-end
 sequencing, aiming for a target read depth of 30 million read pairs.
 
 
-## Trait selectionin DO
+## Trait selection in DO
 We filtered the measured traits in this study to a set of 
 relatively non-redundant measures that were well-represented
-in the population (having at least XXX individuals), and spanned 
-multiple aspects of metabolic disease. A complete description of
-trait filtering can be found in File XXX (1b.Trait_Selection.Rmd).
+in the population (having at least 80\% of individuals measured). 
+A complete description of trait filtering can be found at
+XXX in the file 1b.Trait_Selection.Rmd.
 
 We took two approaches for traits with multiple redundant measurements,
 for example logintudinal body weights. In the case of longitudinal 

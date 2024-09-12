@@ -92,7 +92,7 @@ pmid25363779, pmid21617055, pmid19474294, pmid24702953,
 pmid24316577, pmid27126046}. It is widely assumed that these 
 variants influence local transcription, and methods such as 
 transcriptome-wide association studies (TWAS) 
-\cite{pmid33020666, pmid26258848, pmid27019110, pmid26854917},
+\cite{pmid33020666, pmid26258848, pmid27019110, pmid26854917} and
 summary data-based Mendelian randomization (SMR) \cite{pmid27019110}
 capitalize on this idea to identify genes associated 
 with multiple disease traits \cite{pmid29567659, pmid35533209, 
@@ -113,11 +113,9 @@ and thus local eQTLs influencing traits cannot be detected
 discussed in recent years is that effects of these variants 
 are mediated not through local regulation of gene expression, 
 but through distal regulation \cite{pmid37857933, pmid32424349, 
-pmid32831138, pmid30950127}. 
-
-In this model, a gene's expression is influenced by 
-many variants throughout the genome through their cumulative 
-effects on a broader regulatory network. In other 
+pmid32831138, pmid30950127}. In this model, a gene's expression 
+is influenced by many variants throughout the genome through their 
+cumulative effects on a broader regulatory network. In other 
 words, the heritable component of the transcriptome is an emergent 
 state arising from the myriad molecular interactions defining and 
 constraining gene expression. 
@@ -151,7 +149,7 @@ data set in a large population of diversity outbred (DO) mice
 \cite{pmid22892839}, and an independent validation data set derived
 by crossing inbred strains from the Collaborative Cross (CC) 
 mice \cite{pmid18716833} to form CC F1 mice (CC-RIX). Both populations
-modeled diet-induced obesity and metabolic disease \cite{pmid29567659}
+modeled diet-induced obesity and metabolic disease \cite{pmid29567659}.
 
 The DO population and CC recombinant inbred lines were derived from 
 the same eight inbred founder mouse strains, five classical lab 
@@ -166,25 +164,25 @@ the whole genome visible to genetic inquiry \cite{pmid22892839}. The
 CC mice were initially outcrossed to recombine the genomes from all 
 eight founders, and then inbred for at least 20 generations to 
 generate multiple inbred lines. Because these two populations
-have common ancestral haplotyped we could directly and unambiguously
+have common ancestral haplotypes we could directly and unambiguously
 compare the local genetic effects on gene expression at the 
 whole-transcriptome level while varying the population structure
 driving distal regulation.
 
 In the DO population, we paired clinically relevant metabolic traits 
-from 500 mice \cite{pmid29567659}, including body weight, plasma levels 
-of insulin and glucose and plasma lipids, with transcriptome-wide gene 
+from 371 mice \cite{pmid29567659}, including body weight, plasma levels 
+of insulin, glucose and lipids, with transcriptome-wide gene 
 expression in four tissues related to metabolic disease: adipose tissue, 
 pancreatic islets, liver, and skeletal muscle. We measured similar 
-metabolic traits in the CC-RIX and gene expression from three of the four 
-tissues used in the DO: adipose tissue, liver, and skeletal muscle. Because 
-the CC-RIX carry the same founder alleles as the DO, local gene regulation 
-is expected to match between the populations, but because the alleles are 
-recombined through the genome, distal effects are expected to vary from 
-those in the DO, allowing us to directly assess the role of local gene 
-regulation in driving trait-associated transcript variation. Together, 
-these data enable a comprehensive view into the genetic architecture of 
-metabolic disease.
+metabolic traits in a CC-RIX population and gene expression from three 
+of the four tissues used in the DO: adipose tissue, liver, and skeletal 
+muscle. Because the CC-RIX carry the same founder alleles as the DO, local 
+gene regulation is expected to match between the populations, but because 
+the alleles are recombined through the genome, distal effects are expected 
+to vary from those in the DO, allowing us to directly assess the role of 
+local gene regulation in driving trait-associated transcript variation. 
+Together, these data enable a comprehensive view into the genetic architecture 
+of metabolic disease.
 
 ## Results
 
@@ -198,8 +196,9 @@ Although the environment was consistent across all animals, the
 genetic diversity present in the DO population resulted in widely 
 varying distributions across physiological measurements (Fig.
 \ref{fig:trait_overview}). For example, body weights of adult 
-individuals varied from less than the average adult B6 body weight 
-to several times the body weight of a B6 adult in both sexes 
+individuals varied from less than the average adult C57BL/6J 
+(B6) body weight to several times the body weight of a B6 adult in 
+both sexes 
 (Males: `r signif(min(pheno.stats$Body_Weight$Male, na.rm = TRUE), 3)` -
 `r signif(max(pheno.stats$Body_Weight$Male, na.rm = TRUE), 3)`g, Females:
 `r format(signif(min(pheno.stats$Body_Weight$Female, na.rm = TRUE), 3), nsmall = 1)` -
@@ -219,20 +218,20 @@ animals,
 \cite{pmid17018838}. Males had higher FBG than females on average 
 (Fig. \ref{fig:trait_overview}C) as has been observed before 
 suggesting either that males were 
-more susceptible to metabolic disease on the high-fat diet, or that 
-males and females may require different thresholds for pre-diabetes 
-and diabetes. 
+more susceptible to metabolic disease on the high-fat, high-sugar 
+(HFHS) diet, or that males and females may require different thresholds for 
+pre-diabetes and diabetes. 
 
 Body weight was strongly positively correlated with food consumption 
 (Fig. \ref{fig:trait_overview}D $R^2 =$ `r pheno.stats$food_weight["r"]`,
 $p<$ `r threshold_p(signif(pheno.stats$food_weight["p"], 2))`) 
-and fasting blood glucose (FBG) (Fig. \ref{fig:trait_overview}E, 
+and FBG (Fig. \ref{fig:trait_overview}E, 
 $R^2=$ `r pheno.stats$weight_glu["r"]`, $p <$ 
 `r threshold_p(signif(pheno.stats$weight_glu["p"], 2))`) 
 suggesting a link between behavioral factors and metabolic disease. 
 However, the heritability of this trait and others (Fig.
 \ref{fig:trait_overview}F) indicates that 
-background genetics contribute substantially to correlates of metabolic 
+genetics contribute substantially to correlates of metabolic 
 disease in this population.
 
 \begin{figure}[ht!]
@@ -249,17 +248,16 @@ relationship between food consumption and body weight for both
 sexes. \textbf{E.} Relationship between body weight and fasting glucose 
 for both sexes. \textbf{F.} Heritability estimates for each physiological 
 trait. Bars show standard error of the estimate. \textbf{G.} Correlation 
-structure between pairs of physiological traits.}
+structure between pairs of physiological traits. BMD - bone mineral density,
+WPIC - whole pancreas insulin content, Glu tAUC - glucose total area under 
+the curve, HOMA IR - homeostatic measurement of insulin resistance, HOMA B - 
+homeostatic measure of beta cell health, VLDL - very low-density lipoprotein,
+LDL - low-density lipoprotein, IDL - intermediate density lipoprotein, 
+HDL - high-density lipoprotein, TG - triglyceride.
+}
 \label{fig:trait_overview}
 \end{figure}
 
-The trait correlations (Fig. \ref{fig:trait_overview}G) 
-showed that most of the metabolic trait pairs were only 
-modestly correlated indicating complex relationships among 
-the measured traits. This low level of redundancy suggests 
-a broad sampling of multiple heritable aspects of metabolic 
-disease including overall body weight, glucose homeostasis, 
-pancreatic composition and liver function.
 
 ### Distal Heritability Correlated with Phenotype Relevance
 
@@ -275,11 +273,12 @@ fig.eqtl.label <- fig.counter[fig.label]
 ```
 
 To comprehensively assess the genetic control of gene expression
-in metabolic disease we assayed adipose, islet, liver, and
-skeletal muscle gene expression in the DO cohort. We performed 
-eQTL analysis using R/qtl2 \cite{pmid30591514} 
-(Methods) and identified both local and distal eQTLs for 
-transcripts in each of the four tissues (Supp. Fig. \ref{fig:eQTL}). 
+in metabolic disease we measured overall gene expression via 
+bulk RNA-Seq in adipose, islet, liver, and skeletal muscle in 
+the DO cohort (Supp. Fig. \ref{fig:eQTL}A-H). We performed eQTL 
+analysis using R/qtl2 \cite{pmid30591514} (Methods) and identified 
+both local and distal eQTLs for transcripts in each of the four 
+tissues (Supp. Fig. \ref{fig:eQTL}). 
 Significant local eQTLs far outnumbered distal eQTLs 
 (Supp. Fig. \ref{fig:eQTL}F) and tended to be shared across 
 tissues (Supp. Fig. \ref{fig:eQTL}G) whereas the few 
@@ -291,7 +290,7 @@ local and distal genetic factors (Methods). Overall, local and
 distal genetic factors contributed approximately equally to 
 transcript abundance. In all tissues, both local and distal 
 factors explained between `r min.herit` and `r max.herit`\% 
-of the variance in the median transcript (Fig \ref{fig:motivation}A). 
+of the variance in the median transcript (Fig, \ref{fig:motivation}A). 
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig2_motivation.pdf} 
@@ -342,16 +341,16 @@ to be highly correlated and organized according to coherent, emergent
 biological processes representing the mediating endophenotypes driving 
 clinical trait variation. To identify these endophenotypes in a 
 theoretically principled way, we developed a novel dimension-reduction 
-technique, HDMA, that uses the theory of causal graphical models to 
-identify a transcriptomic signature that is simultaneously 1) highly 
-heritable, 2) strongly correlated to the measured phenotypes, and 3) 
-conforms to the causal mediation hypothesis (Fig. \ref{fig:workflow}).
-HDMA projects the high-dimensional scores--a composite genome score 
-($G_C$), a composite transcriptome score ($T_C$), and a composite 
-phenome score ($P_C$)--and uses the univariate theory of mediation 
-to constrain these projections to satisfy the hypotheses of perfect 
-mediation, namely that upon controlling for the transcriptomic score, 
-the genome score is uncorrelated to the phenome score. Formally, 
+technique, high-dimension mediation analytis (HDMA), that uses the 
+theory of causal graphical models to identify a transcriptomic signature 
+that is simultaneously 1) highly heritable, 2) strongly correlated to the 
+measured phenotypes, and 3) conforms to the causal mediation hypothesis 
+(Fig. \ref{fig:workflow}). HDMA projects the high-dimensional scores--a 
+composite genome score ($G_C$), a composite transcriptome score ($T_C$), 
+and a composite phenome score ($P_C$)--and uses the univariate theory of 
+mediation to constrain these projections to satisfy the hypotheses of 
+perfect mediation, namely that upon controlling for the transcriptomic 
+score, the genome score is uncorrelated to the phenome score. Formally, 
 perfect mediation implies a constraint on the correlation coefficients
 among scores as
 
@@ -360,7 +359,7 @@ Corr(G_C,P_C) = Corr(G_C,T_C)Corr(T_C,P_C)
 \end{equation*}
 
 which is equivalent to the partial correlation of $G_C$ and $P_C$ after 
-controlling for T_C being zero. The value $Corr(G_C,T_C)Corr(T_C,P_C)$ 
+controlling for $T_C$ being zero. The value $Corr(G_C,T_C)Corr(T_C,P_C)$ 
 is called the path coefficient of the mediation model. The projections 
 of the high-dimensional data matrices in HDMA are designed to satisfy 
 this constraint, and thus conform to the perfect mediation hypothesis, 
@@ -400,7 +399,7 @@ correlation vs. the $T_C$-$P_C$ correlation compared with the observed value
 \label{fig:workflow}
 \end{figure}
 
-We used HDMA to identify the major axis of variation in 
+Using HDMA we identifed the major axis of variation in 
 the transcriptome was consistent with mediating the effects 
 of the genome on metabolic traits (Fig \ref{fig:workflow}). Fig. 
 \ref{fig:workflow}A shows the partial correlations 
@@ -425,7 +424,7 @@ similarly prone to over-fitting in a high-dimensional space, we performed
 permutation testing. We permuted the individual labels on the transcriptome 
 matrix 1000 times and recalculated the path coefficient, which is the partial 
 correlation of $G_C$ and $T_C$ multiplied by the partial correlation of $T_C$ 
-and $P_C$. This represents the strenght of the path from $G_C$ to $P_C$ that 
+and $P_C$. This represents the strength of the path from $G_C$ to $P_C$ that 
 is putatively mediated through $T_C$. The null distribution of the path coefficient 
 is shown in Fig. \ref{fig:workflow}B, and the observed path coefficient from 
 the original data is indicated by a red line. The observed path coefficient was 
@@ -491,11 +490,11 @@ strong mediation of the effect of genetics on metabolic
 index. Large positive loadings indicate that higher 
 expression was associated with a higher metabolic
 index (i.e. higher risk of obesity and metabolic disease 
-on the high-fat diet) (Fig. \ref{fig:interpretation}C). 
+on the HFHS diet) (Fig. \ref{fig:interpretation}C). 
 Conversely, large negative loadings indicate that high
 expression of these transcripts was associated with a 
 lower metabolic index (i.e. lower risk of obesity and 
-metabolic disease on the high-fat diet) (Fig. \ref{fig:interpretation}C). 
+metabolic disease on the HFHS diet) (Fig. \ref{fig:interpretation}C). 
 We used gene set enrichment analysis (GSEA) \cite{fgsea, 
 pmid16199517} to look for biological processes and pathways 
 that were enriched at the top and bottom of this list (Methods). 
@@ -518,11 +517,11 @@ go.enrich.label <- fig.counter[fig.label]
 In adipose tissue, both GO processes and KEGG pathway 
 enrichments pointed to an axis of inflammation and metabolism
 (Figs. \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}).
-GO terms and KEGG pathways associated with inflammation, particularly 
-macrophage infiltration, were positively associated with metabolic
-index, indicating that increased expression in inflammatory
-pathways was associated with a higher metabolic index. It is well 
-established that adipose tissue in obese individuals is 
+GO terms and KEGG pathways associated with inflammation were 
+positively associated with metabolic index, indicating that 
+increased expression in inflammatory pathways was associated 
+with a higher metabolic index. It is well established that 
+adipose tissue in obese individuals is 
 inflamed and infiltrated by macrophages \cite{pmid19133410, 
 pmid28955384, pmid28912810, pmid28901330, pmid24969772}, and the 
 results here suggest that this may be a dominant heritable component 
@@ -537,7 +536,7 @@ that increased expression of these genes was associated with reduced
 metabolic index (Supp. Fig. \ref{fig:oxPhos}). Consistent with
 this observations, it has been shown previously that mouse strains 
 with greater thermogenic potential are also less susceptible to obesity 
-on a high-fat diet \cite{pmid18492779}.
+on a HFHS diet \cite{pmid18492779}.
 
 
 ```{r, echo = FALSE}
@@ -764,7 +763,7 @@ with human results, the mean loading of macrophage-specific genes
 was significantly greater than 0 (Fig. \ref{fig:human_translation}A), 
 indicating that obese mice were genetically predisposed to have high 
 levels of macrophage infiltration in adipose tissue in response to 
-the high-fat, high-sugar diet. Loading for marker genes for other cell 
+the HFHS diet. Loading for marker genes for other cell 
 types were not statistically different from zero, indicating that changes 
 in the abundance of those cell types is not a mediator of metabolic index.
 
@@ -954,7 +953,7 @@ simple local regulation, which tend to be depleted of functional
 annotations suggesting they are less likely to be directly involved 
 in disease traits \cite{pmid37857933}. These observations are 
 consistent with principles of robustness in complex systems 
-in which simple regulation of imoprtant elements leads to 
+in which simple regulation of important elements leads to 
 fragility of the system \cite{pmid29782925, pmid12082173, pmid27304973}.
 Our results are consistent, instead, with a more complex picture 
 where genes whose expression can drive trait variation are buffered 
@@ -1036,7 +1035,7 @@ previously known to be involved in the pathogenesis of metabolic disease,
 such as inflammation in adipose tissue. That these processes were 
 identified in this analysis suggests additionally that they have a 
 heritable component, and that some individuals are genetically susceptible 
-to greater adipose inflammation on a high-fat, high-sugar diet.
+to greater adipose inflammation on a HFHS diet.
 
 Individual high-loading transcripts also demonstrated biologically 
 interpretable, tissue-specific patterns. We highlighted
