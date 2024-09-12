@@ -164,7 +164,7 @@ the whole genome visible to genetic inquiry \cite{pmid22892839}. The
 CC mice were initially outcrossed to recombine the genomes from all 
 eight founders, and then inbred for at least 20 generations to 
 generate multiple inbred lines. Because these two populations
-have common ancestral haplotypes we could directly and unambiguously
+have common ancestral haplotypes, we could directly and unambiguously
 compare the local genetic effects on gene expression at the 
 whole-transcriptome level while varying the population structure
 driving distal regulation.
@@ -192,8 +192,8 @@ multi-tissue gene expression in DO mice.
 
 ### Genetic variation contributed to wide phenotypic variation
 
-Although the environment was consistent across all animals, the 
-genetic diversity present in the DO population resulted in widely 
+Although the environment was consistent across the DO mice, the 
+genetic diversity present in this population resulted in widely 
 varying distributions across physiological measurements (Fig.
 \ref{fig:trait_overview}). For example, body weights of adult 
 individuals varied from less than the average adult C57BL/6J 
@@ -236,11 +236,11 @@ disease in this population.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig1_trait_overview.pdf} 
-\caption{Clinical overview. \textbf{A.} Distributions of final body weight 
+\caption{Clinical overview. \textbf{A.} Distributions of body weight 
 in the diversity outbred mice. Sex is indicated by color. The 
 average B6 male and female adult weights at 24 weeks of age 
 are indicated by blue and green bars on the x-axis. \textbf{B.} The 
-distribution of final fasting glucose across the population split 
+distribution of fasting glucose across the population split 
 by sex. Normal, pre-diabetic, and diabetic fasting glucose levels 
 for mice are shown by colored bars along the x-axis. \textbf{C.} Males had 
 higher fasting blood glucose on average than females. \textbf{D.} The 
@@ -337,7 +337,7 @@ The above univariate analyses establish the importance of distal
 heritability for trait-relevant transcripts. However, the number 
 of transcripts dramatically exceeds the number of phenotypes. 
 Thus, we expect the heritable, trait-relevant transcripts 
-to be highly correlated and organized according to coherent, emergent 
+to be highly correlated and organized according to coherent, 
 biological processes representing the mediating endophenotypes driving 
 clinical trait variation. To identify these endophenotypes in a 
 theoretically principled way, we developed a novel dimension-reduction 
@@ -400,7 +400,7 @@ correlation vs. the $T_C$-$P_C$ correlation compared with the observed value
 \end{figure}
 
 Using HDMA we identifed the major axis of variation in 
-the transcriptome was consistent with mediating the effects 
+the transcriptome that was consistent with mediating the effects 
 of the genome on metabolic traits (Fig \ref{fig:workflow}). Fig. 
 \ref{fig:workflow}A shows the partial correlations 
 ($\rho$) between the pairs of these composite vectors. The partial 
@@ -446,8 +446,8 @@ Each composite score is simply a weighted combination of the measured
 variables and the magnitude and sign of the weights, called loadings, 
 correspond the relative importance and directionality of each variable 
 in the composite score. The loadings of each measured trait onto $P_C$ 
-indicate how much each contributed to the composite phenotype. Final 
-body weight contributed the most (Fig. \ref{fig:interpretation}), 
+indicate how much each contributed to the composite phenotype. 
+Body weight contributed the most (Fig. \ref{fig:interpretation}), 
 followed by homeostatic insulin resistance (HOMA_IR) and fasting 
 plasma insulin levels (Insulin_Fasting). We can thus interpret $P_C$ 
 as an index of metabolic disease (Fig. \ref{fig:interpretation}B). 
@@ -590,7 +590,7 @@ genes in each group had been previously associated with obesity and
 diabetes (Fig. \ref{fig:loading_heritability} bolded gene names). Genes 
 with high loadings were most highly enriched for previous literature 
 support. They were `r signif(lit.enrich["loading.twas.enrich"], 2)` 
-more likely than TWAS hits and 
+times more likely than TWAS hits and 
 `r signif(lit.enrich["loading.herit.enrich"], 2)` times more 
 likely than genes with high local heritability to be previously 
 associated with obesity or diabetes.
@@ -620,9 +620,9 @@ insulin resistance (Fig. \ref{fig:toa}A) (Methods).
 The clustering highlights the importance of immune activation 
 particularly in adipose tissue. The "mitosis" cluster had large 
 positive loadings in three of the four tissues potentially 
-suggesting system-wide hyptertrophy. Otherwise, all clusters 
-were strongly loaded in only one or two tissues. For example, 
-the lipid metabolism cluster was loaded most heavily in liver. 
+suggesting system-wide proliferation of immune cells. Otherwise, 
+all clusters were strongly loaded in only one or two tissues. For 
+example, the lipid metabolism cluster was loaded most heavily in liver. 
 The positive loadings suggest that high expression of these genes 
 particularly in the liver was associated with increased
 metabolic disease. This cluster included the gene \textit{Pparg}, 
@@ -859,7 +859,7 @@ pmid30034573}. However, long-term use of other mTOR inhibitors,
 such as rapamycin, are known to cause insulin resistance and 
 $\beta$-cell toxicity \cite{pmid30034573, pmid23881200, pmid21266327}. 
 Glucocorticoids are used to reduce inflammation, which was a 
-prominent siganture in the adipose tissues, but these drugs also 
+prominent signature in the adipose tissues, but these drugs also 
 promote hyperglycemia and diabetes \cite{pmid24582093, pmid35585199}.
 Accute treatment with glucocorticoids has further been shown to 
 reduce thermogenesis in rodent adipocytes \cite{pmid30310815, 
@@ -880,8 +880,10 @@ reducing inflammation in stressed adipocytes. Other notable hits among
 the top 20 were BTK inhibitors, which have been observed to suppress 
 inflammation and improve insulin resistance \cite{pmid33648925} as well 
 as to reduce insulin antibodies in type I diabetes \cite{pmid28753229}. 
-IKK inhibitors have been shown to improve glucose control in type II
-diabetes \cite{pmid28683283, pmid15685170}. 
+IkappaB kinase (IKK) is an enzyme complex involved in regulating cellular
+responses to inflammation \cite{pmid17047224}. Inhibitors of IKK have been 
+shown to improve glucose control in type II diabetes \cite{pmid28683283, 
+pmid15685170}. 
 
 Among the top most significant hits for the transcript loadings from 
 pancreatic islets (Supp. Fig. \ref{fig:clue_islet_all}), was suppression of 
@@ -905,32 +907,45 @@ prescribed drugs for type 2 diabetes before its use was reduced due
 to cardiac side-effects \cite{pmid21190462}. Sulfonylureas are another 
 commonly prescribed drug class for type 2 diabetes, but also have notable 
 side effects including hypoglycemia and accellerated $\beta$-cell death 
-\cite{pmid16631807}.
+\cite{pmid16631807}. 
+
+In summary, the high-loading transcripts derived from HDMA in mice
+prioritized of drugs with demonstrated effectiveness in reducing type 
+2 diabetes phenotypes in humans in a tissue-specific manner. Drugs 
+identified using the islet loadings are known diabetes drugs that act
+directly on pancreatic function. Drugs identified by the adipose loadings
+tended to reduce inflammatory responses and have been shown incidentally
+to reduce obesity-related morbidity.
 
 
 ## Discussion
 
-Here we used a novel high-dimensional mediation analysis (HDMA) to 
-investigate the relative contributions of local and distal gene 
-regulation to heritable trait variation in genetically diverse 
-mouse models of diet-induced obesity and metabolic disease. We 
-identified tissue-specific composite transcripts that are predicted 
-to mediate the effect of genetic background on metabolic traits. 
-Transcripts contributing most strongly to these composite transcripts 
-were distally, but not locally heritable, and composite transcripts 
-were able to predict obesity in a large, independent mouse population 
-with divergent population structure, whereas models using local eQTL 
-only could not. Moreover, the composite transcript from mouse adipose 
-tissue translated to predict obesity and diabetes status in human 
-cohorts with measured adipose gene expression. Taken together, these 
-results support the hypothesis that gene expression mediating the 
-effect of genetic background on metabolic phenotypes is primarily 
-distally regulated, and that the heritable endophenotypes 
-defined by gene expression signatures translate from mice to
-humans. We speculate that the central importance of distal 
-heritability found in this study is likely to be a generic finding 
-for complex common diseases and could have significant consequences 
-for the development of therapies for these diseases.
+Here we investigated the relative contributions of local and distal gene 
+regulation in four tissues to heritable variation in traits related to 
+metabolic disease in genetically diverse mice. We found that 
+distal heritability was positively correlated with trait relatedness, 
+whereas high heritability was negatively correlated with trait 
+relatedness. We used a novel high-dimensional mediation analysis 
+(HDMA) to identify tissue-specific composite transcripts that are predicted to 
+mediate the effect of genetic background on metabolic traits. Transcripts 
+in the adipose tissue had the largest loadings in the composite transcript 
+suggesting that transcription in adipose tissue had the greatest heritable 
+contribution to the response to a high-fat, high-sugar diet. Adipose 
+transcripts with high positively loadings were enriched with biological 
+processes associated with inflammation. Transcripts in adipose tissue 
+with large negative loadings were enriched for mitochondrial functions, 
+particularly thermogenesis. The composite transcript robustly predicted 
+body weight in an independent cohort of diverse mice with disparate 
+population structure. However, gene expression imputed from local 
+genotype failed to predict body weight in the second population. Taken
+together, these results highlight the complexity of gene expression 
+regulation in relation to trait heritability and suggest that heritable 
+trait variation is mediated primarily through distal gene regulation.
+We speculate that this study demonstrates a general feature of the
+heritability of complex traits and diseases and could have significant
+consequences for the development of disease treatments.
+
+## Supplemental Discussion
 
 Genetics is indispensable for the dissection of disease mechanisms 
 because it is one of the only data modalities that supports causal 
