@@ -451,14 +451,15 @@ Body weight contributed the most (Fig. \ref{fig:interpretation}),
 followed by homeostatic insulin resistance (HOMA_IR) and fasting 
 plasma insulin levels (Insulin_Fasting). We can thus interpret $P_C$ 
 as an index of metabolic disease (Fig. \ref{fig:interpretation}B). 
-Individuals with high values of $P_C$ have a higher metabolic index 
-and greater metabolic disease, including higher body weight and higher 
-insulin resistance. We refer to $P_C$ as the metabolic index going 
-forward. Traits contributing the least to the metabolic index were 
-measures of cholesterol and pancreas composition. Thus, when we 
-interpret the transcriptomic signature identified by HDMA, we are 
-explaining primarily the putative transcriptional mediation of body weight 
-and insulin resistance, as opposed to cholesterol measurements.
+Individuals with high values of $P_C$ have a higher metabolic disease 
+index and greater metabolic disease, including higher body weight 
+and higher insulin resistance. We refer to $P_C$ as the metabolic 
+disease index (MDI) going forward. Traits contributing the least 
+to the MDI were measures of cholesterol and pancreas composition. 
+Thus, when we interpret the transcriptomic signature identified by 
+HDMA, we are explaining primarily the putative transcriptional 
+mediation of body weight and insulin resistance, as opposed to 
+cholesterol measurements.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig4_interpretation.pdf} 
@@ -486,14 +487,13 @@ genotype on body weight and insulin resistance.
 ### High-loading transcripts have low local heritability, high distal heritability, and were linked mechanistically to obesity
 
 We interpreted large loadings onto transcripts as indicating
-strong mediation of the effect of genetics on metabolic 
-index. Large positive loadings indicate that higher 
-expression was associated with a higher metabolic
-index (i.e. higher risk of obesity and metabolic disease 
+strong mediation of the effect of genetics on MDI. Large positive 
+loadings indicate that higher expression was associated with a 
+higher MDI (i.e. higher risk of obesity and metabolic disease 
 on the HFHS diet) (Fig. \ref{fig:interpretation}C). 
 Conversely, large negative loadings indicate that high
 expression of these transcripts was associated with a 
-lower metabolic index (i.e. lower risk of obesity and 
+lower MDI (i.e. lower risk of obesity and 
 metabolic disease on the HFHS diet) (Fig. \ref{fig:interpretation}C). 
 We used gene set enrichment analysis (GSEA) \cite{fgsea, 
 pmid16199517} to look for biological processes and pathways 
@@ -518,9 +518,9 @@ In adipose tissue, both GO processes and KEGG pathway
 enrichments pointed to an axis of inflammation and metabolism
 (Figs. \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}).
 GO terms and KEGG pathways associated with inflammation were 
-positively associated with metabolic index, indicating that 
+positively associated with MDI, indicating that 
 increased expression in inflammatory pathways was associated 
-with a higher metabolic index. It is well established that 
+with a higher MDI. It is well established that 
 adipose tissue in obese individuals is 
 inflamed and infiltrated by macrophages \cite{pmid19133410, 
 pmid28955384, pmid28912810, pmid28901330, pmid24969772}, and the 
@@ -533,7 +533,7 @@ to mitochondial activity in general, and thermogenesis in particular
 Genes in the KEGG oxidative phosphorylation pathway in mice were 
 almost universally negatively loaded in adipose tissue, suggesting
 that increased expression of these genes was associated with reduced
-metabolic index (Supp. Fig. \ref{fig:oxPhos}). Consistent with
+MDI (Supp. Fig. \ref{fig:oxPhos}). Consistent with
 this observations, it has been shown previously that mouse strains 
 with greater thermogenic potential are also less susceptible to obesity 
 on a HFHS diet \cite{pmid18492779}.
@@ -653,7 +653,7 @@ regulated and has sufficient variation in this population to drive
 variation in phenotype. Both local and distal heribatility of 
 \textit{Pparg} in the islet are relatively high, but the loading is low,
 suggesting that variability of expression in the islet does not
-drive variation in metabolic index. These results highlight the importance
+drive variation in MDI. These results highlight the importance
 of tissue context when investigating the role of heritable transcript
 variability in driving phenotype.
 
@@ -685,13 +685,13 @@ pmid17674098, pmid15514660} strains (Fig. \ref{fig:cc_prediction})
 (Methods). We tested two questions. First, we asked whether the 
 loadings identified in the DO mice were relevant to the relationship 
 between the transcriptome and the phenome in the CC-RIX. We predicted
-body weight (a surrogate for metabolic index) in each CC-RIX individual 
+body weight (a surrogate for MDI) in each CC-RIX individual 
 using measured gene expression in each tissue and the transcript loadings 
 identified in the DO (Methods). The predicted body weight and acutal body 
 weight were highly correlated in all tissues (Fig. \ref{fig:cc_prediction}B 
 left column). The best prediction was achieved for adipose tissue, which 
 supports the observation in the DO that adipose expression was the strongest 
-mediator of the genetic effect on metabolic index. This result also confirms 
+mediator of the genetic effect on MDI. This result also confirms 
 the validity and translatability of the transcript loadings and their relationship 
 to metabolic disease.
 
@@ -700,13 +700,14 @@ to metabolic disease.
 \caption{Transcription, but not local genotype, predicts 
 phenotype in the CC-RIX. \textbf{A.} Workflow showing procedure 
 for translating HDMA results to an independent population of mice. 
-\textbf{B.} Relationships between the predicted metabolic index 
-and measured body weight. The left column shows the predictions 
-using measured transcripts. The right column shows the prediction 
-using transcript levels imputed from local genotype. Gray boxes 
-indicate measured quantities, and blue boxes indicate calculated 
-quantities. The dots in each panel represent individual CC-RIX strains. 
-The gray lines show the standard deviation on body weight for the strain.
+\textbf{B.} Relationships between the predicted metabolic disease
+index (MDI) and measured body weight. The left column shows the 
+predictions using measured transcripts. The right column shows 
+the prediction using transcript levels imputed from local genotype. 
+Gray boxes indicate measured quantities, and blue boxes indicate 
+calculated quantities. The dots in each panel represent individual 
+CC-RIX strains. The gray lines show the standard deviation on body 
+weight for the strain.
 }
 \label{fig:cc_prediction}
 \end{figure}
@@ -765,7 +766,7 @@ indicating that obese mice were genetically predisposed to have high
 levels of macrophage infiltration in adipose tissue in response to 
 the HFHS diet. Loading for marker genes for other cell 
 types were not statistically different from zero, indicating that changes 
-in the abundance of those cell types is not a mediator of metabolic index.
+in the abundance of those cell types is not a mediator of MDI.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig8_Human_Translation.pdf} 
@@ -788,19 +789,19 @@ We also compared loadings of cell-type specific transcripts in islet
 significantly greater than 0, while the mean loadings for delta- and 
 endothelial-cell specific genes were significantly less than 0
 (Fig. \ref{fig:human_translation}B). These results suggest either 
-that mice with higher metabolic index had inherited a higher proportions 
+that mice with higher MDI had inherited a higher proportions 
 of alpha cells, and lower proportions of endothelial and delta cells 
 in their pancreatic islets, that such compositional changes were induced
 by the HFHS diet in a heritable way, or both. In either case, these 
 results support the hypothesis that alterations in islet composition 
-drive variation in metabolic index.
+drive variation in MDI.
 
 Notably, the loadings for pancreatic beta cell-type specific loadings 
 was not significantly different from zero. We stress that this is not 
 necessarily reflective of the function of the beta cells in the obese 
 mice, but rather suggests that any variation in the number of beta cells 
 in these mice was unrelated to obesity and insulin resistance, the
-major contributors to metabolic index. This is further consistent with 
+major contributors to MDI. This is further consistent with 
 the islet composition traits having small loadings in the phenome score 
 (Fig. \ref{fig:interpretation}).
 
@@ -824,7 +825,7 @@ groups. In all cases, the predicted obesity scores were higher
 on average for individuals in the obese and diabetic groups
 compared with the lean and non-diabetic groups (Fig. 
 \ref{fig:human_translation}D). This indicates that the distally 
-heritable signature of metabolic index identified in DO mice 
+heritable signature of MDI identified in DO mice 
 is relevant to obesity and diabetes in human subjects.
 
 ### Existing therapies are predicted to target mediator gene signatures
@@ -1046,6 +1047,15 @@ a new perspective on disease pathogenesis and develop actionable
 hypotheses about pathogenic mechanisms and potential treatments. 
 
 ## Data Availability
+\textbf{DO mice:} Genotypes, phenotypes, and pancreatic islet gene 
+expression data were previously published \cite{pmid29567659}. Gene 
+expression for the other tissues can be found at the Gene Expression 
+Omnibus url{https://www.ncbi.nlm.nih.gov/geo/} with the following 
+accession numbers: DO adipose tissue - GSE266549; DO liver 
+tissue - GSE266569; DO skeletal muscle - GSE266567. Expression
+data with calculated eQTLs are available on the Synapse 
+\url{https://www.synapse.org/}, synIDXXX
+
 Genotypes: Sequence data for the DO mice used here are available 
 from the Sequence Read Archive \url{https://www.ncbi.nlm.nih.gov/sra/} 
 (study number SRP125176). Genotype data for the CC mice are available 
@@ -1135,7 +1145,7 @@ tissue normalized to run from -1 to 1. Genes highlighted in green had
 negative loadings, and those highlighted in red had positive loadings. 
 Almost the entire pathway was strongly negatively loaded indicating 
 that increased expression of genes involved in oxidative phosphorylation
-was associated with reduced metabolic index.
+was associated with reduced MDI.
 }
 \label{fig:oxPhos}
 \end{figure}
@@ -1148,7 +1158,7 @@ tissue normalized to run from -1 to 1. Genes highlighted in green had
 negative loadings, and those highlighted in red had positive loadings. 
 Many genes in the cycle were strongly negatively loaded indicating 
 that increased expression of genes involved in branched-chain amino acid 
-degradation was associated with reduced metabolic index.
+degradation was associated with reduced MDI.
 }
 \label{fig:TCA_cycle}
 \end{figure}
@@ -1162,7 +1172,7 @@ tissue normalized to run from -1 to 1. Genes highlighted in green had
 negative loadings, and those highlighted in red had positive loadings. 
 Almost the entire pathway was strongly negatively loaded indicating 
 that increased expression of genes involved in branched-chain amino acid 
-degradation was associated with reduced metabolic index.
+degradation was associated with reduced MDI.
 }
 \label{fig:bcaa_degrataion}
 \end{figure}

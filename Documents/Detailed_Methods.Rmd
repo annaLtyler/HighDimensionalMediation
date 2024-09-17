@@ -20,7 +20,7 @@ male and female) from generates 18, 19, and 21, was placed on a
 high-fat (44.6% kcal fat), high-sugar (34% carbohydrate), adequate
 protein (17.3 % protein) diet from Envigo Teklad (catalog number TD.08811) 
 starting at four weeks of age as described previously \cite{pmid29567659}. 
-Each individual was assessed longitudinally for multiple metabolic measures 
+Individuals were assessed longitudinally for multiple metabolic measures 
 including fasting glucose levels, glucose tolerance, insulin levels, body 
 weight, and blood lipid levels.
 
@@ -56,6 +56,9 @@ R/DOQTL software \cite{pmid25237114} and interpolated onto a grid with
 (Chr) haplotypes were reconstructed from RNA-seq data using a hidden 
 Markov model (GBRS, https://github.com/churchill-lab/gbrs).
 
+## Processed Data
+We downloaded genotypes, phenotypes, and pancreatic islet gene expression 
+data from Dryad (doi:10.5061/dryad.pj105).
 
 ## Collaborative cross recombinant inbred mice
 Mice were cared for and treated following the guidelines approved by 
@@ -170,14 +173,14 @@ sequencing, aiming for a target read depth of 30 million read pairs.
 We filtered the measured traits in this study to a set of 
 relatively non-redundant measures that were well-represented
 in the population (having at least 80\% of individuals measured). 
-A complete description of trait filtering can be found at
+A complete description of trait filtering can be found on Synapse
 XXX in the file 1b.Trait_Selection.Rmd.
 
 We took two approaches for traits with multiple redundant measurements,
-for example logintudinal body weights. In the case of longitudinal 
+for example longitudinal body weights. In the case of longitudinal 
 measurements, we used the final measurement, as this was the closest
 physiological measurement to the measurement of gene expression, which
-was done at the end of the experiment. The labels for these traits are 
+was done at the end of the experiment. The labels for these traits 
 have the word "Final" appended to their name. For traits with multiple 
 highly related measurements, such as cholesterol, we used the first
 principal component of the group of measurements. For example, we used 
@@ -224,13 +227,13 @@ To estimate local and distal heritability of each transcript, we scaled each
 normalized transcript to have a variance of 1. We then modeled this transcript
 with the local genotype using the fit1() function in R/qtl with a kinship 
 correction. We used the resulting model to predict the transcript values. 
-The variance of the predicted transcript is its local heribatility. We then 
+The variance of the predicted transcript is its local heritability. We then 
 estimated the heritability of the residual of the model fit. The variance
 of the residual multiplied by its heritability is the distal heritability 
 of the transcript. 
 
 We compared local and distal estimates of heritability to measures of trait
-relevance for each transcript. Trait relevance, was the Pearson correlation
+relevance for each transcript. Trait relevance was the Pearson correlation
 (R) between the transcript and the trait.
 
 ## High-dimensional mediation analysis
@@ -244,7 +247,7 @@ of multivariate data that are maximally consistent with perfect mediation
 (HDMA). Next, we demonstrate how to \textit{kernelize} HDMA to limit 
 dimensionality of the model and enable non-linear HDMA models. Finally, 
 we discuss the connection between HDMA and related \textit{multiblock} 
-methods, including canonical correlation analyssis (CCA) and partial 
+methods, including canonical correlation analysis (CCA) and partial 
 least squares path modeling (PLS-PM).
 
 
@@ -314,7 +317,7 @@ Plugging these into the likelihood function, we get
 \end{align}
 
 To simplify notation, we define
-$$F(\alpha,\beta) = -\log\left((1-\alpha^2)(1-\beta^2)\right) + \frac{2\alpha^2\beta^2}{(1-\alpha^2)(1-\beta^2)} + \frac{2\beta}{1-\beta^2} - 1,$$ so the likelihood function is now
+$$F(\alpha,\beta) = -\log\left((1-\alpha^2)(1-\beta^2)\right) + \frac{2\alpha^2\beta^2}{(1-\alpha^2)(1-\beta^2)} + \frac{2\beta}{1-\beta^2} - 1,$$ so, the likelihood function is now
 
 
 \begin{align}
@@ -449,7 +452,7 @@ For large data matrices $X$, $M$, and $Y$, especially with high
 correlation among variables, as is common for high-throughput 
 biological assays (\textit{e.g.}, ~1M alleles for genotypes, ~20k 
 transcripts), we can further reduce the dimensionality of the HDMA 
-model by requiring that loading vectors lie in the span of the the 
+model by requiring that loading vectors lie in the span of the 
 measured individuals, namely
 
 \begin{align}
@@ -469,7 +472,7 @@ l_M &= YY^T \tilde{c} = C_Y \tilde{c}.
 \end{align}
 
 This reduction is called \textit{kernelization} and is widely applied to 
-other linear models, including CCA \cite{}, linear regression [REF], and 
+other linear models, including CCA [REF], linear regression [REF], and 
 classification [REF].
 
 It is interesting to note that kernelization is often used to convert a 
@@ -485,7 +488,7 @@ this study.
 
 ### Implementation details
 
-We have implemented HDMA (Algortihm \ref{alg:hdma}) in the R programming 
+We have implemented HDMA (Algorithm \ref{alg:hdma}) in the R programming 
 language. Tenenhaus \textit{et al.} have implemented their optimizers in 
 the Regularized Generalized Canonical Correlation Analysis (RGCCA) R 
 package [REF], which we use as the subroutine \texttt{wSUMCOR}. As 
@@ -542,14 +545,15 @@ score for each GO term and collected loadings for the transcripts
 in each term to compare across tissues.
 
 ## TWAS in DO mice
-We performed a transcriptome-wide analysis (TWAS) [cite] in the 
-DO mice to compare to the results of high-dimensional mediation. 
-To perform TWAS, we fit a linear model to explain variation in 
-each transcript across the population using the genotype at the 
-nearest marker to the gene transcription start site (TSS). We
-used kinship as a random effect and sex, diet, and DO generation 
-as fixed effects. The predicted transcript from each of these models
-was the imputed transcript based only on the local genotype.
+We performed a transcriptome-wide analysis (TWAS) \cite{pmid26258848, 
+pmid26854917} in the DO mice to compare to the results of 
+high-dimensional mediation. To perform TWAS, we fit a linear model 
+to explain variation in each transcript across the population using 
+the genotype at the nearest marker to the gene transcription start 
+site (TSS). We used kinship as a random effect and sex, diet, and 
+DO generation as fixed effects. The predicted transcript from each 
+of these models was the imputed transcript based only on the local 
+genotype.
 
 **equation**
 
@@ -562,7 +566,7 @@ than any of the permuted values, corresponding to an empirical $p$
 value of 0. These are transcripts whose locally encoded expression
 level was significantly correlated with one of the metabolic traits.
 This suggests an association between the genetically encoded transcript
-level and the trait, but does not identify a direction of causation. 
+level and the trait but does not identify a direction of causation. 
 
 ## Literature support for genes
 To determine whether each gene among those with large loadings or
@@ -582,7 +586,7 @@ connection were similarly removed. For example, the gene \textit{Rpl27} is
 used as a reference gene for quantification of the expression of other 
 genes, and co-occurrence with diabetes and obesity is a coincidence. We 
 counted the abstracts associated with diabetes or obesity and each gene 
-name, and determined that a gene had literature support when it had at 
+name and determined that a gene had literature support when it had at 
 least two abstracts linking it to the terms diabetes or obesity in the 
 respective tissue. 
 
@@ -596,7 +600,7 @@ package cluster \cite{Rcluster} to cluster the loading profiles around $k$
 medoids. We tested $k = 2$ through 20 and used silhouette andlysis to compare
 the separation of the clusters. The best separation was achieved with $k = 12$
 clusters. For each cluster we used the R package gprofiler2 \cite{Rgprofiler2}
-to enriched GO terms and KEGG pathways for the genes in each cluster. 
+to identify enriched GO terms and KEGG pathways for the genes in each cluster. 
 
 ## CC-RIX mice
 
@@ -618,13 +622,13 @@ steps for each transcript in each tissue (adipose, liver, and skeletal muscle):
   2. Multiply the genotype probabilities by the eQTL coefficients
     identified in the DO population. 
 
-To check the accuracy of the imputation, we correlated the 
-each imputed transcript with the measure transcript. The
+To check the accuracy of the imputation, we correlated 
+each imputed transcript with the measured transcript. The
 average Pearson correlation (r) was close to 0.5 for all 
-three tissues (Supp. Fig. XXXA), and as expected, the 
+three tissues (Supp. Fig. S7A), and as expected, the 
 correlation between the imputed transcript and the measured
 transcript was highly positively dependent on the local 
-eQTL LOD score of the transcript (Supp. Fig. XXXB).
+eQTL LOD score of the transcript (Supp. Fig. S7B).
 
 ## Prediction of CC-RIX traits
 
@@ -637,10 +641,10 @@ populations, and was the largest contributor to the
 phenotype score in the DO. 
 
 For each CC-RIX individual, we multiplied the transcript
-abundaces across the transcriptome by the loadings derived
-from the HDM in the DO population (Fig. XXXA). This resulted 
+abundances across the transcriptome by the loadings derived
+from the HDM in the DO population (Fig. 7A). This resulted 
 in a vector with $n$ elements, where $n$ is the number of 
-transcripts in the trancriptome. Each element was a weigted 
+transcripts in the trancriptome. Each element was a weighted 
 value that combined the relative abundance of the transcript 
 with how that abundance affected the phenotype. We averaged 
 the values in this vector to calculate an overall predicted
@@ -648,7 +652,7 @@ phenotype score for the individual CC-RIX animal.
 
 After calculating this predicted phenotype value across
 all CC-RIX animals, we correlated the predicted values from
-each tissue with measured body weight (Fig. XXXB).
+each tissue with measured body weight (Fig. 7B).
 
 ## Cell type specificity
 
@@ -665,7 +669,7 @@ and endothelial cells as defined by [36778506]. Both studies defined
 cell-type specific transcripts based on human cell types. We collected 
 the loadings for each set of cell-type specific transcripts in the 
 respective tissue and asked whether the mean loading for the cell 
-type differed significantly from 0 (Figure XXX). A significant positive 
+type differed significantly from 0 (Fig. 8). A significant positive 
 loading for the cell type would suggest a genetic predisposition to 
 have a higher proportion of that cell type in the tissue. To determine
 whether each mean loading differed significantly from 0, we 
@@ -680,10 +684,11 @@ used a significance threshold of 0.01.
 
 To compare the transcriptomic signatures identified in the DO
 mice to those seen in human patients, we downloaded human gene 
-expression data from the Gene Expression Omnibus (GEO) [cite].
-We focused on adipose tissue because this had the strongest relationship
-to obesity and insulin resistance in the DO. We downloaded the 
-following human gene expression data sets: 
+expression data from the Gene Expression Omnibus (GEO) 
+\cite{pmid37933855, pmid11752295}. We focused on adipose tissue 
+because this had the strongest relationship to obesity and insulin 
+resistance in the DO. We downloaded the following human gene 
+expression data sets: 
 
 * Accession number GSE152517 - Performed bulk RNA sequencing
   on visceral adipose tissue resected from seven diabetic and
@@ -703,25 +708,25 @@ following human gene expression data sets:
   female patients. Expression was measured with Illumina HumanHT-12 v3 
   Expression BeadChip arrays.
 
-We downloaded each data set from GEO using the R package GEOquery [cite].
-In each case, we verified that gene expression was log transdormed, and
-performed the transformation ourselves if it hadn't already been done.
-When covariates such as age and sex were available in the meta data files
-we regressed out these variables. We mean cetered and standardized gene 
-expression across transcripts.
+We downloaded each data set from GEO using the R package GEOquery 
+\cite{geoquery}. In each case, we verified that gene expression was 
+log transformed and performed the transformation ourselves if it 
+had not already been done. When covariates such as age and sex were 
+available in the metadata files, we regressed out these variables. 
+We mean centered and standardized gene expression across transcripts.
 
 We matched the human gene expression to the mouse gene expression
 by pairing orthologs as defined in The Jackson Laboratory's mouse
-genome informatics data base (MGI) [cite]. We multiplied each transcript
-in the human data by the adipose tissue loading of its ortholog in the DO 
-mice. This resulted in a vector of weighted transcript values for each 
-individual patient based on their own transcriptional profile and the
-obesity-related transcriptional signature from the DO analysis. The mean
-of this vector for an individual was the prediction of their obesity status.
-Higher values indicate a prediction of higher obesity or risk of metabolic
-disease based on adipose gene expression. We then compared the values
-across groups, either obese and non-obese, or diabetic and non-diabetic
-depending on the groups in each study.
+genome informatics data base (MGI) \cite{pmid38531069}. We multiplied each 
+transcript in the human data by the adipose tissue loading of its ortholog 
+in the DO mice. This resulted in a vector of weighted transcript values 
+for each patient based on their own transcriptional profile 
+and the obesity-related transcriptional signature from the DO analysis. 
+The mean of this vector for an individual was the prediction of their 
+obesity status. Higher values indicate a prediction of higher obesity 
+or risk of metabolic disease based on adipose gene expression. We then 
+compared the values across groups, either obese and non-obese, or diabetic 
+and non-diabetic depending on the groups in each study.
 
 ## Connectivity Map Queries
 
@@ -730,7 +735,7 @@ pancreatic islets with the CMAP database. These tissues are the most
 related to metabolic disease and diabetes respectively. 
 
 The gene expression profiles in the Connectivity Map database are derived
-from human cell lines and human primary cultures, and are indexed by 
+from human cell lines and human primary cultures and are indexed by 
 Entrez gene IDs. To query the CMAP database, we identified the Entrez
 gene IDs for the human orthologs of the mouse genes expressed in each 
 tissue. Each CMAP query takes the 150 most up-regulated and the 150
