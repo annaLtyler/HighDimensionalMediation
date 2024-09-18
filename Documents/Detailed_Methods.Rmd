@@ -174,7 +174,8 @@ We filtered the measured traits in this study to a set of
 relatively non-redundant measures that were well-represented
 in the population (having at least 80\% of individuals measured). 
 A complete description of trait filtering can be found on Synapse
-XXX in the file 1b.Trait_Selection.Rmd.
+\url{https://www.synapse.org} in the file 1b.Trait_Selection.Rmd 
+(synID: syn63335511).
 
 We took two approaches for traits with multiple redundant measurements,
 for example longitudinal body weights. In the case of longitudinal 
@@ -503,7 +504,8 @@ analytic formula.
  and $\beta$ change by less than $10^{-6}$ from their previous value 
  in one iteration.
 
- All code required to run HDMA is available at XXX.
+ All code required to run HDMA is available at Synapse \url{https://www.synapse.org},
+ synID: syn63335506.
 
 ## Enrichment of biological terms
 
@@ -606,7 +608,7 @@ to identify enriched GO terms and KEGG pathways for the genes in each cluster.
 ## CC-RIX genotypes
 We used the most recent common ancestor (MRCA) genotypes for the 
 Collaborative Cross (CC) mice available on the University of 
-North Carolina website: 
+North Carolina Computational Systems Biology website: 
 \url{http://www.csbio.unc.edu/CCstatus/CCGenomes/}
 
 To generate CC-RIX genotypes, we averaged the haplotype 

@@ -1046,7 +1046,7 @@ of both gene regulation and the genotype-to-phenotype map, we can gain
 a new perspective on disease pathogenesis and develop actionable 
 hypotheses about pathogenic mechanisms and potential treatments. 
 
-## Data Availability
+## Data and Code Availability
 \textbf{DO mice:} Genotypes, phenotypes, and pancreatic islet gene 
 expression data were previously published \cite{pmid29567659}. Gene 
 expression for the other tissues can be found at the Gene Expression 
@@ -1054,29 +1054,18 @@ Omnibus url{https://www.ncbi.nlm.nih.gov/geo/} with the following
 accession numbers: DO adipose tissue - GSE266549; DO liver 
 tissue - GSE266569; DO skeletal muscle - GSE266567. Expression
 data with calculated eQTLs are available on the Synapse 
-\url{https://www.synapse.org/}, synIDXXX
+\url{https://www.synapse.org/} (SynID: syn63335496). SynIDs for
+individual expression data sets are as follows: Adipose: syn63335560; 
+Islet: syn63335611; Liver: syn63335640; Skeletal muscle: syn63338583.
 
-Genotypes: Sequence data for the DO mice used here are available 
-from the Sequence Read Archive \url{https://www.ncbi.nlm.nih.gov/sra/} 
-(study number SRP125176). Genotype data for the CC mice are available 
-from University of North Carolina Computational Systems Biology
-(http://www.csbio.unc.edu/CCstatus/CCGenomes/).
+\textbf{CC-RIX mice}: Gene expression can be found at the Gene Expression 
+Omnibus url{https://www.ncbi.nlm.nih.gov/geo/} with the following accession
+numbers: CC-RIX adipose tissue - GSE237737; CC-RIX liver tissue - GSE237743; 
+CC-RIX skeletal muscle - GSE237747. Count matrices and phenotype data can
+be found on Synapse (SynID: syn63335450).
 
-Gene expression: Data can be found at the Gene Expression Omnibus 
-url{https://www.ncbi.nlm.nih.gov/geo/} with the following accession
-numbers: DO adipose tissue - GSE266549; DO liver tissue - GSE266569;
-DO skeletal muscle - GSE266567; CC-RIX adipose tissue - GSE237737; 
-CC-RIX liver tissue - GSE237743; CC-RIX skeletal muscle - GSE237747.
-Quantified pancreatic islet gene expression for the DO mice, along 
-with their genotypes and phenotypes can be found on Dryad 
-\url{https://datadryad.org/stash/dataset/doi:10.5061/dryad.pj105}.
-
-Phenotypes: Metabolic phenotypes for the DO mice along with 
-genotypes and quantified gene expression area available from
-\url{https://datadryad.org/stash/dataset/doi:10.5061/dryad.pj105}
-
-Metabolic phenotypes for the CC-RIX mice are available from XXX
-
+Code used to run the analyses reported here are also available on Synapse. 
+SynID: syn63335506
 
 ## Acknowledgements
 
