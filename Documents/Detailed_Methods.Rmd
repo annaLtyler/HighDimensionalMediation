@@ -244,11 +244,8 @@ objective function. Our starting point is the univariate case, where
 we describe perfect mediation as a constraint on the covariance matrix 
 among variables. We then leverage this constraint to define projections 
 of multivariate data that are maximally consistent with perfect mediation 
-(HDMA). Next, we demonstrate how to \textit{kernelize} HDMA to limit 
-dimensionality of the model and enable non-linear HDMA models. Finally, 
-we discuss the connection between HDMA and related \textit{multiblock} 
-methods, including canonical correlation analysis (CCA) and partial 
-least squares path modeling (PLS-PM).
+(HDMA). Then, we demonstrate how to \textit{kernelize} HDMA to limit 
+dimensionality of the model and enable non-linear HDMA models.
 
 
 ### Perfect mediation as a constraint on covariance matrices
@@ -281,7 +278,7 @@ between $x$ and $y$ to be $\alpha \beta$. In any finite data set,
 however, the observed covariance matrix, $\Sigma = [\Sigma_{ij}]$, 
 will not typically satisfy this constraint.
 
-The general log-likelihood function for an SEM is given by
+The general log-likelihood function for an SEM is given by \cite{bollen2014structural}
 
 \begin{align}
 \label{eq:loglikelihood}
@@ -384,7 +381,7 @@ parameters simultaneously. The form of the objective function,
 Eqn. \ref{eqn:gcca_mediation}, is effectively a weighted sum of 
 correlation coefficients, connecting it to so-called 
 \textit{sum-of-correlation}, or SUMCOR, optimization problems 
-[REF], which we discuss further below.
+\cite{tenenhaus2011regularized}, which we discuss further below.
 
 ### An algorithm for HDMA
 
@@ -408,12 +405,13 @@ our objective function reduces to
 \end{align}
 
 which is a weighted sum of correlation coefficients. This is exactly 
-a (weighted) SUMCOR optimization problem [REF]. These optimization 
-problems are still not convex, but Tenenhaus \textit{et al.} have 
-recently proved convergence for iterative algorithms that optimize 
-weighted SUMCOR problems [REF]. These algorithms only guarantee 
-convergence to a stationary point not necessarily a maximum, as is 
-common in other non-convex problems, but this can be overcome with 
+a (weighted) SUMCOR optimization problem \cite{tenenhaus2011regularized}. 
+These optimization problems are still not convex, but Tenenhaus 
+\textit{et al.} have recently proved convergence for iterative algorithms 
+that optimize weighted SUMCOR problems \cite{tenenhaus2011regularized,
+tenenhaus2017regularized, tenenhaus2015kernel}. These algorithms only 
+guarantee convergence to a stationary point not necessarily a maximum, 
+as is common in other non-convex problems, but this can be overcome with 
 multiple random restarts, if needed. Thus, we have a sub-routine 
 $\texttt{wSUMCOR}(X, M, Y, w_1, w_2)$ that solves the weighted SUMCOR 
 problem 
@@ -471,9 +469,9 @@ l_M &= MM^T \tilde{b} = C_M \tilde{b} \\
 l_M &= YY^T \tilde{c} = C_Y \tilde{c}.
 \end{align}
 
-This reduction is called \textit{kernelization} and is widely applied to 
-other linear models, including CCA [REF], linear regression [REF], and 
-classification [REF].
+This reduction is called \textit{kernelization} \cite{tenenhaus2015kernel} 
+and is widely applied to other linear models, including CCA, linear 
+regression, and classification.
 
 It is interesting to note that kernelization is often used to convert a 
 linear model to a non-linear model by replacing the covariance matrices, 
@@ -491,14 +489,15 @@ this study.
 We have implemented HDMA (Algorithm \ref{alg:hdma}) in the R programming 
 language. Tenenhaus \textit{et al.} have implemented their optimizers in 
 the Regularized Generalized Canonical Correlation Analysis (RGCCA) R 
-package [REF], which we use as the subroutine \texttt{wSUMCOR}. As 
-Tenenhaus \textit{et al.} discuss [REF] optimizing the empirical
-correlation coefficient \textit{per se} is numerically unstable due 
-to the inversion of the covariance matrices of the measured variables 
-(\textit{e.g.}, the transcript-transcript covariance matrix). To overcome 
-this, the RGCCA package uses a regularized form of the covariance matrix 
-developed by Schaeffer and Strimmer [REF], which can be estimated 
-rapidly using an analytic formula.
+package \cite{girka2023multiblock}, which we use as the subroutine 
+\texttt{wSUMCOR}. As Tenenhaus \textit{et al.} discuss optimizing 
+the empirical correlation coefficient \textit{per se} is numerically 
+unstable due to the inversion of the covariance matrices of the measured 
+variables (\textit{e.g.}, the transcript-transcript covariance matrix). 
+To overcome this, the RGCCA package uses a regularized form of the 
+covariance matrix developed by Schaeffer and Strimmer 
+\cite{schafer2005shrinkage}, which can be estimated rapidly using an 
+analytic formula.
 
  As a convergence criterion, we stop the iterations when both $\alpha$ 
  and $\beta$ change by less than $10^{-6}$ from their previous value 
