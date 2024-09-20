@@ -173,9 +173,10 @@ sequencing, aiming for a target read depth of 30 million read pairs.
 We filtered the measured traits in this study to a set of 
 relatively non-redundant measures that were well-represented
 in the population (having at least 80\% of individuals measured). 
-A complete description of trait filtering can be found on Synapse
-\url{https://www.synapse.org} in the file 1b.Trait_Selection.Rmd 
-(synID: syn63335511).
+A complete description of trait filtering can be found at Figshare 
+DOI: 10.6084/m9.figshare.27066979 in the file 
+Documents > 1.DO > 1b.Trait_Selection.Rmd.
+
 
 We took two approaches for traits with multiple redundant measurements,
 for example longitudinal body weights. In the case of longitudinal 
@@ -504,8 +505,8 @@ analytic formula.
  and $\beta$ change by less than $10^{-6}$ from their previous value 
  in one iteration.
 
- All code required to run HDMA is available at Synapse \url{https://www.synapse.org},
- synID: syn63335506.
+ All code required to run HDMA is available at Figshare: 
+ \url{https://figshare.com/} DOI: 10.6084/m9.figshare.27066979
 
 ## Enrichment of biological terms
 

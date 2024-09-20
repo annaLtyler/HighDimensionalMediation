@@ -107,12 +107,12 @@ regions, they often do not have detectable effects on gene expression
 quantitative trait loci (eQTLs) \cite{pmid36515579, pmid37857933}. 
 
 One possible explanation for these observations is that gene 
-expression is not being measured in the appropriate cell types 
-and thus local eQTLs influencing traits cannot be detected 
-\cite{pmid32912663}. An alternative explanation that has been 
-discussed in recent years is that effects of these variants 
-are mediated not through local regulation of gene expression, 
-but through distal regulation \cite{pmid37857933, pmid32424349, 
+expression is not being measured in the appropriate cell types
+\cite{pmid32912663}, or cell state \cite{pmid35545678} and thus 
+local eQTLs influencing traits cannot be detected. An alternative 
+explanation that has been discussed in recent years is that effects 
+of these variants are mediated not through local regulation of gene 
+expression, but through distal regulation \cite{pmid37857933, pmid32424349, 
 pmid32831138, pmid30950127}. In this model, a gene's expression 
 is influenced by many variants throughout the genome through their 
 cumulative effects on a broader regulatory network. In other 
@@ -233,6 +233,14 @@ However, the heritability of this trait and others (Fig.
 \ref{fig:trait_overview}F) indicates that 
 genetics contribute substantially to correlates of metabolic 
 disease in this population.
+
+The trait correlatoins (Fig. \ref{fig:trait_overview}G) showed 
+that most of the metabolic trait pairs were only modestly 
+correlated, which combined with the trait decomposition 
+(Supp. Fig. \ref{fig:trait_decomp}), suggest complex 
+relationships among the measured traits and a broad sampling 
+of multiple heritable aspects of metabolic disease including 
+overall body weight, glucose homeostasis, and pancreatic function.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig1_trait_overview.pdf} 
@@ -1050,28 +1058,28 @@ hypotheses about pathogenic mechanisms and potential treatments.
 \textbf{DO mice:} Genotypes, phenotypes, and pancreatic islet gene 
 expression data were previously published \cite{pmid29567659}. Gene 
 expression for the other tissues can be found at the Gene Expression 
-Omnibus url{https://www.ncbi.nlm.nih.gov/geo/} with the following 
+Omnibus \url{https://www.ncbi.nlm.nih.gov/geo/} with the following 
 accession numbers: DO adipose tissue - GSE266549; DO liver 
 tissue - GSE266569; DO skeletal muscle - GSE266567. Expression
-data with calculated eQTLs are available on the Synapse 
-\url{https://www.synapse.org/} (SynID: syn63335496). SynIDs for
-individual expression data sets are as follows: Adipose: syn63335560; 
-Islet: syn63335611; Liver: syn63335640; Skeletal muscle: syn63338583.
+data with calculated eQTLs are available at Figshare 
+\url{https://figshare.com/} DOI: 10.6084/m9.figshare.27066979
 
 \textbf{CC-RIX mice}: Gene expression can be found at the Gene Expression 
-Omnibus url{https://www.ncbi.nlm.nih.gov/geo/} with the following accession
+Omnibus \url{https://www.ncbi.nlm.nih.gov/geo/} with the following accession
 numbers: CC-RIX adipose tissue - GSE237737; CC-RIX liver tissue - GSE237743; 
 CC-RIX skeletal muscle - GSE237747. Count matrices and phenotype data can
-be found on Synapse (SynID: syn63335450).
+be found at Figshare \url{https://figshare.com/} 
+DOI: 10.6084/m9.figshare.27066979
 
-Code used to run the analyses reported here are also available on Synapse. 
-SynID: syn63335506
+\textbf{Code}: All code used to run the analyses reported here are
+available at Figshare: \url{https://figshare.com/} 
+DOI: 10.6084/m9.figshare.27066979
 
 ## Acknowledgements
 
 This project was supported by The Jackson Laboratory Cube Initiative,
 as well as grants from the National Institutes of Health 
-(grant nos.: R01DK101573, R01DK102948, and RC2DK125961) (to A. D. A.) 
+(grant numbers.: R01DK101573, R01DK102948, and RC2DK125961) (to A. D. A.) 
 and by the University of Wisconsin-Madison, Department of Biochemistry 
 and Office of the Vice Chancellor for Research and Graduate Education 
 with funding from the Wisconsin Alumni Research Foundation (to M. P. K.).
@@ -1086,6 +1094,21 @@ phenotyping.
 \beginsupplement
 
 ## Supplemental Figures
+
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{Figures/Supp_Fig_Trait_Decomposition.pdf} 
+\caption{Trait matrix decomposition. \textbf{A} Loadings on 
+principal components. The heat map shows the loadings of each 
+trait onto each principal component of the trait matrix. The 
+bars at the top show the percent variance explained for each 
+principal component. \textbf{B} Traits plotted by the first 
+and second principal components of the trait matrix. This 
+view shows clustering of traits into insulin- and 
+weight-related traits, lipid-related traits, and ex-vivo 
+pancreatic measurements.
+}
+\label{fig:trait_decomp}
+\end{figure}
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig1_eQTL.pdf} 
@@ -1197,9 +1220,10 @@ All distributions were skewed toward positive correlations and had
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Adipose_all_cell_types.png} 
-\caption{CMAP results using the adipose tissue composite transcript as 
-an input. All query results with a $-log_{10}(q) > 15$ across all cell types are 
-shown.
+\caption{CMAP results using the \textit{adipose} tissue composite transcript as 
+an input. Table includes results from \textit{all cell types} sorted with a 
+$-log_{10}(q) > 15$. The results are sorted by the correlation of the 
+query to the input with the most negative results at the top.
 }
 \label{fig:clue_adipose_all}
 \end{figure}
@@ -1207,27 +1231,33 @@ shown.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Islet_all_cell_types.png} 
-\caption{CMAP results using the pancreatic islet composite transcript as 
-an input. All query results with a $-log_{10}(q) > 15$ across all cell types 
-are shown.
+\caption{CMAP results using the \textit{pancreatic islet} tissue composite transcript 
+as an input. Table includes results from \textit{all cell types} sorted with a 
+$-log_{10}(q) > 15$. The results are sorted by the correlation of the 
+query to the input with the most negative results at the top.
 }
 \label{fig:clue_islet_all}
 \end{figure}
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Adipose_ASC.png} 
-\caption{CMAP results using the adipose tissue composite transcript as 
-an input. Query results are limited to the 30 most negatively correlated 
-signals from normal adipocytes.
+\caption{CMAP results using the \textit{adipose} tissue composite 
+transcript as an input. Table includes the top 30 results derived
+\textit{only from normal adipocytes} (ASC) regardless of significance. 
+The results are sorted by the correlation of the query to the input 
+with the most negative results at the top.
 }
 \label{fig:clue_adipose_asc}
 \end{figure}
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Islet_YAPC.png} 
-\caption{CMAP results using the pancreatic islet composite transcript as 
-an input. Query results are limited to the 30 most negatively correlated 
-signals from YAPC cells, which were derived from a pancreatic carcinoma cells.
+\caption{CMAP results using the \textit{pancreatic islet} composite 
+transcript as an input. Table includes the top 30 results derived
+\textit{only from YAPC cells}, which are derived from pancreatic
+carcinoma cells. Results are shown regardless of significance and
+are sorted by the correlation of the query to the input 
+with the most negative results at the top.
 }
 \label{fig:clue_islet_yapc}
 \end{figure}
@@ -1237,8 +1267,8 @@ signals from YAPC cells, which were derived from a pancreatic carcinoma cells.
 \caption{Regulation of \textit{Nucb2} expression in islet. \textit{Nucb2} 
 is encoded on mouse chromosome 7 at 116.5 Mb (red line). In islets the 
 heritability of \textit{Nucb2} expression levels is 69\% heritable. This 
-LOD score trace shows that there is no local eQTL at that position, nor 
-any strong distal eQTL anywhere else in the genome. 
+LOD score trace shows that there is no local eQTL at the position of the
+gene, nor any strong distal eQTL anywhere else in the genome. 
 }
 \label{fig:Nucb2_eqtl}
 \end{figure}
