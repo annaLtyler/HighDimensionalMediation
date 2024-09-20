@@ -1111,7 +1111,7 @@ pancreatic measurements.
 \end{figure}
 
 \begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig1_eQTL.pdf} 
+\includegraphics[width=\textwidth]{Figures/Supp_Fig_eQTL.pdf} 
 \caption{Overview of eQTL analysis in DO mice. \textbf{A.} RNA seq 
 samples from the four different tissues clustered by tissue. 
 \textbf{B.-E.} eQTL maps are shown for each tissue. The $x$-axis 
