@@ -140,7 +140,7 @@ Measuring gene expression
 in multiple tissues is critical to adequately assess the extent 
 to which local gene regulation varies across the tissues and 
 whether such variablilty might account for previous failed attempts 
-to identify trait-relevant local eQTL. Such data sets are extremely 
+to identify trait-relevant local eQTLs. Such data sets are extremely 
 difficult to obtain in human populations, particularly in the large 
 numbers of subjects required for adequate statistical power. Thus, 
 to further investigate the role of local and distal gene regulation 
@@ -149,12 +149,13 @@ data set in a large population of diversity outbred (DO) mice
 \cite{pmid22892839}, and an independent validation data set derived
 by crossing inbred strains from the Collaborative Cross (CC) 
 mice \cite{pmid18716833} to form CC F1 mice (CC-RIX). Both populations
-modeled diet-induced obesity and metabolic disease \cite{pmid29567659}.
+were mainteined on a high-fat, high-sugar diet to model diet-induced 
+obesity and metabolic disease \cite{pmid29567659}.
 
 The DO population and CC recombinant inbred lines were derived from 
 the same eight inbred founder mouse strains, five classical lab 
 strains, and three strains more recently derived from wild mice 
-\cite{pmid22892839}. They represent three subspecies of mouse 
+\cite{pmid22892839}. They represent three subspecies of mouse, 
 \textit{Mus musculus domesticus}, \textit{Mus musculus musculus}, 
 and \textit{Mus musculus casteneus}, and capture 90\% of the known 
 variation in laboratory mice \cite{pmid31133439}. The DO mice are 
@@ -234,10 +235,10 @@ However, the heritability of this trait and others (Fig.
 genetics contribute substantially to correlates of metabolic 
 disease in this population.
 
-The trait correlatoins (Fig. \ref{fig:trait_overview}G) showed 
+The trait correlations (Fig. \ref{fig:trait_overview}G) showed 
 that most of the metabolic trait pairs were only modestly 
-correlated, which combined with the trait decomposition 
-(Supp. Fig. \ref{fig:trait_decomp}), suggest complex 
+correlated, which, in conjunction with the trait decomposition 
+(Supp. Fig. \ref{fig:trait_decomp}), suggests complex 
 relationships among the measured traits and a broad sampling 
 of multiple heritable aspects of metabolic disease including 
 overall body weight, glucose homeostasis, and pancreatic function.
@@ -283,10 +284,10 @@ fig.eqtl.label <- fig.counter[fig.label]
 To comprehensively assess the genetic control of gene expression
 in metabolic disease we measured overall gene expression via 
 bulk RNA-Seq in adipose, islet, liver, and skeletal muscle in 
-the DO cohort (Supp. Fig. \ref{fig:eQTL}A-H). We performed eQTL 
+the DO cohort (Supp. Fig. \ref{fig:eQTL}). We performed eQTL 
 analysis using R/qtl2 \cite{pmid30591514} (Methods) and identified 
 both local and distal eQTLs for transcripts in each of the four 
-tissues (Supp. Fig. \ref{fig:eQTL}). 
+tissues (Supp. Fig. \ref{fig:eQTL}B-E). 
 Significant local eQTLs far outnumbered distal eQTLs 
 (Supp. Fig. \ref{fig:eQTL}F) and tended to be shared across 
 tissues (Supp. Fig. \ref{fig:eQTL}G) whereas the few 
@@ -319,11 +320,11 @@ values for each correlation are shown in the upper-right of each panel.}
 To assess the importance of genetic regulation transcript levels 
 to organism-level traits, we compared the local and distal 
 heritabilities of transcripts to their trait relevance, 
-defined as the maximum correlation of a transcript across all 
-traits. The local heritability of transcripts was negatively 
-correlated with their trait relevance (Fig. \ref{fig:motivation}B),
-suggesting that the more local genotype influenced transcript 
-abundance, the less effect 
+defined as the maximum correlation of a transcript with a trait
+across all traits. The local heritability of transcripts was 
+negatively correlated with their trait relevance (Fig. 
+\ref{fig:motivation}B), suggesting that the more local genotype 
+influenced transcript abundance, the less effect 
 this variation had on the measured traits. Conversely, the 
 distal heritability of transcripts was positively correlated 
 with trait relevance (Fig. \ref{fig:motivation}C). That is, 
@@ -339,7 +340,7 @@ heritability demonstrated further that there are diffuse genetic
 effects throughout the genome converging on trait-related 
 transcripts.
 
-### High-Dimensional Mediation identified a high-heritability composite trait that was mediated by a composite transcript
+### High-Dimensional Mediation Analysis identified a high-heritability composite trait that was mediated by a composite transcript
 
 The above univariate analyses establish the importance of distal 
 heritability for trait-relevant transcripts. However, the number 
@@ -1097,13 +1098,12 @@ phenotyping.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Trait_Decomposition.pdf} 
-\caption{Trait matrix decomposition. \textbf{A} Loadings on 
-principal components. The heat map shows the loadings of each 
-trait onto each principal component of the trait matrix. The 
-bars at the top show the percent variance explained for each 
-principal component. \textbf{B} Traits plotted by the first 
-and second principal components of the trait matrix. This 
-view shows clustering of traits into insulin- and 
+\caption{Trait matrix decomposition. \textbf{A} The heat map 
+shows the loadings of each trait onto each principal component 
+of the trait matrix. The bars at the top show the percent variance 
+explained for each principal component. \textbf{B} Traits plotted 
+by the first and second principal components of the trait matrix. 
+This view shows clustering of traits into insulin- and 
 weight-related traits, lipid-related traits, and ex-vivo 
 pancreatic measurements.
 }
@@ -1123,9 +1123,9 @@ is at the within 4Mb of the encoding gene. Dots off the diagonal are
 distally regulated eQTL for which the mapped eQTL is distant from the 
 gene encoding the transcript. \textbf{F.} Comparison of the total number 
 of local and distal eQTL with a minimum LOD score of 8 in each tissue. 
-All tissues have comparable numbers of eQTL. Local eQTL are much more 
+All tissues have comparable numbers of eQTL. Local eQTLs are much more 
 numerous than distal eQTL. \textbf{G.} Counts of transcripts with local 
-eQTL shared across multiple tissues. The majority of local eQTL were 
+eQTL shared across multiple tissues. The majority of local eQTLs were 
 shared across all four tissues. \textbf{H.} Counts of transcripts with 
 distal eQTL shared across multiple tissues. The majority of distal eQTL 
 were tissue-specific and not shared across multiple tissues. For both G 
@@ -1212,7 +1212,7 @@ All distributions were skewed toward positive correlations and had
  The relationship between the correlation between measured and 
  imputed expression in the CC-RIX (x-axis) and eQTL LOD score. As 
  expected, imputations are more accurate for transcripts with strong 
- local eQTL. \textbf{C.} Variance explained by local genotype in the 
+ local eQTLs. \textbf{C.} Variance explained by local genotype in the 
  DO and CC-RIX. 
 }
 \label{fig:cc_imputation}
@@ -1267,7 +1267,7 @@ with the most negative results at the top.
 \caption{Regulation of \textit{Nucb2} expression in islet. \textit{Nucb2} 
 is encoded on mouse chromosome 7 at 116.5 Mb (red line). In islets the 
 heritability of \textit{Nucb2} expression levels is 69\% heritable. This 
-LOD score trace shows that there is no local eQTL at the position of the
+LOD score trace shows that there is no local eQTLs at the position of the
 gene, nor any strong distal eQTL anywhere else in the genome. 
 }
 \label{fig:Nucb2_eqtl}
