@@ -145,11 +145,11 @@ typically lie in non-coding, regulatory regions, these variants often
 have no detectable effects on gene expression \cite{pmid32912663} and
 tend not to co-localize with expression quantitative trait loci (eQTLs)
 \cite{pmid36515579, pmid37857933}. These observations suggest that the
-relationship among genetic variants, the regulation of gene expression,
-and organism-level traits is more complex than the simple, local model.
+relationship among genetic variants, gene expression, and organism-level
+traits is more complex than the simple, local model.
 
 In recent years the conversation around the genetic architecture of
-common disease traits has been addressing this complexity and there is
+common disease traits has been addressing this complexity, and there is
 increased interest in distal effects as potential drivers of trait
 variation \cite{pmid37857933, pmid32424349, 
 pmid32831138, pmid30950127}. In particular, the omnigenic model posits
@@ -186,14 +186,13 @@ contrast to humans, in mice we have access to multiple disease-relevant
 tissues in the same individuals with sufficient numbers for adequate
 statistical power.
 
-We generated two complementary data sets in mice: A discovery data set
-in a large population of Diversity Outbred (DO) mice
-\cite{pmid22892839}, and an independent validation data set derived by
-crossing inbred strains from the Collaborative Cross (CC) recombinant
-inbred lines \cite{pmid18716833} to form CC recombinant inbred
-intercross (CC-RIX) mice. Both populations were maintained on a
-high-fat, high-sugar diet to model diet-induced obesity and metabolic
-disease \cite{pmid29567659}.
+We generated two complementary data sets: a discovery data set in a
+large population of Diversity Outbred (DO) mice \cite{pmid22892839}, and
+an independent validation data set derived by crossing inbred strains
+from the Collaborative Cross (CC) recombinant inbred lines
+\cite{pmid18716833} to form CC recombinant inbred intercross (CC-RIX)
+mice. Both populations were maintained on a high-fat, high-sugar diet to
+model diet-induced obesity and metabolic disease \cite{pmid29567659}.
 
 The DO population and CC recombinant inbred lines were derived from the
 same eight inbred founder strains: five classical lab strains and three
@@ -224,7 +223,7 @@ gene expression in multiple tissues is critical to adequately assess the
 extent to which local gene regulation varies across the tissues and
 whether such variability might account for previous failed attempts to
 identify trait-relevant local eQTLs. The CC-RIX carry the same founder
-alleles as the DO. Thus, local gene r egulation is expected to match
+alleles as the DO. Thus, local gene regulation is expected to match
 between the populations. However, because the alleles are recombined
 throughout the genome, distal effects are expected to vary from those in
 the DO, allowing us to directly assess the role of distal gene
@@ -232,8 +231,9 @@ regulation in driving trait-associated transcript variation. To
 mechanistically dissect distal effects on metabolic disease, we
 developed a novel dimension reduction framework called high-dimensional
 mediation analysis (HDMA) to identify the heritable transcriptomic
-signatures driving trait variation, which we compared between
-populations. Together, these data enable a comprehensive view into the
+signatures driving trait variation, which we compared between mouse
+populations and to human data sets with measured adipose gene
+expression. Together, these data enable a comprehensive view into the
 genetic architecture of metabolic disease.
 
 \subsection{Results}\label{results}
@@ -351,11 +351,12 @@ was positively correlated with trait relevance (Fig.
 correlated with the measured traits tended to be distally, rather than
 locally, heritable. Importantly, this pattern was consistent across all
 tissues. This finding is consistent with previous observations that
-low-heritability transcripts explain more expression-mediated disease
-heritability than high-heritability transcripts \cite{pmid32424349}.
-However, the positive relationship between trait correlation and distal
-heritability demonstrated further that there are diffuse genetic effects
-throughout the genome converging on trait-related transcripts.
+transcripts with low local heritability explain more expression-mediated
+disease heritability than transcripts with high local heritability
+\cite{pmid32424349}. However, the positive relationship between trait
+correlation and distal heritability demonstrated further that there are
+diffuse genetic effects throughout the genome converging on
+trait-related transcripts.
 
 \subsubsection{High-Dimensional Mediation Analysis identified a
 high-heritability composite trait that was mediated by a composite
@@ -492,9 +493,9 @@ genotype on body weight and insulin resistance.
 \label{fig:interpretation}
 \end{figure}
 
-\subsubsection{High-loading transcripts have low local heritability,
-high distal heritability, and were linked mechanistically to
-obesity}\label{high-loading-transcripts-have-low-local-heritability-high-distal-heritability-and-were-linked-mechanistically-to-obesity}
+\subsubsection{High-loading transcripts had low local heritability, high
+distal heritability, and were linked mechanistically to
+obesity}\label{high-loading-transcripts-had-low-local-heritability-high-distal-heritability-and-were-linked-mechanistically-to-obesity}
 
 We interpreted large loadings onto transcripts as indicating strong
 mediation of the effect of genetics on the MDI. Large positive loadings
@@ -531,9 +532,9 @@ previously that mouse strains with greater thermogenic potential are
 also less susceptible to obesity on an obesigenic diet
 \cite{pmid18492779}.
 
-Transcripts associated with the citric acid (TCA) cycle as well as the
-catabolism of the branched-chain amino acids (BCAA) (valine, leuceine,
-and isoleucine) were strongly enriched with negative loadings in adipose
+Transcripts associated with the citric acid cycle as well as the
+catabolism of the branched-chain amino acids (valine, leuceine, and
+isoleucine) were strongly enriched with negative loadings in adipose
 tissue (Supp. Figs. \ref{fig:top_enrich_kegg}, \ref{fig:TCA_cycle} and
 \ref{fig:bcaa_degrataion}). Expression of genes in both pathways (for
 which there is some overlap) has been previously associated with insulin
@@ -550,13 +551,14 @@ mediated through gene expression in adipose tissue. The strongest
 loadings in liver and pancreas were comparable, and those in skeletal
 muscle were the weakest (Fig. \ref{fig:loading_heritability}A),
 suggesting that less of the genetic effects were mediated through
-transcription in skeletal muscle. Heritability analysis showed that
-transcripts with the largest loadings had higher distal heritability
-than local heritability (Fig. \ref{fig:loading_heritability}A heat map
-and box plot). This pattern contrasts with transcripts nominated by TWAS
-(Fig. \ref{fig:loading_heritability}B), which tended to have lower
-loadings, higher local heritability and lower distal heritability.
-Transcripts with the highest local heritability in each tissue (Fig.
+transcription in skeletal muscle. As expected, heritability analysis
+showed that transcripts with the largest loadings had higher distal
+heritability than local heritability (Fig.
+\ref{fig:loading_heritability}A heat map and box plot). This pattern
+contrasts with transcripts nominated by TWAS (Fig.
+\ref{fig:loading_heritability}B), which tended to have lower loadings,
+higher local heritability and lower distal heritability. Transcripts
+with the highest local heritability in each tissue (Fig.
 \ref{fig:loading_heritability}C) had the lowest loadings, consistent
 with our findings above (Fig. \ref{fig:motivation}B).
 
@@ -620,19 +622,17 @@ causes upregulation of genes involved in adipogenesis
 \cite{pmid16357043}. In the livers of both mice and humans high
 \textit{Pparg} expression is associated with hepatocytes that accumulate
 large lipid droplets and have gene expression profiles similar to that
-of adipocytes \cite{pmid15644454, pmid16403437}.
-
-The local and distal heritability of \textit{Pparg} is low in adipose
-tissue suggesting its expression in this tissue is highly constrained in
-the population (Fig. \ref{fig:toa}B). However, the distal heritability
-of \textit{Pparg} in liver is relatively high suggesting it is complexly
-regulated and has sufficient variation in this population to drive
-variation in phenotype. Both local and distal heribatility of
-\textit{Pparg} in the islet are relatively high, but the loading is low,
-suggesting that variability of expression in the islet does not drive
-variation in MDI. These results highlight the importance of tissue
-context when investigating the role of heritable transcript variability
-in driving phenotype.
+of adipocytes \cite{pmid15644454, pmid16403437}. The local and distal
+heritability of \textit{Pparg} is low in adipose tissue suggesting its
+expression in this tissue is highly constrained in the population (Fig.
+\ref{fig:toa}B). However, the distal heritability of \textit{Pparg} in
+liver is relatively high suggesting it is complexly regulated and has
+sufficient variation in this population to drive variation in phenotype.
+Both local and distal heribatility of \textit{Pparg} in the islet are
+relatively high, but the loading is low, suggesting that variability of
+expression in the islet does not drive variation in MDI. These results
+highlight the importance of tissue context when investigating the role
+of heritable transcript variability in driving phenotype.
 
 Gene lists for all clusters are available in Supp. File 1.
 
@@ -720,13 +720,13 @@ global patterns across the loadings that can inform mechanism. For
 example, heritable variation in cell type composition can be inferred
 from transcript loadings. We observed above that immune activation in
 the adipose tissue was a highly enriched process correlating with
-obesity in the DO population. For example, in humans, it has been
-extensively observed that macrophage infiltration in adipose tissue is a
-marker of obesity and metabolic disease \cite{pmid24781408}. To
-determine whether the immune activation reflected a heritable change in
-cell composition in adipose tissue in DO mice, we compared loadings of
-cell-type specific genes in adipose tissue (Methods). The mean loading
-of macrophage-specific genes was significantly greater than 0 (Fig.
+obesity in the DO population. In humans, it has been extensively
+observed that macrophage infiltration in adipose tissue is a marker of
+obesity and metabolic disease \cite{pmid24781408}. To determine whether
+the immune activation reflected a heritable change in cell composition
+in adipose tissue in DO mice, we compared loadings of cell-type specific
+genes in adipose tissue (Methods). The mean loading of
+macrophage-specific genes was significantly greater than 0 (Fig.
 \ref{fig:human_translation}A), indicating that obese mice were
 genetically predisposed to have high levels of macrophage infiltration
 in adipose tissue in response to the HFHS diet. Loadings for marker
@@ -759,37 +759,34 @@ higher MDI inherited an altered cell composition that predisposed them
 to metabolic disease, or that these compositional changes were induced
 by the HFHS diet in a heritable way. In either case, these results
 support the hypothesis that alterations in islet composition drive
-variation in MDI.
-
-Notably, the mean loading for pancreatic beta cell marker transcripts
-was not significantly different from zero. We stress that this is not
-necessarily reflective of the function of the beta cells in the obese
-mice, but rather suggests that any variation in the number of beta cells
-in these mice was unrelated to obesity and insulin resistance, the major
-contributors to MDI. This is further consistent with the islet
-composition traits having small loadings in the phenome score (Fig.
-\ref{fig:interpretation}).
+variation in MDI. Notably, the mean loading for pancreatic beta cell
+marker transcripts was not significantly different from zero. We stress
+that this is not necessarily reflective of the function of the beta
+cells in the obese mice, but rather suggests that any variation in the
+number of beta cells in these mice was unrelated to obesity and insulin
+resistance, the major contributors to MDI. This is further consistent
+with the islet composition traits having small loadings in the phenome
+score (Fig. \ref{fig:interpretation}).
 
 \subsubsection{Heritable transcriptomic signatures translated to human
 disease}\label{heritable-transcriptomic-signatures-translated-to-human-disease}
 
 Ultimately, the heritable transcriptomic signatures that we identified
-in DO mice will be useful if they inform pathogenicity and treatment of
+in DO mice will be useful if they inform mechanism and treatment of
 human disease. To investigate the potential for translation of the gene
 signatures identified in DO mice, we compared them to transcriptional
 profiles in obese and non-obese human subjects (Methods). We limited our
 analysis to adipose tissue because the adipose tissue signature had the
 strongest relationship to obesity and insulin resistance in the DO.
 
-We calculated a predicted obesity score for each individual in the human
-studies based on their adipose tissue gene expression (Methods) and
-compared the predicted scores for obese and non-obese groups as well as
-diabetic and non-diabetic groups. In all cases, the predicted obesity
-scores were higher on average for individuals in the obese and diabetic
-groups compared with the lean and non-diabetic groups (Fig.
-\ref{fig:human_translation}D). This indicates that the distally
-heritable signature of MDI identified in DO mice is relevant to obesity
-and diabetes in human subjects.
+We calculated a predicted MDI for each individual in the human studies
+based on their adipose tissue gene expression (Methods) and compared the
+predicted scores for obese and non-obese groups as well as diabetic and
+non-diabetic groups. In all cases, the predicted MDIs were higher on
+average for individuals in the obese and diabetic groups compared with
+the lean and non-diabetic groups (Fig. \ref{fig:human_translation}D).
+This indicates that the distally heritable signature of MDI identified
+in DO mice is relevant to obesity and diabetes in human subjects.
 
 \subsubsection{Existing therapies are predicted to target mediator gene
 signatures}\label{existing-therapies-are-predicted-to-target-mediator-gene-signatures}
@@ -804,14 +801,13 @@ allows querying thousands of compounds that reverse or enhance the
 extreme ends of transcriptomic signatures in multiple different cell
 types. By identifying drugs that reverse pathogenic transcriptomic
 signatures, we can potentially identify compounds that have favorable
-effects on gene expression.
-
-To test this hypothesis, we queried the CMAP database through the CLUE
-online query tool (\url{https://clue.io/query/}, version 1.1.1.43)
-(Methods). We identified top anti-correlated hits across all cell types
-(Supp. Figs \ref{fig:clue_adipose_all} and \ref{fig:clue_islet_all}). To
-get more tissue-specific results, we also looked at top results in cell
-types that most closely resembled our tissues. We looked at results in
+effects on gene expression. To test this hypothesis, we queried the CMAP
+database through the CLUE online query tool
+(\url{https://clue.io/query/}, version 1.1.1.43) (Methods). We
+identified top anti-correlated hits across all cell types (Supp. Figs
+\ref{fig:clue_adipose_all} and \ref{fig:clue_islet_all}). To get more
+tissue-specific results, we also looked at top results in cell types
+that most closely resembled our tissues. We looked at results in
 adipocytes (ASC) as well as pancreatic tumor cells (YAPC) regardless of
 \(p\) value (Supp. Figs \ref{fig:clue_adipose_asc} and
 \ref{fig:clue_islet_yapc}).
@@ -825,7 +821,7 @@ pmid30034573}. However, long-term use of other mTOR inhibitors, such as
 rapamycin, are known to cause insulin resistance and \(\beta\)-cell
 toxicity \cite{pmid30034573, pmid23881200, pmid21266327}.
 Glucocorticoids are used to reduce inflammation, which was a prominent
-signature in the adipose tissues, but these drugs also promote
+signature in the adipose tissue, but these drugs also promote
 hyperglycemia and diabetes \cite{pmid24582093, pmid35585199}. Accute
 treatment with glucocorticoids has further been shown to reduce
 thermogenesis in rodent adipocytes \cite{pmid30310815, 
@@ -894,12 +890,12 @@ used a novel high-dimensional mediation analysis (HDMA) to identify
 tissue-specific composite transcripts that are predicted to mediate the
 effect of genetic background on metabolic traits. The adipose-derived
 composite transcript robustly predicted body weight in an independent
-cohort of diverse mice with disparate population structure. However,
-gene expression imputed from local genotype failed to predict body
-weight in the second population. Taken together, these results highlight
-the complexity of gene expression regulation in relation to trait
-heritability and suggest that heritable trait variation is mediated
-primarily through distal gene regulation.
+cohort of diverse mice with disparate population structure, as well as
+to humans. However, gene expression imputed from local genotype failed
+to predict body weight in the second population. Taken together, these
+results highlight the complexity of gene expression regulation in
+relation to trait heritability and suggest that heritable trait
+variation is mediated primarily through distal gene regulation.
 
 \subsection{Supplemental Discussion}\label{supplemental-discussion}
 
@@ -929,19 +925,19 @@ expression can drive trait variation are buffered from local genetic
 variation but are extensively influenced indirectly by genetic variation
 in the regulatory networks converging on those genes.
 
-Our results are consistent with the recently proposed omnigenic model,
-which posits that complex traits are massively polygenic and that their
-heritability is spread out across the genome \cite{pmid28622505}. In the
-omnigenic model, genes are classified either as ``core genes,'' which
-directly impinge on the trait, or ``peripheral genes,'' which are not
-directly trait-related, but influence core genes through the complex
+Our results are also consistent with the recently proposed omnigenic
+model, which posits that complex traits are massively polygenic and that
+their heritability is spread out across the genome \cite{pmid28622505}.
+In the omnigenic model, genes are classified either as ``core genes,''
+which directly impinge on the trait, or ``peripheral genes,'' which are
+not directly trait-related, but influence core genes through the complex
 gene regulatory network. HDMA explicitly models a central proposal of
 the omnigenic model which posits that once the expression of the core
 genes (i.e.~trait-mediating genes) is accounted for, there should be no
 residual correlation between the genome and the phenome. Here, we were
 able to fit this model and identified a composite transcript that, when
 taken into account, left no residual correlation between the composite
-genome and composite phenome (Fig. \ref{fig:workflow}A).
+genome and composite phenome scores (Fig. \ref{fig:workflow}A).
 
 Unlike in the omnigenic model, we did not observe a clear demarcation
 between the core and peripheral genes in loading magnitude, but we do
@@ -954,11 +950,14 @@ the detection threshold in studies with feasible sample sizes
 \cite{pmid31051098}. This is consistent with what we observed here. For
 example, \textit{Nucb2}, had a high loading in islets and was also
 strongly distally regulated (66\% distal heritability) (Fig.
-\ref{fig:loading_heritability}). Although its transcription was highly
-heritable in islets, that regulation was distributed across the genome,
-with no clear distal eQTL (Supp. Fig. \ref{fig:Nucb2_eqtl}). Thus,
-although distal regulation of some genes may be strong, this regulation
-is likely to be highly complex and not easily localized.
+\ref{fig:loading_heritability}). This gene is expressed in pancreatic
+\(\beta\) cells and is involved in inslin and glucagon release
+\cite{pmid24993278, pmid23537085, pmid22108805}. Although its
+transcription was highly heritable in islets, that regulation was
+distributed across the genome, with no clear distal eQTL (Supp. Fig.
+\ref{fig:Nucb2_eqtl}). Thus, although distal regulation of some genes
+may be strong, this regulation is likely to be highly complex and not
+easily localized.
 
 Individual high-loading transcripts also demonstrated biologically
 interpretable, tissue-specific patterns. We highlighted \textit{Pparg},

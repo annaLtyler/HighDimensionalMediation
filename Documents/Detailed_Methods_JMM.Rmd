@@ -1,5 +1,5 @@
 ---
-title: "Online methods for: Transcripts with high distal heritability mediate genetic effects on complex traits"
+title: "Online methods for: Transcripts with high distal heritability mediate genetic effects on complex metabolic traits"
 output: 
   pdf_document:
     keep_tex: true
@@ -549,8 +549,6 @@ site (TSS). We used kinship as a random effect and sex, diet, and
 DO generation as fixed effects. The predicted transcript from each 
 of these models was the imputed transcript based only on the local 
 genotype.
-
-**equation**
 
 We correlated each imputed transcript with each of the metabolic
 phenotypes after adjusting phenotypes for sex, diet, and DO generation.
