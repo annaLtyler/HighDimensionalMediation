@@ -113,8 +113,8 @@ In recent years the conversation around the genetic architecture
 of common disease traits has been addressing this complexity, and 
 there is increased interest in distal effects as potential 
 drivers of trait variation \cite{pmid37857933, pmid32424349, 
-pmid32831138, pmid30950127}. In particular, the omnigenic model 
-posits that trait-driving genes are cumulatively influenced by 
+pmid32831138, pmid30950127, pmid24013639}. In particular, the 
+omnigenic model posits that trait-driving genes are cumulatively influenced by 
 many distal variants. In this view, the heritable transcriptomic 
 signatures driving clinical traits are an emergent state arising 
 from the myriad molecular interactions defining and constraining 
@@ -942,7 +942,7 @@ to explain phenotypic variation have had limited success
 \cite{pmid32912663, pmid36515579}. In recent years, evidence
 has mounted that distal gene regulation may be an important
 mediator of trait heritability \cite{pmid32424349, 
-pmid37857933, pmid31051098}. It has been observed
+pmid37857933, pmid31051098, pmid34475573}. It has been observed
 that transcripts with high local heritability explain less
 expression-mediated disease heritability than those
 with low local heritability \cite{pmid32424349}. Consistent with
