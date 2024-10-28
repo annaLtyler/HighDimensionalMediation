@@ -1082,6 +1082,10 @@ phenotyping.
 
 ## Supplemental Figures
 
+
+
+
+
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Trait_Decomposition.pdf} 
 \caption{Trait matrix decomposition. \textbf{A} The heat map 
