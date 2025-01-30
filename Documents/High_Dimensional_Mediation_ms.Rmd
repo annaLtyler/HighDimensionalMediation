@@ -1055,12 +1055,12 @@ data with calculated eQTLs are available at Figshare
 Omnibus \url{https://www.ncbi.nlm.nih.gov/geo/} with the following accession
 numbers: CC-RIX adipose tissue - GSE237737; CC-RIX liver tissue - GSE237743; 
 CC-RIX skeletal muscle - GSE237747. Count matrices and phenotype data can
-be found at Figshare \url{https://figshare.com/} 
-DOI: 10.6084/m9.figshare.27066979
+be found at Figshare \url{https://figshare.com/} DOI: 
+10.6084/m9.figshare.27066979
 
 \textbf{Code}: All code used to run the analyses reported here are
-available at Figshare: \url{https://figshare.com/} 
-DOI: 10.6084/m9.figshare.27066979
+available at Figshare: \url{https://figshare.com/} DOI: 
+10.6084/m9.figshare.27066979
 
 ## Acknowledgements
 

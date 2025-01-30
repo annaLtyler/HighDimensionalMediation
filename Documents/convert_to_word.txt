@@ -1,5 +1,5 @@
 #convert the tex document
-pandoc --bibliography=islet.bib -o High_Dimensional_Mediation_ms.docx High_Dimensional_Mediation_ms.tex --citeproc --csl=nature.csl
+pandoc --bibliography=islet.bib -o High_Dimensional_Mediation_Cell.docx High_Dimensional_Mediation_Cell.tex --citeproc --csl=nature.csl
 
 #also do the online methods
 pandoc --bibliography=islet.bib -o Detailed_Methods.docx Detailed_Methods.tex --citeproc --csl=nature.csl

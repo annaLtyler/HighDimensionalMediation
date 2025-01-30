@@ -56,9 +56,11 @@ R/DOQTL software \cite{pmid25237114} and interpolated onto a grid with
 (Chr) haplotypes were reconstructed from RNA-seq data using a hidden 
 Markov model (GBRS, https://github.com/churchill-lab/gbrs).
 
-## Processed Data
-We downloaded genotypes, phenotypes, and pancreatic islet gene expression 
-data from Dryad (doi:10.5061/dryad.pj105).
+## Pre-processed DO data
+The DO data had been published previously 
+\cite{pmid29567659, pmid31343992}, We downloaded 
+pre-processed genotypes, phenotypes, and pancreatic 
+islet gene expression data from Dryad (doi:10.5061/dryad.pj105).
 
 ## Collaborative cross recombinant inbred mice
 Mice were cared for and treated following the guidelines approved by 
