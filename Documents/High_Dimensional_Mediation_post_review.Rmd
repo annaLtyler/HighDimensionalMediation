@@ -594,12 +594,16 @@ suggesting that less of the genetic effects were mediated through
 transcription in skeletal muscle. As expected, heritability analysis 
 showed that transcripts with the largest loadings had higher distal 
 heritability than local heritability (Fig. 
-\ref{fig:loading_heritability}A heat map and box plot). This pattern
-contrasts with transcripts nominated by TWAS (Fig. 
-\ref{fig:loading_heritability}B), which tended to have lower loadings,
-higher local heritability and lower distal heritability. Transcripts
-with the highest local heritability in each tissue  (Fig. 
-\ref{fig:loading_heritability}C) had the lowest loadings, consistent
+\ref{fig:loading_heritability}A heat map and box plot). We also 
+performed TWAS in this population by imputing transcript levels
+for each gene based on local genotype only and correlating the
+imputed transcript levels with each trait. In contrast to HDMA,
+the TWAS procecure tended to nominate transcripts with lower 
+loadings (Fig. \ref{fig:loading_heritability}B),
+higher local heritability and lower distal heritability. Finally,
+we focused on transcripts with the highest local heritability in 
+each tissue (Fig. \ref{fig:loading_heritability}C). This procedure
+selected transcripts with low loadings on average, consistent
 with our findings above (Fig. \ref{fig:motivation}B).
 
 We performed a literature search for the genes in each of these groups
@@ -617,17 +621,23 @@ associated with obesity or diabetes.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig5_loading_heritability.pdf} 
-\caption{Transcripts with high loadings have high distal heritability
+\caption{Transcripts with high loadings have high distal heritability 
 and literature support. Each panel has a bar plot showing the loadings 
 of transcripts selected by different criteria. Bar color indicates the 
 tissue of origin. The heat map shows the local (L - left) and distal 
 (D - right) heritability of each transcript. \textbf{A.} Loadings for 
 the 10 transcripts with the largest positive loadings and the 10 
 transcripts with the largest negative loadings for each tissue. 
-\textbf{B.} Loadings of TWAS candidates with the 10 largest positive 
-correlations with traits and the largest negative correlations with 
-traits across all four tissues. \textbf{C.} The transcripts with the 
-largest local heritability (top 20) across all four tissues.
+Distal heritability was significantly higher than local heritability 
+(box plots, $p < 2.2^{-16}$). \textbf{B.} Loadings of TWAS candidates 
+with the 10 largest positive correlations with traits and the largest 
+negative correlations with traits across all four tissues. Local and 
+distal heritability were not significantly different for this group 
+(box plots, $p = 0.77$). \textbf{C.} The transcripts with the largest 
+local heritability (top 20) across all four tissues. Local heritability 
+was significantly higher than distal heritability of these genes (box 
+plots, $p < 2.2^{-16}$)
+
 }
 \label{fig:loading_heritability}
 \end{figure}
