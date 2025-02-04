@@ -2,7 +2,7 @@
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Oblique;}
 {\colortbl;\red255\green255\blue255;\red5\green61\blue204;}
 {\*\expandedcolortbl;;\cssrgb\c0\c33896\c83855;}
-\margl1440\margr1440\vieww26020\viewh16460\viewkind1
+\margl1440\margr1440\vieww26320\viewh16760\viewkind1
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 Dear Editors and Reviewers,\
@@ -18,7 +18,8 @@ Tyler et al. have used multiple metabolic phenotypes, genotypes and transcriptom
 \
 Minor comments:\
 1) In the results section, Fig. 3a, is the composite transcriptome score for all tissues combined? Would partial correlations differ if tissues were looked at individually?\
-\cf2 We performed high dimensional mediation on the tissues separately. \
+\cf2 We performed high dimensional mediation on the tissues separately. We compared the variance explained by the model as well as the correlations between the latent variables. Using the tissues together explained slightly more variance than using the tissues separately\
+\
 \cf0 \
 2) Results: In HDMA, transcripts are given loadings and these loadings are used to perform GSEA. This allows you to determine which biological pathways are altered in the composite phenotype. You do not mention the number of genes that have high or low loadings for each tissue. In other words, how many genes fall into the transcriptomic signatures that satisfy HDMA criteria (heritable, correlate with trait and fits a causal model). It would be worthwhile to include this information as a supplementary table.\
 \cf2 We agree that this information is important. We compared the observed distributions to null transcript loading distributions. The observed distributions extended well beyond the ends of the null distributions. We have added a supplemental figure that shows these distribution comparisons and lists the number of transcripts with extreme loadings.\
@@ -52,10 +53,8 @@ Tyler et al. conducted an interesting study using a population of Diversity Outb
 \
 Minor Comments:\
 1. Please define \'93local\'94 and \'93distal\'94 prominently.\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf2 We have added text to the introduction to define local and distal and distinguish these terms from cis and trans.\cf0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
+\
 2. In line 110: \'93We calculated the heritability of each transcript\'94 \'97 the word \'93calculate\'94 should be replaced with \'93estimate.\'94\
 \cf2 Good point. We have changed "calculate" to "estimate."\
 \cf0 \
@@ -81,28 +80,19 @@ Minor Points:\
 \cf2 Thank you! This is an interesting way to add more information to the plot. We have changed this heat map to show heritability on the diagonal. It changes the clustering in an interesting way.\cf0 \
 \
 (ii) Figure 2 could be significantly improved by replacing the violin plots in Fig2A with overlapping distributions as in Figure 1A,B. Fig 2B is informative but I think the use of linear regression is not the best way of showing the shapes of the distributions for Local and Distal are different. Clearly a straight line does not fit any of the data very well. Can the authors think of another measure which quantifies the fact that strong local eQTL are more likely to have small trait correlations than strong distal eQTL?\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf2 We have changed Fig 2 according to these suggestions. We replaced the violin plots with overlapping density plots. We also replaced the linear models in Fig. 2B and C with splines. We binned the transcripts into centiles based on their variance explained. We then calculated the mean and 95th percentile of their maximum trait correlation. We smoothed these values using splines for better visualization. The top line in each panel shows the 95th percentile and the lower line shows the mean.\cf0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 (iii) Fig 3 is hard to follow, particularly since it mentions Kernelization which is otherwise not mentioned in the main paper (it\'92s mentioned in the Methods) Not sure what G_K, T_K , P_K signify.\
+\
+(iii) Fig 3 is hard to follow, particularly since it mentions Kernelization which is otherwise not mentioned in the main paper (it\'92s mentioned in the Methods) Not sure what G_K, T_K , P_K signify.\
 \
 (iv) Figure 4 D \'96 Please include scatter plots of P_C vs T_C, G_C vs T_C, G_C vs P_C - this is surely key to understanding. Please replace violin plots with overlapping distributions as in Figure 1A,B\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf2 We tried using overlapping histograms to compare these distributions, but the distributions are so similar that the figure was difficult to read. Instead we replaced the distributions with separate panels showing the observed loading distribution for each tissue compared with the null. We shaded the area of the distributions that were more extreme than the null distribution and noted the number of genes in each extreme group. This adds a little more information to distinguish the distributions. We have also added scatter plots to show correlations between the latent variables across the tissues.\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
+\
 (v) Fig 5 is good. It would be helpful to define exactly what is meant by TWAS in this study. I suggest a completely different color ramp is used to indicate tissue type from that used to indicate heritability \'96 it\'92s a bit confusing. It would also help to report the p-values of the t-tests for comparing the heritability distributions for distal vs local (in the three inset boxplots in the Fig 5)\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf2 We have added a short description of our TWAS procedure to the results section that discusses Figure 5. We have also changed the color ramp for the tissues to select\
 colors that do not overlap with the heat maps or the local/distal color scheme. We added t test p values to the legend of Figure 5 for each of the box plots.\cf0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
+\
 (vi) Given the diverse ancestry of the DO, involving alleles from three different murine subspecies, it would be interesting to know if the distal or local eQTLs more often involved alleles segregating between subspecies.\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf2 This is an interesting question. eQTLs were an incidental piece of this study, as we focused primarily on local and distal heritability. We compared the relative allele coefficients from haplotypes in the three subspecies for local and distal eQTL. On average, the 
 \f1\i castaneus 
 \f0\i0 (CAST), and 
@@ -110,14 +100,11 @@ colors that do not overlap with the heat maps or the local/distal color scheme. 
 \f0\i0 (PWK) alleles had stronger allele effects than the 
 \f1\i domesticus 
 \f0\i0 alleles (all the rest). There was no difference in contributions between local and distal eQTL.\cf0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
+\
 \
 (vii) Is there a reason for preferring the nomenclature \'93Local vs Distal\'94 instead of the more usual \'93cis vs trans\'94?\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf2 We avoid the usage of cis and trans terminology because these terms have specific biochemical definitions that are not captured by physical location on the genome (See Box 2 in PMID: 18597885). Because we are not evaluating the biochemical nature of variants in this study and are classifying variants only by genomic position, we use the terms local and distal. We have added text to the introduction to define these terms and discuss the difference between cis/trans and local/distal terminology.\cf0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
+\
 (viii) The statements around line 280: The mean loadings for alpha-cell specific transcripts were significantly greater than 0, while the mean loadings for delta- and endothelial-cell specific genes were significantly less than 0 (Fig. 8B)\
 The study does not give p-values for these statements \'96 Fig 8B appears to show boxplots which don\'92t give an indication of significance. There are several places in the MS where boxplots are used as evidence of \'93significance\'94 without a formal p-value being provided.\
 \

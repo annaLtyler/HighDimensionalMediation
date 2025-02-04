@@ -11,11 +11,11 @@ output:
 library(here)
 pheno.stats <- readRDS(here("Data", "pheno_stats.RDS"))
 comp.trait.herit <- readRDS(here("Data", "Composite_Trait_Heritability.RDS"))
-comp.trait.exp <- readRDS(here("Data", "Model_Variance_Explained.RDS"))
+comp.trait.exp <- readRDS(here("Data", "Model_Variance_Explained_tissue_together-_-complete_mediation.RDS"))
 local.distal.comp <- readRDS(here("Data", "Local_Distal_Comparison.RDS"))
 min.herit <- floor(min(sapply(lapply(local.distal.comp, function(x) apply(x, 2, median, na.rm = TRUE)), min))*100)
 max.herit <- ceiling(max(sapply(lapply(local.distal.comp, function(x) apply(x, 2, median, na.rm = TRUE)), max))*100)
-var.pcor <- readRDS(here("Data", "Pcor.RDS"))
+var.pcor <- readRDS(here("Data", "Pcor_all_tissues.RDS"))
 lit.enrich <- readRDS(here("Data", "Lit_enrich.RDS"))
 ```
 
@@ -314,11 +314,33 @@ significant distal eQTLs we identified tended to be
 tissue-specific (Supp. Fig. \ref{fig:eQTL}H)
 
 We estimated the heritability of each transcript in terms of 
-local and all non-local (distal) genetic factors (Methods). Overall, local and 
-distal genetic factors contributed approximately equally to 
-transcript abundance. In all tissues, both local and distal 
-factors explained between `r min.herit` and `r max.herit`\% 
-of the variance in the median transcript (Fig, \ref{fig:motivation}A). 
+local and all non-local (distal) genetic factors (Methods). 
+Overall, local and distal genetic factors contributed 
+approximately equally to transcript abundance. In all 
+tissues, both local and distal factors explained between 
+`r min.herit` and `r max.herit`\% of the variance in the 
+median transcript (Fig, \ref{fig:motivation}A). 
+
+The equal contribution of local and distal genetic 
+variants to the heritability of transcript abundance
+contrasts with findings in humans in which local 
+variants have been found to explain only 20-30\%
+of total heritability, while distal variants explain
+the remaining 70-80% \cite{pmid31558840, pmid21383966}. 
+This discrepancy may arise due to the relatively high 
+degree of linkage disequilibrium in the DO mice compared 
+to human populations, as well as the high degree of 
+confidence with which ancestral haplotypes can be 
+estimated in the mice. Any genetic marker in the mice 
+captures information from a larger genomic region than 
+any genetic marker in human populations, and thus may 
+capture more local regulatory variants than SNPs capture 
+in humans. It has further been found that transcripts 
+with muliple local eQTL have higher local heritability 
+than transcripts with single local eQTL \cite{pmid25010687}. 
+Because of the high diversity in the DO it is possible 
+that there are more local variants regulating transcription 
+creating a proportionally larger effect of local regulation.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig2_motivation.pdf} 

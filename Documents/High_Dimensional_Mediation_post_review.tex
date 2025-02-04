@@ -330,6 +330,23 @@ abundance. In all tissues, both local and distal factors explained
 between 8 and 18\% of the variance in the median transcript (Fig,
 \ref{fig:motivation}A).
 
+The equal contribution of local and distal genetic variants to the
+heritability of transcript abundance contrasts with findings in humans
+in which local variants have been found to explain only 20-30\% of total
+heritability, while distal variants explain the remaining 70-80\%
+\cite{pmid31558840, pmid21383966}. This discrepancy may arise due to the
+relatively high degree of linkage disequilibrium in the DO mice compared
+to human populations, as well as the high degree of confidence with
+which ancestral haplotypes can be estimated in the mice. Any genetic
+marker in the mice captures information from a larger genomic region
+than any genetic marker in human populations, and thus may capture more
+local regulatory variants than SNPs capture in humans. It has further
+been found that transcripts with muliple local eQTL have higher local
+heritability than transcripts with single local eQTL
+\cite{pmid25010687}. Because of the high diversity in the DO it is
+possible that there are more local variants regulating transcription
+creating a proportionally larger effect of local regulation.
+
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig2_motivation.pdf} 
 \caption{Transcript heritability and trait relevance. 
@@ -424,10 +441,10 @@ that was consistent with mediating the effects of the genome on
 metabolic traits (Fig \ref{fig:workflow}). Fig. \ref{fig:workflow}A
 shows the partial correlations (\(\rho\)) between the pairs of these
 composite vectors. The partial correlation between \(G_C\) and \(T_C\)
-was 0.43, and the partial correlation between \(T_C\) and \(P_C\) was
-0.59. However, when the transcriptome was taken into account, the
+was 0.42, and the partial correlation between \(T_C\) and \(P_C\) was
+0.78. However, when the transcriptome was taken into account, the
 partial correlation between \(G_C\) and \(P_C\) was effectively zero
-(0.14). \(P_C\) captured 30\% of the overall trait variance, and its
+(0.039). \(P_C\) captured 30\% of the overall trait variance, and its
 estimated heritability was 0.71 \(\pm\) 0.084, which was higher than any
 of the measured traits (Fig. \ref{fig:trait_overview}F). Thus, HDMA
 identified a maximally heritable metabolic composite trait and a highly
@@ -579,12 +596,16 @@ of the genetic effects were mediated through transcription in skeletal
 muscle. As expected, heritability analysis showed that transcripts with
 the largest loadings had higher distal heritability than local
 heritability (Fig. \ref{fig:loading_heritability}A heat map and box
-plot). This pattern contrasts with transcripts nominated by TWAS (Fig.
-\ref{fig:loading_heritability}B), which tended to have lower loadings,
-higher local heritability and lower distal heritability. Transcripts
-with the highest local heritability in each tissue (Fig.
-\ref{fig:loading_heritability}C) had the lowest loadings, consistent
-with our findings above (Fig. \ref{fig:motivation}B).
+plot). We also performed TWAS in this population by imputing transcript
+levels for each gene based on local genotype only and correlating the
+imputed transcript levels with each trait. In contrast to HDMA, the TWAS
+procecure tended to nominate transcripts with lower loadings (Fig.
+\ref{fig:loading_heritability}B), higher local heritability and lower
+distal heritability. Finally, we focused on transcripts with the highest
+local heritability in each tissue (Fig.
+\ref{fig:loading_heritability}C). This procedure selected transcripts
+with low loadings on average, consistent with our findings above (Fig.
+\ref{fig:motivation}B).
 
 We performed a literature search for the genes in each of these groups
 along with the terms ``diabetes'', ``obesity'', and the name of the
@@ -597,22 +618,26 @@ literature support. They were 2.1 times more likely than TWAS hits and
 3.8 times more likely than genes with high local heritability to be
 previously associated with obesity or diabetes.
 
-\begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Fig5_loading_heritability.pdf} 
-\caption{Transcripts with high loadings have high distal heritability
-and literature support. Each panel has a bar plot showing the loadings 
-of transcripts selected by different criteria. Bar color indicates the 
-tissue of origin. The heat map shows the local (L - left) and distal 
-(D - right) heritability of each transcript. \textbf{A.} Loadings for 
-the 10 transcripts with the largest positive loadings and the 10 
-transcripts with the largest negative loadings for each tissue. 
-\textbf{B.} Loadings of TWAS candidates with the 10 largest positive 
-correlations with traits and the largest negative correlations with 
-traits across all four tissues. \textbf{C.} The transcripts with the 
-largest local heritability (top 20) across all four tissues.
-}
-\label{fig:loading_heritability}
-\end{figure}
+\textbackslash begin\{figure\}{[}ht!{]}
+\includegraphics[width=\textwidth]{Figures/Fig5_loading_heritability.pdf}
+\textbackslash caption\{Transcripts with high loadings have high distal
+heritability and literature support. Each panel has a bar plot showing
+the loadings of transcripts selected by different criteria. Bar color
+indicates the tissue of origin. The heat map shows the local (L - left)
+and distal (D - right) heritability of each transcript. \textbf{A.}
+Loadings for the 10 transcripts with the largest positive loadings and
+the 10 transcripts with the largest negative loadings for each tissue.
+Distal heritability was significantly higher than local heritability
+(box plots, \(p < 2.2^{-16}\)). \textbf{B.} Loadings of TWAS candidates
+with the 10 largest positive correlations with traits and the largest
+negative correlations with traits across all four tissues. Local and
+distal heritability were not significantly different for this group (box
+plots, \(p = 0.77\)). \textbf{C.} The transcripts with the largest local
+heritability (top 20) across all four tissues. Local heritability was
+significantly higher than distal heritability of these genes (box plots,
+\(p < 2.2^{-16}\))
+
+\} \label{fig:loading_heritability} \textbackslash end\{figure\}
 
 \subsubsection{Tissue-specific transriptional programs were associated
 with metabolic
