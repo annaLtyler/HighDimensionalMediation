@@ -209,8 +209,8 @@ for each tissue. EMASE was performed by the Genotype by RNA-seq
 (GBRS) software package (https://gbrs.readthedocs.io/en/latest/). In the 
 process, R1 and R2 FASTQ files were combined and aligned to a hybridized (8-way) 
 transcriptome generated for the 8 DO founder strains as single-ended reads. GBRS 
-was also used to reconstruct the mouse genotype probabilities along ~69K markers, 
-which was used for confirming genotypes in the quality control (QC) process.
+was also used to reconstruct the mouse genotype probabilities along 
+$\sim69$K markers, which was used for confirming genotypes in the quality control (QC) process.
 For the QC process, we used a Euclidean distances method (developed by Greg 
 Keele - Churchill Lab) to compare the GBRS genotype probabilities between the 
 tissues and the genotype probabilities array for all mice. The counts matrix for 
@@ -225,11 +225,12 @@ rank normal score.
 We used R/qtl2 \cite{pmid30591514} to perform eQTL analysis. We used the rank 
 normal score data and used sex and DO generation as additive covariates. We also 
 used kinship as a random effect. We used permutations to find a LOD threshold of 
-8 for significant QTLs which corresponded to a $p$ value of 0.05. 
+8 for significant QTLs which corresponded to a nominal $p$ value of 0.05. 
 
 To assess whether eQTL were shared across tissues, we considered significant 
 eQTLs within 4Mb of each other to be overlapping. We considered local and 
-distal eQTLs separately.
+distal eQTLs separately. Local eQTL were defined as an eQTL within
+4Mb of the transcription start site of the encoding gene.
 
 ## Local and distal heritability of transcripts 
 To estimate local and distal heritability of each transcript, we scaled each
@@ -241,9 +242,14 @@ estimated the heritability of the residual of the model fit. The variance
 of the residual multiplied by its heritability is the distal heritability 
 of the transcript. 
 
-We compared local and distal estimates of heritability to measures of trait
-relevance for each transcript. Trait relevance was the Pearson correlation
-(R) between the transcript and the trait.
+We compared local and distal estimates of heritability to measures 
+of trait relevance for each transcript. To calculate trait relevance
+of a given transcript, we adjusted normalized transcript values for
+sex, DO wave, and DO generation. We similarly adjusted traits by 
+sex, DO wave, and DO generation. We then calculated all Spearman 
+correlation coefficients ($\rho$) between adjusted traits and adjusted
+transcripts. The trait relevance of a given tanscript was the maximum
+absolute correlation coefficient across all traits.
 
 ## High-dimensional mediation analysis
 

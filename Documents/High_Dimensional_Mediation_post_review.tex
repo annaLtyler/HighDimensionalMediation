@@ -356,14 +356,15 @@ distal factors contribute equally to transcript heritability.
 Arrows indicate the median of each distribution. The 
 relationship between (\textbf{B.}) local and (\textbf{C.}) 
 distal heritability and trait relevance across all four tissues. 
-Here trait relevance is defined as the maximum correlation 
-between the transcript and all traits. The lower line in
-each panel shows the mean trait correlation, and the upper 
-line shows the upper 95th percentile of trait correlation in 
-transcripts with increasing variance explained either locally 
-(B) or distally (C). Transcripts high local heritability have 
-lower trait correlations. In contrast, transcripts with large 
-distal heritability also have high correlations with traits.}
+Here trait relevance is defined as the maximum Spearman 
+correlation between the transcript and all traits. The lower 
+line in each panel shows the mean trait correlation, and 
+the upper line shows the upper 95th percentile of trait 
+correlation in transcripts with increasing variance explained 
+either locally (B) or distally (C). Transcripts high local 
+heritability have lower trait correlations. In contrast, 
+transcripts with large distal heritability also have high 
+correlations with traits.}
 \label{fig:motivation}
 \end{figure}
 
@@ -845,18 +846,18 @@ potential drug candidates for the treatment of metabolic disease.
 Although high-loading transcripts may be good candidates for
 understanding specific biology related to obesity, the transcriptome
 overall is highly interconnected and redundant. The ConnectivityMap
-(CMAP) database \cite{pmid17008526} developed by the Broad Institute
-allows querying thousands of compounds that reverse or enhance the
-extreme ends of transcriptomic signatures in multiple different cell
-types. By identifying drugs that reverse pathogenic transcriptomic
-signatures, we can potentially identify compounds that have favorable
-effects on gene expression. To test this hypothesis, we queried the CMAP
-database through the CLUE online query tool
-(\url{https://clue.io/query/}, version 1.1.1.43) (Methods). We
-identified top anti-correlated hits across all cell types (Supp. Figs
-\ref{fig:clue_adipose_all} and \ref{fig:clue_islet_all}). To get more
-tissue-specific results, we also looked at top results in cell types
-that most closely resembled our tissues. We looked at results in
+(CMAP) database \cite{pmid17008526, 
+pmid29195078} developed by the Broad Institute allows querying thousands
+of compounds that reverse or enhance the extreme ends of transcriptomic
+signatures in multiple different cell types. By identifying drugs that
+reverse pathogenic transcriptomic signatures, we can potentially
+identify compounds that have favorable effects on gene expression. To
+test this hypothesis, we queried the CMAP database through the CLUE
+online query tool (\url{https://clue.io/query/}, version 1.1.1.43)
+(Methods). We identified top anti-correlated hits across all cell types
+(Supp. Figs \ref{fig:clue_adipose_all} and \ref{fig:clue_islet_all}). To
+get more tissue-specific results, we also looked at top results in cell
+types that most closely resembled our tissues. We looked at results in
 adipocytes (ASC) as well as pancreatic tumor cells (YAPC) regardless of
 \(p\) value (Supp. Figs \ref{fig:clue_adipose_asc} and
 \ref{fig:clue_islet_yapc}).
