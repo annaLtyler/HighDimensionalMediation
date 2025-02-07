@@ -815,12 +815,13 @@ the immune activation reflected a heritable change in cell
 composition in adipose tissue in DO mice, we compared loadings 
 of cell-type specific genes in adipose tissue (Methods). The mean 
 loading of macrophage-specific genes was significantly greater than 
-0 (Fig. \ref{fig:human_translation}A) ($p < 2\times10^{-16}$), 
+0 ($p < 2\times10^{-16}$) (Fig. \ref{fig:human_translation}A), 
 indicating that obese mice were genetically predisposed to have high 
 levels of macrophage infiltration in adipose tissue in response to 
 the HFHS diet. Loadings for marker genes for other cell 
-types were not statistically different from zero, indicating that 
-changes in the abundance of those cell types is not a mediator of 
+types were not statistically different from zero (Adipocytes: $p = 0.08$,
+Progenitors: $p = 0.58$, Leukocytes: $p = 0.28$), indicating that 
+changes in the abundance of those cell types was not a mediator of 
 MDI.
 
 \begin{figure}[ht!]
@@ -842,9 +843,9 @@ patients based on the HDMA results from DO mice.
 We also compared loadings of cell-type specific transcripts in islet 
 (Methods). The mean loadings for alpha-cell specific transcripts were 
 significantly greater than 0 ($p = 0.002$), while the mean loadings 
-for delta- and endothelial-cell specific genes were significantly 
-less than 0 ($p < 2\times10^{-16}$) (Fig. \ref{fig:human_translation}B). 
-These results suggest 
+for delta-  ($p < 2\times10^{-16}$) and endothelial-cell 
+($p = 0.01$) specific genes were significantly less than 0 
+(Fig. \ref{fig:human_translation}B). These results suggest 
 that mice with higher MDI inherited an altered cell composition that
 predisposed them to metabolic disease, or that these compositional 
 changes were induced by the HFHS diet in a heritable way. In either 

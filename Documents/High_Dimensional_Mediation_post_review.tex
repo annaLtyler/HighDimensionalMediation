@@ -370,9 +370,10 @@ correlations with traits.}
 
 To assess the importance of genetic regulation of transcript levels to
 clinical traits, we compared the local and distal heritabilities of
-transcripts to their trait relevance, defined as the maximum trait
-correlation for each transcript. The local heritability of transcripts
-was negatively associated with their trait relevance (Fig.
+transcripts to their trait relevance. We defined trait relevance for a
+transcript as its maximum absolute Spearman correlation coefficient
+(\(\rho\)) across all traits (Methods). The local heritability of
+transcripts was negatively associated with their trait relevance (Fig.
 \ref{fig:motivation}B), suggesting that the more local genotype
 influenced transcript abundance, the less effect this variation had on
 the measured traits. Conversely, the distal heritability of transcripts
@@ -776,13 +777,14 @@ obesity and metabolic disease \cite{pmid24781408}. To determine whether
 the immune activation reflected a heritable change in cell composition
 in adipose tissue in DO mice, we compared loadings of cell-type specific
 genes in adipose tissue (Methods). The mean loading of
-macrophage-specific genes was significantly greater than 0 (Fig.
-\ref{fig:human_translation}A), indicating that obese mice were
-genetically predisposed to have high levels of macrophage infiltration
-in adipose tissue in response to the HFHS diet. Loadings for marker
-genes for other cell types were not statistically different from zero,
-indicating that changes in the abundance of those cell types is not a
-mediator of MDI.
+macrophage-specific genes was significantly greater than 0
+(\(p < 2\times10^{-16}\)) (Fig. \ref{fig:human_translation}A),
+indicating that obese mice were genetically predisposed to have high
+levels of macrophage infiltration in adipose tissue in response to the
+HFHS diet. Loadings for marker genes for other cell types were not
+statistically different from zero (Adipocytes: \(p = 0.08\),
+Progenitors: \(p = 0.58\), Leukocytes: \(p = 0.28\)), indicating that
+changes in the abundance of those cell types was not a mediator of MDI.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig8_Human_Translation.pdf} 
@@ -802,21 +804,22 @@ patients based on the HDMA results from DO mice.
 
 We also compared loadings of cell-type specific transcripts in islet
 (Methods). The mean loadings for alpha-cell specific transcripts were
-significantly greater than 0, while the mean loadings for delta- and
-endothelial-cell specific genes were significantly less than 0 (Fig.
+significantly greater than 0 (\(p = 0.002\)), while the mean loadings
+for delta- (\(p < 2\times10^{-16}\)) and endothelial-cell (\(p = 0.01\))
+specific genes were significantly less than 0 (Fig.
 \ref{fig:human_translation}B). These results suggest that mice with
 higher MDI inherited an altered cell composition that predisposed them
 to metabolic disease, or that these compositional changes were induced
 by the HFHS diet in a heritable way. In either case, these results
 support the hypothesis that alterations in islet composition drive
 variation in MDI. Notably, the mean loading for pancreatic beta cell
-marker transcripts was not significantly different from zero. We stress
-that this is not necessarily reflective of the function of the beta
-cells in the obese mice, but rather suggests that any variation in the
-number of beta cells in these mice was unrelated to obesity and insulin
-resistance, the major contributors to MDI. This is further consistent
-with the islet composition traits having small loadings in the phenome
-score (Fig. \ref{fig:interpretation}).
+marker transcripts was not significantly different from zero
+(\(p = 0.95\)). We stress that this is not necessarily reflective of the
+function of the beta cells in the obese mice, but rather suggests that
+any variation in the number of beta cells in these mice was unrelated to
+obesity and insulin resistance, the major contributors to MDI. This is
+further consistent with the islet composition traits having small
+loadings in the phenome score (Fig. \ref{fig:interpretation}).
 
 \subsubsection{Heritable transcriptomic signatures translated to human
 disease}\label{heritable-transcriptomic-signatures-translated-to-human-disease}
@@ -1026,9 +1029,13 @@ of analysis, such as drug prioritization using gene set enrichment
 analysis (GSEA) and the CMAP database. In particular, the CMAP analysis
 identified drugs which have been demonstrated to reverse insulin
 resistance and other aspects of metabolic disease. This finding supports
-the causal role of these full gene signatures in pathogenesis of
-metabolic disease and thus their utility in prioritizing drugs and gene
-targets as therapeutics.
+the hypothtsis that HDMA identified transcripts that truly mediate
+genetic effects on traits. On its own, HDMA identifies transcriptional
+patterns that are consistent with a mediation model, but alone does not
+prove mediation. However, the finding that these drugs act both on the
+transcriptional patterns and on the desired traits support the mediation
+model and the hypothesis that these transcripts have a causal role in
+pathogenesis of metabolic disease.
 
 Together, our results have shown that both tissue specificity and distal
 gene regulation are critically important to understanding the genetic
