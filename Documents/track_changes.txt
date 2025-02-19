@@ -1,0 +1,16 @@
+
+cd /Users/atyler/Documents/Projects/Islets/manuscripts/HighDimensionalMediation/Documents
+
+
+latexdiff High_Dimensional_Mediation_ms.tex High_Dimensional_Mediation_post_review.tex > High_Dimensional_Mediation_edits.tex
+
+latexdiff Detailed_Methods_JMM.tex Detailed_Methods_post_review.tex > Detailed_Methods_edits.tex
+
+red
+orange
+yellow
+green
+blue
+purple
+black
+

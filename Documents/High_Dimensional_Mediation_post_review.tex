@@ -286,23 +286,24 @@ and pancreatic function.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig1_trait_overview.pdf} 
-\caption{Clinical overview. \textbf{A.} Distributions of body weight 
-in the diversity outbred mice. Sex is indicated by color. The 
-average B6 male and female adult weights at 24 weeks of age 
-are indicated by blue and green bars on the x-axis. \textbf{B.} The 
-distribution of fasting glucose across the population split 
+\caption{Clinical overview. \textbf{A.} Distributions of 
+final body weight in the diversity outbred mice. Sex is indicated by 
+color. The average B6 male and female adult weights at 24 weeks of 
+age are indicated by blue and green bars on the x-axis. \textbf{B.} 
+The distribution of final fasting glucose across the population split 
 by sex. Normal, pre-diabetic, and diabetic fasting glucose levels 
-for mice are shown by colored bars along the x-axis. \textbf{C.} Males had 
-higher fasting blood glucose on average than females. \textbf{D.} The 
-relationship between food consumption and body weight for both 
-sexes. \textbf{E.} Relationship between body weight and fasting glucose 
-for both sexes. \textbf{F.} Heritability estimates for each physiological 
-trait. Bars show standard error of the estimate. \textbf{G.} Correlation 
-structure between pairs of physiological traits. The diagonal of the heat
-map shows individual trait heritability. BMD - bone mineral density,
-WPIC - whole pancreas insulin content, Glu tAUC - glucose total area under 
-the curve, HOMA IR - homeostatic measurement of insulin resistance, HOMA B - 
-homeostatic measure of beta cell health, VLDL - very low-density lipoprotein,
+for mice are shown by colored bars along the x-axis. \textbf{C.} 
+Males had higher fasting blood glucose on average than females 
+($p = 9.1\times10^{-15}$). \textbf{D.} The relationship between 
+food consumption and body weight for both sexes. \textbf{E.} 
+Relationship between body weight and fasting glucose for both 
+sexes. \textbf{F.} Heritability estimates for each physiological 
+trait. Bars show standard error of the estimate. \textbf{G.} 
+Correlation structure between pairs of physiological traits.
+BMD - bone mineral density, WPIC - whole pancreas insulin content, 
+Glu tAUC - glucose total area under the curve, HOMA IR - homeostatic 
+measurement of insulin resistance, HOMA B - homeostatic measure of 
+beta cell health, VLDL - very low-density lipoprotein,
 LDL - low-density lipoprotein, IDL - intermediate density lipoprotein, 
 HDL - high-density lipoprotein, TG - triglyceride.
 }
@@ -327,44 +328,42 @@ We estimated the heritability of each transcript in terms of local and
 all non-local (distal) genetic factors (Methods). Overall, local and
 distal genetic factors contributed approximately equally to transcript
 abundance. In all tissues, both local and distal factors explained
-between 8 and 18\% of the variance in the median transcript (Fig,
+between 8 and 17\% of the variance in the median transcript (Fig,
 \ref{fig:motivation}A).
 
 The equal contribution of local and distal genetic variants to the
 heritability of transcript abundance contrasts with findings in humans
-in which local variants have been found to explain only 20-30\% of total
-heritability, while distal variants explain the remaining 70-80\%
-\cite{pmid31558840, pmid21383966}. This discrepancy may arise due to the
-relatively high degree of linkage disequilibrium in the DO mice compared
-to human populations, as well as the high degree of confidence with
-which ancestral haplotypes can be estimated in the mice. Any genetic
-marker in the mice captures information from a larger genomic region
-than any genetic marker in human populations, and thus may capture more
-local regulatory variants than SNPs capture in humans. It has further
-been found that transcripts with muliple local eQTL have higher local
-heritability than transcripts with single local eQTL
-\cite{pmid25010687}. Because of the high diversity in the DO it is
-possible that there are more local variants regulating transcription
-creating a proportionally larger effect of local regulation.
+in which local variants have been found to explain 20-30\% of total
+heritability, while distal variants explain the remaining
+70-80\%\cite{pmid31558840, pmid21383966}. This discrepancy may arise due
+to the high degree of linkage disequilibrium in the DO mice compared to
+human populations. Each genetic marker in the mice captures information
+from a larger genomic region than each genetic marker in human
+populations, and thus may capture more local regulatory variants than
+SNPs capture in humans. It has been found that transcripts with muliple
+local eQTL have higher local heritability than transcripts with single
+local eQTL\cite{pmid25010687}. Because of the high diversity in the DO
+and the high rates of linkage disequilibrium, it is possible that there
+are more local variants regulating transcription creating a
+proportionally larger effect of local regulation.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig2_motivation.pdf} 
 \caption{Transcript heritability and trait relevance. 
-\textbf{A.} Distributions of distal and local heritability 
+\textbf{A.} Distributions of local and distal heritability 
 of transcripts across the four tissues. Overall local and 
-distal factors contribute equally to transcript heritability. 
+distal factors contributed equally to transcript heritability. 
 Arrows indicate the median of each distribution. The 
 relationship between (\textbf{B.}) local and (\textbf{C.}) 
-distal heritability and trait relevance across all four tissues. 
-Here trait relevance is defined as the maximum Spearman 
-correlation between the transcript and all traits. The lower 
-line in each panel shows the mean trait correlation, and 
-the upper line shows the upper 95th percentile of trait 
+distal heritability and trait relevance across all four 
+tissues. Here trait relevance is defined as the maximum 
+correlation between the transcript and all traits. The upper 
+and lower dashed line in each panel show the 95th and 5th 
+percentile correlation. The solid line shows the mean trait 
 correlation in transcripts with increasing variance explained 
-either locally (B) or distally (C). Transcripts high local 
-heritability have lower trait correlations. In contrast, 
-transcripts with large distal heritability also have high 
-correlations with traits.}
+either locally (B) or distally (C). Transcripts that are highly 
+correlated with traits tended to have low local heritability and 
+high distal heritability.}
 \label{fig:motivation}
 \end{figure}
 
@@ -405,15 +404,24 @@ mediation analysis (HDMA), that uses the theory of causal graphical
 models to identify a transcriptomic signature that is simultaneously 1)
 highly heritable, 2) strongly correlated to the measured phenotypes, and
 3) conforms to the causal mediation hypothesis (Fig.
-\ref{fig:workflow}). HDMA projects the high-dimensional genome,
-transcriptome, and phenome data onto one-dimensional scores--a composite
-genome score (\(G_C\)), a composite transcriptome score (\(T_C\)), and a
-composite phenome score (\(P_C\))--and uses the univariate theory of
-mediation to constrain these projections to satisfy the hypotheses of
-perfect mediation, namely that upon controlling for the transcriptomic
-score, the genome score is uncorrelated to the phenome score. A complete
+\ref{fig:workflow}). In HDMA, we first use a linear mapping called
+kernelization to dimension-reduce the genome, transcriptome, and phenome
+to kernel matrices \(G_K\), \(T_K\) and \(P_K\) respectively, which each
+have the dimensions \(n\) by \(n\) where \(n\) is the number of
+individuals (Methods). These kernel matrices describe the relationships
+among the individual mice in genome space, transcriptome space, and
+phenome space and and ensure that these three omic spaces have the same
+dimensions, and thus the same weight in the analysis. If not
+dimension-reduced, the transcriptome would outweigh the phenome in the
+model. We then projected these \(n \times n\)-dimensional kernel
+matrices onto one-dimensional scores--a composite genome score
+(\(G_C\)), a composite transcriptome score (\(T_C\)), and a composite
+phenome score (\(P_C\))--and used the univariate theory of mediation to
+constrain these projections to satisfy the hypotheses of perfect
+mediation, namely that upon controlling for the transcriptomic score,
+the genome score is uncorrelated to the phenome score. A complete
 mathematical derivation and implementation details for HDMA are
-available in Supp. Methods.
+available in the Methods.
 
 \begin{figure}[ht!]
 \includegraphics[width=5in]{Figures/Fig3_workflow.pdf} 
@@ -421,15 +429,15 @@ available in Supp. Methods.
 major steps of high-dimensional mediation. The genotype, transcriptome, 
 and phenotype matrices were independently normalized and converted to 
 kernel matrices representing the pairwise relationships between 
-individuals for each data modality ($K_G$ = genome kernel, $K_T$ = 
-transcriptome kernel; $K_P$ = phenome kernel). 
+individuals for each data modality ($G_K$ = genome kernel, $T_K$ = 
+transcriptome kernel; $P_K$ = phenome kernel). 
 High-dimensional mediation was applied to these matrices to maximize the 
 direct path $G \rightarrow T \rightarrow P$, the mediating pathway (arrows), 
 while simultaneously minimizing the direct $G \rightarrow P$ pathway (dotted 
 line). The composite vectors that resulted from high-dimensional mediation were 
-$G_c$, $T_C$, and $P_C$. The partial correlations $\rho$ between these vectors 
+$G_C$, $T_C$, and $P_C$. The partial correlations $\rho$ between these vectors 
 indicated perfect mediation. Transcript and trait loadings were calculated 
-as described in the methods. \textbf{B.} The null distribution of the path 
+as described in the Methods. \textbf{B.} The null distribution of the path 
 coefficient derived from 10,000 permutations compared to the observed path 
 coefficient (red line). \textbf{C.} The null distribution of the $G_C$-$T_C$ 
 correlation vs. the $T_C$-$P_C$ correlation compared with the observed value 
@@ -453,7 +461,7 @@ identified a maximally heritable metabolic composite trait and a highly
 heritable component of the transcriptome that are correlated as expected
 in the perfect mediation model.
 
-As discussed in Supp. Methods, HDMA is related to a generalized form of
+As discussed in the Methods, HDMA is related to a generalized form of
 canonical correlation analysis (CCA). Standard CCA is prone to
 over-fitting because in any two large matrices it can be trivial to
 identify highly correlated composite vectors \cite{pmid38383808}. To
@@ -463,7 +471,12 @@ testing. We permuted the individual labels on the transcriptome matrix
 10,000 times and recalculated the path coefficient, which is the
 correlation of \(G_C\) and \(T_C\) multiplied by the correlation of
 \(T_C\) and \(P_C\). This represents the strength of the path from
-\(G_C\) to \(P_C\) that is putatively mediated through \(T_C\). The null
+\(G_C\) to \(P_C\) that is putatively mediated through \(T_C\). The
+permutations preserved the correlation between the genome and phenome,
+but broke the correlations between the genome and the transcriptome, as
+well as between the transcriptome and the phenome. We could thus test
+whether, given a random transcriptome, HDMA would overfit and identify
+apparently mediating transcriptomic signatures in random data. The null
 distribution of the path coefficient is shown in Fig.
 \ref{fig:workflow}B, and the observed path coefficient from the original
 data is indicated by a red line. The observed path coefficient was well
@@ -503,10 +516,8 @@ interpret the transcriptomic signature identified by HDMA, we are
 explaining primarily the putative transcriptional mediation of body
 weight and insulin resistance, as opposed to cholesterol measurements.
 
-\pagebreak
-
 \begin{figure}[ht!]
-\includegraphics[width=5.6in]{Figures/Fig4_interpretation.pdf} 
+\includegraphics[width=\textwidth]{Figures/Fig4_interpretation.pdf} 
 \caption{Interpretation of loadings. \textbf{A.} Loadings across traits. 
 Body weight and insulin resistance contributed the most to the composite 
 trait. \textbf{B.} Phenotype scores across individuals. Individuals with 
@@ -620,26 +631,29 @@ literature support. They were 2.1 times more likely than TWAS hits and
 3.8 times more likely than genes with high local heritability to be
 previously associated with obesity or diabetes.
 
-\textbackslash begin\{figure\}{[}ht!{]}
-\includegraphics[width=\textwidth]{Figures/Fig5_loading_heritability.pdf}
-\textbackslash caption\{Transcripts with high loadings have high distal
-heritability and literature support. Each panel has a bar plot showing
-the loadings of transcripts selected by different criteria. Bar color
-indicates the tissue of origin. The heat map shows the local (L - left)
-and distal (D - right) heritability of each transcript. \textbf{A.}
-Loadings for the 10 transcripts with the largest positive loadings and
-the 10 transcripts with the largest negative loadings for each tissue.
-Distal heritability was significantly higher than local heritability
-(box plots, \(p < 2.2^{-16}\)). \textbf{B.} Loadings of TWAS candidates
-with the 10 largest positive correlations with traits and the largest
-negative correlations with traits across all four tissues. Local and
-distal heritability were not significantly different for this group (box
-plots, \(p = 0.77\)). \textbf{C.} The transcripts with the largest local
-heritability (top 20) across all four tissues. Local heritability was
-significantly higher than distal heritability of these genes (box plots,
-\(p < 2.2^{-16}\))
+\pagebreak
 
-\} \label{fig:loading_heritability} \textbackslash end\{figure\}
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{Figures/Fig5_loading_heritability.pdf} 
+\caption{Transcripts with high loadings have high distal heritability 
+and literature support. Each panel has a bar plot showing the loadings 
+of transcripts selected by different criteria. Bar color indicates the 
+tissue of origin. The heat map shows the local (L - left) and distal 
+(D - right) heritability of each transcript. \textbf{A.} Loadings for 
+the 10 transcripts with the largest positive loadings and the 10 
+transcripts with the largest negative loadings for each tissue. 
+Distal heritability was significantly higher than local heritability 
+(t-test $p < 2.2^{-16}$). \textbf{B.} Loadings of TWAS candidates 
+with the 10 largest positive correlations with traits and the largest 
+negative correlations with traits across all four tissues. Local and 
+distal heritability were not significantly different for this group 
+(t-test $p = 0.77$). \textbf{C.} The transcripts with the largest 
+local heritability (top 20) across all four tissues. Local heritability 
+was significantly higher than distal heritability of these genes (t-test 
+$p < 2.2^{-16}$)
+}
+\label{fig:loading_heritability}
+\end{figure}
 
 \subsubsection{Tissue-specific transriptional programs were associated
 with metabolic
@@ -865,72 +879,16 @@ adipocytes (ASC) as well as pancreatic tumor cells (YAPC) regardless of
 \(p\) value (Supp. Figs \ref{fig:clue_adipose_asc} and
 \ref{fig:clue_islet_yapc}).
 
-Looking across all cell types, the notable top hits from the adipose
-tissue loadings included mTOR inhibitors and glucocorticoid agonists
-(Supp. Fig. \ref{fig:clue_adipose_all}). It is thought that metformin,
-which is commonly used to improve glycemic control, acts, at least in
-part, by inhibiting mTOR signaling \cite{pmid30290005, 
-pmid30034573}. However, long-term use of other mTOR inhibitors, such as
-rapamycin, are known to cause insulin resistance and \(\beta\)-cell
-toxicity \cite{pmid30034573, pmid23881200, pmid21266327}.
-Glucocorticoids are used to reduce inflammation, which was a prominent
-signature in the adipose tissue, but these drugs also promote
-hyperglycemia and diabetes \cite{pmid24582093, pmid35585199}. Accute
-treatment with glucocorticoids has further been shown to reduce
-thermogenesis in rodent adipocytes \cite{pmid30310815, 
-pmid11254472, pmid23197361}, but increase thermogenesis in human
-adipocytes \cite{pmid27411014, pmid25385872}. Thus, the pathways
-identified by CMAP across all cell types were highly related to the
-transcript loading profiles, but the relationship was not a simple
-reversal.
-
-The top hit for the adipose composite transcript in CMAP adipocytes was
-a PARP inhibitor (Supp. Fig. \ref{fig:clue_adipose_asc}). PARPs play a
-role in lipid metabolism and are involved in the development of obesity
-and diabetes \cite{pmid34450194}. PARP1 inhibition increases
-mitochondrial biogenesis \cite{pmid21459330}. Inihibition of PARP1
-activity can further prevent necrosis in favor of the less inflammatory
-apoptosis \cite{pmid12114611}, thereby potentially reducing inflammation
-in stressed adipocytes. Other notable hits among the top 20 were BTK
-inhibitors, which have been observed to suppress inflammation and
-improve insulin resistance \cite{pmid33648925} as well as to reduce
-insulin antibodies in type I diabetes \cite{pmid28753229}. IkappaB
-kinase (IKK) is an enzyme complex involved in regulating cellular
-responses to inflammation \cite{pmid17047224}. Inhibitors of IKK have
-been shown to improve glucose control in type II diabetes
-\cite{pmid28683283, 
-pmid15685170}.
-
-Among the top most significant hits for the transcript loadings from
-pancreatic islets (Supp. Fig. \ref{fig:clue_islet_all}), was suppression
-of T cell receptor signaling, which is known to be involved in Type 1
-diabetes \cite{pmid33603744}, as well as TNFR1, which has been
-associated with mortality in diabetes patients \cite{pmid32281000}.
-Suppression of NOD1/2 signaling was also among the top hits. NOD1 and 2
-sense ER stress \cite{pmid27007849, pmid28823510}, which is associated
-with \(\beta\)-cell death in type 1 and type 2 diabetes
-\cite{pmid24520198}. This cell death process is dependent on NOD1/2
-signaling \cite{pmid27007849}, although the specifics have not yet been
-worked out.
-
-We also looked specifically at hits in pancreatic tumor cells (YAPC)
-regardless of significance level to get a transcriptional response more
-specific to the pancreas (Supp. Fig. \ref{fig:clue_islet_yapc}). Hits in
-this list included widely used diabetes drugs, such as sulfonylureas,
-PPAR receptor agonists, and insulin sensitizers. Rosiglitazone is a
-PPAR-\(\gamma\) agonist and was one of the most prescribed drugs for
-type 2 diabetes before its use was reduced due to cardiac side-effects
-\cite{pmid21190462}. Sulfonylureas are another commonly prescribed drug
-class for type 2 diabetes, but also have notable side effects including
-hypoglycemia and accellerated \(\beta\)-cell death \cite{pmid16631807}.
-
-In summary, the high-loading transcripts derived from HDMA in mice
-prioritized of drugs with demonstrated effectiveness in reducing type 2
-diabetes phenotypes in humans in a tissue-specific manner. Drugs
-identified using the islet loadings are known diabetes drugs that act
-directly on pancreatic function. Drugs identified by the adipose
-loadings tended to reduce inflammatory responses and have been shown
-incidentally to reduce obesity-related morbidity.
+The CMAP database identified both known diabetes drugs
+(e.g.~sulfonylureas), as well as drugs that target pathways known to be
+involved in diabetes pathogenesis (e.g.~mTOR inhibitors). These findings
+help support the mediation model we fit here. Although the composite
+variables we identified here are consistent with mediation, they do not
+prove causality. However, the results from CMAP suggest that reversing
+the transcriptomic signatures we found also reverses metabolic disease
+phenotypes, which supports a causal role of the transcript levels in
+driving pathogenesis of metabolic disease. These results thus support
+the mediation model we identified here.
 
 \subsection{Discussion}\label{discussion}
 
@@ -989,7 +947,8 @@ genes (i.e.~trait-mediating genes) is accounted for, there should be no
 residual correlation between the genome and the phenome. Here, we were
 able to fit this model and identified a composite transcript that, when
 taken into account, left no residual correlation between the composite
-genome and composite phenome scores (Fig. \ref{fig:workflow}A).
+genome and composite phenome scores (Fig. \ref{fig:workflow}A, Supp. Fig
+\ref{fig:composite_cor}).
 
 Unlike in the omnigenic model, we did not observe a clear demarcation
 between the core and peripheral genes in loading magnitude, but we do
@@ -1132,6 +1091,17 @@ if they were within 4Mb of each other. Colored bars indicate the counts
 for individual tissues for easy of visualization.
 }
 \label{fig:eQTL}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{Figures/Supp_Fig_Composite_Vector_Correlations.pdf} 
+\caption{Scatter plots showing correlations between composite vectors 
+for the genome ($G_C$), the transcriptome ($T_C$), and the phenome ($P_C$).
+The $G_C$ - $T_C$ correlation is high, the $T_C$ - $P_C$ correlation is high,
+and there is no significant correlation between $G_C$ and $P_C$. This correlation
+structure is consistent with perfect mediation.
+}
+\label{fig:composite_cor}
 \end{figure}
 
 \begin{figure}[ht!]

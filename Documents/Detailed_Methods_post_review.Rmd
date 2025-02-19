@@ -67,8 +67,10 @@ to call haplotypes provided redundancy for quality control. Three
 mice had inconsistent calls between the two methods and were excluded
 from the analysis \cite{pmid29567659}.
 
-## Processed Data
-We downloaded genotypes, phenotypes, and pancreatic islet gene expression 
+## Processed DO Data 
+The DO data used in this study were generated in a previous 
+study\cite{pmid31343992, pmid29567659}. We downloaded genotypes, 
+phenotypes, and pancreatic islet gene expression 
 data from Dryad (doi:10.5061/dryad.pj105).
 
 ## Collaborative cross recombinant inbred mice (CC-RIX)
@@ -235,12 +237,11 @@ distal eQTLs separately. Local eQTL were defined as an eQTL within
 ## Local and distal heritability of transcripts 
 To estimate local and distal heritability of each transcript, we scaled each
 normalized transcript to have a variance of 1. We then modeled this transcript
-with the local genotype using the fit1() function in R/qtl with a kinship 
-correction. We used the resulting model to predict the transcript values. 
-The variance of the predicted transcript is its local heritability. We then 
-estimated the heritability of the residual of the model fit. The variance
-of the residual multiplied by its heritability is the distal heritability 
-of the transcript. 
+with the local genotype using the fit1() function in R/qtl. We used the 
+resulting model to predict the transcript values. The variance of the 
+predicted transcript is its local heritability. We then estimated the 
+heritability of the residual of the model fit. The variance of the residual 
+multiplied by its heritability is the distal heritability of the transcript. 
 
 We compared local and distal estimates of heritability to measures 
 of trait relevance for each transcript. To calculate trait relevance

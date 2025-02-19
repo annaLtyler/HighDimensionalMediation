@@ -113,6 +113,13 @@ starting at four weeks of age as described previously
 multiple metabolic measures including fasting glucose levels, glucose
 tolerance, insulin levels, body weight, and blood lipid levels.
 
+When mice were harvested at 22 weeks of age, their pancreatic islets
+were isolated by hand. Insulin per islet was measured, and whole
+pancreas insulin content was calculated from the insulin per islet
+measure and the total numer of islets per pancreas \cite{pmid29567659}.
+RNA was isolated from the whole islets and sent to The Jackson
+Laboratory for high-throughput sequencing \cite{pmid29567659}.
+
 \subsection{Trait measurements}\label{trait-measurements}
 
 Trait measurements were described previously in \cite{pmid29567659}.
@@ -143,15 +150,21 @@ were converted to founder strain-haplotype reconstructions using the
 R/DOQTL software \cite{pmid25237114} and interpolated onto a grid with
 0.02-cM spacing to yield 69,005 pseudomarkers. Individual chromosome
 (Chr) haplotypes were reconstructed from RNA-seq data using a hidden
-Markov model (GBRS, \url{https://github.com/churchill-lab/gbrs}).
+Markov model \cite{choi2020genotype} (GBRS,
+\url{https://github.com/churchill-lab/gbrs}). Using both methods to call
+haplotypes provided redundancy for quality control. Three mice had
+inconsistent calls between the two methods and were excluded from the
+analysis \cite{pmid29567659}.
 
-\subsection{Processed Data}\label{processed-data}
+\subsection{Processed DO Data}\label{processed-do-data}
 
-We downloaded genotypes, phenotypes, and pancreatic islet gene
-expression data from Dryad (\url{doi:10.5061/dryad.pj105}).
+The DO data used in this study were generated in a previous
+study\cite{pmid31343992, pmid29567659}. We downloaded genotypes,
+phenotypes, and pancreatic islet gene expression data from Dryad
+(\url{doi:10.5061/dryad.pj105}).
 
-\subsection{Collaborative cross recombinant inbred
-mice}\label{collaborative-cross-recombinant-inbred-mice}
+\subsection{Collaborative cross recombinant inbred mice
+(CC-RIX)}\label{collaborative-cross-recombinant-inbred-mice-cc-rix}
 
 Mice were cared for and treated following the guidelines approved by the
 Association for Assessment and Accreditation of Laboratory Animal Care
@@ -300,15 +313,15 @@ software package (\url{https://gbrs.readthedocs.io/en/latest/}). In the
 process, R1 and R2 FASTQ files were combined and aligned to a hybridized
 (8-way) transcriptome generated for the 8 DO founder strains as
 single-ended reads. GBRS was also used to reconstruct the mouse genotype
-probabilities along \textasciitilde69K markers, which was used for
-confirming genotypes in the quality control (QC) process. For the QC
-process, we used a Euclidean distances method (developed by Greg Keele -
-Churchill Lab) to compare the GBRS genotype probabilities between the
-tissues and the genotype probabilities array for all mice. The counts
-matrix for each tissue was processed to filter out transcripts with less
-than one read for at least half of the samples. RNA-seq batch effects
-were removed by regressing out batch as a random effect and considering
-sex and generation as fixed effects using lme4 R package. RNA-Seq counts
+probabilities along \(\sim69\)K markers, which was used for confirming
+genotypes in the quality control (QC) process. For the QC process, we
+used a Euclidean distances method (developed by Greg Keele - Churchill
+Lab) to compare the GBRS genotype probabilities between the tissues and
+the genotype probabilities array for all mice. The counts matrix for
+each tissue was processed to filter out transcripts with less than one
+read for at least half of the samples. RNA-seq batch effects were
+removed by regressing out batch as a random effect and considering sex
+and generation as fixed effects using lme4 R package. RNA-Seq counts
 were normalized relative to total read counts using the variance
 stabilizing transform (VST) as implemented in DESeq2 and using rank
 normal score.
@@ -319,27 +332,33 @@ We used R/qtl2 \cite{pmid30591514} to perform eQTL analysis. We used the
 rank normal score data and used sex and DO generation as additive
 covariates. We also used kinship as a random effect. We used
 permutations to find a LOD threshold of 8 for significant QTLs which
-corresponded to a \(p\) value of 0.05.
+corresponded to a nominal \(p\) value of 0.05.
 
 To assess whether eQTL were shared across tissues, we considered
 significant eQTLs within 4Mb of each other to be overlapping. We
-considered local and distal eQTLs separately.
+considered local and distal eQTLs separately. Local eQTL were defined as
+an eQTL within 4Mb of the transcription start site of the encoding gene.
 
 \subsection{Local and distal heritability of
 transcripts}\label{local-and-distal-heritability-of-transcripts}
 
 To estimate local and distal heritability of each transcript, we scaled
 each normalized transcript to have a variance of 1. We then modeled this
-transcript with the local genotype using the fit1() function in R/qtl
-with a kinship correction. We used the resulting model to predict the
-transcript values. The variance of the predicted transcript is its local
-heritability. We then estimated the heritability of the residual of the
-model fit. The variance of the residual multiplied by its heritability
-is the distal heritability of the transcript.
+transcript with the local genotype using the fit1() function in R/qtl.
+We used the resulting model to predict the transcript values. The
+variance of the predicted transcript is its local heritability. We then
+estimated the heritability of the residual of the model fit. The
+variance of the residual multiplied by its heritability is the distal
+heritability of the transcript.
 
 We compared local and distal estimates of heritability to measures of
-trait relevance for each transcript. Trait relevance was the Pearson
-correlation (R) between the transcript and the trait.
+trait relevance for each transcript. To calculate trait relevance of a
+given transcript, we adjusted normalized transcript values for sex, DO
+wave, and DO generation. We similarly adjusted traits by sex, DO wave,
+and DO generation. We then calculated all Spearman correlation
+coefficients (\(\rho\)) between adjusted traits and adjusted
+transcripts. The trait relevance of a given tanscript was the maximum
+absolute correlation coefficient across all traits.
 
 \subsection{High-dimensional mediation
 analysis}\label{high-dimensional-mediation-analysis}
