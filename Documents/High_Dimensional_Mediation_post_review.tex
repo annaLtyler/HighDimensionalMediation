@@ -488,7 +488,7 @@ between \(G_C\) and \(T_C\), and modest correlations between \(T_C\) and
 could not be maximized simultaneously in the null data. In contrast, the
 red dot shows that in the real data both the \(G_C\)-\(T_C\) correlation
 and the \(T_C\)-\(P_C\) correlation could be maximized simultaneously
-suggesting that the path from genotype to phenotype through
+suggesting that the path from genotype to phenotype through the
 transcriptome is highly non-trivial and identifiable in this case. These
 results suggest that these composite vectors represent genetically
 determined variation in phenotype that is mediated through genetically
@@ -510,8 +510,8 @@ thus interpret \(P_C\) as an index of metabolic disease (Fig.
 \ref{fig:interpretation}B). Individuals with high values of \(P_C\) have
 a higher metabolic disease index (MDI) and greater metabolic disease,
 including higher body weight and higher insulin resistance. We refer to
-\(P_C\) as the MDI going forward. Traits contributing the least to the
-MDI were measures of cholesterol and pancreas composition. Thus, when we
+\(P_C\) as MDI going forward. Traits contributing the least to MDI were
+measures of cholesterol and pancreas composition. Thus, when we
 interpret the transcriptomic signature identified by HDMA, we are
 explaining primarily the putative transcriptional mediation of body
 weight and insulin resistance, as opposed to cholesterol measurements.
@@ -520,10 +520,10 @@ weight and insulin resistance, as opposed to cholesterol measurements.
 \includegraphics[width=\textwidth]{Figures/Fig4_interpretation.pdf} 
 \caption{Interpretation of loadings. \textbf{A.} Loadings across traits. 
 Body weight and insulin resistance contributed the most to the composite 
-trait. \textbf{B.} Phenotype scores across individuals. Individuals with 
-large positive phenotype scores had higher body weight and insulin 
-resistance than average. Individuals with large negative phenotype 
-scores had lower body weight and insulin resistance than average. 
+trait. \textbf{B.} Phenotype scores (MDI) across individuals. Individuals with 
+large positive MDI had higher body weight and insulin 
+resistance than average. Individuals with large negative MDI had 
+lower body weight and insulin resistance than average. 
 \textbf{C.} Distribution of transcript loadings in adipose tissue. 
 For transcripts with large positive loadings, higher expression was 
 associated with higher phenotype scores. For transcripts with large 
@@ -534,11 +534,7 @@ extreme than the null distribution. Numbers indicate how many transcripts
 had loadings above and below the extremes of the null. Transcripts in 
 adipose tissue had the most extreme loadings indicating that transcripts 
 in adipose tissue were the best mediators of the genetic effects on body 
-weight and insulin resistance. \textbf{E.} Dot plots showing correlations 
-between the composite genome ($G_C$), composite transcriptome ($T_C$), 
-and the composite phenome ($P_C$). The $G_C$ and $T_C$ are positively 
-correlated, the $G_T$ and $G_P$ are positively correlated, but the 
-$G_C$ and $G_P$ are uncorrelated.
+weight and insulin resistance.
 }
 \label{fig:interpretation}
 \end{figure}
@@ -550,7 +546,7 @@ distal heritability, and were linked mechanistically to
 obesity}\label{high-loading-transcripts-had-low-local-heritability-high-distal-heritability-and-were-linked-mechanistically-to-obesity}
 
 We interpreted large loadings onto transcripts as indicating strong
-mediation of the effect of genetics on the MDI. Large positive loadings
+mediation of the effect of genetics on MDI. Large positive loadings
 indicate that higher expression was associated with a higher MDI
 (i.e.~higher risk of obesity and metabolic disease on the HFHS diet)
 (Fig. \ref{fig:interpretation}C). Conversely, large negative loadings
@@ -565,17 +561,17 @@ In adipose tissue, both GO processes and KEGG pathway enrichments
 pointed to an axis of inflammation and metabolism (Figs.
 \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}). GO terms and
 KEGG pathways associated with inflammation were positively associated
-with the MDI, indicating that increased expression in inflammatory
-pathways was associated with a higher burden of disease. It is well
-established that adipose tissue in obese individuals is inflamed and
-infiltrated by macrophages \cite{pmid19133410, 
+with MDI, indicating that increased expression in inflammatory pathways
+was associated with a higher burden of disease. It is well established
+that adipose tissue in obese individuals is inflamed and infiltrated by
+macrophages \cite{pmid19133410, 
 pmid28955384, pmid28912810, pmid28901330, pmid24969772}, and the results
 here suggest that this may be a dominant heritable component of
 metabolic disease.
 
 The strongest negative enrichments in adipose tissue were related to
 mitochondial activity in general, and thermogenesis in particular (Figs.
-\ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_kegg}). Genes in the
+\ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}). Genes in the
 KEGG oxidative phosphorylation pathway were almost universally
 negatively loaded in adipose tissue, suggesting that increased
 expression of these genes was associated with reduced MDI (Supp. Fig.
@@ -594,7 +590,7 @@ sensitivity \cite{pmid29567659,
 pmid22560213, pmid19841271}, suggesting that heritable variation in
 regulation of these pathways may influence risk of insulin resistance.
 
-Looking a the 10 most positively and negatively loaded transcripts from
+Looking at the 10 most positively and negatively loaded transcripts from
 each tissue, it is apparent that transcripts in the adipose tissue had
 the largest loadings, both positive and negative (Fig.
 \ref{fig:loading_heritability}A bar plot). This suggests that much of
@@ -612,7 +608,7 @@ heritability (Fig. \ref{fig:loading_heritability}A heat map and box
 plot). We also performed TWAS in this population by imputing transcript
 levels for each gene based on local genotype only and correlating the
 imputed transcript levels with each trait. In contrast to HDMA, the TWAS
-procecure tended to nominate transcripts with lower loadings (Fig.
+procedure tended to nominate transcripts with lower loadings (Fig.
 \ref{fig:loading_heritability}B), higher local heritability and lower
 distal heritability. Finally, we focused on transcripts with the highest
 local heritability in each tissue (Fig.
@@ -636,8 +632,8 @@ previously associated with obesity or diabetes.
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig5_loading_heritability.pdf} 
 \caption{Transcripts with high loadings have high distal heritability 
-and literature support. Each panel has a bar plot showing the loadings 
-of transcripts selected by different criteria. Bar color indicates the 
+and literature support (bolded gene names). Each panel has a bar plot 
+showing the loadings of transcripts selected by different criteria. Bar color indicates the 
 tissue of origin. The heat map shows the local (L - left) and distal 
 (D - right) heritability of each transcript. \textbf{A.} Loadings for 
 the 10 transcripts with the largest positive loadings and the 10 
@@ -697,9 +693,8 @@ Both local and distal heribatility of \textit{Pparg} in the islet are
 relatively high, but the loading is low, suggesting that variability of
 expression in the islet does not drive variation in MDI. These results
 highlight the importance of tissue context when investigating the role
-of heritable transcript variability in driving phenotype.
-
-Gene lists for all clusters are available in Supp. File 1.
+of heritable transcript variability in driving phenotype. Gene lists for
+all clusters are available in Supp. File 1.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig6_TOA.pdf} 
@@ -721,7 +716,7 @@ population}\label{gene-expression-but-not-local-eqtls-predicted-body-weight-in-a
 
 To test whether the transcript loadings identified in the DO could be
 translated to another population, we tested whether they could predict
-metabolic phenotype in an independent population of CC-RIX mice, which
+metabolic phenotypes in an independent population of CC-RIX mice, which
 were F1 mice derived from multiple pairings of Collaborative Cross (CC)
 \cite{pmid28592495, pmid21411855, 
 pmid17674098, pmid15514660} strains (Fig. \ref{fig:cc_prediction})
@@ -744,13 +739,13 @@ metabolic disease.
 phenotype in the CC-RIX. \textbf{A.} Workflow showing procedure 
 for translating HDMA results to an independent population of mice. 
 \textbf{B.} Relationships between the predicted metabolic disease
-index (MDI) and measured body weight. The left column shows the 
-predictions using measured transcripts. The right column shows 
-the prediction using transcript levels imputed from local genotype. 
-Gray boxes indicate measured quantities, and blue boxes indicate 
-calculated quantities. The dots in each panel represent individual 
-CC-RIX strains. The gray lines show the standard deviation on body 
-weight for the strain.
+index (MDI) and measured body weight in the CC-RIX. The left column 
+shows the predictions using measured transcripts. The right column 
+shows the prediction using transcript levels imputed from local 
+genotype. Gray boxes indicate measured quantities, and blue boxes 
+indicate calculated quantities. The dots in each panel represent 
+individual CC-RIX strains. The gray lines show the standard deviation 
+on body weight for the strain.
 }
 \label{fig:cc_prediction}
 \end{figure}
@@ -792,12 +787,13 @@ the immune activation reflected a heritable change in cell composition
 in adipose tissue in DO mice, we compared loadings of cell-type specific
 genes in adipose tissue (Methods). The mean loading of
 macrophage-specific genes was significantly greater than 0
-(\(p < 2\times10^{-16}\)) (Fig. \ref{fig:human_translation}A),
-indicating that obese mice were genetically predisposed to have high
-levels of macrophage infiltration in adipose tissue in response to the
-HFHS diet. Loadings for marker genes for other cell types were not
-statistically different from zero (Adipocytes: \(p = 0.08\),
-Progenitors: \(p = 0.58\), Leukocytes: \(p = 0.28\)), indicating that
+(Holm-adjusted two-sided empirical \(p < 2\times10^{-16}\)) (Fig.
+\ref{fig:human_translation}A), indicating that obese mice were
+genetically predisposed to have high levels of macrophage infiltration
+in adipose tissue in response to the HFHS diet. Loadings for marker
+genes for other cell types were not statistically different from zero
+(Adipocytes: \(p = 0.08\), Progenitors: \(p = 0.58\), Leukocytes:
+\(p = 0.28\); all Holm-adjusted two-sided empirical p), indicating that
 changes in the abundance of those cell types was not a mediator of MDI.
 
 \begin{figure}[ht!]
@@ -805,12 +801,12 @@ changes in the abundance of those cell types was not a mediator of MDI.
 \caption{HDMA results translate to humans. \textbf{A.} Distribution of 
 loadings for cell-type-specific transcripts in adipose tissue. \textbf{B.} 
 Distribution of loadings for cell-type-specific transcripts in pancreatic 
-islets (green). \textbf{C.} Null distributions for the mean loading of 
+islets. \textbf{C.} Null distributions for the mean loading of 
 randomly selected transcripts in each cell type compared with the observed 
 mean loading of each group of transcripts (red asterisk). \textbf{D.} 
 Predictions of metabolic phenotypes in four adipose transcription data 
 sets downloaded from GEO. In each study the obese/diabetic patients were 
-predicted to have greater metabolic disease than the lean/non-diabetic 
+predicted to have greater MDI than the lean/non-diabetic 
 patients based on the HDMA results from DO mice.
 }
 \label{fig:human_translation}
@@ -819,7 +815,8 @@ patients based on the HDMA results from DO mice.
 We also compared loadings of cell-type specific transcripts in islet
 (Methods). The mean loadings for alpha-cell specific transcripts were
 significantly greater than 0 (\(p = 0.002\)), while the mean loadings
-for delta- (\(p < 2\times10^{-16}\)) and endothelial-cell (\(p = 0.01\))
+for delta- (Holm-adjusted two-sided empirial \(p < 2\times10^{-16}\))
+and endothelial-cell (Holm-adjusted two-sided empirical \(p = 0.01\))
 specific genes were significantly less than 0 (Fig.
 \ref{fig:human_translation}B). These results suggest that mice with
 higher MDI inherited an altered cell composition that predisposed them
@@ -828,12 +825,13 @@ by the HFHS diet in a heritable way. In either case, these results
 support the hypothesis that alterations in islet composition drive
 variation in MDI. Notably, the mean loading for pancreatic beta cell
 marker transcripts was not significantly different from zero
-(\(p = 0.95\)). We stress that this is not necessarily reflective of the
-function of the beta cells in the obese mice, but rather suggests that
-any variation in the number of beta cells in these mice was unrelated to
-obesity and insulin resistance, the major contributors to MDI. This is
-further consistent with the islet composition traits having small
-loadings in the phenome score (Fig. \ref{fig:interpretation}).
+(Holm-adjusted two-sided empirical \(p = 0.95\)). We stress that this is
+not necessarily reflective of the function of the beta cells in the
+obese mice, but rather suggests that any variation in the number of beta
+cells in these mice was unrelated to obesity and insulin resistance, the
+major contributors to MDI. This is further consistent with the islet
+composition traits having small loadings in the phenome score (Fig.
+\ref{fig:interpretation}).
 
 \subsubsection{Heritable transcriptomic signatures translated to human
 disease}\label{heritable-transcriptomic-signatures-translated-to-human-disease}
@@ -888,7 +886,8 @@ prove causality. However, the results from CMAP suggest that reversing
 the transcriptomic signatures we found also reverses metabolic disease
 phenotypes, which supports a causal role of the transcript levels in
 driving pathogenesis of metabolic disease. These results thus support
-the mediation model we identified here.
+the mediation model we identified here and its translation to therapies
+in human disease.
 
 \subsection{Discussion}\label{discussion}
 
@@ -896,17 +895,18 @@ Here we investigated the relative contributions of local and distal gene
 regulation in four tissues to heritable variation in traits related to
 metabolic disease in genetically diverse mice. We found that distal
 heritability was positively correlated with trait relatedness, whereas
-high heritability was negatively correlated with trait relatedness. We
-used a novel high-dimensional mediation analysis (HDMA) to identify
-tissue-specific composite transcripts that are predicted to mediate the
-effect of genetic background on metabolic traits. The adipose-derived
-composite transcript robustly predicted body weight in an independent
-cohort of diverse mice with disparate population structure, as well as
-to humans. However, gene expression imputed from local genotype failed
-to predict body weight in the second population. Taken together, these
-results highlight the complexity of gene expression regulation in
-relation to trait heritability and suggest that heritable trait
-variation is mediated primarily through distal gene regulation.
+high local heritability was negatively correlated with trait
+relatedness. We used a novel high-dimensional mediation analysis (HDMA)
+to identify tissue-specific composite transcripts that are predicted to
+mediate the effect of genetic background on metabolic traits. The
+adipose-derived composite transcript robustly predicted body weight in
+an independent cohort of diverse mice with disparate population
+structure. It also predicted MDI in four human cohorts. However, gene
+expression imputed from local genotype failed to predict body weight in
+the second mouse population. Taken together, these results highlight the
+complexity of gene expression regulation in relation to trait
+heritability and suggest that heritable trait variation is mediated
+primarily through distal gene regulation.
 
 Our result that distal regulation accounted for most trait-related gene
 expression differences is consistent with a complex model of genetic
@@ -988,7 +988,7 @@ of analysis, such as drug prioritization using gene set enrichment
 analysis (GSEA) and the CMAP database. In particular, the CMAP analysis
 identified drugs which have been demonstrated to reverse insulin
 resistance and other aspects of metabolic disease. This finding supports
-the hypothtsis that HDMA identified transcripts that truly mediate
+the hypothesis that HDMA identified transcripts that truly mediate
 genetic effects on traits. On its own, HDMA identifies transcriptional
 patterns that are consistent with a mediation model, but alone does not
 prove mediation. However, the finding that these drugs act both on the
@@ -1132,7 +1132,7 @@ or the cellular compartment ontology (CC).
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_OxPhos.png} 
 \caption{The KEGG pathway for oxidative phosphorylation in 
 mice. Each element is colored based on its HDMA loading from adipose
-tissue normalized to run from -1 to 1. Genes highlighted in green had 
+tissue scaled to run from -1 to 1. Genes highlighted in green had 
 negative loadings, and those highlighted in red had positive loadings. 
 Almost the entire pathway was strongly negatively loaded indicating 
 that increased expression of genes involved in oxidative phosphorylation
@@ -1145,11 +1145,11 @@ was associated with reduced MDI.
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_TCA.png} 
 \caption{The KEGG pathway for the TCA (citric acid) cycle in 
 mice. Each element is colored based on its HDMA loading from adipose
-tissue normalized to run from -1 to 1. Genes highlighted in green had 
+tissue scaled to run from -1 to 1. Genes highlighted in green had 
 negative loadings, and those highlighted in red had positive loadings. 
 Many genes in the cycle were strongly negatively loaded indicating 
-that increased expression of genes involved in branched-chain amino acid 
-degradation was associated with reduced MDI.
+that increased expression of genes involved in the TCA cycle was 
+associated with reduced MDI.
 }
 \label{fig:TCA_cycle}
 \end{figure}
@@ -1158,7 +1158,7 @@ degradation was associated with reduced MDI.
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Branched_Chain.png} 
 \caption{The KEGG pathway for branched-chain amino acid degradation in 
 mice. Each element is colored based on its HDMA loading from adipose
-tissue normalized to run from -1 to 1. Genes highlighted in green had 
+tissue scaled to run from -1 to 1. Genes highlighted in green had 
 negative loadings, and those highlighted in red had positive loadings. 
 Almost the entire pathway was strongly negatively loaded indicating 
 that increased expression of genes involved in branched-chain amino acid 
@@ -1177,8 +1177,8 @@ All distributions were skewed toward positive correlations and had
  The relationship between the correlation between measured and 
  imputed expression in the CC-RIX (x-axis) and eQTL LOD score. As 
  expected, imputations are more accurate for transcripts with strong 
- local eQTLs. \textbf{C.} Variance explained by local genotype in the 
- DO and CC-RIX. 
+ local eQTLs. \textbf{C.} Distributions of variance explained by local 
+ genotype across all transcripts in the DO and CC-RIX. 
 }
 \label{fig:cc_imputation}
 \end{figure}
@@ -1231,8 +1231,8 @@ with the most negative results at the top.
 \caption{Regulation of \textit{Nucb2} expression in islet. \textit{Nucb2} 
 is encoded on mouse chromosome 7 at 116.5 Mb (red line). In islets the 
 heritability of \textit{Nucb2} expression levels is 69\% heritable. This 
-LOD score trace shows that there is no local eQTLs at the position of the
-gene, nor any strong distal eQTL anywhere else in the genome. 
+LOD score trace shows that there is no local eQTL at the position of the
+gene, nor any strong distal eQTLs anywhere else in the genome. 
 }
 \label{fig:Nucb2_eqtl}
 \end{figure}
