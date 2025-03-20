@@ -42,7 +42,8 @@ threshold_p <- function(p, thresh = 2.2e-16){
 #paper
 
 #create a vector of reference numbers for each figure
-sup_labels <- c("fig:eQTL", "fig:top_enrich_kegg", "fig:top_enrich_go",
+sup_labels <- c("fig:trait_decomp", "fig:eQTL", "fig:transcript_loading_comparison",
+  "fig:top_enrich_kegg", "fig:top_enrich_go",
   "fig:cc_imputation", "fig:kegg_highlights", "fig:Nucb2_eqtl")
 fig.counter <- rep(0, length(sup_labels))
 names(fig.counter)  <- sup_labels
@@ -263,24 +264,27 @@ overall body weight, glucose homeostasis, and pancreatic function.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig1_trait_overview.pdf} 
-\caption{Clinical overview. \textbf{A.} Distributions of 
-final body weight in the diversity outbred mice. Sex is indicated by 
-color. The average B6 male and female adult weights at 24 weeks of 
+\caption{ Clinical overview. \textbf{A.} Distributions of final body 
+weight in the diversity outbred mice. Sex is indicated by color. 
+The average B6 male and female adult weights at 24 weeks of 
 age are indicated by blue and green bars on the x-axis. \textbf{B.} 
 The distribution of final fasting glucose across the population split 
-by sex. Normal, pre-diabetic, and diabetic fasting glucose levels 
-for mice are shown by colored bars along the x-axis. \textbf{C.} 
-Males had higher fasting blood glucose on average than females 
+by sex. Normal, pre-diabetic, and diabetic fasting glucose levels for 
+mice are shown by colored bars along the x-axis. \textbf{C.} Males 
+had higher fasting blood glucose on average than females 
 ($p = 9.1\times10^{-15}$). \textbf{D.} The relationship between 
 food consumption and body weight for both sexes. \textbf{E.} 
 Relationship between body weight and fasting glucose for both 
-sexes. \textbf{F.} Heritability estimates for each physiological 
-trait. Bars show standard error of the estimate. \textbf{G.} 
-Correlation structure between pairs of physiological traits.
-BMD - bone mineral density, WPIC - whole pancreas insulin content, 
-Glu tAUC - glucose total area under the curve, HOMA IR - homeostatic 
-measurement of insulin resistance, HOMA B - homeostatic measure of 
-beta cell health, VLDL - very low-density lipoprotein,
+sexes. \textbf{F.} Heritability estimates for each physiological trait. 
+Bars show standard error of the estimate. \textbf{G.} Correlation 
+structure between pairs of physiological traits. The lower triangle 
+shows Pearson correlation coefficients between pairs of traits (r). 
+The upper triangle shows the Pearson correlation coefficient (r) 
+between LOD traces of pairs of traits, and diagonal shows the 
+estimated heritability of each trait. BMD - bone mineral density,
+WPIC - whole pancreas insulin content, Glu tAUC - glucose total area under 
+the curve, HOMA IR - homeostatic measurement of insulin resistance, HOMA B - 
+homeostatic measure of beta cell health, VLDL - very low-density lipoprotein,
 LDL - low-density lipoprotein, IDL - intermediate density lipoprotein, 
 HDL - high-density lipoprotein, TG - triglyceride.
 }
@@ -301,45 +305,46 @@ fig.counter <- ref_fig(fig.counter, fig.label)
 fig.eqtl.label <- fig.counter[fig.label]
 ```
 
-To comprehensively assess the genetic control of gene expression
-in metabolic disease we measured overall gene expression via 
-bulk RNA-Seq in adipose, islet, liver, and skeletal muscle in 
-the DO cohort (Supp. Fig. \ref{fig:eQTL}). We performed eQTL 
-analysis using R/qtl2 \cite{pmid30591514} (Methods) and identified 
-both local and distal eQTLs for transcripts in each of the four 
-tissues (Supp. Fig. \ref{fig:eQTL}B-E). 
-Significant local eQTLs far outnumbered distal eQTLs 
-(Supp. Fig. \ref{fig:eQTL}F) and tended to be shared across 
-tissues (Supp. Fig. \ref{fig:eQTL}G) whereas the few 
-significant distal eQTLs we identified tended to be 
-tissue-specific (Supp. Fig. \ref{fig:eQTL}H)
+It is widely assumed that variation in traits is mediated through local
+regulation of gene expression. To test this assumption, we measured 
+transcriptome-wide gene expression in four tissues--adipose, liver, 
+pancreatic islet, and skeletal muscle--in the DO cohort. (Basic 
+results from a standard eQTL analysis \cite{pmid30591514} 
+(Methods) are available in Supp. Fig. \ref{fig:eQTL}). We estimated 
+the local genetic contribution to each transcript as the variance 
+explained by the haplotype probabilities at the genetic marker closest 
+to the gene transcription start site. We estimated the distal 
+heritability as the heritability of the residuals after local 
+haplotype had been accounted for (Methods). Importantly, this 
+estimate was not based on distal eQTL, but rather the unlocalized 
+contribution of the genome after removing the local genetic effect.
 
-We estimated the heritability of each transcript in terms of 
-local and all non-local (distal) genetic factors (Methods). 
-Overall, local and distal genetic factors contributed 
-approximately equally to transcript abundance. In all 
-tissues, both local and distal factors explained between 
-`r min.herit` and `r max.herit`\% of the variance in the 
-median transcript (Fig, \ref{fig:motivation}A). 
+Overall, local and distal genetic factors contributed approximately 
+equally to transcript abundance. In all tissues, both local and 
+distal factors explained between `r min.herit` and `r max.herit`\% of 
+the variance in the median transcript (Fig, \ref{fig:motivation}A). 
 
-The equal contribution of local and distal genetic 
-variants to the heritability of transcript abundance
-contrasts with findings in humans in which local 
-variants have been found to explain 20-30\%
-of total heritability, while distal variants explain
-the remaining 70-80%\cite{pmid31558840, pmid21383966}. 
-This discrepancy may arise due to the high degree of 
-linkage disequilibrium in the DO mice compared to human 
-populations. Each genetic marker in the mice captures 
-information from a larger genomic region than 
-each genetic marker in human populations, and thus may 
-capture more local regulatory variants than SNPs capture 
-in humans. It has been found that transcripts 
-with muliple local eQTL have higher local heritability 
-than transcripts with single local eQTL\cite{pmid25010687}. 
-Because of the high diversity in the DO and the high rates
-of linkage disequilibrium, it is possible that there are 
-more local variants regulating transcription creating a 
+The 50\% contribution of local genetic variation to transcript 
+abundance contrasts with findings in humans in which local 
+variants have been found to explain only 20-30\% of total 
+heritability, while distal effects explain the remaining 
+70-80%\cite{pmid31558840, pmid21383966}. This discrepancy may 
+arise due to the high degree of linkage disequilibrium in the DO 
+mice compared to human populations and to the high degree of 
+confidence with which we can estimate ancestral haplotypes in this 
+population. At each position in the mice we can estimate ancestral
+haplotype with a high degree of accuracy. Haplotype at any given 
+genetic marker captures genomic information from a relatively large
+genomic region surrounding each marker. In contrast, there is a much
+higher degree of recombination in human populations and ancestral 
+haplotypes are more numerous and more difficult to estimate than 
+in the mice. Thus in the mice, each marker may capture more local 
+regulatory variation than SNPs or estimated haplotypes capture in 
+humans. It has been found that transcripts with muliple local eQTL 
+have higher local heritability than transcripts with single local 
+eQTL\cite{pmid25010687}. Because of the high diversity in the DO 
+and the high rates of linkage disequilibrium, it is possible that 
+there are more local variants regulating transcription creating a 
 proportionally larger effect of local regulation.
 
 \begin{figure}[ht!]
@@ -348,8 +353,7 @@ proportionally larger effect of local regulation.
 \textbf{A.} Distributions of local and distal heritability 
 of transcripts across the four tissues. Overall local and 
 distal factors contributed equally to transcript heritability. 
-Arrows indicate the median of each distribution. The 
-relationship between (\textbf{B.}) local and (\textbf{C.}) 
+The relationship between (\textbf{B.}) local and (\textbf{C.}) 
 distal heritability and trait relevance across all four 
 tissues. Here trait relevance is defined as the maximum 
 correlation between the transcript and all traits. The upper 
@@ -362,8 +366,8 @@ high distal heritability.}
 \label{fig:motivation}
 \end{figure}
 
-To assess the importance of genetic regulation of transcript levels 
-to clinical traits, we compared the local and distal 
+To assess the importance of genetic regulation of transcript 
+levels to clinical traits, we compared the local and distal 
 heritabilities of transcripts to their trait relevance.
 We defined trait relevance for a transcript as its maximum
 absolute Spearman correlation coefficient ($\rho$) across all 
@@ -377,7 +381,7 @@ with trait relevance (Fig. \ref{fig:motivation}C). That is,
 transcripts that were more highly correlated with the measured 
 traits tended to be distally, rather than locally, heritable. 
 Importantly, this pattern was consistent across all tissues. 
-This finding is consistent with previous observations that 
+This finding is also consistent with previous observations that 
 transcripts with low local heritability explain more 
 expression-mediated disease heritability than transcripts with 
 high local heritability \cite{pmid32424349}. However, the positive 
@@ -512,21 +516,24 @@ cholesterol measurements.
 \includegraphics[width=\textwidth]{Figures/Fig4_interpretation.pdf} 
 \caption{Interpretation of loadings. \textbf{A.} Loadings across traits. 
 Body weight and insulin resistance contributed the most to the composite 
-trait. \textbf{B.} Phenotype scores (MDI) across individuals. Individuals with 
-large positive MDI had higher body weight and insulin 
-resistance than average. Individuals with large negative MDI had 
-lower body weight and insulin resistance than average. 
-\textbf{C.} Distribution of transcript loadings in adipose tissue. 
-For transcripts with large positive loadings, higher expression was 
-associated with higher phenotype scores. For transcripts with large 
-negative loadings, higher expression was associated with lower phenotype 
-scores. \textbf{D.} Distributions of loadings across tissues compared 
-to null distributions. Shaded areas represent loadings that were more 
-extreme than the null distribution. Numbers indicate how many transcripts 
-had loadings above and below the extremes of the null. Transcripts in 
-adipose tissue had the most extreme loadings indicating that transcripts 
-in adipose tissue were the best mediators of the genetic effects on body 
-weight and insulin resistance.
+trait. \textbf{B.} Phenotype scores across individuals. Individuals with large 
+positive phenotype scores had higher body weight and insulin resistance 
+than average. Individuals with large negative phenotype scores had lower 
+body weight and insulin resistance than average. \textbf{C.} Distribution of 
+transcript loadings in adipose tissue. For transcripts with large positive 
+loadings, higher expression was associated with higher phenotype scores. 
+For transcripts with large negative loadings, higher expression was associated 
+with lower phenotype scores. \textbf{D.} Distributions of loadings across 
+tissues compared to null distributions. Shaded areas represent loadings that 
+were more extreme than the null distribution. Numbers indicate how many 
+transcripts had loadings above and below the extremes of the null. Transcripts 
+in adipose tissue had the most extreme loadings indicating that transcripts in 
+adipose tissue were the best mediators of the genetic effects on body weight 
+and insulin resistance. \textbf{E.} Scatter plots showing correlations between 
+composite vectors for the genome ($G_C$), the transcriptome ($T_C$), and the 
+phenome ($P_C$). The $G_C$ - $T_C$ correlation is high, the $T_C$ - $P_C$ 
+correlation is high, and there is no significant correlation between $G_C$ 
+and $P_C$. This correlation structure is consistent with perfect mediation.
 }
 \label{fig:interpretation}
 \end{figure}
@@ -535,15 +542,32 @@ weight and insulin resistance.
 
 ### High-loading transcripts had low local heritability, high distal heritability, and were linked mechanistically to obesity
 
+
+```{r, echo = FALSE}
+#in the paragraph before a supplemental figure is referenced,
+#find its number. The figure counter can be observed at the 
+#end to verify the order that the figures should be put in,
+#and to see if any figures have not been referenced in the 
+#test
+fig.label <- "fig:transcript_loading_comparison"
+fig.counter <- ref_fig(fig.counter, fig.label)
+overlap.dist.label <- fig.counter[fig.label]
+```
+
 We interpreted large loadings onto transcripts as indicating
 strong mediation of the effect of genetics on MDI. Large positive 
 loadings indicate that higher expression was associated with a 
 higher MDI (i.e. higher risk of obesity and metabolic disease 
-on the HFHS diet) (Fig. \ref{fig:interpretation}C). 
+on the HFHS diet) (Fig. \ref{fig:interpretation}C-D). 
 Conversely, large negative loadings indicate that high
 expression of these transcripts was associated with a 
 lower MDI (i.e. lower risk of obesity and 
-metabolic disease on the HFHS diet) (Fig. \ref{fig:interpretation}C). 
+metabolic disease on the HFHS diet) (Fig. \ref{fig:interpretation}C-D). 
+Fig. \ref{fig:interpretation}D compares the observed transcript
+loading distributions to null distributions and indicates how many
+transcripts in each tissue had large positive and negative loadings.
+A direct comparison of the tissues can be seen in Supp. Fig. 
+\ref{fig:transcript_loading_comparison}.
 We used gene set enrichment analysis (GSEA) \cite{fgsea, 
 pmid16199517} to look for biological processes and pathways 
 that were enriched at the top and bottom of this list (Methods). 
@@ -988,7 +1012,7 @@ should be no residual correlation between the genome and the phenome.
 Here, we were able to fit this model and identified a composite transcript
 that, when taken into account, left no residual correlation between the 
 composite genome and composite phenome scores (Fig. \ref{fig:workflow}A,
-Supp. Fig \ref{fig:composite_cor}).
+Supp. Fig \ref{fig:interpretation}E).
 
 Unlike in the omnigenic model, we did not
 observe a clear demarcation between the core and peripheral genes in 
@@ -1128,34 +1152,37 @@ samples from the four different tissues clustered by tissue.
 \textbf{B.-E.} eQTL maps are shown for each tissue. The $x$-axis 
 shows the position of the mapped eQTL, and the $y$-axis shows the 
 physical position of the gene encoding each mapped transcript. 
-Each dot represents an eQTL with a minimum LOD score of 8. The dots 
-on the diagonal are locally regulated eQTL for which the mapped eQTL 
-is at the within 4Mb of the encoding gene. Dots off the diagonal are 
-distally regulated eQTL for which the mapped eQTL is distant from the 
-gene encoding the transcript. \textbf{F.} Comparison of the total number 
-of local and distal eQTL with a minimum LOD score of 8 in each tissue. 
-All tissues have comparable numbers of eQTL. Local eQTLs are much more 
-numerous than distal eQTL. \textbf{G.} Counts of transcripts with local 
-eQTL shared across multiple tissues. The majority of local eQTLs were 
-shared across all four tissues. \textbf{H.} Counts of transcripts with 
-distal eQTL shared across multiple tissues. The majority of distal eQTL 
-were tissue-specific and not shared across multiple tissues. For both G 
-and H, eQTL for a given transcript were considered shared in two tissues 
-if they were within 4Mb of each other. Colored bars indicate the counts 
-for individual tissues for easy of visualization.
+Each dot represents an eQTL with a minimum LOD score of 8, which 
+represents a genome-wide permutation-based threshold of p < 0.01. The 
+dots on the diagonal are locally regulated eQTL for which the mapped 
+eQTL is at the within 4Mb of the encoding gene. Dots off the diagonal 
+are distally regulated eQTL for which the mapped eQTL is distant from 
+the gene encoding the transcript. \textbf{F.} Comparison of the total 
+number of local and distal eQTL with a minimum LOD score of 8 in each 
+tissue. All tissues have comparable numbers of eQTL. Local eQTLs are 
+much more numerous than distal eQTL. \textbf{G.} Counts of transcripts 
+with local eQTL shared across multiple tissues. The majority of local 
+eQTLs were shared across all four tissues. \textbf{H.} Counts of 
+transcripts with distal eQTL shared across multiple tissues. The majority 
+of distal eQTL were tissue-specific and not shared across multiple tissues. 
+For both G and H, eQTL for a given transcript were considered shared in two 
+tissues if they were within 4Mb of each other. Colored bars indicate the 
+counts for individual tissues for easy of visualization.
 }
 \label{fig:eQTL}
 \end{figure}
 
 \begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_Composite_Vector_Correlations.pdf} 
-\caption{Scatter plots showing correlations between composite vectors 
-for the genome ($G_C$), the transcriptome ($T_C$), and the phenome ($P_C$).
-The $G_C$ - $T_C$ correlation is high, the $T_C$ - $P_C$ correlation is high,
-and there is no significant correlation between $G_C$ and $P_C$. This correlation
-structure is consistent with perfect mediation.
+\includegraphics[width=\textwidth]{Figures/Supp_Fig_transcript_load_comparison.pdf} 
+\caption{Direct comparisons of transcript loadings across tissues. \textbf{A.}
+Distributions of transcript loadings are shown as density curves and are 
+differentially colored to indicate tissue. Transcripts in adipose tissue had 
+both the largest positive and negative loadings. \textbf{B.} Direct comparison
+of absolute values of transcript loadings across tissues. Transcripts in adipose
+tissue had the largest loadings overall, while those in skeletal muscle had the
+smallest.
 }
-\label{fig:composite_cor}
+\label{fig:transcript_loading_comparison}
 \end{figure}
 
 \begin{figure}[ht!]
