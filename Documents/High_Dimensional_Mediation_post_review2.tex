@@ -333,29 +333,27 @@ local genetic effect.
 Overall, local and distal genetic factors contributed approximately
 equally to transcript abundance. In all tissues, both local and distal
 factors explained between 8 and 17\% of the variance in the median
-transcript (Fig, \ref{fig:motivation}A).
-
-The 50\% contribution of local genetic variation to transcript abundance
-contrasts with findings in humans in which local variants have been
-found to explain only 20-30\% of total heritability, while distal
-effects explain the remaining 70-80\%\cite{pmid31558840, pmid21383966}.
-This discrepancy may arise due to the high degree of linkage
-disequilibrium in the DO mice compared to human populations and to the
-high degree of confidence with which we can estimate ancestral
-haplotypes in this population. At each position in the mice we can
-estimate ancestral haplotype with a high degree of accuracy. Haplotype
-at any given genetic marker captures genomic information from a
-relatively large genomic region surrounding each marker. In contrast,
-there is a much higher degree of recombination in human populations and
-ancestral haplotypes are more numerous and more difficult to estimate
-than in the mice. Thus in the mice, each marker may capture more local
-regulatory variation than SNPs or estimated haplotypes capture in
-humans. It has been found that transcripts with muliple local eQTL have
-higher local heritability than transcripts with single local
-eQTL\cite{pmid25010687}. Because of the high diversity in the DO and the
-high rates of linkage disequilibrium, it is possible that there are more
-local variants regulating transcription creating a proportionally larger
-effect of local regulation.
+transcript (Fig, \ref{fig:motivation}A). This 50\% contribution of local
+genetic variation to transcript abundance contrasts with findings in
+humans in which local variants have been found to explain only 20-30\%
+of total heritability, while distal effects explain the remaining
+70-80\%\cite{pmid31558840, pmid21383966}. This discrepancy may arise due
+to the high degree of linkage disequilibrium in the DO mice compared to
+human populations and to the high degree of confidence with which we can
+estimate ancestral haplotypes in this population. At each position in
+the mice we can estimate ancestral haplotype with a high degree of
+accuracy. Haplotype at any given genetic marker captures genomic
+information from a relatively large genomic region surrounding each
+marker. In contrast, there is a much higher degree of recombination in
+human populations and ancestral haplotypes are more numerous and more
+difficult to estimate than in the mice. Thus in the mice, each marker
+may capture more local regulatory variation than SNPs or estimated
+haplotypes capture in humans. It has been found that transcripts with
+muliple local eQTL have higher local heritability than transcripts with
+single local eQTL\cite{pmid25010687}. Because of the high diversity in
+the DO and the high rates of linkage disequilibrium, it is possible that
+there are more local variants regulating transcription creating a
+proportionally larger effect of local regulation.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Fig2_motivation.pdf} 
@@ -419,7 +417,7 @@ to kernel matrices \(G_K\), \(T_K\) and \(P_K\) respectively, which each
 have the dimensions \(n\) by \(n\) where \(n\) is the number of
 individuals (Methods). These kernel matrices describe the relationships
 among the individual mice in genome space, transcriptome space, and
-phenome space and and ensure that these three omic spaces have the same
+phenome space and ensure that these three omic spaces have the same
 dimensions, and thus the same weight in the analysis. If not
 dimension-reduced, the transcriptome would outweigh the phenome in the
 model. We then projected these \(n \times n\)-dimensional kernel
@@ -434,23 +432,31 @@ available in the Methods.
 
 \begin{figure}[ht!]
 \includegraphics[width=5in]{Figures/Fig3_workflow.pdf} 
-\caption{High-dimensional mediation. \textbf{A.} Workflow indicating 
-major steps of high-dimensional mediation. The genotype, transcriptome, 
-and phenotype matrices were independently normalized and converted to 
-kernel matrices representing the pairwise relationships between 
-individuals for each data modality ($G_K$ = genome kernel, $T_K$ = 
-transcriptome kernel; $P_K$ = phenome kernel). 
-High-dimensional mediation was applied to these matrices to maximize the 
-direct path $G \rightarrow T \rightarrow P$, the mediating pathway (arrows), 
-while simultaneously minimizing the direct $G \rightarrow P$ pathway (dotted 
-line). The composite vectors that resulted from high-dimensional mediation were 
-$G_C$, $T_C$, and $P_C$. The partial correlations $\rho$ between these vectors 
-indicated perfect mediation. Transcript and trait loadings were calculated 
-as described in the Methods. \textbf{B.} The null distribution of the path 
-coefficient derived from 10,000 permutations compared to the observed path 
-coefficient (red line). \textbf{C.} The null distribution of the $G_C$-$T_C$ 
-correlation vs. the $T_C$-$P_C$ correlation compared with the observed value 
-(red dot).
+\caption{High-dimensional mediation. \textbf{A.} Workflow 
+indicating major steps of high-dimensional mediation. The 
+genotype, transcriptome, and phenotype matrices were 
+kernelized to yield single matrices representing the 
+relationships between all individuals for each data modality 
+($G_K$ = genome kernel, $T_K$ = transcriptome kernel; 
+$P_K$ = phenome kernel). High-dimensional mediation 
+was applied to these matrices to maximize the direct path 
+$G \rightarrow T \rightarrow P$, the mediating pathway 
+(arrows), while simultaneously minimizing the direct $G 
+\rightarrow P$ pathway (dotted line). The composite 
+vectors that resulted from high-dimensional mediation 
+were $G_c$, $T_C$, and $P_C$. The partial correlations 
+$\rho$ between these vectors indicated perfect mediation. 
+Transcript and trait loadings were calculated as described 
+in the methods. \textbf{B.} The null distribution of the path 
+coefficient derived from 10,000 permutations. The observed model
+(red) is compared to models derived from exclusively distal 
+(gray) or local genetic effects (brown). The similarity of 
+the observed and distal models indicates the full model is 
+dominated by distal genetic effects. \textbf{C.} 
+The null distribution of the $G_C$-$T_C$ correlation vs. 
+the $T_C$-$P_C$ correlation. Comparisons are shown 
+to the observed values (red), and those derived from the 
+distal-only model (gray) and the local-only model (brown).
 }
 \label{fig:workflow}
 \end{figure}
@@ -488,7 +494,7 @@ whether, given a random transcriptome, HDMA would overfit and identify
 apparently mediating transcriptomic signatures in random data. The null
 distribution of the path coefficient is shown in Fig.
 \ref{fig:workflow}B, and the observed path coefficient from the original
-data is indicated by a red line. The observed path coefficient was well
+data is indicated by a red arrow. The observed path coefficient was well
 outside the null distribution generated by permutations
 (\(p < 10^{-16}\)). Fig. \ref{fig:workflow}C illustrates this
 observation in more detail. Although we identified high correlations
@@ -498,10 +504,37 @@ could not be maximized simultaneously in the null data. In contrast, the
 red dot shows that in the real data both the \(G_C\)-\(T_C\) correlation
 and the \(T_C\)-\(P_C\) correlation could be maximized simultaneously
 suggesting that the path from genotype to phenotype through the
-transcriptome is highly non-trivial and identifiable in this case. These
-results suggest that these composite vectors represent genetically
-determined variation in phenotype that is mediated through genetically
-determined variation in transcription.
+transcriptome is highly non-trivial and identifiable in this case.
+
+To test whether the presence of local eQTLs affected the result, we
+generated two additional transcriptomic kernel matrices. To generate a
+``distal kernel'' we regressed out the effect of local haplotype from
+each transcript and calculated the kernel from only distally regulated
+transcription. We generated a ``local kernel'' using only locally
+determined gene expression and a ``distal kernel'' using only distally
+determined gene expression, i.e.~the effects of local haplotype were
+regressed out. The path coefficient identified using the local kernel
+was not significantly different from the null (Fig.
+\ref{fig:workflow}B), suggesting that locally determined gene expression
+does not mediate the effects of the genome on the phenome. In contrast,
+the path coefficient identified using the distal kernel, was highly
+significant and indistinguishable from that identified using the full
+transcriptome.
+
+Further, the \(G_C\)-\(T_C\) and \(T_C\)-\(P_C\) correlations derived
+from the distal kernal were indistinguishable from those derived from
+the original transcriptomic kernel. In contrast, the \(G_C\)-\(T_C\)
+correlation derived with the local kernel was extremely high, reflecting
+the fact that the local transcriptomic kernel was derived directly from
+local haplotypes. The \(T_C\)-\(P_C\) correlation, however, was very low
+(0.14), suggesting that the these locally derived transcripts were not
+highly related to phenotype. In other words, mice that shared many local
+eQTL were not highly similar in trait space. Taken together, these
+results suggest that composite vectors derived from the measured
+transcriptomic kernel represent genetically determined variation in
+phenotype that is mediated through genetically determined variation in
+transcription, and that this genetically deremined variation in
+transcription is largely driven by distal factors.
 
 \subsubsection{Body weight and insulin resistance were highly
 represented in the expression-mediated composite
@@ -1022,8 +1055,7 @@ regulation and the genotype-to-phenotype map, we can gain a new
 perspective on disease pathogenesis and develop actionable hypotheses
 about pathogenic mechanisms and potential treatments.
 
-\subsection{Data and Code
-Availability}\label{data-and-code-availability}
+\subsection{Data Availability}\label{data-availability}
 
 \textbf{DO mice:} Genotypes, phenotypes, and pancreatic islet gene
 expression data were previously published \cite{pmid29567659}. Gene
@@ -1044,6 +1076,8 @@ liver tissue - GSE237743; CC-RIX skeletal muscle - GSE237747. Count
 matrices and phenotype data can be found at Figshare
 \url{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979}
 DOI: 10.6084/m9.figshare.27066979
+
+\subsection{Code Availability}\label{code-availability}
 
 \textbf{Code}: All code used to run the analyses reported here are
 available at Figshare:

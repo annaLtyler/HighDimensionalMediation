@@ -332,7 +332,7 @@ We used R/qtl2 \cite{pmid30591514} to perform eQTL analysis. We used the
 rank normal score data and used sex and DO generation as additive
 covariates. We also used kinship as a random effect. We used
 permutations to find a LOD threshold of 8 for significant QTLs which
-corresponded to a nominal \(p\) value of 0.05.
+corresponded to a genome-wide \(p\) value of 0.01 \cite{pmid7851788}.
 
 To assess whether eQTL were shared across tissues, we considered
 significant eQTLs within 4Mb of each other to be overlapping. We
@@ -609,6 +609,19 @@ called the \textit{kernel trick} and is widely used in the machine
 learning field. The above considerations show that HDMA is kernelizable
 in the same way as other linear models, although the exploration of
 non-linear models is outside the scope of this study.
+
+We generated kernel matrices for the genome, phenome, and transcriptome
+as described above. To test the effect of the presence of local eQTLs on
+mediation, we further generated two additional transcriptomic kernels.
+1) A distal-only kernel was derived first by regressing out the effect
+of local haplotype on all transcripts as described above and generating
+the kernel matrix using the residual expression (distal-affected only).
+2) A local-only kernel was derived by imputing transcription levels for
+each transcript as described above and then calculating the kernel with
+only these locally derived expression values. We replaced the original
+transcriptomic kernel with each of these additional kernels in turn and
+performed HDMA. We calculated the correlation between all pairs of
+latent variables and the path coefficient for each instance.
 
 \subsubsection{Implementation details}\label{implementation-details}
 
