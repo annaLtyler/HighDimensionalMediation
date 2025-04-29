@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: High_Dimensional_Mediation_editorial.aux
+The style file: unsrt.bst
+Database file #1: islet.bib
+You've used 95 entries,
+            1791 wiz_defined-function locations,
+            1005 strings with 33091 characters,
+and the built_in function-call counts, 34312 in all, are:
+= -- 2297
+> -- 3285
+< -- 3
++ -- 1129
+- -- 1034
+* -- 3629
+:= -- 6073
+add.period$ -- 286
+call.type$ -- 95
+change.case$ -- 91
+chr.to.int$ -- 0
+cite$ -- 95
+duplicate$ -- 905
+empty$ -- 2316
+format.name$ -- 1034
+if$ -- 6793
+int.to.chr$ -- 0
+int.to.str$ -- 95
+missing$ -- 93
+newline$ -- 479
+num.names$ -- 95
+pop$ -- 114
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 387
+stack$ -- 0
+substring$ -- 2425
+swap$ -- 159
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 255
+width$ -- 97
+write$ -- 1044

@@ -55,12 +55,20 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 
-\newcommand{\beginsupplement}{%
-        \setcounter{table}{0}
-        \renewcommand{\thetable}{\arabic{table}}%
-        \setcounter{figure}{0}
-        \renewcommand{\thefigure}{\arabic{figure}}%
-     }
+%\newcommand{\beginsupplement}{%
+%        \setcounter{table}{0}
+%        \renewcommand{\thetable}{\arabic{table}}%
+%        \setcounter{figure}{0}
+%        \renewcommand{\thefigure}{\arabic{figure}}%
+%     }
+
+\newcommand{\beginsupplement}{
+	\renewcommand{\figurename}{Supplementary Figure}
+	\setcounter{figure}{0}
+}
+
+\usepackage{xr}
+\externaldocument{Supplementary_File1}
 
 \usepackage{lineno}
 \linenumbers
@@ -291,35 +299,6 @@ measured traits and a broad sampling of multiple heritable aspects of
 metabolic disease including overall body weight, glucose homeostasis,
 and pancreatic function.
 
-\begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Fig1_trait_overview.pdf} 
-\caption{ Clinical overview. \textbf{A.} Distributions of final body 
-weight in the diversity outbred mice. Sex is indicated by color. 
-The average B6 male and female adult weights at 24 weeks of 
-age are indicated by blue and green bars on the x-axis. \textbf{B.} 
-The distribution of final fasting glucose across the population split 
-by sex. Normal, pre-diabetic, and diabetic fasting glucose levels for 
-mice are shown by colored bars along the x-axis. \textbf{C.} Males 
-had higher fasting blood glucose on average than females 
-($p = 9.1\times10^{-15}$). \textbf{D.} The relationship between 
-food consumption and body weight for both sexes. \textbf{E.} 
-Relationship between body weight and fasting glucose for both 
-sexes. \textbf{F.} Heritability estimates for each physiological trait. 
-Bars show standard error of the estimate. \textbf{G.} Correlation 
-structure between pairs of physiological traits. The lower triangle 
-shows Pearson correlation coefficients between pairs of traits (r). 
-The upper triangle shows the Pearson correlation coefficient (r) 
-between LOD traces of pairs of traits, and diagonal shows the 
-estimated heritability of each trait. BMD - bone mineral density,
-WPIC - whole pancreas insulin content, Glu tAUC - glucose total area under 
-the curve, HOMA IR - homeostatic measurement of insulin resistance, HOMA B - 
-homeostatic measure of beta cell health, VLDL - very low-density lipoprotein,
-LDL - low-density lipoprotein, IDL - intermediate density lipoprotein, 
-HDL - high-density lipoprotein, TG - triglyceride.
-}
-\label{fig:trait_overview}
-\end{figure}
-
 \subsubsection{Distal Heritability Correlated with Phenotype
 Relevance}\label{distal-heritability-correlated-with-phenotype-relevance}
 
@@ -361,25 +340,6 @@ single local eQTL\cite{pmid25010687}. Because of the high diversity in
 the DO and the high rates of linkage disequilibrium, it is possible that
 there are more local variants regulating transcription creating a
 proportionally larger effect of local regulation.
-
-\begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Fig2_motivation.pdf} 
-\caption{Transcript heritability and trait relevance. 
-\textbf{A.} Distributions of local and distal heritability 
-of transcripts across the four tissues. Overall local and 
-distal factors contributed equally to transcript heritability. 
-The relationship between (\textbf{B.}) local and (\textbf{C.}) 
-distal heritability and trait relevance across all four 
-tissues. Here trait relevance is defined as the maximum 
-correlation between the transcript and all traits. The upper 
-and lower dashed line in each panel show the 95th and 5th 
-percentile correlation. The solid line shows the mean trait 
-correlation in transcripts with increasing variance explained 
-either locally (B) or distally (C). Transcripts that are highly 
-correlated with traits tended to have low local heritability and 
-high distal heritability.}
-\label{fig:motivation}
-\end{figure}
 
 To assess the importance of genetic regulation of transcript levels to
 clinical traits, we compared the local and distal heritabilities of
@@ -436,37 +396,6 @@ mediation, namely that upon controlling for the transcriptomic score,
 the genome score is uncorrelated to the phenome score. A complete
 mathematical derivation and implementation details for HDMA are
 available in the Methods.
-
-\begin{figure}[ht!]
-\includegraphics[width=5in]{Figures/Fig3_workflow.pdf} 
-\caption{High-dimensional mediation. \textbf{A.} Workflow 
-indicating major steps of high-dimensional mediation. The 
-genotype, transcriptome, and phenotype matrices were 
-kernelized to yield single matrices representing the 
-relationships between all individuals for each data modality 
-($G_K$ = genome kernel, $T_K$ = transcriptome kernel; 
-$P_K$ = phenome kernel). High-dimensional mediation 
-was applied to these matrices to maximize the direct path 
-$G \rightarrow T \rightarrow P$, the mediating pathway 
-(arrows), while simultaneously minimizing the direct $G 
-\rightarrow P$ pathway (dotted line). The composite 
-vectors that resulted from high-dimensional mediation 
-were $G_c$, $T_C$, and $P_C$. The partial correlations 
-$\rho$ between these vectors indicated perfect mediation. 
-Transcript and trait loadings were calculated as described 
-in the methods. \textbf{B.} The null distribution of the path 
-coefficient derived from 10,000 permutations. The observed model
-(red) is compared to models derived from exclusively distal 
-(gray) or local genetic effects (brown). The similarity of 
-the observed and distal models indicates the full model is 
-dominated by distal genetic effects. \textbf{C.} 
-The null distribution of the $G_C$-$T_C$ correlation vs. 
-the $T_C$-$P_C$ correlation. Comparisons are shown 
-to the observed values (red), and those derived from the 
-distal-only model (gray) and the local-only model (brown).
-}
-\label{fig:workflow}
-\end{figure}
 
 Using HDMA we identifed the major axis of variation in the transcriptome
 that was consistent with mediating the effects of the genome on
@@ -565,34 +494,6 @@ interpret the transcriptomic signature identified by HDMA, we are
 explaining primarily the putative transcriptional mediation of body
 weight and insulin resistance, as opposed to cholesterol measurements.
 
-\begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Fig4_interpretation.pdf} 
-\caption{Interpretation of loadings. \textbf{A.} Loadings across traits. 
-Body weight and insulin resistance contributed the most to the composite 
-trait. \textbf{B.} Phenotype scores across individuals. Individuals with large 
-positive phenotype scores had higher body weight and insulin resistance 
-than average. Individuals with large negative phenotype scores had lower 
-body weight and insulin resistance than average. \textbf{C.} Distribution of 
-transcript loadings in adipose tissue. For transcripts with large positive 
-loadings, higher expression was associated with higher phenotype scores. 
-For transcripts with large negative loadings, higher expression was associated 
-with lower phenotype scores. \textbf{D.} Distributions of loadings across 
-tissues compared to null distributions. Shaded areas represent loadings that 
-were more extreme than the null distribution. Numbers indicate how many 
-transcripts had loadings above and below the extremes of the null. Transcripts 
-in adipose tissue had the most extreme loadings indicating that transcripts in 
-adipose tissue were the best mediators of the genetic effects on body weight 
-and insulin resistance. \textbf{E.} Scatter plots showing correlations between 
-composite vectors for the genome ($G_C$), the transcriptome ($T_C$), and the 
-phenome ($P_C$). The $G_C$ - $T_C$ correlation is high, the $T_C$ - $P_C$ 
-correlation is high, and there is no significant correlation between $G_C$ 
-and $P_C$. This correlation structure is consistent with perfect mediation.
-}
-\label{fig:interpretation}
-\end{figure}
-
-\pagebreak
-
 \subsubsection{High-loading transcripts had low local heritability, high
 distal heritability, and were linked mechanistically to
 obesity}\label{high-loading-transcripts-had-low-local-heritability-high-distal-heritability-and-were-linked-mechanistically-to-obesity}
@@ -684,30 +585,6 @@ literature support. They were 2.2 times more likely than TWAS hits and 4
 times more likely than genes with high local heritability to be
 previously associated with obesity or diabetes.
 
-\pagebreak
-
-\begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Fig5_loading_heritability.pdf} 
-\caption{Transcripts with high loadings have high distal heritability 
-and literature support (bolded gene names). Each panel has a bar plot 
-showing the loadings of transcripts selected by different criteria. Bar color indicates the 
-tissue of origin. The heat map shows the local (L - left) and distal 
-(D - right) heritability of each transcript. \textbf{A.} Loadings for 
-the 10 transcripts with the largest positive loadings and the 10 
-transcripts with the largest negative loadings for each tissue. 
-Distal heritability was significantly higher than local heritability 
-(t-test $p < 2.2^{-16}$). \textbf{B.} Loadings of TWAS candidates 
-with the 10 largest positive correlations with traits and the largest 
-negative correlations with traits across all four tissues. Local and 
-distal heritability were not significantly different for this group 
-(t-test $p = 0.77$). \textbf{C.} The transcripts with the largest 
-local heritability (top 20) across all four tissues. Local heritability 
-was significantly higher than distal heritability of these genes (t-test 
-$p < 2.2^{-16}$)
-}
-\label{fig:loading_heritability}
-\end{figure}
-
 \subsubsection{Tissue-specific transriptional programs were associated
 with metabolic
 traits}\label{tissue-specific-transriptional-programs-were-associated-with-metabolic-traits}
@@ -753,20 +630,6 @@ highlight the importance of tissue context when investigating the role
 of heritable transcript variability in driving phenotype. Gene lists for
 all clusters are available in Supplementary File 1.
 
-\begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Fig6_TOA.pdf} 
-\caption{Tissue-specific transcriptional programs were associated 
-with obesity and insulin resistance. \textbf{A} Heat map showing 
-the loadings of all transcripts with loadings greater than 2.5 
-standard deviations from the mean in any tissue. The heat map was 
-clustered using k medoid clustering. Functional enrichments of each 
-cluster are indicated along the left margin. \textbf{B} Loadings for 
-\textit{Pparg} in different tissues. \textbf{C} Local and distal of 
-\textit{Pparg} expression in different tissues.
-}
-\label{fig:toa}
-\end{figure}
-
 \subsubsection{Gene expression, but not local eQTLs, predicted body
 weight in an independent
 population}\label{gene-expression-but-not-local-eqtls-predicted-body-weight-in-an-independent-population}
@@ -789,23 +652,6 @@ observation in the DO that adipose expression was the strongest mediator
 of the genetic effect on MDI. This result also confirms the validity and
 translatability of the transcript loadings and their relationship to
 metabolic disease.
-
-\begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Fig7_CC_Prediction.pdf} 
-\caption{Transcription, but not local genotype, predicts 
-phenotype in the CC-RIX. \textbf{A.} Workflow showing procedure 
-for translating HDMA results to an independent population of mice. 
-\textbf{B.} Relationships between the predicted metabolic disease
-index (MDI) and measured body weight in the CC-RIX. The left column 
-shows the predictions using measured transcripts. The right column 
-shows the prediction using transcript levels imputed from local 
-genotype. Gray boxes indicate measured quantities, and blue boxes 
-indicate calculated quantities. The dots in each panel represent 
-individual CC-RIX strains. The gray lines show the standard deviation 
-on body weight for the strain.
-}
-\label{fig:cc_prediction}
-\end{figure}
 
 The second question related to the source of the relevant variation in
 gene expression. If local regulation was the predominant factor
@@ -852,22 +698,6 @@ genes for other cell types were not statistically different from zero
 (Adipocytes: \(p = 0.08\), Progenitors: \(p = 0.58\), Leukocytes:
 \(p = 0.28\); all Holm-adjusted two-sided empirical p), indicating that
 changes in the abundance of those cell types was not a mediator of MDI.
-
-\begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Fig8_Human_Translation.pdf} 
-\caption{HDMA results translate to humans. \textbf{A.} Distribution of 
-loadings for cell-type-specific transcripts in adipose tissue. \textbf{B.} 
-Distribution of loadings for cell-type-specific transcripts in pancreatic 
-islets. \textbf{C.} Null distributions for the mean loading of 
-randomly selected transcripts in each cell type compared with the observed 
-mean loading of each group of transcripts (red asterisk). \textbf{D.} 
-Predictions of metabolic phenotypes in four adipose transcription data 
-sets downloaded from GEO. In each study the obese/diabetic patients were 
-predicted to have greater MDI than the lean/non-diabetic 
-patients based on the HDMA results from DO mice.
-}
-\label{fig:human_translation}
-\end{figure}
 
 We also compared loadings of cell-type specific transcripts in islet
 (Methods). The mean loadings for alpha-cell specific transcripts were
@@ -1901,6 +1731,11 @@ available at Figshare:
 \url{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979}
 DOI: 10.6084/m9.figshare.27066979
 
+\pagebreak
+
+\bibliographystyle{unsrt}
+\bibliography{islet.bib}
+
 \subsection{Acknowledgements}\label{acknowledgements}
 
 This project was supported by The Jackson Laboratory Cube Initiative, as
@@ -1915,201 +1750,198 @@ Genome Technologies for the RNA sequencing, necropsy services for the
 tissue harvests, and the Center for Biometric Analysis for metabolic
 phenotyping.
 
-\pagebreak
-\beginsupplement
+\subsection{Author Contributions
+Statement}\label{author-contributions-statement}
 
-\subsection{Supplementary Figures}\label{supplementary-figures}
+Conceptualization: J.M.M., A.D.A., N.A.R., G.A.C., G.W.C. Methodology:
+G.A.C., A.D.A., J.M.M., C.N.B., M.P.K. Software: A.L.T., J.M.M., I.G.G.,
+A.S. Formal Analysis: A.L.T., I.G.G., A.S. Investigation: C.N.B., M.G.
+Resources: A.D.A., M.P.K., C.N.B., G.A.C., G.W.C. Data Curation: C.N.B.,
+A.L.T. Writing - Original Draft: A.L.T, J.M.M. Writing - Review and
+Editing: A.L.T., J.M.M, G.A.C, G.W.C., M.P.K., C.N.B. Visualization:
+A.L.T. Supervision: M.J.B., N.A.R., A.D.A., G.A.C., G.W.C. Project
+Administration: M.J.B., C.N.B. Funding acquisition: N.A.R., A.D.A.,
+G.A.C., G.W.C.
+
+\subsection{Competing Interest
+Statement}\label{competing-interest-statement}
+
+The authors declare no competing interests.
+
+\subsection{Figure Legends/Captions}\label{figure-legendscaptions}
 
 \begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_Trait_Decomposition.pdf} 
-\caption{Trait matrix decomposition. \textbf{A} The heat map 
-shows the loadings of each trait onto each principal component 
-of the trait matrix. The bars at the top show the percent variance 
-explained for each principal component. \textbf{B} Traits plotted 
-by the first and second principal components of the trait matrix. 
-This view shows clustering of traits into insulin- and 
-weight-related traits, lipid-related traits, and ex-vivo 
-pancreatic measurements.
+%\includegraphics[width=\textwidth]{Figures/Fig1_trait_overview.pdf} 
+\caption{ Clinical overview. \textbf{A.} Distributions of final body 
+weight in the diversity outbred mice. Sex is indicated by color. 
+The average B6 male and female adult weights at 24 weeks of 
+age are indicated by blue and green bars on the x-axis. \textbf{B.} 
+The distribution of final fasting glucose across the population split 
+by sex. Normal, pre-diabetic, and diabetic fasting glucose levels for 
+mice are shown by colored bars along the x-axis. \textbf{C.} Males 
+had higher fasting blood glucose on average than females 
+($p = 9.1\times10^{-15}$). \textbf{D.} The relationship between 
+food consumption and body weight for both sexes. \textbf{E.} 
+Relationship between body weight and fasting glucose for both 
+sexes. \textbf{F.} Heritability estimates for each physiological trait. 
+Bars show standard error of the estimate. \textbf{G.} Correlation 
+structure between pairs of physiological traits. The lower triangle 
+shows Pearson correlation coefficients between pairs of traits (r). 
+The upper triangle shows the Pearson correlation coefficient (r) 
+between LOD traces of pairs of traits, and diagonal shows the 
+estimated heritability of each trait. BMD - bone mineral density,
+WPIC - whole pancreas insulin content, Glu tAUC - glucose total area under 
+the curve, HOMA IR - homeostatic measurement of insulin resistance, HOMA B - 
+homeostatic measure of beta cell health, VLDL - very low-density lipoprotein,
+LDL - low-density lipoprotein, IDL - intermediate density lipoprotein, 
+HDL - high-density lipoprotein, TG - triglyceride.
 }
-\label{fig:trait_decomp}
+\label{fig:trait_overview}
 \end{figure}
 
 \begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_eQTL.pdf} 
-\caption{Overview of eQTL analysis in DO mice. \textbf{A.} RNA seq 
-samples from the four different tissues clustered by tissue. 
-\textbf{B.-E.} eQTL maps are shown for each tissue. The $x$-axis 
-shows the position of the mapped eQTL, and the $y$-axis shows the 
-physical position of the gene encoding each mapped transcript. 
-Each dot represents an eQTL with a minimum LOD score of 8, which 
-represents a genome-wide permutation-based threshold of p < 0.01. The 
-dots on the diagonal are locally regulated eQTL for which the mapped 
-eQTL is at the within 4Mb of the encoding gene. Dots off the diagonal 
-are distally regulated eQTL for which the mapped eQTL is distant from 
-the gene encoding the transcript. \textbf{F.} Comparison of the total 
-number of local and distal eQTL with a minimum LOD score of 8 in each 
-tissue. All tissues have comparable numbers of eQTL. Local eQTLs are 
-much more numerous than distal eQTL. \textbf{G.} Counts of transcripts 
-with local eQTL shared across multiple tissues. The majority of local 
-eQTLs were shared across all four tissues. \textbf{H.} Counts of 
-transcripts with distal eQTL shared across multiple tissues. The majority 
-of distal eQTL were tissue-specific and not shared across multiple tissues. 
-For both G and H, eQTL for a given transcript were considered shared in two 
-tissues if they were within 4Mb of each other. Colored bars indicate the 
-counts for individual tissues for easy of visualization.
-}
-\label{fig:eQTL}
+%\includegraphics[width=\textwidth]{Figures/Fig2_motivation.pdf} 
+\caption{Transcript heritability and trait relevance. 
+\textbf{A.} Distributions of local and distal heritability 
+of transcripts across the four tissues. Overall local and 
+distal factors contributed equally to transcript heritability. 
+The relationship between (\textbf{B.}) local and (\textbf{C.}) 
+distal heritability and trait relevance across all four 
+tissues. Here trait relevance is defined as the maximum 
+correlation between the transcript and all traits. The upper 
+and lower dashed line in each panel show the 95th and 5th 
+percentile correlation. The solid line shows the mean trait 
+correlation in transcripts with increasing variance explained 
+either locally (B) or distally (C). Transcripts that are highly 
+correlated with traits tended to have low local heritability and 
+high distal heritability.}
+\label{fig:motivation}
 \end{figure}
 
 \begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_transcript_load_comparison.pdf} 
-\caption{Direct comparisons of transcript loadings across tissues. \textbf{A.}
-Distributions of transcript loadings are shown as density curves and are 
-differentially colored to indicate tissue. Transcripts in adipose tissue had 
-both the largest positive and negative loadings. \textbf{B.} Direct comparison
-of absolute values of transcript loadings across tissues. Transcripts in adipose
-tissue had the largest loadings overall, while those in skeletal muscle had the
-smallest.
+%\includegraphics[width=5in]{Figures/Fig3_workflow.pdf} 
+\caption{High-dimensional mediation. \textbf{A.} Workflow 
+indicating major steps of high-dimensional mediation. The 
+genotype, transcriptome, and phenotype matrices were 
+kernelized to yield single matrices representing the 
+relationships between all individuals for each data modality 
+($G_K$ = genome kernel, $T_K$ = transcriptome kernel; 
+$P_K$ = phenome kernel). High-dimensional mediation 
+was applied to these matrices to maximize the direct path 
+$G \rightarrow T \rightarrow P$, the mediating pathway 
+(arrows), while simultaneously minimizing the direct $G 
+\rightarrow P$ pathway (dotted line). The composite 
+vectors that resulted from high-dimensional mediation 
+were $G_c$, $T_C$, and $P_C$. The partial correlations 
+$\rho$ between these vectors indicated perfect mediation. 
+Transcript and trait loadings were calculated as described 
+in the methods. \textbf{B.} The null distribution of the path 
+coefficient derived from 10,000 permutations. The observed model
+(red) is compared to models derived from exclusively distal 
+(gray) or local genetic effects (brown). The similarity of 
+the observed and distal models indicates the full model is 
+dominated by distal genetic effects. \textbf{C.} 
+The null distribution of the $G_C$-$T_C$ correlation vs. 
+the $T_C$-$P_C$ correlation. Comparisons are shown 
+to the observed values (red), and those derived from the 
+distal-only model (gray) and the local-only model (brown).
 }
-\label{fig:transcript_loading_comparison}
+\label{fig:workflow}
 \end{figure}
 
 \begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_enrichments_KEGG.pdf} 
-\caption{Bar plots showing normalized enrichment scores (NES) for KEGG 
-pathways as determined by fast gene score enrichment analysis (fgsea). 
-Only the top 10 positive and top 10 negative scores are shown. Colors 
-indicate tissue. The name beside each bar shows the name of each enriched 
-KEGG pathway.
+%\includegraphics[width=\textwidth]{Figures/Fig4_interpretation.pdf} 
+\caption{Interpretation of loadings. \textbf{A.} Loadings across traits. 
+Body weight and insulin resistance contributed the most to the composite 
+trait. \textbf{B.} Phenotype scores across individuals. Individuals with large 
+positive phenotype scores had higher body weight and insulin resistance 
+than average. Individuals with large negative phenotype scores had lower 
+body weight and insulin resistance than average. \textbf{C.} Distribution of 
+transcript loadings in adipose tissue. For transcripts with large positive 
+loadings, higher expression was associated with higher phenotype scores. 
+For transcripts with large negative loadings, higher expression was associated 
+with lower phenotype scores. \textbf{D.} Distributions of loadings across 
+tissues compared to null distributions. Shaded areas represent loadings that 
+were more extreme than the null distribution. Numbers indicate how many 
+transcripts had loadings above and below the extremes of the null. Transcripts 
+in adipose tissue had the most extreme loadings indicating that transcripts in 
+adipose tissue were the best mediators of the genetic effects on body weight 
+and insulin resistance. \textbf{E.} Scatter plots showing correlations between 
+composite vectors for the genome ($G_C$), the transcriptome ($T_C$), and the 
+phenome ($P_C$). The $G_C$ - $T_C$ correlation is high, the $T_C$ - $P_C$ 
+correlation is high, and there is no significant correlation between $G_C$ 
+and $P_C$. This correlation structure is consistent with perfect mediation.
 }
-\label{fig:top_enrich_kegg}
+\label{fig:interpretation}
 \end{figure}
 
 \begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_enrichments_GO.pdf} 
-\caption{Bar plots showing normalized enrichment scores (NES) for GO 
-terms as determined by fast gene score enrichment analysis (fgsea). 
-Only the top 10 positive and top 10 negative scores are shown. Colors 
-indicate tissue. The name beside each bar shows the name of each enriched 
-GO term. The letters in parentheses indicate whether the term is from the 
-biological process ontology (BP), the molecular function ontology (MF), 
-or the cellular compartment ontology (CC).
+%\includegraphics[width=\textwidth]{Figures/Fig5_loading_heritability.pdf} 
+\caption{Transcripts with high loadings have high distal heritability 
+and literature support (bolded gene names). Each panel has a bar plot 
+showing the loadings of transcripts selected by different criteria. Bar color indicates the 
+tissue of origin. The heat map shows the local (L - left) and distal 
+(D - right) heritability of each transcript. \textbf{A.} Loadings for 
+the 10 transcripts with the largest positive loadings and the 10 
+transcripts with the largest negative loadings for each tissue. 
+Distal heritability was significantly higher than local heritability 
+(t-test $p < 2.2^{-16}$). \textbf{B.} Loadings of TWAS candidates 
+with the 10 largest positive correlations with traits and the largest 
+negative correlations with traits across all four tissues. Local and 
+distal heritability were not significantly different for this group 
+(t-test $p = 0.77$). \textbf{C.} The transcripts with the largest 
+local heritability (top 20) across all four tissues. Local heritability 
+was significantly higher than distal heritability of these genes (t-test 
+$p < 2.2^{-16}$)
 }
-\label{fig:top_enrich_go}
+\label{fig:loading_heritability}
 \end{figure}
 
 \begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_OxPhos.png} 
-\caption{The KEGG pathway for oxidative phosphorylation in 
-mice. Each element is colored based on its HDMA loading from adipose
-tissue scaled to run from -1 to 1. Genes highlighted in green had 
-negative loadings, and those highlighted in red had positive loadings. 
-Almost the entire pathway was strongly negatively loaded indicating 
-that increased expression of genes involved in oxidative phosphorylation
-was associated with reduced MDI.
+%\includegraphics[width=\textwidth]{Figures/Fig6_TOA.pdf} 
+\caption{Tissue-specific transcriptional programs were associated 
+with obesity and insulin resistance. \textbf{A} Heat map showing 
+the loadings of all transcripts with loadings greater than 2.5 
+standard deviations from the mean in any tissue. The heat map was 
+clustered using k medoid clustering. Functional enrichments of each 
+cluster are indicated along the left margin. \textbf{B} Loadings for 
+\textit{Pparg} in different tissues. \textbf{C} Local and distal of 
+\textit{Pparg} expression in different tissues.
 }
-\label{fig:oxPhos}
+\label{fig:toa}
 \end{figure}
 
 \begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_TCA.png} 
-\caption{The KEGG pathway for the TCA (citric acid) cycle in 
-mice. Each element is colored based on its HDMA loading from adipose
-tissue scaled to run from -1 to 1. Genes highlighted in green had 
-negative loadings, and those highlighted in red had positive loadings. 
-Many genes in the cycle were strongly negatively loaded indicating 
-that increased expression of genes involved in the TCA cycle was 
-associated with reduced MDI.
+%\includegraphics[width=\textwidth]{Figures/Fig7_CC_Prediction.pdf} 
+\caption{Transcription, but not local genotype, predicts 
+phenotype in the CC-RIX. \textbf{A.} Workflow showing procedure 
+for translating HDMA results to an independent population of mice. 
+\textbf{B.} Relationships between the predicted metabolic disease
+index (MDI) and measured body weight in the CC-RIX. The left column 
+shows the predictions using measured transcripts. The right column 
+shows the prediction using transcript levels imputed from local 
+genotype. Gray boxes indicate measured quantities, and blue boxes 
+indicate calculated quantities. The dots in each panel represent 
+individual CC-RIX strains. The gray lines show the standard deviation 
+on body weight for the strain.
 }
-\label{fig:TCA_cycle}
+\label{fig:cc_prediction}
 \end{figure}
 
 \begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_Branched_Chain.png} 
-\caption{The KEGG pathway for branched-chain amino acid degradation in 
-mice. Each element is colored based on its HDMA loading from adipose
-tissue scaled to run from -1 to 1. Genes highlighted in green had 
-negative loadings, and those highlighted in red had positive loadings. 
-Almost the entire pathway was strongly negatively loaded indicating 
-that increased expression of genes involved in branched-chain amino acid 
-degradation was associated with reduced MDI.
+%\includegraphics[width=\textwidth]{Figures/Fig8_Human_Translation.pdf} 
+\caption{HDMA results translate to humans. \textbf{A.} Distribution of 
+loadings for cell-type-specific transcripts in adipose tissue. \textbf{B.} 
+Distribution of loadings for cell-type-specific transcripts in pancreatic 
+islets. \textbf{C.} Null distributions for the mean loading of 
+randomly selected transcripts in each cell type compared with the observed 
+mean loading of each group of transcripts (red asterisk). \textbf{D.} 
+Predictions of metabolic phenotypes in four adipose transcription data 
+sets downloaded from GEO. In each study the obese/diabetic patients were 
+predicted to have greater MDI than the lean/non-diabetic 
+patients based on the HDMA results from DO mice.
 }
-\label{fig:bcaa_degrataion}
+\label{fig:human_translation}
 \end{figure}
-
-\begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_CC-RIX_Imputation.pdf} 
-\caption{Validation of transcript imputation in the CC-RIX. \textbf{A.} 
-Distributions of correlations between imputed and measured transcripts 
-in the CC-RIX. The mean of each distribution is shown by the red line. 
-All distributions were skewed toward positive correlations and had
- positive means near a Pearson correlation (r) of 0.5. \textbf{B.} 
- The relationship between the correlation between measured and 
- imputed expression in the CC-RIX (x-axis) and eQTL LOD score. As 
- expected, imputations are more accurate for transcripts with strong 
- local eQTLs. \textbf{C.} Distributions of variance explained by local 
- genotype across all transcripts in the DO and CC-RIX. 
-}
-\label{fig:cc_imputation}
-\end{figure}
-
-\begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_Adipose_all_cell_types.png} 
-\caption{CMAP results using the \textit{adipose} tissue composite transcript as 
-an input. Table includes results from \textit{all cell types} sorted with a 
-$-log_{10}(q) > 15$. The results are sorted by the correlation of the 
-query to the input with the most negative results at the top.
-}
-\label{fig:clue_adipose_all}
-\end{figure}
-
-\begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_Islet_all_cell_types.png} 
-\caption{CMAP results using the \textit{pancreatic islet} tissue composite transcript 
-as an input. Table includes results from \textit{all cell types} sorted with a 
-$-log_{10}(q) > 15$. The results are sorted by the correlation of the 
-query to the input with the most negative results at the top.
-}
-\label{fig:clue_islet_all}
-\end{figure}
-
-\begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_Adipose_ASC.png} 
-\caption{CMAP results using the \textit{adipose} tissue composite 
-transcript as an input. Table includes the top 30 results derived
-\textit{only from normal adipocytes} (ASC) regardless of significance. 
-The results are sorted by the correlation of the query to the input 
-with the most negative results at the top.
-}
-\label{fig:clue_adipose_asc}
-\end{figure}
-
-\begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supp_Fig_Islet_YAPC.png} 
-\caption{CMAP results using the \textit{pancreatic islet} composite 
-transcript as an input. Table includes the top 30 results derived
-\textit{only from YAPC cells}, which are derived from pancreatic
-carcinoma cells. Results are shown regardless of significance and
-are sorted by the correlation of the query to the input 
-with the most negative results at the top.
-}
-\label{fig:clue_islet_yapc}
-\end{figure}
-
-\begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supplemental_FigX_Nucb2_eQTL.pdf} 
-\caption{Regulation of \textit{Nucb2} expression in islet. \textit{Nucb2} 
-is encoded on mouse chromosome 7 at 116.5 Mb (red line). In islets the 
-heritability of \textit{Nucb2} expression levels is 69\% heritable. This 
-LOD score trace shows that there is no local eQTL at the position of the
-gene, nor any strong distal eQTLs anywhere else in the genome. 
-}
-\label{fig:Nucb2_eqtl}
-\end{figure}
-
-\clearpage
-
-\bibliographystyle{unsrt}
-\bibliography{islet.bib}
 
 \end{document}

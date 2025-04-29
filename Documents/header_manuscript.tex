@@ -1,0 +1,32 @@
+
+%\newcommand{\beginsupplement}{%
+%        \setcounter{table}{0}
+%        \renewcommand{\thetable}{\arabic{table}}%
+%        \setcounter{figure}{0}
+%        \renewcommand{\thefigure}{\arabic{figure}}%
+%     }
+
+\newcommand{\beginsupplement}{
+	\renewcommand{\figurename}{Supplementary Figure}
+	\setcounter{figure}{0}
+}
+
+\usepackage{xr}
+\externaldocument{Supplementary_File1}
+
+\usepackage{lineno}
+\linenumbers
+
+\usepackage[compress, super]{natbib}
+
+\usepackage{setspace} \doublespacing
+
+\usepackage{siunitx}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}
