@@ -7,7 +7,7 @@ output:
       in_header: header_supplement.tex
 ---
 
-```{r keep_aux}
+```{r keep_aux, echo = FALSE}
 #set options to keep the auxiliary files. 
 #we use these to reference the figure labels
 #from the manuscript file
