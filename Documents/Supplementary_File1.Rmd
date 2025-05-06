@@ -156,8 +156,8 @@ All distributions were skewed toward positive correlations and had
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Adipose_all_cell_types.png} 
-\caption{CMAP results using the \textit{adipose} tissue composite transcript as 
-an input. Table includes results from \textit{all cell types} sorted with a 
+\caption{CMAP results using the adipose tissue composite transcript as 
+an input. Table includes results from all cell types sorted with a 
 $-log_{10}(q) > 15$. The results are sorted by the correlation of the 
 query to the input with the most negative results at the top.
 }
@@ -167,8 +167,8 @@ query to the input with the most negative results at the top.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Islet_all_cell_types.png} 
-\caption{CMAP results using the \textit{pancreatic islet} tissue composite transcript 
-as an input. Table includes results from \textit{all cell types} sorted with a 
+\caption{CMAP results using the pancreatic islet tissue composite transcript 
+as an input. Table includes results from all cell types sorted with a 
 $-log_{10}(q) > 15$. The results are sorted by the correlation of the 
 query to the input with the most negative results at the top.
 }
@@ -177,9 +177,9 @@ query to the input with the most negative results at the top.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Adipose_ASC.png} 
-\caption{CMAP results using the \textit{adipose} tissue composite 
+\caption{CMAP results using the adipose tissue composite 
 transcript as an input. Table includes the top 30 results derived
-\textit{only from normal adipocytes} (ASC) regardless of significance. 
+only from normal adipocytes (ASC) regardless of significance. 
 The results are sorted by the correlation of the query to the input 
 with the most negative results at the top.
 }
@@ -188,9 +188,9 @@ with the most negative results at the top.
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Islet_YAPC.png} 
-\caption{CMAP results using the \textit{pancreatic islet} composite 
+\caption{CMAP results using the pancreatic islet composite 
 transcript as an input. Table includes the top 30 results derived
-\textit{only from YAPC cells}, which are derived from pancreatic
+only from YAPC cells, which are derived from pancreatic
 carcinoma cells. Results are shown regardless of significance and
 are sorted by the correlation of the query to the input 
 with the most negative results at the top.

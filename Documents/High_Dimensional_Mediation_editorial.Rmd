@@ -742,15 +742,15 @@ significantly greater than 0 ($p = 0.002$), while the mean loadings
 for delta-  (Holm-adjusted two-sided empirial $p < 2\times10^{-16}$) 
 and endothelial-cell 
 (Holm-adjusted two-sided empirical $p = 0.01$) specific genes were 
-significantly less than 0 (Fig. \ref{fig:human_translation}B). These results suggest 
-that mice with higher MDI inherited an altered cell composition that
-predisposed them to metabolic disease, or that these compositional 
-changes were induced by the HFHS diet in a heritable way. In either 
-case, these results support the hypothesis that alterations in islet 
-composition drive variation in MDI. Notably, the mean loading for 
-pancreatic beta cell marker transcripts was not significantly different 
-from zero (Holm-adjusted two-sided empirical $p = 0.95$). We stress 
-that this is not necessarily 
+significantly less than 0 (Fig. \ref{fig:human_translation}B). These 
+results suggest that mice with higher MDI inherited an altered cell 
+composition that predisposed them to metabolic disease, or that these 
+compositional changes were induced by the HFHS diet in a heritable way. 
+In either case, these results support the hypothesis that alterations 
+in islet composition drive variation in MDI. Notably, the mean loading 
+for pancreatic beta cell marker transcripts was not significantly 
+different from zero (Holm-adjusted two-sided empirical $p = 0.95$). 
+We stress that this is not necessarily 
 reflective of the function of the beta cells in the obese mice, but 
 rather suggests that any variation in the number of beta cells in 
 these mice was unrelated to obesity and insulin resistance, the major 
@@ -1203,7 +1203,7 @@ this objective function. Our starting point is the univariate case, where
 we describe perfect mediation as a constraint on the covariance matrix among 
 variables. We then leverage this constraint to define projections of 
 multivariate data that are maximally consistent with perfect mediation (HDMA). 
-Next, we demonstrate how to \textit{kernelize} HDMA to limit dimensionality of 
+Next, we demonstrate how to kernelize HDMA to limit dimensionality of 
 the model and enable non-linear HDMA models. 
 
 ### Perfect mediation as a constraint on covariance matrices
@@ -1216,7 +1216,7 @@ m &= \alpha x + \epsilon_m \label{eqn:perfect_mediation1}\\
 y &= \beta m + \epsilon_y  \label{eqn:perfect_mediation2}
 \end{align}
 
-From these structural equations, we have the \textit{model-implied covariance matrix}, 
+From these structural equations, we have the model-implied covariance matrix, 
 $\Sigma$, given by
 
 \begin{align}
@@ -1277,7 +1277,7 @@ log-likelihood formulation is useful for the multivariate extension below.
 ### Projecting multivariate data to identify latent mediators
 Suppose now that we have three data matrices, $X$, $M$, and $Y$ (individuals by 
 variables) that are mean centered by column. The central  assumption of HDMA is 
-that these multivariate data encode \textit{latent variables} that are causally 
+that these multivariate data encode latent variables that are causally 
 linked according to the perfect-mediation model, in a sense made precise as 
 follows.
 
@@ -1294,7 +1294,7 @@ l_M &= Mb \\
 l_Y &= Yc
 \end{align}
 
-The coefficient vectors $a$, $b$, and $c$, are called \textit{loadings}, analogous 
+The coefficient vectors $a$, $b$, and $c$, are called loadings, analogous 
 to the terminology in PCA and CCA. Because the data matrices are mean centered, we 
 have
 
@@ -1320,14 +1320,14 @@ L(\alpha, \beta, a,b,c) &= F(\alpha, \beta) - \frac{2\alpha}{1-\alpha^2} {\rm co
 \end{align}
 
 This yields an objective function of two sets of parameters: the
-\textit{structural parameters} $\alpha$ and $\beta$ that define the 
+structural parameters $\alpha$ and $\beta$ that define the 
 causal model among latent variables, and the loading vectors $a$, 
 $b$, and $c$, that define the latent variables in terms of the 
 measured variables. The goal of HDMA is to optimize $L$ as a 
 function of all parameters simultaneously. The form of the objective 
 function, Eqn. \ref{eqn:gcca_mediation}, is effectively a weighted 
 sum of correlation coefficients, connecting it to so-called 
-\textit{sum-of-correlation}, or SUMCOR, optimization problems 
+sum-of-correlation, or SUMCOR, optimization problems 
 \cite{tenenhaus2011regularized}, which we discuss further below.
 
 ### An algorithm for HDMA
@@ -1397,7 +1397,7 @@ We summarize our optimization procedure in Algorithm \ref{alg:hdma}.
 ### Kernel HDMA
 
 For large data matrices $X$, $M$, and $Y$, especially with high correlation 
-among variables, as is common for high-throughput biological assays (\textit{e.g.}, 
+among variables, as is common for high-throughput biological assays (e.g., 
 ~1M alleles for genotypes, ~20k transcripts), we can further reduce the 
 dimensionality of the HDMA model by requiring that loading vectors lie in 
 the span of the the measured individuals, namely
@@ -1419,19 +1419,19 @@ l_M &= MM^T \tilde{b} = C_M \tilde{b} \\
 l_M &= YY^T \tilde{c} = C_Y \tilde{c}.
 \end{align}
 
-This reduction is called \textit{kernelization} \cite{tenenhaus2015kernel} 
+This reduction is called kernelization \cite{tenenhaus2015kernel} 
 and is widely applied to other linear models, including CCA, linear 
 regression, and classification.
 
 It is interesting to note that kernelization is often used to convert a 
 linear model to a non-linear model by replacing the covariance matrices, 
-\textit{e.g.} $C_X$, with more complex \textit{kernel matrices} $K_X$ that 
+e.g. $C_X$, with more complex kernel matrices $K_X$ that 
 encode similarity measures among individuals that are non-linear functions 
 of the measured variables. non-linear model by replacing the covariance 
-matrices, \textit{e.g.} $C_X$, with more complex \textit{kernel matrices} 
+matrices, e.g. $C_X$, with more complex kernel matrices
 $K_X$ that encode similarity measures among individuals that are non-linear 
 functions of the measured variables. Promoting a linear model to a non-linear 
-model in this way is called the \textit{kernel trick} and is widely used in the 
+model in this way is called the kernel trick and is widely used in the 
 machine learning field. The above considerations show that HDMA is kernelizable 
 in the same way as other linear models, although the exploration of non-linear 
 models is outside the scope of this study.
@@ -1458,7 +1458,7 @@ package \cite{girka2023multiblock}, which we use as the subroutine
 \texttt{wSUMCOR}. As Tenenhaus \textit{et al.} discuss optimizing 
 the empirical correlation coefficient \textit{per se} is numerically 
 unstable due to the inversion of the covariance matrices of the measured 
-variables (\textit{e.g.}, the transcript-transcript covariance matrix). 
+variables (e.g., the transcript-transcript covariance matrix). 
 To overcome this, the RGCCA package uses a regularized form of the 
 covariance matrix developed by Schaeffer and Strimmer 
 \cite{schafer2005shrinkage}, which can be estimated rapidly using an 
@@ -1623,11 +1623,11 @@ tissue composition changes in the DO mice prone to obesity on the
 high-fat diet. To do this, we acquired lists of cell-type specific
 transcripts from the literature. In adipose tissue, we looked
 at cell-type specific transcripts for macrophages, leukocytes,
-adipocyte progenitors, and adipocytes as defined in [29087381].
+adipocyte progenitors, and adipocytes as defined in \cite{pmid29087381}.
 In pancreatic islets, we looked at cell-type specific transcripts
 for alpha cells, beta cells, delta cells, ductal cells, mast cells, 
 macrophages, acinar cells, stellate cells, gamma and epsilon cells, 
-and endothelial cells as defined by [36778506]. Both studies defined
+and endothelial cells as defined by \cite{pmid36778506}. Both studies defined
 cell-type specific transcripts based on human cell types. We collected 
 the loadings for each set of cell-type specific transcripts in the 
 respective tissue and asked whether the mean loading for the cell 
@@ -1921,8 +1921,8 @@ the loadings of all transcripts with loadings greater than 2.5
 standard deviations from the mean in any tissue. The heat map was 
 clustered using k medoid clustering. Functional enrichments of each 
 cluster are indicated along the left margin. \textbf{B} Loadings for 
-\textit{Pparg} in different tissues. \textbf{C} Local and distal of 
-\textit{Pparg} expression in different tissues.
+\textit{Pparg} in different tissues. \textbf{C} Local and distal 
+heritability of \textit{Pparg} expression in different tissues.
 }
 \label{fig:toa}
 \end{figure}
@@ -1930,16 +1930,17 @@ cluster are indicated along the left margin. \textbf{B} Loadings for
 \begin{figure}[ht!]
 %\includegraphics[width=\textwidth]{Figures/Fig7_CC_Prediction.pdf} 
 \caption{Transcription, but not local genotype, predicts 
-phenotype in the CC-RIX. \textbf{A.} Workflow showing procedure 
-for translating HDMA results to an independent population of mice. 
-\textbf{B.} Relationships between the predicted metabolic disease
-index (MDI) and measured body weight in the CC-RIX. The left column 
-shows the predictions using measured transcripts. The right column 
-shows the prediction using transcript levels imputed from local 
-genotype. Gray boxes indicate measured quantities, and blue boxes 
-indicate calculated quantities. The dots in each panel represent 
-individual CC-RIX strains. The gray lines show the standard deviation 
-on body weight for the strain.
+phenotype in the CC-RIX. \textbf{A.} Workflow showing 
+procedure for translating HDM results to an independent 
+population of mice. \textbf{B.} Relationships between the 
+predicted metabolic disease index (MDI) and measured 
+body weight. In this case the MDI was derived from 
+measured transcripts. \textbf{C.} In this column, MDI 
+was derived from transcripts imputed from local genotype. 
+Gray boxes indicate measured quantities, and blue boxes 
+indicate calculated quantities. The dots in each panel 
+represent individual CC-RIX strains. The gray lines show 
+the standard deviation on body weight for the strain.
 }
 \label{fig:cc_prediction}
 \end{figure}

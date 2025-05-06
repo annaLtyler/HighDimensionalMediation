@@ -77,7 +77,7 @@ Z.~Zhu, F.~Zhang, H.~Hu, A.~Bakshi, M.~R. Robinson, J.~E. Powell, G.~W.
 \bibitem{pmid26854917}
 A.~Gusev, A.~Ko, H.~Shi, G.~Bhatia, W.~Chung, B.~W. Penninx, R.~Jansen, E.~J.
   de~Geus, D.~I. Boomsma, F.~A. Wright, P.~F. Sullivan, E.~Nikkola, M.~Alvarez,
-  M.~Civelek, A.~J. Lusis, T.~ki, E.~Raitoharju, M.~nen, I.~ä, O.~T.
+  M.~Civelek, A.~J. Lusis, T.~ki, E.~Raitoharju, M.~nen, I.~{\"a}, O.~T.
   Raitakari, J.~Kuusisto, M.~Laakso, A.~L. Price, P.~Pajukanta, and
   B.~Pasaniuc.
 \newblock {{I}ntegrative approaches for large-scale transcriptome-wide
@@ -172,8 +172,8 @@ Aparna Nathan, Samira Asgari, Kazuyoshi Ishigaki, Cristian Valencia, Tiffany
 \newblock {\em Nature}, 606(7912):120--128, 2022.
 
 \bibitem{pmid36350656}
-E.~Sollis, A.~Mosaku, A.~Abid, A.~Buniello, M.~Cerezo, L.~Gil, T.~Groza, O.~ş,
-  P.~Hall, J.~Hayhurst, A.~Ibrahim, Y.~Ji, S.~John, E.~Lewis, J.~A.~L.
+E.~Sollis, A.~Mosaku, A.~Abid, A.~Buniello, M.~Cerezo, L.~Gil, T.~Groza, O.~{\c
+  s}, P.~Hall, J.~Hayhurst, A.~Ibrahim, Y.~Ji, S.~John, E.~Lewis, J.~A.~L.
   MacArthur, A.~McMahon, D.~Osumi-Sutherland, K.~Panoutsopoulou,
   Z.~Pendlington, S.~Ramachandran, R.~Stefancsik, J.~Stewart, P.~Whetzel,
   R.~Wilson, L.~Hindorff, F.~Cunningham, S.~A. Lambert, M.~Inouye,
@@ -236,8 +236,8 @@ S.~M. Clee and A.~D. Attie.
 \newblock {\em Endocr Rev}, 28(1):48--83, Feb 2007.
 
 \bibitem{pmid30591514}
-K.~W. Broman, D.~M. Gatti, P.~Simecek, N.~A. Furlotte, P.~Prins, Ś. Sen, B.~S.
-  Yandell, and G.~A. Churchill.
+K.~W. Broman, D.~M. Gatti, P.~Simecek, N.~A. Furlotte, P.~Prins, {\'S}.~Sen,
+  B.~S. Yandell, and G.~A. Churchill.
 \newblock {{R}/qtl2: {S}oftware for {M}apping {Q}uantitative {T}rait {L}oci
   with {H}igh-{D}imensional {D}ata and {M}ultiparent {P}opulations}.
 \newblock {\em Genetics}, 211(2):495--502, Feb 2019.
@@ -410,7 +410,7 @@ G.~A. Churchill, D.~C. Airey, H.~Allayee, J.~M. Angel, A.~D. Attie, J.~Beatty,
   A.~V. Osadchuk, G.~P. Page, B.~Paigen, K.~Paigen, A.~A. Palmer, H.~J. Pan,
   L.~Peltonen-Palotie, J.~Peirce, D.~Pomp, M.~Pravenec, D.~R. Prows, Z.~Qi,
   R.~H. Reeves, J.~Roder, G.~D. Rosen, E.~E. Schadt, L.~C. Schalkwyk,
-  Z.~Seltzer, K.~Shimomura, S.~Shou, M.~J. ä, L.~D. Siracusa, H.~W. Snoeck,
+  Z.~Seltzer, K.~Shimomura, S.~Shou, M.~J. {\"a}, L.~D. Siracusa, H.~W. Snoeck,
   J.~L. Spearow, K.~Svenson, L.~M. Tarantino, D.~Threadgill, L.~A. Toth,
   W.~Valdar, F.~P. de~Villena, C.~Warden, S.~Whatley, R.~W. Williams,
   T.~Wiltshire, N.~Yi, D.~Zhang, M.~Zhang, and F.~Zou.
@@ -451,13 +451,13 @@ X.~Liu, Y.~I. Li, and J.~K. Pritchard.
 U.~Vosa, A.~Claringbould, H.~J. Westra, M.~J. Bonder, P.~Deelen, B.~Zeng,
   H.~Kirsten, A.~Saha, R.~Kreuzhuber, S.~Yazar, H.~Brugge, R.~Oelen, D.~H.
   de~Vries, M.~G.~P. van~der Wijst, S.~Kasela, N.~Pervjakova, I.~Alves, M.~J.
-  é, M.~Agbessi, M.~W. Christiansen, R.~Jansen, I.~ä, L.~Tong, A.~Teumer,
-  K.~Schramm, G.~Hemani, J.~Verlouw, H.~Yaghootkar, R.~nmez Flitman, A.~Brown,
-  V.~Kukushkina, A.~Kalnapenkis, S.~eger, E.~Porcu, J.~Kronberg, J.~Kettunen,
-  B.~Lee, F.~Zhang, T.~Qi, J.~A. Hernandez, W.~Arindrarto, F.~Beutner,
-  J.~Dmitrieva, M.~Elansary, B.~P. Fairfax, M.~Georges, B.~T. Heijmans, A.~W.
-  Hewitt, M.~nen, Y.~Kim, J.~C. Knight, P.~Kovacs, K.~Krohn, S.~Li,
-  M.~Loeffler, U.~M. Marigorta, H.~Mei, Y.~Momozawa, M.~ller Nurasyid,
+  {\'e}, M.~Agbessi, M.~W. Christiansen, R.~Jansen, I.~{\"a}, L.~Tong,
+  A.~Teumer, K.~Schramm, G.~Hemani, J.~Verlouw, H.~Yaghootkar, R.~nmez Flitman,
+  A.~Brown, V.~Kukushkina, A.~Kalnapenkis, S.~eger, E.~Porcu, J.~Kronberg,
+  J.~Kettunen, B.~Lee, F.~Zhang, T.~Qi, J.~A. Hernandez, W.~Arindrarto,
+  F.~Beutner, J.~Dmitrieva, M.~Elansary, B.~P. Fairfax, M.~Georges, B.~T.
+  Heijmans, A.~W. Hewitt, M.~nen, Y.~Kim, J.~C. Knight, P.~Kovacs, K.~Krohn,
+  S.~Li, M.~Loeffler, U.~M. Marigorta, H.~Mei, Y.~Momozawa, M.~ller Nurasyid,
   M.~Nauck, M.~G. Nivard, B.~W. J.~H. Penninx, J.~K. Pritchard, O.~T.
   Raitakari, O.~Rotzschke, E.~P. Slagboom, C.~D.~A. Stehouwer, M.~Stumvoll,
   P.~Sullivan, P.~A.~C. 't~Hoen, J.~Thiery, A.~njes, J.~van Dongen, M.~van
@@ -663,6 +663,13 @@ Liis Kolberg, Uku Raudvere, Ivan Kuzmin, Jaak Vilo, and Hedi Peterson.
   analysis and namespace conversion toolset g:profiler.
 \newblock {\em F1000Research}, 9 (ELIXIR)(709), 2020.
 \newblock R package version 0.2.3.
+
+\bibitem{pmid29087381}
+Anna Ehrlund, Juan~R Acosta, Christel Bj{\"o}rk, Per Hed{\'e}n, Iyadh Douagi,
+  Peter Arner, and Jurga Laurencikiene.
+\newblock The cell-type specific transcriptome in human adipose tissue and
+  influence of obesity on adipocyte progenitors.
+\newblock {\em Sci Data}, 4:170164, Oct 2017.
 
 \bibitem{pmid37933855}
 E.~Clough, T.~Barrett, S.~E. Wilhite, P.~Ledoux, C.~Evangelista, I.~F. Kim,
