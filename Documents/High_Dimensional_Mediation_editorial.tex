@@ -1606,7 +1606,7 @@ adipocytes as defined in \cite{pmid29087381}. In pancreatic islets, we
 looked at cell-type specific transcripts for alpha cells, beta cells,
 delta cells, ductal cells, mast cells, macrophages, acinar cells,
 stellate cells, gamma and epsilon cells, and endothelial cells as
-defined by {[}36778506{]}. Both studies defined cell-type specific
+defined by \cite{pmid36778506}. Both studies defined cell-type specific
 transcripts based on human cell types. We collected the loadings for
 each set of cell-type specific transcripts in the respective tissue and
 asked whether the mean loading for the cell type differed significantly
@@ -1712,8 +1712,6 @@ calculated eQTLs are available at Figshare
 \url{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979}
 DOI: 10.6084/m9.figshare.27066979
 
-10.6084/m9.figshare.27066979.v1
-
 \textbf{CC-RIX mice}: Gene expression can be found at the Gene
 Expression Omnibus \url{https://www.ncbi.nlm.nih.gov/geo/} with the
 following accession numbers: CC-RIX adipose tissue - GSE237737; CC-RIX
@@ -1721,6 +1719,8 @@ liver tissue - GSE237743; CC-RIX skeletal muscle - GSE237747. Count
 matrices and phenotype data can be found at Figshare
 \url{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979}
 DOI: 10.6084/m9.figshare.27066979
+
+Source data are provided with this paper in the file Source\_Data.zip.
 
 \subsection{Code Availability}\label{code-availability}
 
@@ -1792,7 +1792,8 @@ WPIC - whole pancreas insulin content, Glu tAUC - glucose total area under
 the curve, HOMA IR - homeostatic measurement of insulin resistance, HOMA B - 
 homeostatic measure of beta cell health, VLDL - very low-density lipoprotein,
 LDL - low-density lipoprotein, IDL - intermediate density lipoprotein, 
-HDL - high-density lipoprotein, TG - triglyceride.
+HDL - high-density lipoprotein, TG - triglyceride. Source data are provided 
+as Source Data files Fig1A-E.txt, Fig1F.txt, and Fig1G.txt.
 }
 \label{fig:trait_overview}
 \end{figure}
@@ -1812,7 +1813,8 @@ percentile correlation. The solid line shows the mean trait
 correlation in transcripts with increasing variance explained 
 either locally (B) or distally (C). Transcripts that are highly 
 correlated with traits tended to have low local heritability and 
-high distal heritability.}
+high distal heritability. Source data are provided 
+as Source Data files Fig2A.txt, Fig2B.txt, and Fig2C.txt}
 \label{fig:motivation}
 \end{figure}
 
@@ -1843,6 +1845,8 @@ The null distribution of the $G_C$-$T_C$ correlation vs.
 the $T_C$-$P_C$ correlation. Comparisons are shown 
 to the observed values (red), and those derived from the 
 distal-only model (gray) and the local-only model (brown).
+Source data are provided as Source Data files Fig3B\_null.txt,
+Fig3B\_stats.txt, Fig3C\_null.txt and Fig3C\_stats.txt.
 }
 \label{fig:workflow}
 \end{figure}
@@ -1869,6 +1873,8 @@ composite vectors for the genome ($G_C$), the transcriptome ($T_C$), and the
 phenome ($P_C$). The $G_C$ - $T_C$ correlation is high, the $T_C$ - $P_C$ 
 correlation is high, and there is no significant correlation between $G_C$ 
 and $P_C$. This correlation structure is consistent with perfect mediation.
+Source data are provided as Source Data files Fig4A.txt, Fig4B.txt, Fig4C.txt,
+Fig4D\_null.txt, and Fig4D\_observed.txt.
 }
 \label{fig:interpretation}
 \end{figure}
@@ -1877,20 +1883,21 @@ and $P_C$. This correlation structure is consistent with perfect mediation.
 %\includegraphics[width=\textwidth]{Figures/Fig5_loading_heritability.pdf} 
 \caption{Transcripts with high loadings have high distal heritability 
 and literature support (bolded gene names). Each panel has a bar plot 
-showing the loadings of transcripts selected by different criteria. Bar color indicates the 
-tissue of origin. The heat map shows the local (L - left) and distal 
-(D - right) heritability of each transcript. \textbf{A.} Loadings for 
-the 10 transcripts with the largest positive loadings and the 10 
-transcripts with the largest negative loadings for each tissue. 
-Distal heritability was significantly higher than local heritability 
-(t-test $p < 2.2^{-16}$). \textbf{B.} Loadings of TWAS candidates 
-with the 10 largest positive correlations with traits and the largest 
-negative correlations with traits across all four tissues. Local and 
-distal heritability were not significantly different for this group 
-(t-test $p = 0.77$). \textbf{C.} The transcripts with the largest 
+showing the loadings of transcripts selected by different criteria. Bar 
+color indicates the tissue of origin. The heat map shows the local 
+(L - left) and distal (D - right) heritability of each transcript. 
+\textbf{A.} Loadings for the 10 transcripts with the largest positive 
+loadings and the 10 transcripts with the largest negative loadings for 
+each tissue. Distal heritability was significantly higher than local 
+heritability (t-test $p < 2.2^{-16}$). \textbf{B.} Loadings of TWAS 
+candidates with the 10 largest positive correlations with traits and 
+the largest negative correlations with traits across all four tissues. 
+Local and distal heritability were not significantly different for this 
+group (t-test $p = 0.77$). \textbf{C.} The transcripts with the largest 
 local heritability (top 20) across all four tissues. Local heritability 
 was significantly higher than distal heritability of these genes (t-test 
-$p < 2.2^{-16}$)
+$p < 2.2^{-16}$, Source data are provided as Source Data files 
+Fig5A.txt, Fig5B.txt, and Fig5C.txt.)
 }
 \label{fig:loading_heritability}
 \end{figure}
@@ -1905,6 +1912,8 @@ clustered using k medoid clustering. Functional enrichments of each
 cluster are indicated along the left margin. \textbf{B} Loadings for 
 \textit{Pparg} in different tissues. \textbf{C} Local and distal 
 heritability of \textit{Pparg} expression in different tissues.
+Source data are provided as Source Data files Fig6A.txt, Fig6B.txt,
+and Fig6C.txt.
 }
 \label{fig:toa}
 \end{figure}
@@ -1923,6 +1932,8 @@ Gray boxes indicate measured quantities, and blue boxes
 indicate calculated quantities. The dots in each panel 
 represent individual CC-RIX strains. The gray lines show 
 the standard deviation on body weight for the strain.
+Source data are provided as Source Data files Fig7B.txt
+and Fig7C.txt.
 }
 \label{fig:cc_prediction}
 \end{figure}
@@ -1938,7 +1949,9 @@ mean loading of each group of transcripts (red asterisk). \textbf{D.}
 Predictions of metabolic phenotypes in four adipose transcription data 
 sets downloaded from GEO. In each study the obese/diabetic patients were 
 predicted to have greater MDI than the lean/non-diabetic 
-patients based on the HDMA results from DO mice.
+patients based on the HDMA results from DO mice. Source data are provided 
+as Source Data files Fig8A.txt, Fig8B.txt, Fig8C.txt, Fig8D1\_upper\_left.txt, 
+Fig8D2\_upper\_right.txt, Fig8D3\_lower\_left.txt, Fig8D4\_lower\_right.txt.
 }
 \label{fig:human_translation}
 \end{figure}

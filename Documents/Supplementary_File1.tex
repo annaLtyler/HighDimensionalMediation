@@ -118,7 +118,8 @@ explained for each principal component. \textbf{B} Traits plotted
 by the first and second principal components of the trait matrix. 
 This view shows clustering of traits into insulin- and 
 weight-related traits, lipid-related traits, and ex-vivo 
-pancreatic measurements.
+pancreatic measurements. Source data are provided as Source Data 
+files Supp\_Fig1A-B.txt and Supp\_Fig1A.txt.
 }
 \label{fig:trait_decomp}
 \end{figure}
@@ -145,20 +146,24 @@ transcripts with distal eQTL shared across multiple tissues. The majority
 of distal eQTL were tissue-specific and not shared across multiple tissues. 
 For both G and H, eQTL for a given transcript were considered shared in two 
 tissues if they were within 4Mb of each other. Colored bars indicate the 
-counts for individual tissues for easy of visualization.
+counts for individual tissues for easy of visualization. Source data are 
+provided as Source Data files Supp\_Fig2A.txt through Supp\_Fig2H.txt.
 }
 \label{fig:eQTL}
 \end{figure}
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_transcript_load_comparison.pdf} 
-\caption{Direct comparisons of transcript loadings across tissues. \textbf{A.}
+\caption{Direct comparisons of transcript loadings across tissues also shown
+in main Figure 4D. \textbf{A.}
 Distributions of transcript loadings are shown as density curves and are 
 differentially colored to indicate tissue. Transcripts in adipose tissue had 
 both the largest positive and negative loadings. \textbf{B.} Direct comparison
 of absolute values of transcript loadings across tissues. Transcripts in adipose
 tissue had the largest loadings overall, while those in skeletal muscle had the
-smallest.
+smallest. Source data are provided as a Source Data file. The data shown in this
+figure are the same as in Fig 4D in the main text and the data are stored in 
+Fig4D\_observed.txt.
 }
 \label{fig:transcript_loading_comparison}
 \end{figure}
@@ -169,7 +174,7 @@ smallest.
 pathways as determined by fast gene score enrichment analysis (fgsea). 
 Only the top 10 positive and top 10 negative scores are shown. Colors 
 indicate tissue. The name beside each bar shows the name of each enriched 
-KEGG pathway.
+KEGG pathway. Source data are provided as a Source Data file Supp\_Fig4.txt.
 }
 \label{fig:top_enrich_kegg}
 \end{figure}
@@ -182,7 +187,8 @@ Only the top 10 positive and top 10 negative scores are shown. Colors
 indicate tissue. The name beside each bar shows the name of each enriched 
 GO term. The letters in parentheses indicate whether the term is from the 
 biological process ontology (BP), the molecular function ontology (MF), 
-or the cellular compartment ontology (CC).
+or the cellular compartment ontology (CC). Source data are provided as a 
+Source Data file Supp\_Fig5.txt.
 }
 \label{fig:top_enrich_go}
 \end{figure}
@@ -195,7 +201,8 @@ tissue scaled to run from -1 to 1. Genes highlighted in green had
 negative loadings, and those highlighted in red had positive loadings. 
 Almost the entire pathway was strongly negatively loaded indicating 
 that increased expression of genes involved in oxidative phosphorylation
-was associated with reduced MDI.
+was associated with reduced MDI. Source data are provided as a Source Data 
+file Supp\_Fig6.txt.
 }
 \label{fig:oxPhos}
 \end{figure}
@@ -208,7 +215,8 @@ tissue scaled to run from -1 to 1. Genes highlighted in green had
 negative loadings, and those highlighted in red had positive loadings. 
 Many genes in the cycle were strongly negatively loaded indicating 
 that increased expression of genes involved in the TCA cycle was 
-associated with reduced MDI.
+associated with reduced MDI. Source data are provided as a Source 
+Data file Supp\_Fig7.txt.
 }
 \label{fig:TCA_cycle}
 \end{figure}
@@ -221,7 +229,8 @@ tissue scaled to run from -1 to 1. Genes highlighted in green had
 negative loadings, and those highlighted in red had positive loadings. 
 Almost the entire pathway was strongly negatively loaded indicating 
 that increased expression of genes involved in branched-chain amino acid 
-degradation was associated with reduced MDI.
+degradation was associated with reduced MDI. Source data are provided as 
+a Source Data file Supp\_Fig8.txt.
 }
 \label{fig:bcaa_degrataion}
 \end{figure}
@@ -237,61 +246,68 @@ All distributions were skewed toward positive correlations and had
  imputed expression in the CC-RIX (x-axis) and eQTL LOD score. As 
  expected, imputations are more accurate for transcripts with strong 
  local eQTLs. \textbf{C.} Distributions of variance explained by local 
- genotype across all transcripts in the DO and CC-RIX. 
+ genotype across all transcripts in the DO and CC-RIX. Source data are 
+ provided as Source Data files Supp\_Fig9A-B.txt and Supp\_Fig9C.txt.
 }
 \label{fig:cc_imputation}
 \end{figure}
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Adipose_all_cell_types.png} 
-\caption{CMAP results using the \textit{adipose} tissue composite transcript as 
-an input. Table includes results from \textit{all cell types} sorted with a 
+\caption{CMAP results using the adipose tissue composite transcript as 
+an input. Table includes results from all cell types sorted with a 
 $-log_{10}(q) > 15$. The results are sorted by the correlation of the 
-query to the input with the most negative results at the top.
+query to the input with the most negative results at the top. Source 
+data are provided as a Source Data file Supp\_Fig10-12.txt.
 }
 \label{fig:clue_adipose_all}
 \end{figure}
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Islet_all_cell_types.png} 
-\caption{CMAP results using the \textit{pancreatic islet} tissue composite transcript 
-as an input. Table includes results from \textit{all cell types} sorted with a 
+\caption{CMAP results using the pancreatic islet tissue composite transcript 
+as an input. Table includes results from all cell types sorted with a 
 $-log_{10}(q) > 15$. The results are sorted by the correlation of the 
-query to the input with the most negative results at the top.
+query to the input with the most negative results at the top. Source 
+data are provided as a Source Data file Supp\_Fig11-13.txt.
 }
 \label{fig:clue_islet_all}
 \end{figure}
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Adipose_ASC.png} 
-\caption{CMAP results using the \textit{adipose} tissue composite 
+\caption{CMAP results using the adipose tissue composite 
 transcript as an input. Table includes the top 30 results derived
-\textit{only from normal adipocytes} (ASC) regardless of significance. 
+only from normal adipocytes (ASC) regardless of significance. 
 The results are sorted by the correlation of the query to the input 
-with the most negative results at the top.
+with the most negative results at the top. Source data are provided 
+as a Source Data file Supp\_Fig10-12.txt.
 }
 \label{fig:clue_adipose_asc}
 \end{figure}
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Islet_YAPC.png} 
-\caption{CMAP results using the \textit{pancreatic islet} composite 
+\caption{CMAP results using the pancreatic islet composite 
 transcript as an input. Table includes the top 30 results derived
-\textit{only from YAPC cells}, which are derived from pancreatic
+only from YAPC cells, which are derived from pancreatic
 carcinoma cells. Results are shown regardless of significance and
 are sorted by the correlation of the query to the input 
-with the most negative results at the top.
+with the most negative results at the top. Source data 
+are provided as a Source Data file Supp\_Fig11-13.txt.
 }
 \label{fig:clue_islet_yapc}
 \end{figure}
 
 \begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/Supplemental_FigX_Nucb2_eQTL.pdf} 
+\includegraphics[width=\textwidth]{Figures/Supp_Fig14_Nucb2_eQTL.pdf} 
 \caption{Regulation of \textit{Nucb2} expression in islet. \textit{Nucb2} 
-is encoded on mouse chromosome 7 at 116.5 Mb (red line). In islets the 
+is encoded on mouse chromosome 7 at 116.5 Mb (red arrow). In islets the 
 heritability of \textit{Nucb2} expression levels is 69\% heritable. This 
 LOD score trace shows that there is no local eQTL at the position of the
-gene, nor any strong distal eQTLs anywhere else in the genome. 
+gene, nor any strong distal eQTLs anywhere else in the genome. The 
+horizontal dashed line shows the genome-wide FDR threshold of 0.01.
+Source data are provided as a Source Data file Supp\_Fig14.txt.
 }
 \label{fig:Nucb2_eqtl}
 \end{figure}
