@@ -1900,23 +1900,30 @@ individuals. Individuals with large positive phenotype scores
 had higher body weight and insulin resistance than average. 
 Individuals with large negative phenotype scores had lower 
 body weight and insulin resistance than average. \textbf{C.} 
-Distribution of transcript loadings in adipose tissue. For transcripts 
-with large positive loadings, higher expression was associated with 
-higher phenotype scores. For transcripts with large negative 
-loadings, higher expression was associated with lower phenotype 
-scores. \textbf{D.} Distributions of loadings across tissues compared 
-to null distributions. Shaded areas represent loadings that were more 
-extreme than the null distribution. Numbers indicate how many 
-transcripts had loadings above and below the extremes of the null. 
-Transcripts in adipose tissue had the most extreme loadings indicating 
-that transcripts in adipose tissue were the best mediators of the genetic 
-effects on body weight and insulin resistance. \textbf{E.} Scatter plots 
-showing correlations between composite vectors for the genome 
-($G_C$), the transcriptome ($T_C$), and the phenome ($P_C$). The 
-$G_C$ - $T_C$ correlation is high, the $T_C$ - $P_C$ correlation is 
-high, and there is no significant correlation between $G_C$ and $P_C$. 
-This correlation structure is consistent with perfect mediation. Source 
-data are provided as a Source Data file.
+Distribution of transcript loadings in adipose tissue (purple). 
+For transcripts with large positive loadings, higher expression 
+was associated with higher phenotype scores. For transcripts 
+with large negative loadings, higher expression was associated 
+with lower phenotype scores. \textbf{D.} Distributions of loadings 
+across tissues compared to null distributions. Shaded areas 
+represent loadings that were more extreme than the null 
+distribution. Numbers indicate how many transcripts had loadings 
+above and below the extremes of the null. Transcripts in adipose 
+tissue (purple) had the most extreme loadings indicating 
+that transcripts in adipose tissue were the best mediators of the 
+genetic effects on body weight and insulin resistance. \textbf{E.} 
+Scatter plots showing correlations between composite vectors for 
+the genome ($G_C$), the transcriptome ($T_C$), and the phenome 
+($P_C$). The $G_C$ - $T_C$ association was significant 
+(Linear regression $R^2 = 0.18$;  beta coefficient = $7.8\pm0.86$ 
+standard error; $t = 9.03$; $p < 2.2^{-16}$). The $T_C$ - $P_C$ 
+association was significant (Linear regression $R^2 = 0.62$;  
+beta coefficient = $3.1\pm0.13$ standard error; $t = 24.4$; 
+$p < 2.2^{-16}$). There is no association between $G_C$ and $P_C$
+(Linear regression $R^2 = 7.1\times10^{4}$;  beta coefficient = 
+$2.0\pm3.8$ standard error; $t = 0.51$; $p = 0.61$). This correlation 
+structure is consistent with perfect mediation. Source data are provided 
+as a Source Data file.
 }
 \label{fig:interpretation}
 \end{figure}
