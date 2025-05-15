@@ -1013,7 +1013,7 @@ from the analysis \cite{pmid29567659}.
 The DO data used in this study were generated in a previous 
 study\cite{pmid31343992, pmid29567659}. We downloaded genotypes, 
 phenotypes, and pancreatic islet gene expression 
-data from Dryad (doi:10.5061/dryad.pj105).
+data from Dryad (doi:10.5061/dryad.pj105) \cite{DO_data}.
 
 ## Collaborative cross recombinant inbred mice (CC-RIX)
 Mice were cared for and treated following the guidelines approved by 
@@ -1126,7 +1126,7 @@ We filtered the measured traits in this study to a set of
 relatively non-redundant measures that were well-represented
 in the population (having at least 80\% of individuals measured). 
 A complete description of trait filtering can be found at Figshare 
-DOI: 10.6084/m9.figshare.27066979 in the file 
+DOI: 10.6084/m9.figshare.27066979 \cite{cube_data} in the file 
 Documents > 1.DO > 1b.Trait_Selection.Rmd.
 
 We took two approaches for traits with multiple redundant measurements,
@@ -1469,7 +1469,8 @@ analytic formula.
  in one iteration.
 
  All code required to run HDMA is available at Figshare: 
- \url{https://figshare.com/} DOI: 10.6084/m9.figshare.27066979
+ \url{https://figshare.com/} DOI: 10.6084/m9.figshare.27066979 
+ \cite{DO_data}
 
 ## Enrichment of biological terms
 
@@ -1652,20 +1653,20 @@ because this had the strongest relationship to obesity and insulin
 resistance in the DO. We downloaded the following human gene 
 expression data sets: 
 
-* Accession number GSE152517 - Performed bulk RNA sequencing
+* Accession number [GSE152517](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE152517) - Performed bulk RNA sequencing
   on visceral adipose tissue resected from seven diabetic and
   seven non-diabetic obese individuals.
 
-* Accession number GSE44000 - Used Agilent-014850 4X44K human 
+* Accession number [GSE44000](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44000) - Used Agilent-014850 4X44K human 
   whole genome platform arrays (GPL6480) to measure gene expression 
   in purified adipocytes derived from the subcutaneous adipose tissue 
   of seven obese (BMI>30) and seven lean (BMI<25) post-menopausal women.
 
-* Accession number GSE205668 - Subcutaneous adipose tissue was resected
+* Accession number [GSE205668](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE205668) - Subcutaneous adipose tissue was resected
   during elective surgery from 35 normal weight, and 26 obese children. 
   Gene expression was measured by RNA sequencing with an Illumina HiSeq 2500.
 
-* Accession number GSE29231 - Visceral adipose biopsies were taken from
+* Accession number [GSE29231](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE29231) - Visceral adipose biopsies were taken from
   three female patients with type 2 diabetes, and three non-diabetic 
   female patients. Expression was measured with Illumina HumanHT-12 v3 
   Expression BeadChip arrays.
@@ -1722,19 +1723,25 @@ pancreatic cancer cells, abbreviated YAPC in the CMAP database.
 expression data were previously published \cite{pmid29567659}. Gene 
 expression for the other tissues can be found at the Gene Expression 
 Omnibus \url{https://www.ncbi.nlm.nih.gov/geo/} with the following 
-accession numbers: DO adipose tissue - GSE266549; DO liver 
-tissue - GSE266569; DO skeletal muscle - GSE266567. Expression
-data with calculated eQTLs are available at Figshare 
-\url{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979} 
-DOI: 10.6084/m9.figshare.27066979
+accession numbers:
+DO adipose tissue - [GSE266549](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE266549);
+DO liver tissue - [GSE266569](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE266569);
+DO skeletal muscle - [GSE266567](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE266567).
 
+Expression data with calculated eQTLs are available at Figshare: \url{https://figshare.com/}.
+[DOI: 10.6084/m9.figshare.27066979](https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979)
+ \cite{cube_data}
 
 \textbf{CC-RIX mice}: Gene expression can be found at the Gene Expression 
 Omnibus \url{https://www.ncbi.nlm.nih.gov/geo/} with the following accession
-numbers: CC-RIX adipose tissue - GSE237737; CC-RIX liver tissue - GSE237743; 
-CC-RIX skeletal muscle - GSE237747. Count matrices and phenotype data can
-be found at Figshare \url{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979} 
-DOI: 10.6084/m9.figshare.27066979
+numbers: 
+CC-RIX adipose tissue - [GSE237737](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE237737);
+CC-RIX liver tissue - [GSE237743](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE237743); 
+CC-RIX skeletal muscle - [GSE237747](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE237747). 
+
+Count matrices and phenotype data can be found at Figshare: \url{https://figshare.com/} 
+[DOI: 10.6084/m9.figshare.27066979](https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979) 
+\cite{cube_data}
 
 Source data are provided with this paper in the file Source\_Data.zip.
 
@@ -1742,8 +1749,9 @@ Source data are provided with this paper in the file Source\_Data.zip.
 ## Code Availability
 
 \textbf{Code}: All code used to run the analyses reported here are
-available at Figshare: \url{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979} 
-DOI: 10.6084/m9.figshare.27066979
+available at Figshare: \url{https://figshare.com}
+[DOI: 10.6084/m9.figshare.27066979](https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979)
+\cite{cube_data}
 
 \pagebreak
 
@@ -1800,7 +1808,7 @@ $x$-axis. \textbf{B.} Distributions of fasting glucose in female
 shown by colored bars along the $x$-axis. \textbf{C.} Males 
 (blue $n = 242$) had higher fasting blood glucose on average 
 (mean = 170.0 mg/dL) than females (green $n = 240$, 
-mean = $136) (two-sided Welch's t test: $t = 8.02$, 
+mean = 136) (two-sided Welch's t test: $t = 8.02$, 
 df = 428.9, 95\% CI of difference = 25.4 to 42.0 mg/dL; 
 $p = 1.05\times10^{-14}$). Lines in boxes 
 correspond to the median; lower and upper edges of 
@@ -1922,8 +1930,8 @@ beta coefficient = $3.1\pm0.13$ standard error; $t = 24.4$;
 $p < 2.2^{-16}$). There is no association between $G_C$ and $P_C$
 (Linear regression $R^2 = 7.1\times10^{4}$;  beta coefficient = 
 $2.0\pm3.8$ standard error; $t = 0.51$; $p = 0.61$). This correlation 
-structure is consistent with perfect mediation. Source data are provided 
-as a Source Data file.
+structure is consistent with perfect mediation. Blue lines show
+lines of best fit. Source data are provided as a Source Data file.
 }
 \label{fig:interpretation}
 \end{figure}

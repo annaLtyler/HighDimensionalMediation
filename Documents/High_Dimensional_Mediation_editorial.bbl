@@ -556,6 +556,21 @@ Kwangbom Choi, Hao He, Daniel~M Gatti, Vivek~M Philip, Narayanan Raghupathy,
   population models by rna sequencing data.
 \newblock {\em bioRxiv}, pages 2020--10, 2020.
 
+\bibitem{DO_data}
+M.~P. Keller, D.~M. Gatti, K.~L. Schueler, M.~E. Rabaglia, D.~S. Stapleton,
+  P.~Simecek, M.J. Vincent, S.~Allen, A.~T. Broman, R.~Bacher, C.~Kendziorski,
+  K.~W. Broman, B.~S. Yandell, G.~A. Churchill, and A.~D. Attie.
+\newblock Data from: Genetic drivers of pancreatic islet function.
+\newblock {\em Dryad}, 2018.
+
+\bibitem{cube_data}
+A.L. Tyler, J.M. Mahoney, M.~P. Keller, Baker C.N., Gaca M., A.~Srivastava,
+  Gyuricza I.G., Braun M.J., Rosenthal N.A., A.~D. Attie, G.~A. Churchill, and
+  Carter G.W.
+\newblock Data and code for high-dimensional mediation analysis (hdma) in
+  diversity outbred mice.
+\newblock {\em Figshare}, 2024.
+
 \bibitem{pmid29444201}
 Narayanan Raghupathy, Kwangbom Choi, Matthew~J Vincent, Glen~L Beane, Keith~S
   Sheppard, Steven~C Munger, Ron Korstanje, Fernando Pardo-Manual~de Villena,

@@ -957,7 +957,7 @@ analysis \cite{pmid29567659}.
 The DO data used in this study were generated in a previous
 study\cite{pmid31343992, pmid29567659}. We downloaded genotypes,
 phenotypes, and pancreatic islet gene expression data from Dryad
-(\url{doi:10.5061/dryad.pj105}).
+(\url{doi:10.5061/dryad.pj105}) \cite{DO_data}.
 
 \subsection{Collaborative cross recombinant inbred mice
 (CC-RIX)}\label{collaborative-cross-recombinant-inbred-mice-cc-rix}
@@ -1080,8 +1080,8 @@ We filtered the measured traits in this study to a set of relatively
 non-redundant measures that were well-represented in the population
 (having at least 80\% of individuals measured). A complete description
 of trait filtering can be found at Figshare DOI:
-10.6084/m9.figshare.27066979 in the file Documents \textgreater{} 1.DO
-\textgreater{} 1b.Trait\_Selection.Rmd.
+10.6084/m9.figshare.27066979 \cite{cube_data} in the file Documents
+\textgreater{} 1.DO \textgreater{} 1b.Trait\_Selection.Rmd.
 
 We took two approaches for traits with multiple redundant measurements,
 for example longitudinal body weights. In the case of longitudinal
@@ -1438,6 +1438,7 @@ in one iteration.
 
 All code required to run HDMA is available at Figshare:
 \url{https://figshare.com/} DOI: 10.6084/m9.figshare.27066979
+\cite{DO_data}
 
 \subsection{Enrichment of biological
 terms}\label{enrichment-of-biological-terms}
@@ -1707,28 +1708,40 @@ in the CMAP database.
 expression data were previously published \cite{pmid29567659}. Gene
 expression for the other tissues can be found at the Gene Expression
 Omnibus \url{https://www.ncbi.nlm.nih.gov/geo/} with the following
-accession numbers: DO adipose tissue - GSE266549; DO liver tissue -
-GSE266569; DO skeletal muscle - GSE266567. Expression data with
-calculated eQTLs are available at Figshare
-\url{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979}
-DOI: 10.6084/m9.figshare.27066979
+accession numbers: DO adipose tissue -
+\href{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE266549}{GSE266549};
+DO liver tissue -
+\href{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE266569}{GSE266569};
+DO skeletal muscle -
+\href{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE266567}{GSE266567}.
+
+Expression data with calculated eQTLs are available at Figshare:
+\url{https://figshare.com/}.
+\href{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979}{DOI:
+10.6084/m9.figshare.27066979} \cite{cube_data}
 
 \textbf{CC-RIX mice}: Gene expression can be found at the Gene
 Expression Omnibus \url{https://www.ncbi.nlm.nih.gov/geo/} with the
-following accession numbers: CC-RIX adipose tissue - GSE237737; CC-RIX
-liver tissue - GSE237743; CC-RIX skeletal muscle - GSE237747. Count
-matrices and phenotype data can be found at Figshare
-\url{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979}
-DOI: 10.6084/m9.figshare.27066979
+following accession numbers: CC-RIX adipose tissue -
+\href{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE237737}{GSE237737};
+CC-RIX liver tissue -
+\href{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE237743}{GSE237743};
+CC-RIX skeletal muscle -
+\href{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE237747}{GSE237747}.
+
+Count matrices and phenotype data can be found at Figshare:
+\url{https://figshare.com/}
+\href{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979}{DOI:
+10.6084/m9.figshare.27066979} \cite{cube_data}
 
 Source data are provided with this paper in the file Source\_Data.zip.
 
 \subsection{Code Availability}\label{code-availability}
 
 \textbf{Code}: All code used to run the analyses reported here are
-available at Figshare:
-\url{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979}
-DOI: 10.6084/m9.figshare.27066979
+available at Figshare: \url{https://figshare.com}
+\href{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979}{DOI:
+10.6084/m9.figshare.27066979} \cite{cube_data}
 
 \pagebreak
 
@@ -1769,46 +1782,52 @@ The authors declare no competing interests.
 
 \subsection{Figure Legends/Captions}\label{figure-legendscaptions}
 
-\textbackslash begin\{figure\}{[}ht!{]}
-\%\includegraphics[width=\textwidth]{Figures/Fig1_trait_overview.pdf}
-\textbackslash caption\{Clinical overview. \textbf{A.} Distributions of
-final body weight in female (green) and male (blue) diversity outbred
-mice. The average B6 female and male adult weights at 24 weeks of age
-are indicated by green and blue bars respectively on the \(x\)-axis.
-\textbf{B.} Distributions of fasting glucose in female (green) and male
-(blue) DO mice. Normal (green), pre-diabetic (yellow), and diabetic
-(red) fasting glucose ranges for mice are shown by colored bars along
-the \(x\)-axis. \textbf{C.} Males (blue \(n = 242\)) had higher fasting
-blood glucose on average (mean = 170.0 mg/dL) than females (green
-\(n = 240\), mean = \$136) (two-sided Welch's t test: \(t = 8.02\), df =
-428.9, 95\% CI of difference = 25.4 to 42.0 mg/dL;
-\(p = 1.05\times10^{-14}\)). Lines in boxes correspond to the median;
-lower and upper edges of boxes indicate the first and third quartiles;
-whiskers indicate the first and third quartiles \(\pm\) 1.5 times the
-interquartile range; dots indicate outliers beyond 1.5 times the
-interquartile range. \textbf{D.} The relationship between food
-consumption and body weight for female (green) and male (blue) DO mice.
-(Linear regression \(R^2 = 0.51\); beta coefficient = \(12.6\pm0.57\)
-standard error; \(t = 22.2\); \(p < 2.2^{-16}\)). \textbf{E.}
-Relationship between body weight and fasting glucose for female (green)
-and male (blue) DO mice. (Linear regression \(R^2 = 0.21\); beta
-coefficient = \(2.49\pm 0.22\) standard error; \(t = 11.34\);
-\(p < 2.2^{-16}\)). In D and E, blue lines show line of best fit.
-\textbf{F.} Data presented are heritability estimates for each
-physiological trait. Bars show standard error of each estimate. The
-number of animals used in each estimate is shown in parentheses after
-each trait name. \textbf{G.} Correlation structure between pairs of
-physiological traits. The upper and lower triangle show the Pearson
-correlation coefficients (\(r\)) between LOD traces of trait pairs
-(blue) and trait pairs (purple) respectively. The diagonal (orange)
-shows the estimated heritability of each trait. BMD - bone mineral
-density, WPIC - whole pancreas insulin content, Glu tAUC - glucose total
-area under the curve, HOMA IR - homeostatic measurement of insulin
-resistance, HOMA B - homeostatic measure of beta cell health, VLDL -
-very low-density lipoprotein, LDL - low-density lipoprotein, IDL -
-intermediate density lipoprotein, HDL - high-density lipoprotein, TG -
-triglyceride. Source data are provided as a Source Data file. \}
-\label{fig:trait_overview} \textbackslash end\{figure\}
+\begin{figure}[ht!]
+%\includegraphics[width=\textwidth]{Figures/Fig1_trait_overview.pdf}
+\caption{Clinical overview. \textbf{A.} Distributions of final body 
+weight in female (green) and male (blue) diversity outbred mice.
+The average B6 female and male adult weights at 24 weeks of 
+age are indicated by green and blue bars respectively on the 
+$x$-axis. \textbf{B.} Distributions of fasting glucose in female 
+(green) and male (blue) DO mice. Normal (green), pre-diabetic
+(yellow), and diabetic (red) fasting glucose ranges for mice are 
+shown by colored bars along the $x$-axis. \textbf{C.} Males 
+(blue $n = 242$) had higher fasting blood glucose on average 
+(mean = 170.0 mg/dL) than females (green $n = 240$, 
+mean = 136) (two-sided Welch's t test: $t = 8.02$, 
+df = 428.9, 95\% CI of difference = 25.4 to 42.0 mg/dL; 
+$p = 1.05\times10^{-14}$). Lines in boxes 
+correspond to the median; lower and upper edges of 
+boxes indicate the first and third quartiles; whiskers 
+indicate the first and third quartiles $\pm$ 1.5 times
+the interquartile range; dots indicate outliers beyond 1.5 times
+the interquartile range. \textbf{D.} The relationship between 
+food consumption and body weight for female (green) and 
+male (blue) DO mice. (Linear regression 
+$R^2 = 0.51$;  beta coefficient = $12.6\pm0.57$ 
+standard error; $t = 22.2$; $p < 2.2^{-16}$). \textbf{E.} 
+Relationship between body weight and fasting glucose for 
+female (green) and male (blue) DO mice. (Linear regression 
+$R^2 = 0.21$; beta coefficient = $2.49\pm 0.22$ 
+standard error; $t = 11.34$; $p < 2.2^{-16}$). In D and E,
+blue lines show line of best fit. \textbf{F.} Data 
+presented are heritability estimates for each physiological trait. 
+Bars show standard error of each estimate. The number of animals 
+used in each estimate is shown in parentheses after each trait name. 
+\textbf{G.} Correlation structure between pairs of physiological 
+traits. The upper and lower triangle show the Pearson correlation 
+coefficients ($r$) between LOD traces of trait pairs (blue) and trait 
+pairs (purple) respectively. The diagonal (orange) shows the estimated 
+heritability of each trait. BMD - bone mineral density, WPIC - whole 
+pancreas insulin content, Glu tAUC - glucose total area under the 
+curve, HOMA IR - homeostatic measurement of insulin resistance, 
+HOMA B - homeostatic measure of beta cell health, VLDL - very 
+low-density lipoprotein, LDL - low-density lipoprotein, IDL - intermediate 
+density lipoprotein, HDL - high-density lipoprotein, TG - triglyceride. 
+Source data are provided as a Source Data file.
+}
+\label{fig:trait_overview}
+\end{figure}
 
 \begin{figure}[ht!]
 %\includegraphics[width=\textwidth]{Figures/Fig2_motivation.pdf} 
@@ -1897,8 +1916,8 @@ beta coefficient = $3.1\pm0.13$ standard error; $t = 24.4$;
 $p < 2.2^{-16}$). There is no association between $G_C$ and $P_C$
 (Linear regression $R^2 = 7.1\times10^{4}$;  beta coefficient = 
 $2.0\pm3.8$ standard error; $t = 0.51$; $p = 0.61$). This correlation 
-structure is consistent with perfect mediation. Source data are provided 
-as a Source Data file.
+structure is consistent with perfect mediation. Blue lines show
+lines of best fit. Source data are provided as a Source Data file.
 }
 \label{fig:interpretation}
 \end{figure}
