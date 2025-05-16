@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.7)  15 MAY 2025 13:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.7)  15 MAY 2025 13:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Supplementary_File1.tex
-(./Supplementary_File1.tex
+**High_Dimensional_Mediation_editorial.tex
+(./High_Dimensional_Mediation_editorial.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex
 /base/article.cls
@@ -227,7 +227,12 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 )
 \Gin@req@height=\dimen159
 \Gin@req@width=\dimen160
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/lineno/lineno.sty
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/xr.sty
+Package: xr 2020-05-10 v5.06 eXternal References (DPC)
+)
+Package xr Info: IMPORTING LABELS FROM Supplementary_File1.aux on input line 71
+.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2023/01/19 line numbers on paragraphs v5.1
 \linenopenalty=\count277
 \output=\toks27
@@ -454,8 +459,8 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count320
 \l__pdf_internal_box=\box67
-) (./Supplementary_File1.aux)
-\openout1 = `Supplementary_File1.aux'.
+) (./High_Dimensional_Mediation_editorial.aux)
+\openout1 = `High_Dimensional_Mediation_editorial.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
 LaTeX Font Info:    ... okay on input line 105.
@@ -603,128 +608,106 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<Figures/Supp_Fig_Trait_Decomposition.pdf, id=4, 768.20221pt x 440.89085pt>
-File: Figures/Supp_Fig_Trait_Decomposition.pdf Graphic file (type pdf)
-<use Figures/Supp_Fig_Trait_Decomposition.pdf>
-Package pdftex.def Info: Figures/Supp_Fig_Trait_Decomposition.pdf  used on inpu
-t line 111.
-(pdftex.def)             Requested size: 469.7514pt x 269.60231pt.
-<Figures/Supp_Fig_eQTL.pdf, id=5, 794.97pt x 614.295pt>
-File: Figures/Supp_Fig_eQTL.pdf Graphic file (type pdf)
-<use Figures/Supp_Fig_eQTL.pdf>
-Package pdftex.def Info: Figures/Supp_Fig_eQTL.pdf  used on input line 127.
-(pdftex.def)             Requested size: 469.76819pt x 363.00267pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 150.
+(Font)              <10> on input line 108.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 150.
+(Font)              <7> on input line 108.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 150.
-<Figures/Supp_Fig_transcript_load_comparison.pdf, id=6, 722.7pt x 361.35pt>
-File: Figures/Supp_Fig_transcript_load_comparison.pdf Graphic file (type pdf)
-<use Figures/Supp_Fig_transcript_load_comparison.pdf>
-Package pdftex.def Info: Figures/Supp_Fig_transcript_load_comparison.pdf  used 
-on input line 155.
-(pdftex.def)             Requested size: 469.76045pt x 234.88023pt.
-<Figures/Supp_Fig_enrichments_KEGG.pdf, id=7, 1156.32pt x 650.43pt>
-File: Figures/Supp_Fig_enrichments_KEGG.pdf Graphic file (type pdf)
-<use Figures/Supp_Fig_enrichments_KEGG.pdf>
-Package pdftex.def Info: Figures/Supp_Fig_enrichments_KEGG.pdf  used on input l
-ine 171.
-(pdftex.def)             Requested size: 469.75385pt x 264.23653pt.
-<Figures/Supp_Fig_enrichments_GO.pdf, id=8, 1156.32pt x 650.43pt>
-File: Figures/Supp_Fig_enrichments_GO.pdf Graphic file (type pdf)
-<use Figures/Supp_Fig_enrichments_GO.pdf>
-Package pdftex.def Info: Figures/Supp_Fig_enrichments_GO.pdf  used on input lin
-e 182.
-(pdftex.def)             Requested size: 469.75385pt x 264.23653pt.
-<Figures/Supp_Fig_OxPhos.png, id=9, 1333.98375pt x 964.60374pt>
-File: Figures/Supp_Fig_OxPhos.png Graphic file (type png)
-<use Figures/Supp_Fig_OxPhos.png>
-Package pdftex.def Info: Figures/Supp_Fig_OxPhos.png  used on input line 196.
-(pdftex.def)             Requested size: 469.75099pt x 339.67697pt.
-<Figures/Supp_Fig_TCA.png, id=11, 973.6375pt x 739.76375pt>
-File: Figures/Supp_Fig_TCA.png Graphic file (type png)
-<use Figures/Supp_Fig_TCA.png>
-Package pdftex.def Info: Figures/Supp_Fig_TCA.png  used on input line 210.
-(pdftex.def)             Requested size: 469.74744pt x 356.9112pt.
-<Figures/Supp_Fig_Branched_Chain.png, id=12, 852.18375pt x 1022.82124pt>
-File: Figures/Supp_Fig_Branched_Chain.png Graphic file (type png)
-<use Figures/Supp_Fig_Branched_Chain.png>
-Package pdftex.def Info: Figures/Supp_Fig_Branched_Chain.png  used on input lin
-e 224.
-(pdftex.def)             Requested size: 469.76877pt x 563.83319pt.
-<Figures/Supp_Fig_CC-RIX_Imputation.pdf, id=13, 728.27675pt x 507.65535pt>
-File: Figures/Supp_Fig_CC-RIX_Imputation.pdf Graphic file (type pdf)
-<use Figures/Supp_Fig_CC-RIX_Imputation.pdf>
-Package pdftex.def Info: Figures/Supp_Fig_CC-RIX_Imputation.pdf  used on input 
-line 238.
-(pdftex.def)             Requested size: 469.7627pt x 327.45454pt.
-<Figures/Supp_Fig_Adipose_all_cell_types.png, id=14, 815.045pt x 486.81876pt>
-File: Figures/Supp_Fig_Adipose_all_cell_types.png Graphic file (type png)
-<use Figures/Supp_Fig_Adipose_all_cell_types.png>
-Package pdftex.def Info: Figures/Supp_Fig_Adipose_all_cell_types.png  used on i
-nput line 256.
-(pdftex.def)             Requested size: 469.75409pt x 280.57973pt.
-<Figures/Supp_Fig_Islet_all_cell_types.png, id=15, 815.045pt x 492.84125pt>
-File: Figures/Supp_Fig_Islet_all_cell_types.png Graphic file (type png)
-<use Figures/Supp_Fig_Islet_all_cell_types.png>
-Package pdftex.def Info: Figures/Supp_Fig_Islet_all_cell_types.png  used on inp
-ut line 267.
-(pdftex.def)             Requested size: 469.75409pt x 284.0508pt.
-<Figures/Supp_Fig_Adipose_ASC.png, id=16, 815.045pt x 486.81876pt>
-File: Figures/Supp_Fig_Adipose_ASC.png Graphic file (type png)
-<use Figures/Supp_Fig_Adipose_ASC.png>
-Package pdftex.def Info: Figures/Supp_Fig_Adipose_ASC.png  used on input line 2
-78.
-(pdftex.def)             Requested size: 469.75409pt x 280.57973pt.
-<Figures/Supp_Fig_Islet_YAPC.png, id=17, 815.045pt x 486.81876pt>
-File: Figures/Supp_Fig_Islet_YAPC.png Graphic file (type png)
-<use Figures/Supp_Fig_Islet_YAPC.png>
-Package pdftex.def Info: Figures/Supp_Fig_Islet_YAPC.png  used on input line 29
-0.
-(pdftex.def)             Requested size: 469.75409pt x 280.57973pt.
-<Figures/Supp_Fig14_Nucb2_eQTL.pdf, id=18, 742.49019pt x 261.6981pt>
-File: Figures/Supp_Fig14_Nucb2_eQTL.pdf Graphic file (type pdf)
-<use Figures/Supp_Fig14_Nucb2_eQTL.pdf>
-Package pdftex.def Info: Figures/Supp_Fig14_Nucb2_eQTL.pdf  used on input line 
-303.
-(pdftex.def)             Requested size: 469.76527pt x 165.57347pt.
+(Font)              <5> on input line 108.
 [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./Figures/Supp_Fig_Tr
-ait_Decomposition.pdf>] [2{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/l
-m/lm-mathit.enc} <./Figures/Supp_Fig_eQTL.pdf>] [3 <./Figures/Supp_Fig_transcri
-pt_load_comparison.pdf>] [4 <./Figures/Supp_Fig_enrichments_KEGG.pdf>] [5 <./Fi
-gures/Supp_Fig_enrichments_GO.pdf>] [6 <./Figures/Supp_Fig_OxPhos.png>] [7 <./F
-igures/Supp_Fig_TCA.png>] [8 <./Figures/Supp_Fig_Branched_Chain.png>] [9 <./Fig
-ures/Supp_Fig_CC-RIX_Imputation.pdf>] [10{/usr/local/texlive/2023/texmf-dist/fo
-nts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dv
-ips/lm/lm-rm.enc} <./Figures/Supp_Fig_Adipose_all_cell_types.png>] [11 <./Figur
-es/Supp_Fig_Islet_all_cell_types.png>] [12 <./Figures/Supp_Fig_Adipose_ASC.png>
-] [13 <./Figures/Supp_Fig_Islet_YAPC.png> <./Figures/Supp_Fig14_Nucb2_eQTL.pdf>
-] (./Supplementary_File1.aux) ) 
+al/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2] [3] [4{/usr/local
+/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2
+023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2023/texmf-
+dist/fonts/enc/dvips/lm/lm-rm.enc}] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14
+] [15] [16]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+037.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [17] [18{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [
+19] [20] [21{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.en
+c}] [22]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+333.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [23]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 1347.
+[24] [25]
+Overfull \hbox (22.49239pt too wide) in paragraph at lines 1442--1445
+[]\T1/lmr/m/n/10 (-20) All code re-quired to run HDMA is avail-able at Figshare
+: []$h t t p s : / / ^^\ g s h a r e . c o m/$[] DOI: 10.6084/m9.figshare.27066
+979$[]$ 
+ []
+
+[26] [27] [28] [29] [30]
+Underfull \hbox (badness 2088) in paragraph at lines 1749--1768
+[]\T1/lmr/m/n/10 (+20) We down-loaded geno-types, phe-no-types, and pan-cre-ati
+c islet gene ex-pres-sion data from []Dryad[]
+ []
+
+[31] (./High_Dimensional_Mediation_editorial.bbl [32] [33] [34] [35] [36] [37] 
+[38] [39] [40]
+Overfull \hbox (0.75879pt too wide) in paragraph at lines 606--610
+\T1/lmr/m/n/10 (-20) correlation analysis: a framework for sequential multibloc
+k component methods.  \T1/lmr/m/it/10 (-20) Psychometrika\T1/lmr/m/n/10 (-20) ,
+ 82(3):737--
+ []
+
+[41]) [42] [43] [44] [45] [46] (./High_Dimensional_Mediation_editorial.aux) ) 
 Here is how much of TeX's memory you used:
- 18450 strings out of 476025
- 348620 string characters out of 5790017
- 1866388 words of memory out of 5000000
- 38496 multiletter control sequences out of 15000+600000
- 563852 words of font info for 123 fonts, out of 8000000 for 9000
+ 19307 strings out of 476025
+ 361483 string characters out of 5790017
+ 1874388 words of memory out of 5000000
+ 38974 multiletter control sequences out of 15000+600000
+ 585469 words of font info for 211 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,6n,81p,1644b,909s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/
-public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/
-lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb>
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local
-/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/202
-3/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2023/texmf-di
-st/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/ty
-pe1/public/lm/lmsy10.pfb>
-Output written on Supplementary_File1.pdf (13 pages, 11161805 bytes).
+ 77i,14n,81p,2644b,1389s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{figure.14} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.13} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.12} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.11} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.10} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.9} has been referenced but does not exist, r
+eplaced by a fixed one
+
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/
+2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf
+-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/font
+s/type1/public/lm/lmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/pub
+lic/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr1
+7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/
+local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texliv
+e/2023/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2023/tex
+mf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fon
+ts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/p
+ublic/lm/lmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lm
+tt10.pfb>
+Output written on High_Dimensional_Mediation_editorial.pdf (46 pages, 436038 by
+tes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 164 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
- 26695 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 954 PDF objects out of 1000 (max. 8388607)
+ 865 compressed objects within 9 object streams
+ 243 named destinations out of 1000 (max. 500000)
+ 41385 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -1,5 +1,5 @@
 ---
-title: "Supplemental File for: Transcripts with high distal heritability mediate genetic effects on complex metabolic traits"
+title: "Supplementary Figures for: Transcripts with high distal heritability mediate genetic effects on complex metabolic traits"
 output: 
   pdf_document:
     keep_tex: true
@@ -16,20 +16,18 @@ options(tinytex.clean = FALSE)
 
 \beginsupplement
 
-## Supplementary Figures
-
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Trait_Decomposition.pdf} 
 \caption{Trait matrix decomposition. \textbf{A} The heat map 
 shows the loadings of each trait onto each principal component 
-of the trait matrix. The bars at the top show the percent variance 
-explained for each principal component. \textbf{B} Traits plotted 
-by the first and second principal components of the trait matrix. 
-This view shows clustering of traits into insulin- and 
-weight-related traits, lipid-related traits, and ex-vivo 
-pancreatic measurements. Source data are provided as a Source 
-Data file.
+of the trait matrix derived from $n = 471$ DO mice. The bars 
+at the top show the percent variance explained for each principal 
+component. \textbf{B} Traits plotted by the first and second 
+principal components of the trait matrix. This view shows 
+clustering of traits into insulin- and weight-related traits, 
+lipid-related traits, and ex-vivo pancreatic measurements. 
+Source data are provided as a Source Data file.
 }
 \label{fig:trait_decomp}
 \end{figure}
