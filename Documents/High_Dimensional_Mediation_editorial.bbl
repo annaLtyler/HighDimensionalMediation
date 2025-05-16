@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
 \bibitem{pmid22955828}
 M.~T. Maurano, R.~Humbert, E.~Rynes, R.~E. Thurman, E.~Haugen, H.~Wang, A.~P.
@@ -524,6 +524,11 @@ M.~Riva, M.~D. Nitert, U.~Voss, R.~Sathanoori, A.~Lindqvist, C.~Ling, and
   {N}{U}{C}{B}2 is reduced in human type 2 diabetic subjects}.
 \newblock {\em Cell Tissue Res}, 346(3):393--405, Dec 2011.
 
+\bibitem{van2011statistical}
+Gerald Van~Belle.
+\newblock {\em Statistical rules of thumb}.
+\newblock John Wiley \& Sons, 2nd edition, 2008.
+
 \bibitem{pmid26684931}
 A.~P. Morgan, C.~P. Fu, C.~Y. Kao, C.~E. Welsh, J.~P. Didion, L.~Yadgary,
   L.~Hyacinth, M.~T. Ferris, T.~A. Bell, D.~R. Miller, P.~Giusti-Rodriguez,
@@ -556,13 +561,6 @@ Kwangbom Choi, Hao He, Daniel~M Gatti, Vivek~M Philip, Narayanan Raghupathy,
   population models by rna sequencing data.
 \newblock {\em bioRxiv}, pages 2020--10, 2020.
 
-\bibitem{DO_data}
-M.~P. Keller, D.~M. Gatti, K.~L. Schueler, M.~E. Rabaglia, D.~S. Stapleton,
-  P.~Simecek, M.J. Vincent, S.~Allen, A.~T. Broman, R.~Bacher, C.~Kendziorski,
-  K.~W. Broman, B.~S. Yandell, G.~A. Churchill, and A.~D. Attie.
-\newblock Data from: Genetic drivers of pancreatic islet function.
-\newblock {\em Dryad}, 2018.
-
 \bibitem{cube_data}
 A.L. Tyler, J.M. Mahoney, M.~P. Keller, Baker C.N., Gaca M., A.~Srivastava,
   Gyuricza I.G., Braun M.J., Rosenthal N.A., A.~D. Attie, G.~A. Churchill, and
@@ -570,6 +568,13 @@ A.L. Tyler, J.M. Mahoney, M.~P. Keller, Baker C.N., Gaca M., A.~Srivastava,
 \newblock Data and code for high-dimensional mediation analysis (hdma) in
   diversity outbred mice.
 \newblock {\em Figshare}, 2024.
+
+\bibitem{DO_data}
+M.~P. Keller, D.~M. Gatti, K.~L. Schueler, M.~E. Rabaglia, D.~S. Stapleton,
+  P.~Simecek, M.J. Vincent, S.~Allen, A.~T. Broman, R.~Bacher, C.~Kendziorski,
+  K.~W. Broman, B.~S. Yandell, G.~A. Churchill, and A.~D. Attie.
+\newblock Data from: Genetic drivers of pancreatic islet function.
+\newblock {\em Dryad}, 2018.
 
 \bibitem{pmid29444201}
 Narayanan Raghupathy, Kwangbom Choi, Matthew~J Vincent, Glen~L Beane, Keith~S

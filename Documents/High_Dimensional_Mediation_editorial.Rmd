@@ -950,7 +950,45 @@ a new perspective on disease pathogenesis and develop actionable
 hypotheses about pathogenic mechanisms and potential treatments. 
 
 
-## Materials and Methods
+## Methods
+
+### Statistics and Reproducibility
+In this study we used two populations of laboratory mice 
+(\textit{Mus musculus}): 1) a population of 
+482 diversity outbred mice (J:DO, JAX strain#:009376) ($n = 240$ 
+females and $n = 242$ males), and 2) a population of 466 CC-RIX 
+mice ($n = 234$ females, and $n = 232$ males), which were 
+F1 mice derived from crosses of the following JAX strains of 
+Collaborative Cross mice: 
+CC043/GeniUncJ (strain#:023828), CC011/UncJ (strain#018854), 
+CC030/GeniUncJ (strain#:025426), CC002/UncJ (strain#:021236), 
+CC051/TauUncJ (strain#:021897), CC019/TauUncJ (strain#:CC019), 
+CC027/GeniUncJ (strain#:025130), CC012/GeniUncJ (strain#:028409), 
+CC024/GeniUncJ (strain#:021891), CC075/UncJ (strain#:027293), 
+CC005/TauUncJ (strain#:020945), CC059/TauUncJ (strain#:025125), 
+CC001/UncJ (strain#:021238), CC042/GeniUncJ (strain#:020947), 
+CC040/TauUncJ (strain#:023831), CC004/TauUncJ (strain#:020944), 
+CC009/UncJ (strain#:018856), CC013/GeniUncJ (strain#:021892), and
+CC060/UncJ (strain#:026427). Counts of male and female mice in 
+each strain are available in the supplementary file 
+CC-RIX_strain_table.txt. All DO mice were maintained on a
+high-fat, high-sugar diet. The CC-RIX mice were randomized to 
+a high-fat or a low-fat diet. The diets were different colors,
+so blinding was not possible. In the DO population, we used
+sex, DO generation, and DO wave as covariates in all statistical
+tests. In the CC-RIX population, we used diet, sex, and age as 
+covariates in all statistical tests. We did not investiagate 
+sex-specific effects on genetic architecture in order to maximize 
+power and generalizability, as well as to simplify the overall
+analysis. CC-RIX animals were randomly assigned to housing and 
+diets based on litters with multiple litters in each group. While 
+undergoing metabolic phenotyping animals were randomly assigned 
+an order for testing. Sample sizes were determined using statistical 
+rules of thumb \cite{van2011statistical}. We included at least four 
+biological replicates that were tested over multiple months to 
+increase replication power. No data were excluded. Further experimental
+details and statistical testing are described individually in the 
+following Methods sections.
 
 ### Diversity Outbred Mice
 
@@ -959,7 +997,7 @@ approved by the Department of Biochemistry animal vivarium at the
 University of Wisconsin. Animal husbandry and in vivo phenotyping 
 methods were previously published \cite{pmid31343992, pmid29567659}. 
 
-A population of 500 diversity outbred mice (split evenly between
+A population of 482 diversity outbred mice (split evenly between
 male and female) from generates 18, 19, and 21, was placed on a 
 high-fat (44.6% kcal fat), high-sugar (34% carbohydrate), adequate
 protein (17.3 % protein) diet from Envigo Teklad (catalog number TD.08811) 
@@ -1068,6 +1106,15 @@ cohorts), 26 weeks (for 12-month cohorts), 38 weeks, and 56 weeks of
 age via retro-orbital or submental vein. Sex, diet, and age were used 
 as covariates in all analyses.
 
+### CC-RIX genotypes
+We used the most recent common ancestor (MRCA) genotypes for the 
+Collaborative Cross (CC) mice available on the University of 
+North Carolina Computational Systems Biology website: 
+\url{http://www.csbio.unc.edu/CCstatus/CCGenomes/}
+
+To generate CC-RIX genotypes, we averaged the haplotype 
+probabilities for the two parental strains at each locus. 
+
 #### Clinical chemistries
 
 CC-RIX animals were fasted for four hours before serum collection 
@@ -1147,9 +1194,7 @@ Libraries were sequenced on an Illumina NovaSeq 6000 using the S4 Reagent
 Kit (Illumina; 20028312). All tissues underwent 100 bp paired-end 
 sequencing, aiming for a target read depth of 30 million read pairs.
 
-
-## Processing of RNA sequencing data
-
+### Processing of RNA sequencing data
 We used the Expectation-Maximization algorithm for Allele Specific 
 Expression (EMASE) \cite{pmid29444201, pmid25236449} to quantify 
 multi-parent allele-specific and total expression from RNA-seq data 
@@ -1169,7 +1214,7 @@ using lme4 R package. RNA-Seq counts were normalized relative to total read coun
 using the variance stabilizing transform (VST) as implemented in DESeq2 and using 
 rank normal score.
 
-## eQTL analysis
+### eQTL analysis
 We used R/qtl2 \cite{pmid30591514} to perform eQTL analysis. We used the rank 
 normal score data and used sex and DO generation as additive covariates. We also 
 used kinship as a random effect. We used permutations to find a LOD threshold of 
@@ -1181,7 +1226,7 @@ eQTLs within 4Mb of each other to be overlapping. We considered local and
 distal eQTLs separately. Local eQTL were defined as an eQTL within
 4Mb of the transcription start site of the encoding gene.
 
-## Local and distal heritability of transcripts 
+### Local and distal heritability of transcripts 
 To estimate local and distal heritability of each transcript, we scaled each
 normalized transcript to have a variance of 1. We then modeled this transcript
 with the local genotype using the fit1() function in R/qtl. We used the 
@@ -1199,7 +1244,7 @@ correlation coefficients ($\rho$) between adjusted traits and adjusted
 transcripts. The trait relevance of a given tanscript was the maximum
 absolute correlation coefficient across all traits.
 
-## High-dimensional mediation analysis
+### High-dimensional mediation analysis
 
 In this section we derive the objective function for high-dimensional 
 mediation analysis (HDMA) and present an iterative algorithm to optimize 
@@ -1210,7 +1255,7 @@ multivariate data that are maximally consistent with perfect mediation (HDMA).
 Next, we demonstrate how to kernelize HDMA to limit dimensionality of 
 the model and enable non-linear HDMA models. 
 
-### Perfect mediation as a constraint on covariance matrices
+#### Perfect mediation as a constraint on covariance matrices
 Suppose we have three random variables $x$, $m$, and $y$. Assume they each 
 have unit variance and that they satisfy the following structural equation 
 model (SEM) such that $m$ perfectly mediates the effect of $x$ on $y$:
@@ -1278,7 +1323,7 @@ Note that this likelihood is maximized by fitting regression coefficients $\alph
 and $\beta$ between $x$ and $m$ and $m$ and $y$, respectively, but the negative 
 log-likelihood formulation is useful for the multivariate extension below.
 
-### Projecting multivariate data to identify latent mediators
+#### Projecting multivariate data to identify latent mediators
 Suppose now that we have three data matrices, $X$, $M$, and $Y$ (individuals by 
 variables) that are mean centered by column. The central  assumption of HDMA is 
 that these multivariate data encode latent variables that are causally 
@@ -1334,7 +1379,7 @@ sum of correlation coefficients, connecting it to so-called
 sum-of-correlation, or SUMCOR, optimization problems 
 \cite{tenenhaus2011regularized}, which we discuss further below.
 
-### An algorithm for HDMA
+#### An algorithm for HDMA
 
 The global optimization of \ref{eqn:gcca_mediation} is challenging because 
 it is not a convex problem. However, the decomposition of the variables 
@@ -1398,7 +1443,7 @@ We summarize our optimization procedure in Algorithm \ref{alg:hdma}.
 \end{algorithmic}
 \end{algorithm}
 
-### Kernel HDMA
+#### Kernel HDMA
 
 For large data matrices $X$, $M$, and $Y$, especially with high correlation 
 among variables, as is common for high-throughput biological assays (e.g., 
@@ -1453,7 +1498,7 @@ transcriptomic kernel with each of these additional kernels in turn and
 performed HDMA. We calculated the correlation between all pairs of latent
 variables and the path coefficient for each instance.
 
-### Implementation details
+#### Implementation details
 
 We have implemented HDMA (Algorithm \ref{alg:hdma}) in the R programming 
 language. Tenenhaus \textit{et al.} have implemented their optimizers in 
@@ -1476,7 +1521,7 @@ analytic formula.
  \url{https://figshare.com/} DOI: 10.6084/m9.figshare.27066979 
  \cite{DO_data}
 
-## Enrichment of biological terms
+### Enrichment of biological terms
 
 We performed gene set enrichment analysis (GSEA) \cite{pmid16199517}
 using the transcript loadings in each tissue as gene weights. GSEA 
@@ -1514,7 +1559,7 @@ the KEGG pathways, we used fgsea to calculate a normalized enrichment
 score for each GO term and collected loadings for the transcripts
 in each term to compare across tissues.
 
-## TWAS in DO mice
+### TWAS in DO mice
 We performed a transcriptome-wide analysis (TWAS) \cite{pmid26258848, 
 pmid26854917} in the DO mice to compare to the results of 
 high-dimensional mediation. To perform TWAS, we fit a linear model 
@@ -1536,7 +1581,7 @@ level was significantly correlated with one of the metabolic traits.
 This suggests an association between the genetically encoded transcript
 level and the trait but does not identify a direction of causation. 
 
-## Literature support for genes
+### Literature support for genes
 To determine whether each gene among those with large loadings or
 large heritability had a supported connection to obesity or diabetes
 in the literature, we used the R package easyPubMed \cite{easyPubMed}. 
@@ -1558,7 +1603,7 @@ name and determined that a gene had literature support when it had at
 least two abstracts linking it to the terms diabetes or obesity in the 
 respective tissue. 
 
-## Tissue-specific clusters
+### Tissue-specific clusters
 
 To compare the top loading genes across tissues, we selected genes with
 a loading at least 2.5 standard deviations from the mean across all tissues.
@@ -1570,16 +1615,7 @@ the separation of the clusters. The best separation was achieved with $k = 12$
 clusters. For each cluster we used the R package gprofiler2 \cite{Rgprofiler2}
 to identify enriched GO terms and KEGG pathways for the genes in each cluster. 
 
-## CC-RIX genotypes
-We used the most recent common ancestor (MRCA) genotypes for the 
-Collaborative Cross (CC) mice available on the University of 
-North Carolina Computational Systems Biology website: 
-\url{http://www.csbio.unc.edu/CCstatus/CCGenomes/}
-
-To generate CC-RIX genotypes, we averaged the haplotype 
-probabilities for the two parental strains at each locus. 
-
-## Imputation of gene expression in CC-RIX
+### Imputation of gene expression in CC-RIX
 
 To impute gene expression in the CC-RIX, we performed the following
 steps for each transcript in each tissue (adipose, liver, and skeletal muscle):
@@ -1597,7 +1633,7 @@ correlation between the imputed transcript and the measured
 transcript was highly positively dependent on the local 
 eQTL LOD score of the transcript (Supp. Fig. S7B).
 
-## Prediction of CC-RIX traits
+### Prediction of CC-RIX traits
 
 We used both measured expression and imputed expression
 combined with the results from HDM in the to predict
@@ -1621,7 +1657,7 @@ After calculating this predicted phenotype value across
 all CC-RIX animals, we correlated the predicted values from
 each tissue with measured body weight (Fig. 7B).
 
-## Cell type specificity
+### Cell type specificity
 
 We investigated whether the loadings derived from HDM reflected
 tissue composition changes in the DO mice prone to obesity on the
@@ -1632,11 +1668,11 @@ adipocyte progenitors, and adipocytes as defined in \cite{pmid29087381}.
 In pancreatic islets, we looked at cell-type specific transcripts
 for alpha cells, beta cells, delta cells, ductal cells, mast cells, 
 macrophages, acinar cells, stellate cells, gamma and epsilon cells, 
-and endothelial cells as defined by \cite{pmid36778506}. Both studies defined
-cell-type specific transcripts based on human cell types. We collected 
-the loadings for each set of cell-type specific transcripts in the 
-respective tissue and asked whether the mean loading for the cell 
-type differed significantly from 0 (Fig. 8). A significant positive 
+and endothelial cells as defined by \cite{pmid36778506}. Both studies 
+defined cell-type specific transcripts based on human cell types. We 
+collected the loadings for each set of cell-type specific transcripts 
+in the respective tissue and asked whether the mean loading for the 
+cell type differed significantly from 0 (Fig. 8). A significant positive 
 loading for the cell type would suggest a genetic predisposition to 
 have a higher proportion of that cell type in the tissue. To determine
 whether each mean loading differed significantly from 0, we 
@@ -1647,8 +1683,7 @@ over 10,000 random draws to that seen in the observed data. We
 used a significance threshold of 0.01.
 
 
-## Comparison of transcriptomic signatures to human transcriptomic signatures
-
+### Comparison of transcriptomic signatures to human transcriptomic signatures
 To compare the transcriptomic signatures identified in the DO
 mice to those seen in human patients, we downloaded human gene 
 expression data from the Gene Expression Omnibus (GEO) 
@@ -1695,7 +1730,7 @@ or risk of metabolic disease based on adipose gene expression. We then
 compared the values across groups, either obese and non-obese, or diabetic 
 and non-diabetic depending on the groups in each study.
 
-## Connectivity Map Queries
+### Connectivity Map Queries
 
 We queried the transcript loading signatures from adipose tissue and 
 pancreatic islets with the CMAP database. These tissues are the most
@@ -1722,7 +1757,7 @@ ASC in the CMAP database, and for pancreatic islets we looked in
 pancreatic cancer cells, abbreviated YAPC in the CMAP database. 
 
 
-## Data Availability
+### Data Availability
 \textbf{DO mice:} Genotypes, phenotypes, and pancreatic islet gene 
 expression data were previously published \cite{pmid29567659}. Gene 
 expression for the other tissues can be found at the [Gene Expression 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.7)  15 MAY 2025 13:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.7)  16 MAY 2025 13:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -622,50 +622,50 @@ al/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2] [3] [4{/usr/local
 023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2023/texmf-
 dist/fonts/enc/dvips/lm/lm-rm.enc}] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14
 ] [15] [16]
+Underfull \hbox (badness 2088) in paragraph at lines 1021--1027
+\T1/lmr/m/n/10 (+20) We down-loaded geno-types, phe-no-types, and pan-cre-atic 
+islet gene ex-pres-sion data from []Dryad[]
+ []
+
+[17]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-037.
+106.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [17] [18{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [
-19] [20] [21{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.en
-c}] [22]
+) [18] [19{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [
+20] [21{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [
+22] [23]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-333.
+378.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [23]
+)
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 1347.
+put line 1392.
 [24] [25]
-Overfull \hbox (22.49239pt too wide) in paragraph at lines 1442--1445
+Overfull \hbox (22.49239pt too wide) in paragraph at lines 1487--1490
 []\T1/lmr/m/n/10 (-20) All code re-quired to run HDMA is avail-able at Figshare
 : []$h t t p s : / / ^^\ g s h a r e . c o m/$[] DOI: 10.6084/m9.figshare.27066
 979$[]$ 
  []
 
 [26] [27] [28] [29] [30]
-Underfull \hbox (badness 2088) in paragraph at lines 1749--1768
+Underfull \hbox (badness 2088) in paragraph at lines 1784--1803
 []\T1/lmr/m/n/10 (+20) We down-loaded geno-types, phe-no-types, and pan-cre-ati
 c islet gene ex-pres-sion data from []Dryad[]
  []
 
-[31] (./High_Dimensional_Mediation_editorial.bbl [32] [33] [34] [35] [36] [37] 
-[38] [39] [40]
-Overfull \hbox (0.75879pt too wide) in paragraph at lines 606--610
-\T1/lmr/m/n/10 (-20) correlation analysis: a framework for sequential multibloc
-k component methods.  \T1/lmr/m/it/10 (-20) Psychometrika\T1/lmr/m/n/10 (-20) ,
- 82(3):737--
- []
-
-[41]) [42] [43] [44] [45] [46] (./High_Dimensional_Mediation_editorial.aux) ) 
+[31] [32] (./High_Dimensional_Mediation_editorial.bbl [33] [34] [35] [36] [37] 
+[38] [39] [40] [41] [42] [43]) [44] [45] [46] [47] (./High_Dimensional_Mediatio
+n_editorial.aux) ) 
 Here is how much of TeX's memory you used:
  19307 strings out of 476025
- 361483 string characters out of 5790017
+ 361580 string characters out of 5790017
  1874388 words of memory out of 5000000
- 38974 multiletter control sequences out of 15000+600000
- 585469 words of font info for 211 fonts, out of 8000000 for 9000
+ 38967 multiletter control sequences out of 15000+600000
+ 585621 words of font info for 213 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,14n,81p,2644b,1389s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,14n,81p,2644b,1421s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{figure.14} has been referenced but does not exist, 
 replaced by a fixed one
@@ -703,11 +703,11 @@ mf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fon
 ts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/p
 ublic/lm/lmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lm
 tt10.pfb>
-Output written on High_Dimensional_Mediation_editorial.pdf (46 pages, 436038 by
+Output written on High_Dimensional_Mediation_editorial.pdf (47 pages, 436188 by
 tes).
 PDF statistics:
- 954 PDF objects out of 1000 (max. 8388607)
- 865 compressed objects within 9 object streams
- 243 named destinations out of 1000 (max. 500000)
- 41385 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 928 PDF objects out of 1000 (max. 8388607)
+ 838 compressed objects within 9 object streams
+ 246 named destinations out of 1000 (max. 500000)
+ 41297 words of extra memory for PDF output out of 42996 (max. 10000000)
 
