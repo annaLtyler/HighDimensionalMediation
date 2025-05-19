@@ -36,7 +36,11 @@ Source data are provided as a Source Data file.
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_eQTL.pdf} 
 \caption{Overview of eQTL analysis in DO mice. \textbf{A.} RNA seq 
 samples from the four different tissues clustered by tissue. 
-\textbf{B.-E.} eQTL maps are shown for each tissue. The $x$-axis 
+\textbf{B.-E.} eQTL maps are shown for (B) adipose tissue 
+($n = 227$ females, $n = 241$ males), (C) liver ($n = 240$ females,
+$n = 241$ males), (D) pancreatic islet ($n = 188$ females, $n = 
+190$ males), and (E) skeletal muscle ($n = 235$ females, $n = 239$
+males). The $x$-axis 
 shows the position of the mapped eQTL, and the $y$-axis shows the 
 physical position of the gene encoding each mapped transcript. 
 Each dot represents an eQTL with a minimum LOD score of 8, which 
@@ -70,8 +74,7 @@ both the largest positive and negative loadings. \textbf{B.} Direct comparison
 of absolute values of transcript loadings across tissues. Transcripts in adipose
 tissue had the largest loadings overall, while those in skeletal muscle had the
 smallest. Source data are provided as a Source Data file. The data shown in this
-figure are the same as in Fig 4D in the main text and the data are stored in 
-Fig4D\_observed.txt.
+figure are the same as in Fig 4D.
 }
 \label{fig:transcript_loading_comparison}
 \end{figure}
@@ -167,9 +170,10 @@ CC-RIX (green). Source data are provided as a Source Data file.
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_Adipose_all_cell_types.png} 
 \caption{CMAP results using the adipose tissue composite transcript as 
 an input. Table includes results from all cell types sorted with a 
-$-\mathrm{log}_{10}(q) > 15$. The results are sorted by the correlation of the 
-query to the input with the most negative results at the top. Source 
-data are provided as a Source Data file.
+$-\mathrm{log}_{10}(q) > 15$. The results are sorted by the correlation 
+of the query to the input with the most negative results at the top. 
+Colored text distinguishes cell and perturbation types to aid
+visualization. Source data are provided as a Source Data file.
 }
 \label{fig:clue_adipose_all}
 \end{figure}
@@ -180,8 +184,9 @@ data are provided as a Source Data file.
 \caption{CMAP results using the pancreatic islet tissue composite transcript 
 as an input. Table includes results from all cell types sorted with a 
 $-log_{10}(q) > 15$. The results are sorted by the correlation of the 
-query to the input with the most negative results at the top. Source data 
-are provided as a Source Data file.
+query to the input with the most negative results at the top. Colored 
+text distinguishes cell and perturbation types to aid visualization. 
+Source data are provided as a Source Data file.
 }
 \label{fig:clue_islet_all}
 \end{figure}
@@ -192,7 +197,8 @@ are provided as a Source Data file.
 transcript as an input. Table includes the top 30 results derived
 only from normal adipocytes (ASC) regardless of significance. 
 The results are sorted by the correlation of the query to the input 
-with the most negative results at the top. Source data are provided 
+with the most negative results at the top. Colored text distinguishes 
+cell and perturbation types to aid visualization. Source data are provided 
 as a Source Data file.
 }
 \label{fig:clue_adipose_asc}
@@ -205,8 +211,9 @@ transcript as an input. Table includes the top 30 results derived
 only from YAPC cells, which are derived from pancreatic
 carcinoma cells. Results are shown regardless of significance and
 are sorted by the correlation of the query to the input 
-with the most negative results at the top. Source data are 
-provided as a Source Data file.
+with the most negative results at the top. Colored text 
+distinguishes cell and perturbation types to aid visualization. 
+Source data are provided as a Source Data file.
 }
 \label{fig:clue_islet_yapc}
 \end{figure}
@@ -214,12 +221,12 @@ provided as a Source Data file.
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig14_Nucb2_eQTL.pdf} 
 \caption{Regulation of \textit{Nucb2} expression in islet. \textit{Nucb2} 
-is encoded on mouse chromosome 7 at 116.5 Mb (red arrow). In islets the 
-heritability of \textit{Nucb2} expression levels is 69\% heritable. This 
-LOD score trace shows that there is no local eQTL at the position of the
-gene, nor any strong distal eQTLs anywhere else in the genome. The 
-horizontal dashed line shows the genome-wide FDR threshold of 0.01.
-Source data are provided as a Source Data file.
+is encoded on mouse chromosome 7 at 116.5 Mb (red arrow). Expression 
+levels of \textit{Nucb2} in islets was 69\%. This LOD score trace 
+shows that there is no local eQTL at the position of the gene, nor 
+any strong distal eQTLs. The horizontal dashed line shows the 
+genome-wide FDR threshold of 0.01. Source data are provided as 
+a Source Data file.
 }
 \label{fig:Nucb2_eqtl}
 \end{figure}

@@ -974,8 +974,9 @@ each strain are available in the supplementary file
 CC-RIX_strain_table.txt. All DO mice were maintained on a
 high-fat, high-sugar diet. The CC-RIX mice were randomized to 
 a high-fat or a low-fat diet. The diets were different colors,
-so blinding was not possible. In the DO population, we used
-sex, DO generation, and DO wave as covariates in all statistical
+so blinding was not possible. CC-RIX mice were sacrificed in a 
+6-month cohort and a 12-month cohort. In the DO population, we 
+used sex, DO generation, and DO wave as covariates in all statistical
 tests. In the CC-RIX population, we used diet, sex, and age as 
 covariates in all statistical tests. We did not investiagate 
 sex-specific effects on genetic architecture in order to maximize 
