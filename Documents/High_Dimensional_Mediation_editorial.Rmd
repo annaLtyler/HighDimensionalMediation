@@ -43,8 +43,10 @@ threshold_p <- function(p, thresh = 2.2e-16){
 
 #create a vector of reference numbers for each figure
 sup_labels <- c("fig:trait_decomp", "fig:eQTL", "fig:transcript_loading_comparison",
-  "fig:top_enrich_kegg", "fig:top_enrich_go",
-  "fig:cc_imputation", "fig:kegg_highlights", "fig:Nucb2_eqtl")
+  "fig:top_enrich_kegg", "fig:top_enrich_go", "fig:oxPhos", "fig:TCA_cycle",
+  "fig:bcaa_degradation", "fig:cc_imputation", "fig:clue_adipose_all", 
+  "fig:clue_islet_all", "fig:clue_adipose_asc", "fig:clue_islet_yapc", 
+  "fig:Nucb2_eqtl")
 fig.counter <- rep(0, length(sup_labels))
 names(fig.counter)  <- sup_labels
 
@@ -531,7 +533,7 @@ go.enrich.label <- fig.counter[fig.label]
 
 In adipose tissue, both GO processes and KEGG pathway 
 enrichments pointed to an axis of inflammation and metabolism
-(Figs. \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}).
+(Supplementary Figures \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}).
 GO terms and KEGG pathways associated with inflammation were 
 positively associated with MDI, indicating that 
 increased expression in inflammatory pathways was associated 
@@ -542,9 +544,21 @@ pmid28955384, pmid28912810, pmid28901330, pmid24969772}, and the
 results here suggest that this may be a dominant heritable component 
 of metabolic disease. 
 
+```{r, echo = FALSE}
+#in the paragraph before a supplemental figure is referenced,
+#find its number. The figure counter can be observed at the 
+#end to verify the order that the figures should be put in,
+#and to see if any figures have not been referenced in the 
+#test
+
+fig.label <- "fig:oxPhos"
+fig.counter <- ref_fig(fig.counter, fig.label)
+kegg.highlight.label <- fig.counter[fig.label]
+```
+
 The strongest negative enrichments in adipose tissue were related 
 to mitochondial activity in general, and thermogenesis in particular
-(Figs. \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}).
+(Supplementary Figures \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}).
 Genes in the KEGG oxidative phosphorylation pathway were 
 almost universally negatively loaded in adipose tissue, suggesting
 that increased expression of these genes was associated with reduced
@@ -560,7 +574,12 @@ on an obesigenic diet \cite{pmid18492779}.
 #end to verify the order that the figures should be put in,
 #and to see if any figures have not been referenced in the 
 #test
-fig.label <- "fig:kegg_highlights"
+
+fig.label <- "fig:TCA_cycle"
+fig.counter <- ref_fig(fig.counter, fig.label)
+kegg.highlight.label <- fig.counter[fig.label]
+
+fig.label <- "fig:bcaa_degradation"
 fig.counter <- ref_fig(fig.counter, fig.label)
 kegg.highlight.label <- fig.counter[fig.label]
 ```
@@ -569,7 +588,7 @@ Transcripts associated with the citric acid cycle as well
 as the catabolism of the branched-chain amino acids (valine, 
 leuceine, and isoleucine) were strongly enriched with negative 
 loadings in adipose tissue (Supplementary Figures \ref{fig:top_enrich_kegg},
-\ref{fig:TCA_cycle} and \ref{fig:bcaa_degrataion}). Expression of 
+\ref{fig:TCA_cycle} and \ref{fig:bcaa_degradation}). Expression of 
 genes in both pathways (for which there is some overlap) has been 
 previously associated with insulin sensitivity \cite{pmid29567659, 
 pmid22560213, pmid19841271}, suggesting that heritable variation
@@ -786,6 +805,30 @@ compared with the lean and non-diabetic groups (Fig.
 \ref{fig:human_translation}D). This indicates that the distally 
 heritable signature of MDI identified in DO mice 
 is relevant to obesity and diabetes in human subjects.
+
+
+```{r, echo = FALSE}
+#in the paragraph before a supplemental figure is referenced,
+#find its number. The figure counter can be observed at the 
+#end to verify the order that the figures should be put in,
+#and to see if any figures have not been referenced in the 
+#test
+fig.label <- "fig:clue_adipose_all"
+fig.counter <- ref_fig(fig.counter, fig.label)
+cc.imputation.label <- fig.counter[fig.label]
+
+fig.label <- "fig:clue_islet_all"
+fig.counter <- ref_fig(fig.counter, fig.label)
+cc.imputation.label <- fig.counter[fig.label]
+
+fig.label <- "fig:clue_adipose_asc"
+fig.counter <- ref_fig(fig.counter, fig.label)
+cc.imputation.label <- fig.counter[fig.label]
+
+fig.label <- "fig:clue_islet_yapc"
+fig.counter <- ref_fig(fig.counter, fig.label)
+cc.imputation.label <- fig.counter[fig.label]
+```
 
 ### Existing therapies are predicted to target mediator gene signatures
 Another application of the transcript loading landscape 
@@ -1082,7 +1125,7 @@ Heritability of each trait was estimates using the R package qtl2
 \cite{pmid30591514}. Standard errors of heritability were estimated
 using a purpose-built function by Karl Broman available on 
 (GitHub)[https://github.com/rqtl/qtl2/issues/193]. This method is 
-based on equation 2 in Visscher et al. (2015)\cite{pmid25361897}.
+based on equation 2 in Visscher and Goddard (2015)\cite{pmid25361897}.
 
 #### Processed DO Data 
 The DO data used in this study were generated in a previous 
@@ -2119,11 +2162,24 @@ compared with the observed mean loading of each group
 of transcripts (red asterisk). Violin plot colors indicate the 
 tissue of each cell type and match panels A and B 
 (purple = adipose; green = islet) \textbf{D.} Predictions of 
-metabolic phenotypes in four adipose transcription data 
-sets downloaded from GEO. In each study the obese/diabetic 
-patients were predicted to have greater metabolic disease 
-than the lean/non-diabetic patients based on the HDM 
-results from DO mice. Lines in boxes correspond to the 
+metabolic disease index (MDI) in four adipose transcription 
+data sets downloaded from GEO. In each study the 
+obese/diabetic patients were predicted to have greater 
+MDI than the lean/non-diabetic patients based on the 
+HDM results from DO mice. 1) two-sided Welch's $t$ test: $t = 2.28$, 
+df = 58.1, 95\% CI of difference = $2.1\times10^{-5}$ 
+to $3.2\times10^{-4}$ A.U.; $p = 0.027$
+2) two-sided Welch's $t$ test: $t = 3.04$, 
+df = 11.84, 95\% CI of difference = $9.3\times10^{-4}$ 
+to $5.7\times10^{-3}$ A.U.; $p = 0.01$
+3) linear mixed effects model: 
+fixed effect diabetic = 
+$1.4\times10^{-3}\pm5.6\times10^{-4}$ Std. Error;
+$t = 2.4$, df = 4, $p = 0.075$
+4) two-sided Welch's $t$ test: $t = 2.95$, 
+df = 11.89, 95\% CI of difference = $6.8\times10^{-5}$ 
+to $4.6\times10^{-4}$ A.U.; $p = 0.012$
+Lines in boxes correspond to the 
 median; lower and upper edges of boxes indicate the 
 first and third quartiles; whiskers indicate either the minimum
 and maximum values if no outliers, or the first and third quartiles 
@@ -2131,12 +2187,8 @@ $\pm$ 1.5 times the interquartile range if there are outliers;
 dots indicate outliers beyond 1.5 times the interquartile range. 
 The number of patients in each group is indicated by numbers 
 in parentheses with the number of technical replicates (reps) if 
-relevant. The $p$ values for studies without replicates were 
-derived from two-sided Welch's t tests. The $p$ value for the
-study with replicates was derived from a linear mixed model
-using subject ID as the random variable. No adjustments were 
-made for multiple comparisons. Source data are provided as 
-a Source Data file.
+relevant. No adjustments were made for multiple comparisons. 
+Source data are provided as a Source Data file.
 }
 \label{fig:human_translation}
 \end{figure}

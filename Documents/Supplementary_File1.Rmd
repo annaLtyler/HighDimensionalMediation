@@ -104,6 +104,7 @@ Source Data file.
 \label{fig:top_enrich_go}
 \end{figure}
 
+
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_OxPhos.png} 
 \caption{The KEGG pathway for oxidative phosphorylation in 
@@ -117,6 +118,7 @@ Data file.
 }
 \label{fig:oxPhos}
 \end{figure}
+
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/Supp_Fig_TCA.png} 
@@ -144,7 +146,7 @@ that increased expression of genes involved in branched-chain amino acid
 degradation was associated with reduced MDI. Source data are provided as 
 a Source Data file.
 }
-\label{fig:bcaa_degrataion}
+\label{fig:bcaa_degradation}
 \end{figure}
 
 

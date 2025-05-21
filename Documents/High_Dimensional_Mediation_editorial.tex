@@ -523,7 +523,7 @@ pmid16199517} to look for biological processes and pathways that were
 enriched at the top and bottom of this list (Methods).
 
 In adipose tissue, both GO processes and KEGG pathway enrichments
-pointed to an axis of inflammation and metabolism (Figs.
+pointed to an axis of inflammation and metabolism (Supplementary Figures
 \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}). GO terms and
 KEGG pathways associated with inflammation were positively associated
 with MDI, indicating that increased expression in inflammatory pathways
@@ -535,21 +535,21 @@ here suggest that this may be a dominant heritable component of
 metabolic disease.
 
 The strongest negative enrichments in adipose tissue were related to
-mitochondial activity in general, and thermogenesis in particular (Figs.
-\ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}). Genes in the
-KEGG oxidative phosphorylation pathway were almost universally
-negatively loaded in adipose tissue, suggesting that increased
-expression of these genes was associated with reduced MDI (Supplementary
-Figure \ref{fig:oxPhos}). Consistent with this observation, it has been
-shown previously that mouse strains with greater thermogenic potential
-are also less susceptible to obesity on an obesigenic diet
-\cite{pmid18492779}.
+mitochondial activity in general, and thermogenesis in particular
+(Supplementary Figures \ref{fig:top_enrich_kegg} and
+\ref{fig:top_enrich_go}). Genes in the KEGG oxidative phosphorylation
+pathway were almost universally negatively loaded in adipose tissue,
+suggesting that increased expression of these genes was associated with
+reduced MDI (Supplementary Figure \ref{fig:oxPhos}). Consistent with
+this observation, it has been shown previously that mouse strains with
+greater thermogenic potential are also less susceptible to obesity on an
+obesigenic diet \cite{pmid18492779}.
 
 Transcripts associated with the citric acid cycle as well as the
 catabolism of the branched-chain amino acids (valine, leuceine, and
 isoleucine) were strongly enriched with negative loadings in adipose
 tissue (Supplementary Figures \ref{fig:top_enrich_kegg},
-\ref{fig:TCA_cycle} and \ref{fig:bcaa_degrataion}). Expression of genes
+\ref{fig:TCA_cycle} and \ref{fig:bcaa_degradation}). Expression of genes
 in both pathways (for which there is some overlap) has been previously
 associated with insulin sensitivity \cite{pmid29567659, 
 pmid22560213, pmid19841271}, suggesting that heritable variation in
@@ -1029,7 +1029,8 @@ Heritability of each trait was estimates using the R package qtl2
 \cite{pmid30591514}. Standard errors of heritability were estimated
 using a purpose-built function by Karl Broman available on
 (GitHub){[}\url{https://github.com/rqtl/qtl2/issues/193}{]}. This method
-is based on equation 2 in Visscher et al.~(2015)\cite{pmid25361897}.
+is based on equation 2 in Visscher and Goddard
+(2015)\cite{pmid25361897}.
 
 \paragraph{Processed DO Data}\label{processed-do-data}
 
@@ -2117,11 +2118,24 @@ compared with the observed mean loading of each group
 of transcripts (red asterisk). Violin plot colors indicate the 
 tissue of each cell type and match panels A and B 
 (purple = adipose; green = islet) \textbf{D.} Predictions of 
-metabolic phenotypes in four adipose transcription data 
-sets downloaded from GEO. In each study the obese/diabetic 
-patients were predicted to have greater metabolic disease 
-than the lean/non-diabetic patients based on the HDM 
-results from DO mice. Lines in boxes correspond to the 
+metabolic disease index (MDI) in four adipose transcription 
+data sets downloaded from GEO. In each study the 
+obese/diabetic patients were predicted to have greater 
+MDI than the lean/non-diabetic patients based on the 
+HDM results from DO mice. 1) two-sided Welch's $t$ test: $t = 2.28$, 
+df = 58.1, 95\% CI of difference = $2.1\times10^{-5}$ 
+to $3.2\times10^{-4}$ A.U.; $p = 0.027$
+2) two-sided Welch's $t$ test: $t = 3.04$, 
+df = 11.84, 95\% CI of difference = $9.3\times10^{-4}$ 
+to $5.7\times10^{-3}$ A.U.; $p = 0.01$
+3) linear mixed effects model: 
+fixed effect diabetic = 
+$1.4\times10^{-3}\pm5.6\times10^{-4}$ Std. Error;
+$t = 2.4$, df = 4, $p = 0.075$
+4) two-sided Welch's $t$ test: $t = 2.95$, 
+df = 11.89, 95\% CI of difference = $6.8\times10^{-5}$ 
+to $4.6\times10^{-4}$ A.U.; $p = 0.012$
+Lines in boxes correspond to the 
 median; lower and upper edges of boxes indicate the 
 first and third quartiles; whiskers indicate either the minimum
 and maximum values if no outliers, or the first and third quartiles 
@@ -2129,12 +2143,8 @@ $\pm$ 1.5 times the interquartile range if there are outliers;
 dots indicate outliers beyond 1.5 times the interquartile range. 
 The number of patients in each group is indicated by numbers 
 in parentheses with the number of technical replicates (reps) if 
-relevant. The $p$ values for studies without replicates were 
-derived from two-sided Welch's t tests. The $p$ value for the
-study with replicates was derived from a linear mixed model
-using subject ID as the random variable. No adjustments were 
-made for multiple comparisons. Source data are provided as 
-a Source Data file.
+relevant. No adjustments were made for multiple comparisons. 
+Source data are provided as a Source Data file.
 }
 \label{fig:human_translation}
 \end{figure}
