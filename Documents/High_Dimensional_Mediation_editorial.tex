@@ -1710,8 +1710,9 @@ We downloaded each data set from GEO using the R package GEOquery
 \cite{geoquery}. In each case, we verified that gene expression was log
 transformed and performed the transformation ourselves if it had not
 already been done. When covariates such as age and sex were available in
-the metadata files, we regressed out these variables. We mean centered
-and standardized gene expression across transcripts.
+the metadata files, we regressed out these variables (GSE205668 - sex
+and age; GSE44000 - none; GSE29231 - age; GSE152517 - none). We
+mean-centered and standardized gene expression across transcripts.
 
 We matched the human gene expression to the mouse gene expression by
 pairing orthologs as defined in The Jackson Laboratory's mouse genome
