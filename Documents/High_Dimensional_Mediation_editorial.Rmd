@@ -1078,6 +1078,12 @@ For correlation coefficients (R) less than 0, we multiplied the principal
 component by -1. The labels for these traits have the term PC1 appended 
 to their name.
 
+Heritability of each trait was estimates using the R package qtl2
+\cite{pmid30591514}. Standard errors of heritability were estimated
+using a purpose-built function by Karl Broman available on 
+(GitHub)[https://github.com/rqtl/qtl2/issues/193]. This method is 
+based on equation 2 in Visscher et al. (2015)\cite{pmid25361897}.
+
 #### Processed DO Data 
 The DO data used in this study were generated in a previous 
 study\cite{pmid31343992, pmid29567659}. We downloaded genotypes, 
@@ -2128,7 +2134,7 @@ in parentheses with the number of technical replicates (reps) if
 relevant. The $p$ values for studies without replicates were 
 derived from two-sided Welch's t tests. The $p$ value for the
 study with replicates was derived from a linear mixed model
-using subject as the random variable. No adjustments were 
+using subject ID as the random variable. No adjustments were 
 made for multiple comparisons. Source data are provided as 
 a Source Data file.
 }
