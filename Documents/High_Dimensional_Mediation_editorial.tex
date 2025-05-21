@@ -83,6 +83,8 @@
 \usepackage{amsmath}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
+\usepackage{hyperref}
+\usepackage[misc]{ifsym}
 
 \algrenewcommand\algorithmicrequire{\textbf{Input:}}
 \algrenewcommand\algorithmicensure{\textbf{Output:}}
@@ -105,17 +107,23 @@ on complex metabolic traits}
 \begin{document}
 \maketitle
 
-Anna L. Tyler\textsuperscript{1}, J. Matthew Mahoney\textsuperscript{1},
-Mark P. Keller\textsuperscript{2}, Candice N. Baker\textsuperscript{1},
-Margaret Gaca\textsuperscript{1}, Anuj Srivastava\textsuperscript{1},
-Isabela Gerdes Gyuricza\textsuperscript{1}, Madeleine J.
-Braun\textsuperscript{1}, Nadia A. Rosenthal\textsuperscript{1}, Alan D.
-Attie\textsuperscript{2}, Gary A. Churchill\textsuperscript{1} and
-Gregory W. Carter\textsuperscript{1}
+Anna L. Tyler\textsuperscript{1}\text{*}, J. Matthew
+Mahoney\textsuperscript{1}\text{*}, Mark P. Keller\textsuperscript{2},
+Candice N. Baker\textsuperscript{1}, Margaret Gaca\textsuperscript{1},
+Anuj Srivastava\textsuperscript{1}, Isabela Gerdes
+Gyuricza\textsuperscript{1}, Madeleine J. Braun\textsuperscript{1},
+Nadia A. Rosenthal\textsuperscript{1}, Alan D. Attie\textsuperscript{2},
+Gary A.
+Churchill\textsuperscript{1}\textsuperscript{\textdagger}\textsuperscript{\Letter}
+and Gregory W.
+Carter\textsuperscript{1}\textsuperscript{\textdagger}\textsuperscript{\Letter}
 
 \textsuperscript{1}The Jackson Laboratory, Bar Harbor, Maine, USA.
 \textsuperscript{2}University of Wisconsin-Madison, Biochemistry
-Department, Madison, Wisconsin, USA.
+Department, Madison, Wisconsin, USA. \text{*}equal contributions
+\textsuperscript{\textdagger} joint supervision
+\textsuperscript{\Letter}\href{mailto:gary.churchill@jax.org}{email: gary.churchill@jax.org}
+\textsuperscript{\Letter}\href{mailto:gregory.carter@jax.org}{email: gregory.carter@jax.org}
 
 \subsection{Abstract}\label{abstract}
 
@@ -645,10 +653,10 @@ transcriptome and the phenome in the CC-RIX. We predicted body weight (a
 surrogate for MDI) in each CC-RIX individual using measured gene
 expression in each tissue and the transcript loadings identified in the
 DO (Methods). The predicted body weight and acutal body weight were
-highly correlated (Fig. \ref{fig:cc_prediction}B left column). The best
-prediction was achieved for adipose tissue, which supports the
-observation in the DO that adipose expression was the strongest mediator
-of the genetic effect on MDI. This result also confirms the validity and
+highly correlated (Fig. \ref{fig:cc_prediction}B). The best prediction
+was achieved for adipose tissue, which supports the observation in the
+DO that adipose expression was the strongest mediator of the genetic
+effect on MDI. This result also confirms the validity and
 translatability of the transcript loadings and their relationship to
 metabolic disease.
 
@@ -662,10 +670,10 @@ the genome. We imputed gene expression in the CC-RIX using local
 genotype and were able to estimate variation in gene transcription
 robustly (Supplementary Figure \ref{fig:cc_imputation}). However, these
 imputed values failed to predict body weight in the CC-RIX when weighted
-with the loadings from HDMA. (Fig. \ref{fig:cc_prediction}B right
-column). This result suggests that local regulation of gene expression
-is not the primary factor driving heritability of complex traits. It is
-also consistent with our findings in the DO population that distal
+with the loadings from HDMA. (Fig. \ref{fig:cc_prediction}C). This
+result suggests that local regulation of gene expression is not the
+primary factor driving heritability of complex traits. It is also
+consistent with our findings in the DO population that distal
 heritability was a major driver of trait-relevant gene expression and
 that high-loading transcripts had comparatively high distal and low
 local heritability.
@@ -917,10 +925,11 @@ following JAX strains of Collaborative Cross mice: CC043/GeniUncJ
 available in the supplementary file CC-RIX\_strain\_table.txt. All DO
 mice were maintained on a high-fat, high-sugar diet. The CC-RIX mice
 were randomized to a high-fat or a low-fat diet. The diets were
-different colors, so blinding was not possible. In the DO population, we
-used sex, DO generation, and DO wave as covariates in all statistical
-tests. In the CC-RIX population, we used diet, sex, and age as
-covariates in all statistical tests. We did not investiagate
+different colors, so blinding was not possible. CC-RIX mice were
+sacrificed in a 6-month cohort and a 12-month cohort. In the DO
+population, we used sex, DO generation, and DO wave as covariates in all
+statistical tests. In the CC-RIX population, we used diet, sex, and age
+as covariates in all statistical tests. We did not investiagate
 sex-specific effects on genetic architecture in order to maximize power
 and generalizability, as well as to simplify the overall analysis.
 CC-RIX animals were randomly assigned to housing and diets based on
@@ -1714,8 +1723,16 @@ profile and the obesity-related transcriptional signature from the DO
 analysis. The mean of this vector for an individual was the prediction
 of their obesity status. Higher values indicate a prediction of higher
 obesity or risk of metabolic disease based on adipose gene expression.
+
 We then compared the values across groups, either obese and non-obese,
-or diabetic and non-diabetic depending on the groups in each study.
+or diabetic and non-diabetic depending on the groups in each study. For
+the three studies without technical replicates (accession numbers
+GSE152517, GSE44000, and GSE205668), we used Welch's t-test to compare
+the means of the two groups. This is the default t-test in base R and
+assumes unequal variance across groups. For the study that included
+technical replicates (GSE29231) we fit a linear mixed model from the R
+packages lme4 \cite{lme4_package} and lmerTest \cite{lmerTest_package}.
+We used subject ID as a random variable.
 
 \subsubsection{Connectivity Map Queries}\label{connectivity-map-queries}
 
@@ -1801,7 +1818,9 @@ each in three female patients with type 2 diabetes, and three
 non-diabetic female patients - accession number
 \href{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE29231}{GSE29231}
 
-Source data are provided with this paper in the file Source\_Data.zip.
+Source data for figures are provided as tab-delimited text files on
+\href{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979}{Figshare}
+in the file Source\_Data.zip.
 
 \subsection{Code Availability}\label{code-availability}
 
@@ -2102,9 +2121,13 @@ and maximum values if no outliers, or the first and third quartiles
 $\pm$ 1.5 times the interquartile range if there are outliers; 
 dots indicate outliers beyond 1.5 times the interquartile range. 
 The number of patients in each group is indicated by numbers 
-in parentheses. The $p$ values reported are derived from two-sided
-Welch's t tests. No adjustments were made for multiple comparisons. 
-Source data are provided as a Source Data file.
+in parentheses with the number of technical replicates (reps) if 
+relevant. The $p$ values for studies without replicates were 
+derived from two-sided Welch's t tests. The $p$ value for the
+study with replicates was derived from a linear mixed model
+using subject as the random variable. No adjustments were 
+made for multiple comparisons. Source data are provided as 
+a Source Data file.
 }
 \label{fig:human_translation}
 \end{figure}
