@@ -60,7 +60,7 @@ ref_fig <- function(fig.vector, fig.ref){
 
 Anna L. Tyler\textsuperscript{1}\text{*}, J. Matthew Mahoney\textsuperscript{1}\text{*}, 
 Mark P. Keller\textsuperscript{2}, Candice N. Baker\textsuperscript{1}, 
-Margaret Gaca\textsuperscript{1}, Anuj Srivastava\textsuperscript{1}, 
+Margaret Gaca\textsuperscript{1}, Anuj Srivastava\textsuperscript{3}, 
 Isabela Gerdes Gyuricza\textsuperscript{1}, Madeleine J. Braun\textsuperscript{1},
 Nadia A. Rosenthal\textsuperscript{1}, Alan D. Attie\textsuperscript{2}, 
 Gary A. Churchill\textsuperscript{1}\textsuperscript{\textdagger}\textsuperscript{\Letter} and 
@@ -69,8 +69,10 @@ Gregory W. Carter\textsuperscript{1}\textsuperscript{\textdagger}\textsuperscrip
 
 \textsuperscript{1}The Jackson Laboratory, Bar Harbor, Maine, USA.
 \textsuperscript{2}University of Wisconsin-Madison, Biochemistry 
-Department, Madison, Wisconsin, USA. \text{*}equal contributions 
-\textsuperscript{\textdagger} joint supervision
+Department, Madison, Wisconsin, USA. 
+\textsuperscript{3}The Jackson Laboratory for Genomic Medicine, Farmington, Connecticut, USA.
+\text{*}equal contributions 
+\textsuperscript{\textdagger} corresponding author
 \textsuperscript{\Letter}\href{mailto:gary.churchill@jax.org}{email: gary.churchill@jax.org}
 \textsuperscript{\Letter}\href{mailto:gregory.carter@jax.org}{email: gregory.carter@jax.org}
 
@@ -176,17 +178,17 @@ set in a large population of Diversity Outbred (DO) mice
 \cite{pmid22892839}, and an independent validation data set derived 
 by crossing inbred strains from the Collaborative Cross (CC) 
 recombinant inbred lines \cite{pmid18716833} to form CC recombinant 
-inbred intercross (CC-RIX) mice. Both populations were maintained 
+inbred intercross (CC-RIX) mice. Animals in populations were maintained 
 on a high-fat, high-sugar diet to model diet-induced obesity and 
 metabolic disease \cite{pmid29567659}.
 
-The DO population and CC recombinant inbred lines were derived 
+The DO population and CC-RIX were derived 
 from the same eight inbred founder strains: five classical lab 
 strains and three strains more recently derived from wild mice 
 \cite{pmid22892839}, representing three subspecies and capturing 
 90\% of the known variation in laboratory mice \cite{pmid31133439}. 
 The DO mice are maintained with a breeding scheme that ensures 
-equal contributions from each founder across the genome thus 
+equal contributions from each founder across the genome, thus 
 rendering almost the whole genome visible to genetic inquiry and 
 maximizing power to detect eQTLs \cite{pmid22892839}. The CC 
 mice were initially intercrossed to recombine the genomes from 
@@ -208,19 +210,20 @@ four tissues used in the DO: adipose tissue, liver, and skeletal
 muscle. Measuring gene expression in multiple tissues is critical 
 to adequately assess the extent to which local gene regulation varies 
 across the tissues and whether such variability might account for 
-previous failed attempts to identify trait-relevant local eQTLs. The 
-CC-RIX carry the same founder alleles as the DO. Thus, local gene 
-regulation is expected to match between the populations. However, because 
-the alleles are recombined throughout the genome, distal effects are 
-expected to vary from those in the DO, allowing us to directly assess 
-the role of distal gene regulation in driving trait-associated transcript 
-variation. To mechanistically dissect distal effects on metabolic 
-disease, we developed a novel dimension reduction framework called 
-high-dimensional mediation analysis (HDMA) to identify the heritable 
-transcriptomic signatures driving trait variation, which we compared 
-between mouse populations and to human data sets with measured adipose
-gene expression. Together, these data enable a comprehensive view 
-into the genetic architecture of metabolic disease.
+previous failed attempts to identify trait-relevant local eQTLs. 
+Because the CC-RIX carry the same founder alleles as the DO, the 
+local gene regulation is expected to match between the populations. 
+However, because the alleles are recombined throughout the genome, 
+distal effects are expected to vary from those in the DO, allowing 
+us to directly assess the role of distal gene regulation in driving 
+trait-associated transcript variation. To mechanistically dissect 
+distal effects on metabolic disease, we developed a novel dimension 
+reduction framework called high-dimensional mediation analysis (HDMA) 
+to identify the heritable transcriptomic signatures driving trait 
+variation, which we compared between mouse populations and to human 
+data sets with measured adipose gene expression. Together, these data 
+enable a comprehensive view into the genetic architecture of metabolic 
+disease.
 
 
 ## Results
@@ -254,15 +257,17 @@ animals,
 (Figure \ref{fig:trait_overview}C) as has been observed before 
 suggesting either that males were 
 more susceptible to metabolic disease on the high-fat, high-sugar 
-(HFHS) diet, or that males and females may require different thresholds for 
-pre-diabetes and diabetes. 
+(HFHS) diet, or that males and females may require different FBG
+thresholds for pre-diabetes and diabetes. 
 
 Body weight was strongly positively correlated with food consumption 
-(Figure \ref{fig:trait_overview}D $R^2 =$ `r pheno.stats$food_weight["r"]`,
-$p<$ `r threshold_p(signif(pheno.stats$food_weight["p"], 2))`) 
-and FBG (Figure \ref{fig:trait_overview}E, 
-$R^2=$ `r pheno.stats$weight_glu["r"]`, $p <$ 
-`r threshold_p(signif(pheno.stats$weight_glu["p"], 2))`) 
+(Figure \ref{fig:trait_overview}D; Linear regression 
+$R^2 = 0.51$;  beta coefficient = $12.6\pm0.57$ 
+standard error; $t = 22.2$; $p < 2.2^{-16}$) 
+and FBG (Figure \ref{fig:trait_overview}E; 
+Linear regression 
+$R^2 = 0.21$; beta coefficient = $2.49\pm 0.22$ 
+standard error; $t = 11.34$; $p < 2.2^{-16}$)
 suggesting a link between behavioral factors and metabolic disease. 
 However, the heritability of this trait and others (Figure
 \ref{fig:trait_overview}F) indicates that 
@@ -308,7 +313,7 @@ contribution of the genome after removing the local genetic effect.
 Overall, local and distal genetic factors contributed approximately 
 equally to transcript abundance. In all tissues, both local and 
 distal factors explained between `r min.herit` and `r max.herit`\% of 
-the variance in the median transcript (Fig, \ref{fig:motivation}A). 
+the variance in the median transcript (Figure \ref{fig:motivation}A). 
 This 50\% contribution of local genetic variation to transcript 
 abundance contrasts with findings in humans in which local 
 variants have been found to explain only 20-30\% of total 
@@ -346,7 +351,7 @@ distal heritability of transcripts was positively associated
 with trait relevance (Figure \ref{fig:motivation}C). That is, 
 transcripts that were more highly correlated with the measured 
 traits tended to be distally, rather than locally, heritable. 
-Importantly, this pattern was consistent across all tissues. 
+This pattern was consistent across all tissues. 
 This finding is also consistent with previous observations that 
 transcripts with low local heritability explain more 
 expression-mediated disease heritability than transcripts with 
@@ -372,7 +377,7 @@ measured phenotypes, and 3) conforms to the causal mediation hypothesis
 (Figure \ref{fig:workflow}). In HDMA, we first use a linear mapping called 
 kernelization to dimension-reduce the genome, transcriptome, and 
 phenome to kernel matrices $G_K$, $T_K$ and $P_K$ respectively, which 
-each have the dimensions $n$ by $n$ where $n$ is the number of individuals 
+each have the dimensions $n\times n$ where $n$ is the number of individuals 
 (Methods). These kernel matrices describe the relationships among
 the individual mice in genome space, transcriptome space, and phenome
 space and ensure that these three omic spaces have the same 
@@ -391,14 +396,14 @@ in the Methods.
 
 Using HDMA we identifed the major axis of variation in 
 the transcriptome that was consistent with mediating the effects 
-of the genome on metabolic traits (Fig \ref{fig:workflow}). Figure 
+of the genome on metabolic traits (Figure \ref{fig:workflow}). Figure 
 \ref{fig:workflow}A shows the partial correlations 
-($\rho$) between the pairs of these composite vectors. The partial 
-correlation between $G_C$ and $T_C$ was `r signif(var.pcor["Causal", "Mediator"], 2)`, 
+($\rho$) between the pairs of these composite vectors. The 
+partial correlation between $G_C$ and $T_C$ was 0.43, 
 and the partial correlation between $T_C$ and $P_C$ 
-was `r signif(var.pcor["Mediator", "Outcome"], 2)`. However, when the 
-transcriptome was taken into account, the partial correlation between 
-$G_C$ and $P_C$ was effectively zero (`r signif(var.pcor["Causal", "Outcome"], 2)`).
+was 0.79. However, when the transcriptome was taken into 
+account, the partial correlation between 
+$G_C$ and $P_C$ was effectively zero (0.027).
 $P_C$ captured `r signif(comp.trait.exp[[1]], 2)`\% of the overall trait variance,
 and its estimated heritability was `r signif(comp.trait.herit[1], 2)` $\pm$ 
 `r signif(comp.trait.herit[2], 2)`, which was higher than any of the measured 
@@ -424,25 +429,23 @@ and identify apparently mediating transcriptomic signatures in random data.
 The null distribution of the path coefficient is shown in 
 Figure \ref{fig:workflow}B, and the observed path coefficient from 
 the original data is indicated by a red arrow. The observed path coefficient was 
-well outside the null distribution generated by permutations ($p < 10^{-16}$). 
-Figure \ref{fig:workflow}C illustrates this observation in more detail. 
-Although we identified high correlations between $G_C$ and $T_C$, and modest 
-correlations between $T_C$ and $P_C$ in the null data (Fig \ref{fig:workflow}C), 
+well outside the null distribution generated by permutations (empirical 
+$p < 10^{-16}$). Figure \ref{fig:workflow}C illustrates this observation in 
+more detail. Although we identified high correlations between $G_C$ and $T_C$, 
+and modest correlations between $T_C$ and $P_C$ in the null data (Figure \ref{fig:workflow}C), 
 these two values could not be maximized simultaneously in the null data. In 
 contrast, the red dot shows that in the real data both the $G_C$-$T_C$ correlation 
 and the $T_C$-$P_C$ correlation could be maximized simultaneously suggesting 
 that the path from genotype to phenotype through the transcriptome is highly 
-non-trivial and identifiable in this case. 
+non-trivial and is identifiable in this case. 
 
 To test whether the presence of local eQTLs affected the result, we 
-generated two additional transcriptomic kernel matrices. To generate 
-a distal kernel we regressed out the effect of local haplotype from 
-each transcript and calculated the kernel from only distally regulated 
-transcription. We generated a local kernel using only locally determined
-gene expression and a distal kernel using only distally determined 
-gene expression, i.e. the effects of local haplotype were regressed
-out. The path coefficient identified using the local kernel was not 
-significantly different from the null (Figure \ref{fig:workflow}B), 
+generated two additional transcriptomic kernel matrices. We generated 
+a local-effects only kernel using only locally determined
+gene expression and a distal-effects only kernel using only distally 
+determined gene expression, i.e. the effects of local haplotype were 
+regressed out. The path coefficient identified using the local kernel 
+was not significantly different from the null (Figure \ref{fig:workflow}B), 
 suggesting that locally determined gene expression does not 
 mediate the effects of the genome on the phenome. In contrast, the 
 path coefficient identified using the distal kernel, was highly 
@@ -452,17 +455,17 @@ transcriptome.
 Further, the $G_C$-$T_C$ and $T_C$-$P_C$ correlations derived 
 from the distal kernal were indistinguishable from those derived
 from the original transcriptomic kernel. In contrast, the $G_C$-$T_C$
-correlation derived with the local kernel was high, reflecting
-the fact that the local transcriptomic kernel was derived directly
-from local haplotypes. The $T_C$-$P_C$ correlation, however, was 
-low (0.14), suggesting that the these locally derived transcripts
-were not highly related to phenotype. In other words, mice that shared
-many local eQTL were not highly similar in trait space. Taken together,
-these results suggest that composite vectors derived from the measured
-transcriptomic kernel represent genetically determined variation in 
-phenotype that is mediated through genetically determined variation 
-in transcription, and that this genetically deremined variation in 
-transcription is largely driven by distal factors. 
+correlation derived with the local kernel was high (Pearson correlation 
+$r = 0.92$), reflecting the fact that the local transcriptomic kernel 
+was derived directly from local haplotypes. The $T_C$-$P_C$ correlation, 
+however, was low (Pearson correlation $r = 0.14$), suggesting that the 
+these locally derived transcripts were not highly related to phenotype. 
+In other words, mice that shared many local eQTL were not highly similar 
+in trait space. Taken together, these results suggest that composite vectors 
+derived from the measured transcriptomic kernel represent genetically 
+determined variation in phenotype that is mediated through genetically 
+determined variation in transcription, and that this genetically deremined 
+variation in transcription is largely driven by distal factors. 
 
 ### Body weight and insulin resistance were highly represented in the expression-mediated composite trait
 
@@ -471,11 +474,12 @@ variables. The magnitude and sign of the weights, called loadings,
 correspond to the relative importance and directionality of each variable 
 in the composite score. The loadings of each measured trait onto $P_C$ 
 indicate how much each contributed to the composite phenotype. 
-Body weight contributed the most (Figure \ref{fig:interpretation}), 
+Body weight (Weight_Final) contributed the most 
+(Figure \ref{fig:interpretation}A), 
 followed by homeostatic insulin resistance (HOMA_IR) and fasting 
 plasma insulin levels (Insulin_Fasting). We can thus interpret $P_C$ 
 as an index of metabolic disease (Figure \ref{fig:interpretation}B). 
-Individuals with high values of $P_C$ have a higher metabolic disease 
+Individuals with high values of $P_C$ had a higher metabolic disease 
 index (MDI) and greater metabolic disease, including higher body weight 
 and higher insulin resistance. We refer to $P_C$ as MDI going forward. 
 Traits contributing the least to MDI were measures of cholesterol and 
@@ -502,11 +506,11 @@ We interpreted large loadings onto transcripts as indicating
 strong mediation of the effect of genetics on MDI. Large positive 
 loadings indicate that higher expression was associated with a 
 higher MDI (i.e. higher risk of obesity and metabolic disease 
-on the HFHS diet) (Figure \ref{fig:interpretation}C-D). 
+on the HFHS diet) (Figure \ref{fig:interpretation}C-E). 
 Conversely, large negative loadings indicate that high
 expression of these transcripts was associated with a 
 lower MDI (i.e. lower risk of obesity and 
-metabolic disease on the HFHS diet) (Figure \ref{fig:interpretation}C-D). 
+metabolic disease on the HFHS diet) (Figure \ref{fig:interpretation}C-E). 
 Figure \ref{fig:interpretation}D compares the observed transcript
 loading distributions to null distributions and indicates how many
 transcripts in each tissue had large positive and negative loadings.
@@ -522,18 +526,18 @@ that were enriched at the top and bottom of this list (Methods).
 #end to verify the order that the figures should be put in,
 #and to see if any figures have not been referenced in the 
 #test
-fig.label <- "fig:top_enrich_kegg"
-fig.counter <- ref_fig(fig.counter, fig.label)
-kegg.enrich.label <- fig.counter[fig.label]
-
 fig.label <- "fig:top_enrich_go"
 fig.counter <- ref_fig(fig.counter, fig.label)
 go.enrich.label <- fig.counter[fig.label]
+
+fig.label <- "fig:top_enrich_kegg"
+fig.counter <- ref_fig(fig.counter, fig.label)
+kegg.enrich.label <- fig.counter[fig.label]
 ```
 
 In adipose tissue, both GO processes and KEGG pathway 
 enrichments pointed to an axis of inflammation and metabolism
-(Supplementary Figures \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}).
+(Supplementary Figures \ref{fig:top_enrich_go} and \ref{fig:top_enrich_kegg}).
 GO terms and KEGG pathways associated with inflammation were 
 positively associated with MDI, indicating that 
 increased expression in inflammatory pathways was associated 
@@ -558,7 +562,7 @@ kegg.highlight.label <- fig.counter[fig.label]
 
 The strongest negative enrichments in adipose tissue were related 
 to mitochondial activity in general, and thermogenesis in particular
-(Supplementary Figures \ref{fig:top_enrich_kegg} and \ref{fig:top_enrich_go}).
+(Supplementary Figures \ref{fig:top_enrich_go} and \ref{fig:top_enrich_kegg}).
 Genes in the KEGG oxidative phosphorylation pathway were 
 almost universally negatively loaded in adipose tissue, suggesting
 that increased expression of these genes was associated with reduced
@@ -604,22 +608,26 @@ body weight and insulin reisistance is mediated through gene
 expression in adipose tissue. This finding does not speak to
 the relative importance of tissues not included in this study,
 such as brain, in which transcriptional variation may mediate 
-a large portion of the genetic effect on obesity. The strongest 
-loadings in liver and pancreas were comparable, and those in 
-skeletal muscle were the weakest (Figure \ref{fig:loading_heritability}A), 
-suggesting that less of the genetic effects were mediated through 
-transcription in skeletal muscle. As expected, heritability analysis 
-showed that transcripts with the largest loadings had higher distal 
-heritability than local heritability (Figure
-\ref{fig:loading_heritability}A heat map and box plot). We also 
-performed TWAS in this population by imputing transcript levels
-for each gene based on local genotype only and correlating the
-imputed transcript levels with each trait. In contrast to HDMA,
-the TWAS procedure tended to nominate transcripts with lower 
-loadings (Figure \ref{fig:loading_heritability}B),
-higher local heritability and lower distal heritability. Finally,
-we focused on transcripts with the highest local heritability in 
-each tissue (Figure \ref{fig:loading_heritability}C). This procedure
+a large portion of the genetic effect on obesity \cite{pmid18721800}. 
+The strongest loadings in liver and pancreas were comparable, 
+and those in skeletal muscle were the weakest (Figure 
+\ref{fig:loading_heritability}A), suggesting that less of the 
+genetic effects were mediated through transcription in skeletal 
+muscle. Heritability analysis 
+showed that transcripts with the largest loadings had higher 
+distal heritability (\31.8\%) than local heritability (5\%) 
+(Figure \ref{fig:loading_heritability}A) (two-sided Welch's 
+t-test $t = 16.4$; df = 100.2; difference 95\% CI = 0.24 to 
+0.30; $p < 2.2^{-16}$). We also performed TWAS in this population 
+by imputing transcript levels for each gene based on local genotype 
+only and correlating the imputed transcript levels with each trait. 
+In contrast to HDMA, the TWAS procedure (Figure \ref{fig:loading_heritability}B) 
+tended to nominate transcripts with lower loadings,
+higher local heritability (15\%), and lower distal heritability (20\%)
+(two-sided Welch's t-test $t = 1.9$; df = 151.7; difference 95\% 
+CI = -0.002 to 0.1; $p = 0.77$). 
+Finally, we focused on transcripts with the highest local heritability 
+in each tissue (Figure \ref{fig:loading_heritability}C). This procedure
 selected transcripts with low loadings on average, consistent
 with our findings above (Figure \ref{fig:motivation}B).
 
@@ -1049,8 +1057,8 @@ methods were previously published \cite{pmid31343992, pmid29567659}.
 
 A population of 482 diversity outbred mice (split evenly between
 male and female) from generates 18, 19, and 21, was placed on a 
-high-fat (44.6% kcal fat), high-sugar (34% carbohydrate), adequate
-protein (17.3 % protein) diet from Envigo Teklad (catalog number TD.08811) 
+high-fat (44.6\% kcal fat), high-sugar (34\% carbohydrate), adequate
+protein (17.3\% protein) diet from Envigo Teklad (catalog number TD.08811) 
 starting at four weeks of age as described previously \cite{pmid29567659}. 
 Individuals were assessed longitudinally for multiple metabolic measures 
 including fasting glucose levels, glucose tolerance, insulin levels, body 
@@ -1185,7 +1193,7 @@ or c-peptide (MSD; K1526JK-1).
 After a fasting period of 4-6 hours, baseline glucose measurements 
 were taken from CC-RIX mice using an AlphaTrak2 glucometer and test 
 strips (Zoetis) by making a small nick in the tail tip. A bolus 
-intraperitoneal injection of 20% glucose (1g/kg) was then administered, 
+intraperitoneal injection of 20\% glucose (1g/kg) was then administered, 
 and additional tail tip nicks were performed at 15, 30, 60, and 120 
 minutes post-injection to measure glucose levels.
 
@@ -1201,7 +1209,7 @@ The animals were humanely euthanized at 16 weeks of age and the entire
 pancreas was removed, ensuring no excess fat or mesentery tissue was 
 included. The pancreas tissue was placed in a pre-weighed 20 mL glass 
 scintillation vial containing acid ethanol (75\% HPLC grade ethanol 
-(ThermoFisher; A995-4), 1.\5% concentrated hydrochloric acid 
+(ThermoFisher; A995-4), 1.5\% concentrated hydrochloric acid 
 (ThermoFisher; A144-212) in distilled water). The weight of the 
 pancreas was measured for normalization. Using curved scissors, the 
 pancreas was chopped for four minutes, and the samples were stored 
@@ -1340,9 +1348,9 @@ The general negative log-likelihood fitting function for an SEM is given by
 
 \begin{align}
 \label{eq:loglikelihood}
-L &= {\rm tr}\left(S \Sigma^{-1}\right) + \log\left|\Sigma\right|,
+L &= {\mathrm tr}\left(S \Sigma^{-1}\right) + \log\left|\Sigma\right|,
 \end{align}
-where $|\cdot|$ denotes the determinant of a matrix and ${\rm tr}(\cdot)$ 
+where $|\cdot|$ denotes the determinant of a matrix and ${\mathrm tr}(\cdot)$ 
 denotes the trace \cite{bollen2014structural}. For the perfect-mediation model, 
 these values are
 
@@ -1403,24 +1411,24 @@ to the terminology in PCA and CCA. Because the data matrices are mean centered, 
 have
 
 \begin{equation}
-{\rm mean}(l_X) = {\rm mean}(l_M) = {\rm mean}(l_Y) = 0,
+{\mathrm mean}(l_X) = {\mathrm mean}(l_M) = {\mathrm mean}(l_Y) = 0,
 \end{equation}
 
 and we assume the loadings are scaled so that each latent variable has unit variance
 
 \begin{equation}
-{\rm var}(l_X) = {\rm var}(l_M) = {\rm var}(l_Y) = 1.
+{\mathrm var}(l_X) = {\mathrm var}(l_M) = {\mathrm var}(l_Y) = 1.
 \end{equation}
 
 Plugging these formulae into the objective function 
 (Eqn. \ref{eqn:mediation_loglikelihood_simple}), we have 
 
 \begin{align}
-S_{12} &= {\rm corr}\left(l_X, l_M\right)\\
-S_{23} &= {\rm corr}\left(l_M, l_Y\right)\\
+S_{12} &= {\mathrm corr}\left(l_X, l_M\right)\\
+S_{23} &= {\mathrm corr}\left(l_M, l_Y\right)\\
 \label{eqn:gcca_mediation}
-L(\alpha, \beta, a,b,c) &= F(\alpha, \beta) - \frac{2\alpha}{1-\alpha^2} {\rm corr}\left(l_X, l_M\right) - \frac{2\beta}{1-\beta^2} {\rm corr}\left(l_M, l_Y\right) \\ 
-&= F(\alpha, \beta) - \frac{2\alpha}{1-\alpha^2} {\rm corr}\left(Xa, Mb\right) - \frac{2\beta}{1-\beta^2} {\rm corr}\left(Mb, Yc\right)
+L(\alpha, \beta, a,b,c) &= F(\alpha, \beta) - \frac{2\alpha}{1-\alpha^2} {\mathrm corr}\left(l_X, l_M\right) - \frac{2\beta}{1-\beta^2} {\mathrm corr}\left(l_M, l_Y\right) \\ 
+&= F(\alpha, \beta) - \frac{2\alpha}{1-\alpha^2} {\mathrm corr}\left(Xa, Mb\right) - \frac{2\beta}{1-\beta^2} {\mathrm corr}\left(Mb, Yc\right)
 \end{align}
 
 This yields an objective function of two sets of parameters: the
@@ -1452,7 +1460,7 @@ the term $F(\alpha, \beta)$ is irrelevant, so minimizing the negative
 log-likelihood function reduces to maximizing the reduced function
 
 \begin{align}
-L_{red}(a,b,c) = \frac{2\alpha}{1-\alpha^2} {\rm corr}\left(Xa, Mb\right) + \frac{2\beta}{1-\beta^2} {\rm corr}\left(Mb, Yc\right),
+L_{red}(a,b,c) = \frac{2\alpha}{1-\alpha^2} {\mathrm corr}\left(Xa, Mb\right) + \frac{2\beta}{1-\beta^2} {\mathrm corr}\left(Mb, Yc\right),
 \end{align}
 
 which is a weighted sum of correlation coefficients. This is exactly 
@@ -1468,7 +1476,7 @@ $\texttt{wSUMCOR}(X, M, Y, w_1, w_2)$ that solves the weighted SUMCOR
 problem
 
 \begin{align}
-L_{wSUMCOR}(a,b,c, w_1, w_2) = w_1 {\rm corr}\left(Xa, Mb\right) + w_2 {\rm corr}\left(Mb, Yc\right).
+L_{wSUMCOR}(a,b,c, w_1, w_2) = w_1 {\mathrm corr}\left(Xa, Mb\right) + w_2 {\mathrm corr}\left(Mb, Yc\right).
 \end{align}
 
 Iterating between optimizing the structural parameters and loading 
@@ -1493,7 +1501,7 @@ We summarize our optimization procedure in Algorithm \ref{alg:hdma}.
 \State $w_1 \gets \frac{1}{d}\frac{2\alpha}{1-\alpha^2}$, $w_2 \gets \frac{1}{d}\frac{2\beta}{1-\beta^2}$ \Comment{Set weights (sum to one)}
 \State $(a,b,c) \gets \texttt{wSUMCOR}(X, M, Y, w_1, w_2)$  \Comment{Compute loadings}
 \State $l_X \gets Xa$, $l_M \gets Mb$, $l_Y \gets Yc$ \Comment{Compute scores}
-\State $\alpha \gets {\rm corr}(l_X, l_M)$, $\beta \gets {\rm corr}(l_M, l_Y)$ \Comment{Update structural parameters}
+\State $\alpha \gets {\mathrm corr}(l_X, l_M)$, $\beta \gets {\mathrm corr}(l_M, l_Y)$ \Comment{Update structural parameters}
 \EndWhile
 \end{algorithmic}
 \end{algorithm}
