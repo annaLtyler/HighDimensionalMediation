@@ -66,7 +66,6 @@ Nadia A. Rosenthal\textsuperscript{1}, Alan D. Attie\textsuperscript{2},
 Gary A. Churchill\textsuperscript{1}\textsuperscript{\textdagger}\textsuperscript{\Letter} and 
 Gregory W. Carter\textsuperscript{1}\textsuperscript{\textdagger}\textsuperscript{\Letter}
 
-
 \textsuperscript{1}The Jackson Laboratory, Bar Harbor, Maine, USA.
 \textsuperscript{2}University of Wisconsin-Madison, Biochemistry 
 Department, Madison, Wisconsin, USA. 
@@ -203,27 +202,27 @@ driving distal regulation.
 In the DO population, we paired clinically relevant metabolic traits, 
 including body weight and plasma levels of insulin, glucose and lipids 
 \cite{pmid29567659}, with transcriptome-wide gene expression in four 
-tissues related to metabolic disease: adipose tissue, pancreatic 
-islets, liver, and skeletal muscle. We measured similar metabolic 
-traits in a CC-RIX population and gene expression from three of the 
-four tissues used in the DO: adipose tissue, liver, and skeletal 
-muscle. Measuring gene expression in multiple tissues is critical 
-to adequately assess the extent to which local gene regulation varies 
-across the tissues and whether such variability might account for 
-previous failed attempts to identify trait-relevant local eQTLs. 
-Because the CC-RIX carry the same founder alleles as the DO, the 
-local gene regulation is expected to match between the populations. 
-However, because the alleles are recombined throughout the genome, 
-distal effects are expected to vary from those in the DO, allowing 
-us to directly assess the role of distal gene regulation in driving 
-trait-associated transcript variation. To mechanistically dissect 
-distal effects on metabolic disease, we developed a novel dimension 
-reduction framework called high-dimensional mediation analysis (HDMA) 
-to identify the heritable transcriptomic signatures driving trait 
-variation, which we compared between mouse populations and to human 
-data sets with measured adipose gene expression. Together, these data 
-enable a comprehensive view into the genetic architecture of metabolic 
-disease.
+tissues related to metabolic disease: visceral adipose tissue (gonadal
+fat pad), pancreatic islets, liver, and skeletal muscle. We measured 
+similar metabolic traits in a CC-RIX population and gene expression 
+from three of the four tissues used in the DO: visceral adipose tissue
+(gonadal fat pad), liver, and skeletal muscle. Measuring gene expression 
+in multiple tissues is critical to adequately assess the extent to which 
+local gene regulation varies across the tissues and whether such 
+variability might account for previous failed attempts to identify 
+trait-relevant local eQTLs. Because the CC-RIX carry the same founder 
+alleles as the DO, the local gene regulation is expected to match between 
+the populations. However, because the alleles are recombined throughout 
+the genome, distal effects are expected to vary from those in the DO, 
+allowing us to directly assess the role of distal gene regulation in 
+driving trait-associated transcript variation. To mechanistically 
+dissect distal effects on metabolic disease, we developed a novel 
+dimension reduction framework called high-dimensional mediation 
+analysis (HDMA) to identify the heritable transcriptomic signatures 
+driving trait variation, which we compared between mouse populations 
+and to human data sets with measured adipose gene expression. Together, 
+these data enable a comprehensive view into the genetic architecture of 
+metabolic disease.
 
 
 ## Results
@@ -1188,7 +1187,7 @@ probabilities for the two parental strains at each locus.
 CC-RIX animals were fasted for four hours before serum collection 
 via the retro-orbital or submental vein. Whole blood was left at 
 room temperature for 30-60 minutes before being centrifuged for 
-5 minutes at 12,500 RPM. The serum was then tested for glucose 
+5 minutes at 14,674 g. The serum was then tested for glucose 
 (Beckman Coulter; OSR6121), cholesterol (Beckman Coulter; OSR6116), 
 triglycerides (Beckman Coulter; OSR60118), insulin (MSD; K152BZC-1), 
 or c-peptide (MSD; K1526JK-1).
@@ -1205,9 +1204,9 @@ minutes post-injection to measure glucose levels.
 #### Bulk tissue collection 
 At either 28 weeks of age (for the 6-month cohort) or 56 weeks of age 
 (for the 12-month cohort), CC-RIX animals were humanely euthanized by 
-cervical dislocation. Tissues, including adipose, gastrocnemius, and 
-the left liver lobe, were harvested and flash-frozen in liquid nitrogen 
-for RNA sequencing.
+cervical dislocation. Tissues, including visceral adipose (gonadal 
+fat pad), skeletal muscle (gastrocnemius), and the left liver lobe, 
+were harvested and flash-frozen in liquid nitrogen for RNA sequencing.
 
 ### Whole Pancreas Insulin Content 
 The animals were humanely euthanized at 16 weeks of age and the entire 
@@ -1223,7 +1222,7 @@ measurements, the contents of the scintillation vials were rinsed
 with 4 mL PBS (Roche; 1666789) with 1\% BSA (Sigma; A7888), 
 neutralized with 65 \si{\micro\liter} 
 10N NaOH (Fisher; SS255-1), and vortexed for 30 seconds. The samples 
-were then centrifuged at $4^{\circ}$C for 5 minutes at 2,000 RPM. 
+were then centrifuged at $4^{\circ}$C for 5 minutes at 452 g. 
 The samples were diluted 5000X in PBS with 1\% BSA, and insulin was 
 measured (MSD; K152BZC-1).
 
