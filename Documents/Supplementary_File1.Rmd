@@ -225,7 +225,7 @@ Source data are provided as a Source Data file.
 \includegraphics[width=\textwidth]{Figures/Supp_Fig14_Nucb2_eQTL.pdf} 
 \caption{Regulation of \textit{Nucb2} expression in islet. \textit{Nucb2} 
 is encoded on mouse chromosome 7 at 116.5 Mb (red arrow). Expression 
-levels of \textit{Nucb2} in islets was 69\%. This LOD score trace 
+levels of \textit{Nucb2} in islets was 65\%. This LOD score trace 
 shows that there is no local eQTL at the position of the gene, nor 
 any strong distal eQTLs. The horizontal dashed line shows the 
 genome-wide FDR threshold of 0.01. Source data are provided as 

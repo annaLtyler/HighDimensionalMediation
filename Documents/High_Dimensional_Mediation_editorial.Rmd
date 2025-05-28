@@ -72,7 +72,7 @@ Gregory W. Carter\textsuperscript{1}\textsuperscript{\textdagger}\textsuperscrip
 Department, Madison, Wisconsin, USA. 
 \textsuperscript{3}The Jackson Laboratory for Genomic Medicine, Farmington, Connecticut, USA.
 \text{*}equal contributions 
-\textsuperscript{\textdagger} corresponding author
+\textsuperscript{\textdagger}corresponding author
 \textsuperscript{\Letter}\href{mailto:gary.churchill@jax.org}{email: gary.churchill@jax.org}
 \textsuperscript{\Letter}\href{mailto:gregory.carter@jax.org}{email: gregory.carter@jax.org}
 
@@ -629,14 +629,16 @@ CI = -0.002 to 0.1; $p = 0.77$).
 Finally, we focused on transcripts with the highest local heritability 
 in each tissue (Figure \ref{fig:loading_heritability}C). This procedure
 selected transcripts with low loadings on average, consistent
-with our findings above (Figure \ref{fig:motivation}B).
+with our findings above that high local heritability was associated 
+with low trait correlations (Figure \ref{fig:motivation}B).
 
 We performed a literature search for the genes in each of these groups
 along with the terms diabetes, obesity, and the name of the 
 expressing tissue to determine whether any of these genes had previous 
-associations with metabolic disease in the literature (Methods). Multiple 
-genes in each group had been previously associated with obesity and 
-diabetes (Figure \ref{fig:loading_heritability} bolded gene names). Genes 
+tissue-specific associations with metabolic disease in the literature 
+(Methods). Multiple genes in each group had been previously associated 
+with obesity and diabetes in the represented tissue (Figure 
+\ref{fig:loading_heritability} bolded gene names). Genes 
 with high loadings were most highly enriched for previous literature 
 support. They were `r signif(lit.enrich["loading.twas.enrich"], 2)` 
 times more likely than TWAS hits and 
@@ -644,12 +646,12 @@ times more likely than TWAS hits and
 likely than genes with high local heritability to be previously 
 associated with obesity or diabetes.
 
-### Tissue-specific transriptional programs were associated with metabolic traits
+### Tissue-specific transcriptional programs were associated with metabolic traits
 
 Clustering of transcripts with top loadings in each tissue showed 
 tissue-specific functional modules associated with obesity and 
 insulin resistance (Figure \ref{fig:toa}A) (Methods). 
-The clustering highlights the importance of immune activation 
+The clustering highlights the importance of immune activation, 
 particularly in adipose tissue. The mitosis cluster had large 
 positive loadings in three of the four tissues potentially 
 suggesting system-wide proliferation of immune cells. Otherwise, 
@@ -665,8 +667,9 @@ treat type II diabetes, and reduce inflammation and adipose
 hyptertrophy \cite{pmid17389767}. Consistent with this role, the loading for 
 \textit{Pparg} in adipose tissue was negative, suggesting 
 that higher expression was associated with leaner mice (Figure \ref{fig:toa}B). 
-In contrast, \textit{Pparg} had a large positive loading in liver, 
-where it is known to play a role in the development of hepatic steatosis, 
+In contrast, \textit{Pparg} had a large positive loading in liver 
+((Figure \ref{fig:toa}B)), where it is known to play a role in the 
+development of hepatic steatosis, 
 or fatty liver. Mice that lack \textit{Pparg} specifically in the liver, 
 are protected from developing steatosis and show reduced expression
 of lipogenic genes \cite{pmid12805374, pmid12618528}. Overexpression
@@ -686,8 +689,8 @@ variation in phenotype. Both local and distal heribatility of
 suggesting that variability of expression in the islet does not
 drive variation in MDI. These results highlight the importance
 of tissue context when investigating the role of heritable transcript
-variability in driving phenotype. Gene lists for all clusters are 
-available in Supplementary File 1.
+variability in driving phenotype. Gene lists for all clusters with 
+tissue-specific loadings are available in Supplementary File 2.
 
 ### Gene expression, but not local eQTLs, predicted body weight in an independent population
 
@@ -697,18 +700,17 @@ predict metabolic phenotypes in an independent population of
 CC-RIX mice, which were F1 mice derived from multiple pairings of 
 Collaborative Cross (CC) \cite{pmid28592495, pmid21411855, 
 pmid17674098, pmid15514660} strains (Figure \ref{fig:cc_prediction}) 
-(Methods). We tested two questions. First, we asked whether the 
-loadings identified in the DO mice were relevant to the relationship 
-between the transcriptome and the phenome in the CC-RIX. We predicted
-body weight (a surrogate for MDI) in each CC-RIX individual 
-using measured gene expression in each tissue and the transcript loadings 
-identified in the DO (Methods). The predicted body weight and acutal body 
-weight were highly correlated (Figure \ref{fig:cc_prediction}B). The best 
-prediction was achieved for adipose tissue, which 
-supports the observation in the DO that adipose expression was the strongest 
-mediator of the genetic effect on MDI. This result also confirms 
-the validity and translatability of the transcript loadings and their 
-relationship to metabolic disease.
+(Methods). We asked whether the loadings identified in the DO mice 
+were relevant to the relationship between the transcriptome and the 
+phenome in the CC-RIX. We predicted body weight (a surrogate for MDI) 
+in each CC-RIX individual using measured gene expression in each tissue 
+and the transcript loadings identified in the DO (Methods). The predicted 
+body weight and acutal body weight were highly correlated (Figure 
+\ref{fig:cc_prediction}B). The best prediction was achieved for adipose 
+tissue, which supports the observation in the DO that adipose expression 
+was the strongest mediator of the genetic effect on MDI. This result also 
+confirms the validity and translatability of the transcript loadings and 
+their relationship to metabolic disease.
 
 ```{r, echo = FALSE}
 #in the paragraph before a supplemental figure is referenced,
@@ -722,7 +724,7 @@ cc.imputation.label <- fig.counter[fig.label]
 ```
 
 
-The second question related to the source of the relevant variation 
+We then investigated the source of the relevant variation 
 in gene expression. If local regulation was the predominant factor 
 influencing trait-relevant gene expression, we should be able to 
 predict phenotype in the CC-RIX using transcripts imputed from 
@@ -738,10 +740,10 @@ that local regulation of gene expression is not the primary
 factor driving heritability of complex traits. It is also consistent 
 with our findings in the DO population that distal heritability 
 was a major driver of trait-relevant gene expression and that 
-high-loading transcripts had comparatively high distal and low 
-local heritability.
+high-loading transcripts had comparatively high distal, and low 
+local, heritability.
 
-### Distally heritable transcriptomic signatures reflected variation in composition of adipose tissue and islets
+### Distally heritable transcriptomic signatures suggested variation in composition of adipose tissue and islets
 
 The interpretation of global genetic influences on gene expression and 
 phenotype is potentially more challenging than the interpretation and 
@@ -771,10 +773,11 @@ not a mediator of MDI.
 
 We also compared loadings of cell-type specific transcripts in islet 
 (Methods). The mean loadings for alpha-cell specific transcripts were 
-significantly greater than 0 ($p = 0.002$), while the mean loadings 
-for delta-  (Holm-adjusted two-sided empirial $p < 2\times10^{-16}$) 
-and endothelial-cell 
-(Holm-adjusted two-sided empirical $p = 0.01$) specific genes were 
+significantly greater than 0 (Holm-adjusted two-sided empirical 
+$p = 0.002$), while the mean loadings 
+for transcripts specific to delta cells (Holm-adjusted two-sided 
+empirial $p < 2\times10^{-16}$) and endothelial cells 
+(Holm-adjusted two-sided empirical $p = 0.01$) were 
 significantly less than 0 (Figure \ref{fig:human_translation}B). These 
 results suggest that mice with higher MDI inherited an altered cell 
 composition that predisposed them to metabolic disease, or that these 
@@ -884,9 +887,9 @@ relatedness. We used a novel high-dimensional mediation analysis
 (HDMA) to identify tissue-specific composite transcripts that are 
 predicted to mediate the effect of genetic background on metabolic 
 traits. The adipose-derived composite transcript robustly predicted 
-body weight in an independent cohort of diverse mice with disparate 
+body weight in an independent cohort of diverse mice with a disparate 
 population structure. It also predicted MDI in four human cohorts. 
-However, gene expression imputed from local genotype failed to predict 
+However, gene expression imputed from local haplotype failed to predict 
 body weight in the second mouse population. Taken together, these 
 results highlight the complexity of gene expression regulation in 
 relation to trait heritability and suggest that heritable trait 
@@ -932,7 +935,7 @@ should be no residual correlation between the genome and the phenome.
 Here, we were able to fit this model and identified a composite transcript
 that, when taken into account, left no residual correlation between the 
 composite genome and composite phenome scores (Figure \ref{fig:workflow}A,
-Supplementary Figure \ref{fig:interpretation}E).
+Figure \ref{fig:interpretation}E).
 
 Unlike in the omnigenic model, we did not
 observe a clear demarcation between the core and peripheral genes in 
@@ -955,10 +958,10 @@ An extension of the omnigenic model proposed that most heritability
 of complex traits is driven by weak distal eQTLs that are potentially
 below the detection threshold in studies with feasible sample sizes 
 \cite{pmid31051098}. This is consistent with what we observed here. 
-For example, \textit{Nucb2}, had a high loading in islets 
-and was also strongly distally regulated (66\% distal heritability) 
+For example, the gene \textit{Nucb2}, had a high loading in islets 
+and was also strongly distally regulated (65\% distal heritability) 
 (Figure \ref{fig:loading_heritability}). This gene is expressed in 
-pancreatic $\beta$ cells and is involved in inslin and glucagon
+pancreatic $\beta$ cells and is involved in insulin and glucagon
 release \cite{pmid24993278, pmid23537085, pmid22108805}. Although its 
 transcription was highly heritable in islets, that regulation was 
 distributed across the genome, with no clear distal eQTL 
@@ -984,17 +987,17 @@ interest, the composite transcripts can be used as
 weighted vectors in multiple types of analysis, 
 such as drug prioritization using gene set enrichment 
 analysis (GSEA) and the CMAP database. In particular,
-the CMAP analysis identified drugs which have been 
+the CMAP analysis identified drugs that have been 
 demonstrated to reverse insulin resistance and other 
 aspects of metabolic disease. This finding supports the
 hypothesis that HDMA identified transcripts that truly
-mediate genetic effects on traits. On its own, HDMA identifies
+mediate genetic effects on traits. HDMA identifies
 transcriptional patterns that are consistent with a mediation 
 model, but alone does not prove mediation. However, the finding
 that these drugs act both on the transcriptional patterns and 
 on the desired traits support the mediation model and the 
-hypothesis that these transcripts have a causal role in pathogenesis 
-of metabolic disease.
+hypothesis that these transcripts play a causal role in 
+pathogenesis of metabolic disease.
 
 Together, our results have shown that both tissue specificity and 
 distal gene regulation are critically important to understanding 
@@ -1053,10 +1056,11 @@ following Methods sections.
 Mice were maintained and treated in accordance with the guidelines 
 approved by the Department of Biochemistry animal vivarium at the 
 University of Wisconsin. Animal husbandry and in vivo phenotyping 
-methods were previously published \cite{pmid31343992, pmid29567659}. 
+methods were previously published are are described briefly below
+\cite{pmid31343992, pmid29567659}. 
 
 A population of 482 diversity outbred mice (split evenly between
-male and female) from generates 18, 19, and 21, was placed on a 
+male and female) from generations 18, 19, and 21, was placed on a 
 high-fat (44.6\% kcal fat), high-sugar (34\% carbohydrate), adequate
 protein (17.3\% protein) diet from Envigo Teklad (catalog number TD.08811) 
 starting at four weeks of age as described previously \cite{pmid29567659}. 
@@ -1073,7 +1077,8 @@ for high-throughput sequencing \cite{pmid29567659}.
 
 #### Trait measurements
 
-Trait measurements were described previously in \cite{pmid29567659}.
+Trait measurements were described previously in Keller \textit{et al.}
+2018\cite{pmid29567659}.
 Briefly, body weight was measured every two weeks, and 4-hour fasting 
 plasma samples were collected to measure insulin, glucose, and 
 triglycerides (TG). At around 18 weeks of age, an oral glucose 
@@ -1125,9 +1130,9 @@ principal component of the group of measurements. For example, we used
 the first principal component of all LDL measurements as the measurement 
 of LDL. For each set of traits, we ensured the first principal component 
 had the correct sign by correlating it with the average of the traits. 
-For correlation coefficients (R) less than 0, we multiplied the principal 
-component by -1. The labels for these traits have the term PC1 appended 
-to their name.
+For pearson correlation coefficients ($r$) less than 0, we multiplied 
+the principal component by -1. The labels for these traits have the term 
+PC1 appended to their name.
 
 Heritability of each trait was estimates using the R package qtl2
 \cite{pmid30591514}. Standard errors of heritability were estimated
@@ -1266,37 +1271,40 @@ for each tissue. EMASE was performed by the Genotype by RNA-seq
 process, R1 and R2 FASTQ files were combined and aligned to a hybridized (8-way) 
 transcriptome generated for the 8 DO founder strains as single-ended reads. GBRS 
 was also used to reconstruct the mouse genotype probabilities along 
-$\sim69$K markers, which was used for confirming genotypes in the quality control (QC) process.
-For the QC process, we used a Euclidean distances method (developed by Greg 
-Keele - Churchill Lab) to compare the GBRS genotype probabilities between the 
-tissues and the genotype probabilities array for all mice. The counts matrix for 
-each tissue was processed to filter out transcripts with less than one read for 
-at least half of the samples. RNA-seq batch effects were removed by regressing 
-out batch as a random effect and considering sex and generation as fixed effects 
-using lme4 R package. RNA-Seq counts were normalized relative to total read counts 
-using the variance stabilizing transform (VST) as implemented in DESeq2 and using 
-rank normal score.
+$\sim69$K markers, which was used for confirming genotypes in the quality 
+control (QC) process. For the QC process, we used a Euclidean distances method 
+(developed by Greg Keele - Churchill Lab) to compare the GBRS genotype probabilities 
+between the tissues and the genotype probabilities array for all mice. The counts 
+matrix for each tissue was processed to filter out transcripts with less than one 
+read for at least half of the samples. RNA-seq batch effects were removed by 
+regressing out batch as a random effect and considering sex and generation as 
+fixed effects using lme4 R package \cite{lme4_package}. RNA-Seq counts were 
+normalized relative to total read counts using the variance stabilizing transform 
+(VST) as implemented in DESeq2 \cite{deseq2} and using rank normal score.
 
 ### eQTL analysis
-We used R/qtl2 \cite{pmid30591514} to perform eQTL analysis. We used the rank 
-normal score data and used sex and DO generation as additive covariates. We also 
-used kinship as a random effect. We used permutations to find a LOD threshold of 
-8 for significant QTLs which corresponded to a genome-wide $p$ value of 0.01
-\cite{pmid7851788}. 
+We used the R package qtl2 \cite{pmid30591514} to perform eQTL analysis. We used 
+the rank normal score data and used sex, DO generation, and DO wave as additive 
+covariates. We also used kinship as a random effect. We used permutations to find 
+a LOD threshold of eight for significant QTLs which corresponded to a genome-wide 
+$p$ value of 0.01 \cite{pmid7851788}. 
 
 To assess whether eQTL were shared across tissues, we considered significant 
 eQTLs within 4Mb of each other to be overlapping. We considered local and 
 distal eQTLs separately. Local eQTL were defined as an eQTL within
-4Mb of the transcription start site of the encoding gene.
+4Mb of the transcription start site (TSS) of the encoding gene. Distal 
+eQTL were defined as an eQTL greater than 4Mb from the TSS of the encoding
+gene.
 
 ### Local and distal heritability of transcripts 
 To estimate local and distal heritability of each transcript, we scaled each
 normalized transcript to have a variance of 1. We then modeled this transcript
-with the local genotype using the fit1() function in R/qtl. We used the 
-resulting model to predict the transcript values. The variance of the 
-predicted transcript is its local heritability. We then estimated the 
-heritability of the residual of the model fit. The variance of the residual 
-multiplied by its heritability is the distal heritability of the transcript. 
+with the local genotype using the fit1() function in the R package 
+qtl2 \cite{pmid30591514}. We used the resulting model to predict the transcript 
+values. The variance of the predicted transcript is its local heritability. 
+We then estimated the heritability of the residual of the model fit. The 
+variance of the residual multiplied by its heritability is the estimate of 
+the distal heritability of the transcript. 
 
 We compared local and distal estimates of heritability to measures 
 of trait relevance for each transcript. To calculate trait relevance
@@ -1634,7 +1642,8 @@ of these models was the imputed transcript based only on the local
 genotype.
 
 We correlated each imputed transcript with each of the metabolic
-phenotypes after adjusting phenotypes for sex, diet, and DO generation.
+phenotypes after adjusting phenotypes for sex, diet, DO generation,
+and DO wave.
 To calculate significance of these correlations, we performed permutation 
 testing by shuffling labels of individual mice and recalculating 
 correlation values. Significant correlations were those more extreme
@@ -1673,7 +1682,7 @@ a loading at least 2.5 standard deviations from the mean across all tissues.
 We made a matrix consisting of the union of these sets populated with the
 tissue-specific loading for each gene. We used the pam() function in the R 
 package cluster \cite{Rcluster} to cluster the loading profiles around $k$
-medoids. We tested $k = 2$ through 20 and used silhouette andlysis to compare
+medoids. We tested $k = 2$ through 20 and used silhouette analysis to compare
 the separation of the clusters. The best separation was achieved with $k = 12$
 clusters. For each cluster we used the R package gprofiler2 \cite{Rgprofiler2}
 to identify enriched GO terms and KEGG pathways for the genes in each cluster. 
@@ -1700,11 +1709,11 @@ eQTL LOD score of the transcript (Supplementary Figure \ref{fig:cc_imputation}B)
 
 We used both measured expression and imputed expression
 combined with the results from HDM in the to predict
-phenotype in the CC-RIX. The traits measured in the DO
-and the CC-RIX were not identical, so we limited our
-prediction to body weight, which was measured in both
-populations, and was the largest contributor to the 
-phenotype score in the DO. 
+metabolic disease index (MDI) in the CC-RIX. The traits 
+measured in the DO and the CC-RIX were not identical, so 
+we limited our prediction to body weight, which was 
+measured in both populations, and was the largest contributor 
+to MDI in the DO. 
 
 For each CC-RIX individual, we multiplied the transcript
 abundances across the transcriptome by the loadings derived
@@ -1712,11 +1721,11 @@ from the HDM in the DO population. This resulted
 in a vector with $n$ elements, where $n$ is the number of 
 transcripts in the trancriptome. Each element was a weighted 
 value that combined the relative abundance of the transcript 
-with how that abundance affected the phenotype. We averaged 
+with how that abundance affected MDI. We averaged 
 the values in this vector to calculate an overall predicted
-phenotype score for the individual CC-RIX animal. 
+MDI for the individual CC-RIX animal.
 
-After calculating this predicted phenotype value across
+After calculating this predicted MDI across
 all CC-RIX animals, we correlated the predicted values from
 each tissue with measured body weight (Supplementary Figure 
 \ref{fig:cc_imputation}B).
@@ -1728,11 +1737,13 @@ tissue composition changes in the DO mice prone to obesity on the
 high-fat diet. To do this, we acquired lists of cell-type specific
 transcripts from the literature. In adipose tissue, we looked
 at cell-type specific transcripts for macrophages, leukocytes,
-adipocyte progenitors, and adipocytes as defined in \cite{pmid29087381}.
+adipocyte progenitors, and adipocytes as defined in Ehrlund 
+\textit{et al.} (2017) \cite{pmid29087381}.
 In pancreatic islets, we looked at cell-type specific transcripts
 for alpha cells, beta cells, delta cells, ductal cells, mast cells, 
 macrophages, acinar cells, stellate cells, gamma and epsilon cells, 
-and endothelial cells as defined by \cite{pmid36778506}. Both studies 
+and endothelial cells as defined by Elgamal \textit{et al.} (2023)
+\cite{pmid36778506}. Both studies 
 defined cell-type specific transcripts based on human cell types. We 
 collected the loadings for each set of cell-type specific transcripts 
 in the respective tissue and asked whether the mean loading for the 
@@ -1756,12 +1767,12 @@ because this had the strongest relationship to obesity and insulin
 resistance in the DO. We downloaded the following human gene 
 expression data sets: 
 
-* Accession number [GSE152517](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE152517) - Performed bulk RNA sequencing
+* Accession number [GSE152517](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE152517) - Bulk RNA sequencing
   on visceral adipose tissue resected from seven diabetic and
   seven non-diabetic obese individuals.
 
-* Accession number [GSE44000](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44000) - Used Agilent-014850 4X44K human 
-  whole genome platform arrays (GPL6480) to measure gene expression 
+* Accession number [GSE44000](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44000) - Agilent-014850 4X44K human 
+  whole genome platform arrays (GPL6480) measuring gene expression 
   in purified adipocytes derived from the subcutaneous adipose tissue 
   of seven obese (BMI>30) and seven lean (BMI<25) post-menopausal women.
 
@@ -1770,9 +1781,9 @@ expression data sets:
   Gene expression was measured by RNA sequencing with an Illumina HiSeq 2500.
 
 * Accession number [GSE29231](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE29231) - Visceral adipose biopsies were taken from
-  three female patients with type 2 diabetes, and three non-diabetic 
-  female patients. Expression was measured with Illumina HumanHT-12 v3 
-  Expression BeadChip arrays.
+  three (four technical replicates each) female patients with type 2 diabetes, and 
+  three (four technical replicates each) non-diabetic female patients. Expression 
+  was measured with Illumina HumanHT-12 v3 Expression BeadChip arrays.
 
 We downloaded each data set from GEO using the R package GEOquery 
 \cite{geoquery}. In each case, we verified that gene expression was 
@@ -1791,7 +1802,7 @@ ortholog in the DO mice. This resulted in a vector of weighted transcript
 values for each patient based on their own transcriptional profile 
 and the obesity-related transcriptional signature from the DO analysis. 
 The mean of this vector for an individual was the prediction of their 
-obesity status. Higher values indicate a prediction of higher obesity 
+obesity status (MDI). Higher values indicate a prediction of higher obesity 
 or risk of metabolic disease based on adipose gene expression. 
 
 We then compared the values across groups, either obese and non-obese, 
@@ -1819,7 +1830,8 @@ most down-regulated genes in a signature, however, not all human genes
 are included in their database. To ensure we had as many genes as possible
 in the query, we selected the top and bottom 200 genes with the most extreme
 positive and negative loadings respectively. We pasted these into the CLUE
-query application available at \url{https://clue.io/query}.
+query application available at \url{https://clue.io/query}. These gene
+lists are available as Source Data.
 
 We filtered the results in two ways: First, we looked at the most 
 significantly anti-correlated ($-\mathrm{log}_{10}(\mathrm{FDR} q) > 15$) 
@@ -1861,19 +1873,22 @@ Count matrices and phenotype data can be found at [Figshare](https://figshare.co
 We downloaded genotypes, phenotypes, and pancreatic islet 
 gene expression data from [Dryad](https://datadryad.org/) 
 [doi:10.5061/dryad.pj105](https://datadryad.org/dataset/doi:10.5061/dryad.pj105)
-\cite{DO_data}. To predict human MDI from RNA-seq profiles, the following 
-data were downloaded from the Gene Expression Omnibus: Gene expression in 
-visceral adipose tissue resected from seven diabetic and
-seven non-diabetic obese individuals. Accession number 
-[GSE152517](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE152517) 
+\cite{DO_data}. 
+To predict human MDI from RNA-seq profiles, the following 
+data were downloaded from the Gene Expression Omnibus: 
+* Accession number [GSE152517](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE152517) 
+  Gene expression in visceral adipose tissue resected from seven 
+  diabetic and seven non-diabetic obese individuals. 
+* Accession number [GSE44000](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44000)
   Gene expression in purified adipocytes derived from the subcutaneous adipose 
-tissue of seven obese (BMI>30) and seven lean (BMI<25) post-menopausal women. - accession 
-number [GSE44000](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44000)
-Gene expression in subcutaneous adipose tissue from 35 normal weight, and 26 obese 
-children. - accession number [GSE205668](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE205668)
-Visceral adipose biopsies were measured in four technical replicates
-each in three female patients with type 2 diabetes, and three non-diabetic 
-female patients - accession number [GSE29231](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE29231)
+  tissue of seven obese (BMI>30) and seven lean (BMI<25) post-menopausal women. 
+* Accession number [GSE205668](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE205668)
+  Gene expression in subcutaneous adipose tissue from 35 normal weight, and 26 obese 
+  children. 
+* Accession number [GSE29231](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE29231)
+  Visceral adipose biopsies were measured in four technical replicates
+  each in three female patients with type 2 diabetes, and three non-diabetic 
+  female patients.
 
 Source data for figures are provided as tab-delimited text files on 
 [Figshare](https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979) 

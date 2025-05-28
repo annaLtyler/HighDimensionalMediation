@@ -604,6 +604,17 @@ S.~C. Munger, N.~Raghupathy, K.~Choi, A.~K. Simons, D.~M. Gatti, D.~A.
   transcript abundance estimates in multiparent populations}.
 \newblock {\em Genetics}, 198(1):59--73, Sep 2014.
 
+\bibitem{lme4_package}
+Douglas Bates, Martin M{\"a}chler, Ben Bolker, and Steve Walker.
+\newblock Fitting linear mixed-effects models using {lme4}.
+\newblock {\em Journal of Statistical Software}, 67(1):1--48, 2015.
+
+\bibitem{deseq2}
+Michael~I. Love, Wolfgang Huber, and Simon Anders.
+\newblock Moderated estimation of fold change and dispersion for rna-seq data
+  with deseq2.
+\newblock {\em Genome Biology}, 15:550, 2014.
+
 \bibitem{pmid7851788}
 Gary~A Churchill and Rachel~W Doerge.
 \newblock Empirical threshold values for quantitative trait mapping.
@@ -741,11 +752,6 @@ R.~M. Baldarelli, C.~L. Smith, M.~Ringwald, J.~E. Richardson, C.~J. Bult,
 \newblock {{M}ouse {G}enome {I}nformatics: an integrated knowledgebase system
   for the laboratory mouse}.
 \newblock {\em Genetics}, 227(1), May 2024.
-
-\bibitem{lme4_package}
-Douglas Bates, Martin M{\"a}chler, Ben Bolker, and Steve Walker.
-\newblock Fitting linear mixed-effects models using {lme4}.
-\newblock {\em Journal of Statistical Software}, 67(1):1--48, 2015.
 
 \bibitem{lmerTest_package}
 Alexandra Kuznetsova, Per~B. Brockhoff, and Rune H.~B. Christensen.
