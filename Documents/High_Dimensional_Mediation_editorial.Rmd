@@ -1351,7 +1351,7 @@ Note that the assumption of perfect mediation forces the covariance between
 $x$ and $y$ to be $\alpha \beta$. In any finite data set, however, the observed 
 covariance matrix, $S = [S_{ij}]$, will not typically satisfy this constraint.
 
-The general negative log-likelihood fitting function for an SEM is given by 
+The general log-likelihood fitting function for an SEM is given by 
 
 \begin{align}
 \label{eq:loglikelihood}
@@ -1362,36 +1362,29 @@ denotes the trace \cite{bollen2014structural}. For the perfect-mediation model,
 these values are
 
 \begin{align}
-\left|\Sigma\right| &= (1-\alpha^2)(1-\beta^2) \\
-%S^{-1} &= 
-  %\begin{bmatrix}
-%\frac{1}{1-\alpha^2} & \frac{-\alpha}{1-\alpha^2} & 0 \\
-%\frac{-\alpha}{1-\alpha^2} & \frac{1-\alpha^2\beta^2}{(1-\alpha^2)(1-%\beta^2} & \frac{-\beta}{1-\beta^2} \\
-%0 & \frac{-\beta}{1-\beta^2} & \frac{1}{1-\beta^2}
-%\end{bmatrix}\\ 
-\Sigma^{-1} &= 
-  \begin{bmatrix}
-1/(1-\alpha^2) & -\alpha/(1-\alpha^2) & 0 \\
--\alpha/(1-\alpha^2) & (1-\alpha^2\beta^2)/\left((1-\alpha^2)(1-\beta^2)\right) & -\beta/(1-\beta^2) \\
-0 & -\beta/(1-\beta^2) & 1/(1-\beta^2)
-\end{bmatrix}
+    \left|\Sigma\right| &= (1-\alpha^2)(1-\beta^2) \\
+    \Sigma^{-1} &= 
+    \begin{bmatrix}
+    1/(1-\alpha^2) & \alpha/(1-\alpha^2) & 0 \\
+    \alpha/(1-\alpha^2) & (1-\alpha^2\beta^2)/\left((1-\alpha^2)(1-\beta^2)\right) & \beta/(1-\beta^2) \\
+    0 & \beta/(1-\beta^2) & 1/(1-\beta^2)
+    \end{bmatrix}
 \end{align}
 Plugging these into the likelihood function, we get
 \begin{align}
 \label{eqn:mediation_loglikelihood}
-L = &\log\left((1-\alpha^2)(1-\beta^2)\right) - \frac{2\alpha^2\beta^2}{(1-\alpha^2)(1-\beta^2)} + 1 - \frac{2\alpha}{1-\alpha^2} S_{12} - \frac{2\beta}{1-\beta^2} S_{23}
+L = &\log\left((1-\alpha^2)(1-\beta^2)\right) + \frac{3 - \alpha^2 - \beta^2 - \alpha^2\beta^2}{(1-\alpha^2)(1-\beta^2)} + \frac{2\alpha}{1-\alpha^2} S_{12} + \frac{2\beta}{1-\beta^2} S_{23}
 \end{align}
 To simplify notation, we define
 \begin{equation}
-F(\alpha,\beta) = \log\left((1-\alpha^2)(1-\beta^2)\right) - \frac{2\alpha^2\beta^2}{(1-\alpha^2)(1-\beta^2)} + 1,
+F(\alpha,\beta) = \log\left((1-\alpha^2)(1-\beta^2)\right) + \frac{3 - \alpha^2 - \beta^2 - \alpha^2\beta^2}{(1-\alpha^2)(1-\beta^2)},
 \end{equation} so the likelihood function is now
 \begin{align}
 \label{eqn:mediation_loglikelihood_simple}
-L = F(\alpha, \beta) - \frac{2\alpha}{1-\alpha^2} S_{12} - \frac{2\beta}{1-\beta^2} S_{23}
+L = F(\alpha, \beta) + \frac{2\alpha}{1-\alpha^2} S_{12} + \frac{2\beta}{1-\beta^2} S_{23}
 \end{align}
 Note that this likelihood is maximized by fitting regression coefficients $\alpha$ 
-and $\beta$ between $x$ and $m$ and $m$ and $y$, respectively, but the negative 
-log-likelihood formulation is useful for the multivariate extension below.
+and $\beta$ between $x$ and $m$ and $m$ and $y$, respectively, but the log-likelihood formulation is useful for the multivariate extension below.
 
 #### Projecting multivariate data to identify latent mediators
 Suppose now that we have three data matrices, $X$, $M$, and $Y$ (individuals by 
@@ -1431,11 +1424,11 @@ Plugging these formulae into the objective function
 (Eqn. \ref{eqn:mediation_loglikelihood_simple}), we have 
 
 \begin{align}
-S_{12} &= {\mathrm corr}\left(l_X, l_M\right)\\
-S_{23} &= {\mathrm corr}\left(l_M, l_Y\right)\\
-\label{eqn:gcca_mediation}
-L(\alpha, \beta, a,b,c) &= F(\alpha, \beta) - \frac{2\alpha}{1-\alpha^2} {\mathrm corr}\left(l_X, l_M\right) - \frac{2\beta}{1-\beta^2} {\mathrm corr}\left(l_M, l_Y\right) \\ 
-&= F(\alpha, \beta) - \frac{2\alpha}{1-\alpha^2} {\mathrm corr}\left(Xa, Mb\right) - \frac{2\beta}{1-\beta^2} {\mathrm corr}\left(Mb, Yc\right)
+S_{12} &= {\rm corr}\left(l_X, l_M\right)\\
+    S_{23} &= {\rm corr}\left(l_M, l_Y\right)\\
+    \label{eqn:gcca_mediation}
+    L(\alpha, \beta, a,b,c) &= F(\alpha, \beta) + \frac{2\alpha}{1-\alpha^2} {\rm corr}\left(l_X, l_M\right) + \frac{2\beta}{1-\beta^2} {\rm corr}\left(l_M, l_Y\right) \\ 
+    &= F(\alpha, \beta) + \frac{2\alpha}{1-\alpha^2} {\rm corr}\left(Xa, Mb\right) + \frac{2\beta}{1-\beta^2} {\rm corr}\left(Mb, Yc\right)
 \end{align}
 
 This yields an objective function of two sets of parameters: the
@@ -1463,7 +1456,7 @@ For fixed $a$, $b$, and $c$, the optimal $\alpha$ and $\beta$ are simply
 given by regression coefficients between $l_X$ and $l_M$ and $l_M$ and $l_Y$, 
 respectively. Given these regression coefficients, $\alpha$ and $\beta$, 
 we then optimize $a$, $b$, and $c$. For fixed $\alpha$ and $\beta$, 
-the term $F(\alpha, \beta)$ is irrelevant, so minimizing the negative 
+the term $F(\alpha, \beta)$ is irrelevant, so maximizing the  
 log-likelihood function reduces to maximizing the reduced function
 
 \begin{align}
