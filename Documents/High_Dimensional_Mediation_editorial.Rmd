@@ -1029,8 +1029,8 @@ CC001/UncJ (strain#:021238), CC042/GeniUncJ (strain#:020947),
 CC040/TauUncJ (strain#:023831), CC004/TauUncJ (strain#:020944), 
 CC009/UncJ (strain#:018856), CC013/GeniUncJ (strain#:021892), and
 CC060/UncJ (strain#:026427). Counts of male and female mice in 
-each strain are available in the supplementary file 
-CC-RIX_strain_table.txt. All DO mice were maintained on a
+each strain are available in the Supplementary File 3. All DO 
+mice were maintained on a
 high-fat, high-sugar diet. The CC-RIX mice were randomized to 
 a high-fat or a low-fat diet. The diets were different colors,
 so blinding was not possible. CC-RIX mice were sacrificed in a 
@@ -1700,7 +1700,7 @@ eQTL LOD score of the transcript (Supplementary Figure \ref{fig:cc_imputation}B)
 ### Prediction of CC-RIX traits
 
 We used both measured expression and imputed expression
-combined with the results from HDM in the to predict
+combined with the results from HDMA in the to predict
 metabolic disease index (MDI) in the CC-RIX. The traits 
 measured in the DO and the CC-RIX were not identical, so 
 we limited our prediction to body weight, which was 
@@ -1709,7 +1709,7 @@ to MDI in the DO.
 
 For each CC-RIX individual, we multiplied the transcript
 abundances across the transcriptome by the loadings derived
-from the HDM in the DO population. This resulted 
+from the HDMA in the DO population. This resulted 
 in a vector with $n$ elements, where $n$ is the number of 
 transcripts in the trancriptome. Each element was a weighted 
 value that combined the relative abundance of the transcript 
@@ -1724,7 +1724,7 @@ each tissue with measured body weight (Supplementary Figure
 
 ### Cell type specificity
 
-We investigated whether the loadings derived from HDM reflected
+We investigated whether the loadings derived from HDMA reflected
 tissue composition changes in the DO mice prone to obesity on the
 high-fat diet. To do this, we acquired lists of cell-type specific
 transcripts from the literature. In adipose tissue, we looked
@@ -1856,9 +1856,13 @@ numbers:
 [CC-RIX liver tissue - GSE237743](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE237743); 
 [CC-RIX skeletal muscle - GSE237747](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE237747). 
 
-Count matrices and phenotype data can be found at [Figshare](https://figshare.com/).
+Count matrices and phenotype data can be found on [Figshare](https://figshare.com/).
 [DOI: 10.6084/m9.figshare.27066979](https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979) 
 \cite{cube_data}
+
+Source Data for figures in this manuscript are available on [Figshare](https://figshare.com/).
+[DOI: 10.6084/m9.figshare.29247428](https://figshare.com/account/projects/251795/articles/29247428?file=55154321)
+\cite{tyler_2025}
 
 \textbf{Data from previous publications:}
 
@@ -1882,9 +1886,6 @@ data were downloaded from the Gene Expression Omnibus:
   each in three female patients with type 2 diabetes, and three non-diabetic 
   female patients.
 
-Source data for figures are provided as tab-delimited text files on 
-[Figshare](https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979) 
-in the file Source\_Data.zip.
 
 ## Code Availability
 
@@ -2022,7 +2023,7 @@ $G \rightarrow T \rightarrow P$, the mediating pathway
 (arrows), while simultaneously minimizing the direct $G 
 \rightarrow P$ pathway (dotted line). The composite 
 vectors that resulted from high-dimensional mediation 
-were $G_c$, $T_C$, and $P_C$. The partial correlations 
+were $G_C$, $T_C$, and $P_C$. The partial correlations 
 $\rho$ between these vectors indicated perfect mediation. 
 Transcript and trait loadings were calculated as described 
 in the methods. \textbf{B.} The null distribution of the path 
@@ -2122,7 +2123,7 @@ mean in any tissue. The heat map was clustered using
 $k$ medoid clustering. Functional enrichments of each 
 cluster are indicated along the left margin. \textbf{B} 
 Loadings for \textit{Pparg} in different tissues indicated 
-by color. \textbf{C} Local (brown) and distal (gray) of 
+by color. \textbf{C.} Local (brown) and distal (gray) of 
 \textit{Pparg} expression in different tissues. Source data 
 are provided as a Source Data file.
 }
@@ -2133,7 +2134,7 @@ are provided as a Source Data file.
 %\includegraphics[width=\textwidth]{Figures/Fig7_CC_Prediction.pdf} 
 \caption{Transcription, but not local genotype, predicts 
 phenotype in the CC-RIX. \textbf{A.} Workflow showing 
-procedure for translating HDM results to an independent 
+procedure for translating HDMA results to an independent 
 population of mice. \textbf{B.} Relationships between the 
 predicted metabolic disease index (MDI) and the mean
 of the rankZ normalized body weight. In this column,
@@ -2166,7 +2167,7 @@ file.
 
 \begin{figure}[ht!]
 %\includegraphics[width=\textwidth]{Figures/Fig8_Human_Translation.pdf} 
-\caption{HDM results translate to humans. \textbf{A.} Distribution of 
+\caption{HDMA results translate to humans. \textbf{A.} Distribution of 
 loadings for cell-type-specific transcripts in adipose tissue
 (purple). Numbers in parentheses indicate the number of 
 transcripts in each group. \textbf{B.} Distribution of loadings 
@@ -2182,7 +2183,7 @@ metabolic disease index (MDI) in four adipose transcription
 data sets downloaded from GEO. In each study the 
 obese/diabetic patients were predicted to have greater 
 MDI than the lean/non-diabetic patients based on the 
-HDM results from DO mice. 1) two-sided Welch's $t$ test: $t = 2.28$, 
+HDMA results from DO mice. 1) two-sided Welch's $t$ test: $t = 2.28$, 
 df = 58.1, 95\% CI of difference = $2.1\times10^{-5}$ 
 to $3.2\times10^{-4}$ A.U.; $p = 0.027$
 2) two-sided Welch's $t$ test: $t = 3.04$, 

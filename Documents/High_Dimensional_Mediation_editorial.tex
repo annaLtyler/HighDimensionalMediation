@@ -931,20 +931,19 @@ following JAX strains of Collaborative Cross mice: CC043/GeniUncJ
 (strain\#:023831), CC004/TauUncJ (strain\#:020944), CC009/UncJ
 (strain\#:018856), CC013/GeniUncJ (strain\#:021892), and CC060/UncJ
 (strain\#:026427). Counts of male and female mice in each strain are
-available in the supplementary file CC-RIX\_strain\_table.txt. All DO
-mice were maintained on a high-fat, high-sugar diet. The CC-RIX mice
-were randomized to a high-fat or a low-fat diet. The diets were
-different colors, so blinding was not possible. CC-RIX mice were
-sacrificed in a 6-month cohort and a 12-month cohort. In the DO
-population, we used sex, DO generation, and DO wave as covariates in all
-statistical tests. In the CC-RIX population, we used diet, sex, and age
-as covariates in all statistical tests. We did not investiagate
-sex-specific effects on genetic architecture in order to maximize power
-and generalizability, as well as to simplify the overall analysis.
-CC-RIX animals were randomly assigned to housing and diets based on
-litters with multiple litters in each group. While undergoing metabolic
-phenotyping animals were randomly assigned an order for testing. Sample
-sizes were determined using statistical rules of thumb
+available in the Supplementary File 3. All DO mice were maintained on a
+high-fat, high-sugar diet. The CC-RIX mice were randomized to a high-fat
+or a low-fat diet. The diets were different colors, so blinding was not
+possible. CC-RIX mice were sacrificed in a 6-month cohort and a 12-month
+cohort. In the DO population, we used sex, DO generation, and DO wave as
+covariates in all statistical tests. In the CC-RIX population, we used
+diet, sex, and age as covariates in all statistical tests. We did not
+investiagate sex-specific effects on genetic architecture in order to
+maximize power and generalizability, as well as to simplify the overall
+analysis. CC-RIX animals were randomly assigned to housing and diets
+based on litters with multiple litters in each group. While undergoing
+metabolic phenotyping animals were randomly assigned an order for
+testing. Sample sizes were determined using statistical rules of thumb
 \cite{van2011statistical}. We included at least four biological
 replicates that were tested over multiple months to increase replication
 power. No data were excluded. Further experimental details and
@@ -1275,8 +1274,7 @@ covariance between \(x\) and \(y\) to be \(\alpha \beta\). In any finite
 data set, however, the observed covariance matrix, \(S = [S_{ij}]\),
 will not typically satisfy this constraint.
 
-The general negative log-likelihood fitting function for an SEM is given
-by
+The general log-likelihood fitting function for an SEM is given by
 
 \begin{align}
 \label{eq:loglikelihood}
@@ -1286,32 +1284,26 @@ L &= {\mathrm tr}\left(S \Sigma^{-1}\right) + \log\left|\Sigma\right|,
 For the perfect-mediation model, these values are
 
 \begin{align}
-\left|\Sigma\right| &= (1-\alpha^2)(1-\beta^2) \\
-%S^{-1} &= 
-  %\begin{bmatrix}
-%\frac{1}{1-\alpha^2} & \frac{-\alpha}{1-\alpha^2} & 0 \\
-%\frac{-\alpha}{1-\alpha^2} & \frac{1-\alpha^2\beta^2}{(1-\alpha^2)(1-%\beta^2} & \frac{-\beta}{1-\beta^2} \\
-%0 & \frac{-\beta}{1-\beta^2} & \frac{1}{1-\beta^2}
-%\end{bmatrix}\\ 
-\Sigma^{-1} &= 
-  \begin{bmatrix}
-1/(1-\alpha^2) & -\alpha/(1-\alpha^2) & 0 \\
--\alpha/(1-\alpha^2) & (1-\alpha^2\beta^2)/\left((1-\alpha^2)(1-\beta^2)\right) & -\beta/(1-\beta^2) \\
-0 & -\beta/(1-\beta^2) & 1/(1-\beta^2)
-\end{bmatrix}
+    \left|\Sigma\right| &= (1-\alpha^2)(1-\beta^2) \\
+    \Sigma^{-1} &= 
+    \begin{bmatrix}
+    1/(1-\alpha^2) & \alpha/(1-\alpha^2) & 0 \\
+    \alpha/(1-\alpha^2) & (1-\alpha^2\beta^2)/\left((1-\alpha^2)(1-\beta^2)\right) & \beta/(1-\beta^2) \\
+    0 & \beta/(1-\beta^2) & 1/(1-\beta^2)
+    \end{bmatrix}
 \end{align} Plugging these into the likelihood function, we get
 \begin{align}
 \label{eqn:mediation_loglikelihood}
-L = &\log\left((1-\alpha^2)(1-\beta^2)\right) - \frac{2\alpha^2\beta^2}{(1-\alpha^2)(1-\beta^2)} + 1 - \frac{2\alpha}{1-\alpha^2} S_{12} - \frac{2\beta}{1-\beta^2} S_{23}
+L = &\log\left((1-\alpha^2)(1-\beta^2)\right) + \frac{3 - \alpha^2 - \beta^2 - \alpha^2\beta^2}{(1-\alpha^2)(1-\beta^2)} + \frac{2\alpha}{1-\alpha^2} S_{12} + \frac{2\beta}{1-\beta^2} S_{23}
 \end{align} To simplify notation, we define \begin{equation}
-F(\alpha,\beta) = \log\left((1-\alpha^2)(1-\beta^2)\right) - \frac{2\alpha^2\beta^2}{(1-\alpha^2)(1-\beta^2)} + 1,
+F(\alpha,\beta) = \log\left((1-\alpha^2)(1-\beta^2)\right) + \frac{3 - \alpha^2 - \beta^2 - \alpha^2\beta^2}{(1-\alpha^2)(1-\beta^2)},
 \end{equation} so the likelihood function is now \begin{align}
 \label{eqn:mediation_loglikelihood_simple}
-L = F(\alpha, \beta) - \frac{2\alpha}{1-\alpha^2} S_{12} - \frac{2\beta}{1-\beta^2} S_{23}
+L = F(\alpha, \beta) + \frac{2\alpha}{1-\alpha^2} S_{12} + \frac{2\beta}{1-\beta^2} S_{23}
 \end{align} Note that this likelihood is maximized by fitting regression
 coefficients \(\alpha\) and \(\beta\) between \(x\) and \(m\) and \(m\)
-and \(y\), respectively, but the negative log-likelihood formulation is
-useful for the multivariate extension below.
+and \(y\), respectively, but the log-likelihood formulation is useful
+for the multivariate extension below.
 
 \paragraph{Projecting multivariate data to identify latent
 mediators}\label{projecting-multivariate-data-to-identify-latent-mediators}
@@ -1355,11 +1347,11 @@ Plugging these formulae into the objective function (Eqn.
 \ref{eqn:mediation_loglikelihood_simple}), we have
 
 \begin{align}
-S_{12} &= {\mathrm corr}\left(l_X, l_M\right)\\
-S_{23} &= {\mathrm corr}\left(l_M, l_Y\right)\\
-\label{eqn:gcca_mediation}
-L(\alpha, \beta, a,b,c) &= F(\alpha, \beta) - \frac{2\alpha}{1-\alpha^2} {\mathrm corr}\left(l_X, l_M\right) - \frac{2\beta}{1-\beta^2} {\mathrm corr}\left(l_M, l_Y\right) \\ 
-&= F(\alpha, \beta) - \frac{2\alpha}{1-\alpha^2} {\mathrm corr}\left(Xa, Mb\right) - \frac{2\beta}{1-\beta^2} {\mathrm corr}\left(Mb, Yc\right)
+S_{12} &= {\rm corr}\left(l_X, l_M\right)\\
+    S_{23} &= {\rm corr}\left(l_M, l_Y\right)\\
+    \label{eqn:gcca_mediation}
+    L(\alpha, \beta, a,b,c) &= F(\alpha, \beta) + \frac{2\alpha}{1-\alpha^2} {\rm corr}\left(l_X, l_M\right) + \frac{2\beta}{1-\beta^2} {\rm corr}\left(l_M, l_Y\right) \\ 
+    &= F(\alpha, \beta) + \frac{2\alpha}{1-\alpha^2} {\rm corr}\left(Xa, Mb\right) + \frac{2\beta}{1-\beta^2} {\rm corr}\left(Mb, Yc\right)
 \end{align}
 
 This yields an objective function of two sets of parameters: the
@@ -1388,7 +1380,7 @@ are simply given by regression coefficients between \(l_X\) and \(l_M\)
 and \(l_M\) and \(l_Y\), respectively. Given these regression
 coefficients, \(\alpha\) and \(\beta\), we then optimize \(a\), \(b\),
 and \(c\). For fixed \(\alpha\) and \(\beta\), the term
-\(F(\alpha, \beta)\) is irrelevant, so minimizing the negative
+\(F(\alpha, \beta)\) is irrelevant, so maximizing the\\
 log-likelihood function reduces to maximizing the reduced function
 
 \begin{align}
@@ -1646,14 +1638,14 @@ Figure \ref{fig:cc_imputation}B).
 traits}\label{prediction-of-cc-rix-traits}
 
 We used both measured expression and imputed expression combined with
-the results from HDM in the to predict metabolic disease index (MDI) in
+the results from HDMA in the to predict metabolic disease index (MDI) in
 the CC-RIX. The traits measured in the DO and the CC-RIX were not
 identical, so we limited our prediction to body weight, which was
 measured in both populations, and was the largest contributor to MDI in
 the DO.
 
 For each CC-RIX individual, we multiplied the transcript abundances
-across the transcriptome by the loadings derived from the HDM in the DO
+across the transcriptome by the loadings derived from the HDMA in the DO
 population. This resulted in a vector with \(n\) elements, where \(n\)
 is the number of transcripts in the trancriptome. Each element was a
 weighted value that combined the relative abundance of the transcript
@@ -1667,7 +1659,7 @@ weight (Supplementary Figure \ref{fig:cc_imputation}B).
 
 \subsubsection{Cell type specificity}\label{cell-type-specificity}
 
-We investigated whether the loadings derived from HDM reflected tissue
+We investigated whether the loadings derived from HDMA reflected tissue
 composition changes in the DO mice prone to obesity on the high-fat
 diet. To do this, we acquired lists of cell-type specific transcripts
 from the literature. In adipose tissue, we looked at cell-type specific
@@ -1817,10 +1809,15 @@ liver tissue - GSE237743};
 \href{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE237747}{CC-RIX
 skeletal muscle - GSE237747}.
 
-Count matrices and phenotype data can be found at
+Count matrices and phenotype data can be found on
 \href{https://figshare.com/}{Figshare}.
 \href{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979}{DOI:
 10.6084/m9.figshare.27066979} \cite{cube_data}
+
+Source Data for figures in this manuscript are available on
+\href{https://figshare.com/}{Figshare}.
+\href{https://figshare.com/account/projects/251795/articles/29247428?file=55154321}{DOI:
+10.6084/m9.figshare.29247428} \cite{tyler_2025}
 
 \textbf{Data from previous publications:}
 
@@ -1844,10 +1841,6 @@ and 26 obese children. * Accession number
 Visceral adipose biopsies were measured in four technical replicates
 each in three female patients with type 2 diabetes, and three
 non-diabetic female patients.
-
-Source data for figures are provided as tab-delimited text files on
-\href{https://figshare.com/articles/dataset/Data_and_code_for_High-Dimensional_Mediation_Analysis_HDMA_in_diversity_outbred_mice/27066979}{Figshare}
-in the file Source\_Data.zip.
 
 \subsection{Code Availability}\label{code-availability}
 
@@ -1981,7 +1974,7 @@ $G \rightarrow T \rightarrow P$, the mediating pathway
 (arrows), while simultaneously minimizing the direct $G 
 \rightarrow P$ pathway (dotted line). The composite 
 vectors that resulted from high-dimensional mediation 
-were $G_c$, $T_C$, and $P_C$. The partial correlations 
+were $G_C$, $T_C$, and $P_C$. The partial correlations 
 $\rho$ between these vectors indicated perfect mediation. 
 Transcript and trait loadings were calculated as described 
 in the methods. \textbf{B.} The null distribution of the path 
@@ -2081,7 +2074,7 @@ mean in any tissue. The heat map was clustered using
 $k$ medoid clustering. Functional enrichments of each 
 cluster are indicated along the left margin. \textbf{B} 
 Loadings for \textit{Pparg} in different tissues indicated 
-by color. \textbf{C} Local (brown) and distal (gray) of 
+by color. \textbf{C.} Local (brown) and distal (gray) of 
 \textit{Pparg} expression in different tissues. Source data 
 are provided as a Source Data file.
 }
@@ -2092,7 +2085,7 @@ are provided as a Source Data file.
 %\includegraphics[width=\textwidth]{Figures/Fig7_CC_Prediction.pdf} 
 \caption{Transcription, but not local genotype, predicts 
 phenotype in the CC-RIX. \textbf{A.} Workflow showing 
-procedure for translating HDM results to an independent 
+procedure for translating HDMA results to an independent 
 population of mice. \textbf{B.} Relationships between the 
 predicted metabolic disease index (MDI) and the mean
 of the rankZ normalized body weight. In this column,
@@ -2125,7 +2118,7 @@ file.
 
 \begin{figure}[ht!]
 %\includegraphics[width=\textwidth]{Figures/Fig8_Human_Translation.pdf} 
-\caption{HDM results translate to humans. \textbf{A.} Distribution of 
+\caption{HDMA results translate to humans. \textbf{A.} Distribution of 
 loadings for cell-type-specific transcripts in adipose tissue
 (purple). Numbers in parentheses indicate the number of 
 transcripts in each group. \textbf{B.} Distribution of loadings 
@@ -2141,7 +2134,7 @@ metabolic disease index (MDI) in four adipose transcription
 data sets downloaded from GEO. In each study the 
 obese/diabetic patients were predicted to have greater 
 MDI than the lean/non-diabetic patients based on the 
-HDM results from DO mice. 1) two-sided Welch's $t$ test: $t = 2.28$, 
+HDMA results from DO mice. 1) two-sided Welch's $t$ test: $t = 2.28$, 
 df = 58.1, 95\% CI of difference = $2.1\times10^{-5}$ 
 to $3.2\times10^{-4}$ A.U.; $p = 0.027$
 2) two-sided Welch's $t$ test: $t = 3.04$, 
