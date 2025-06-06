@@ -931,20 +931,19 @@ following JAX strains of Collaborative Cross mice: CC043/GeniUncJ
 (strain\#:023831), CC004/TauUncJ (strain\#:020944), CC009/UncJ
 (strain\#:018856), CC013/GeniUncJ (strain\#:021892), and CC060/UncJ
 (strain\#:026427). Counts of male and female mice in each strain are
-available in the supplementary file CC-RIX\_strain\_table.txt. All DO
-mice were maintained on a high-fat, high-sugar diet. The CC-RIX mice
-were randomized to a high-fat or a low-fat diet. The diets were
-different colors, so blinding was not possible. CC-RIX mice were
-sacrificed in a 6-month cohort and a 12-month cohort. In the DO
-population, we used sex, DO generation, and DO wave as covariates in all
-statistical tests. In the CC-RIX population, we used diet, sex, and age
-as covariates in all statistical tests. We did not investiagate
-sex-specific effects on genetic architecture in order to maximize power
-and generalizability, as well as to simplify the overall analysis.
-CC-RIX animals were randomly assigned to housing and diets based on
-litters with multiple litters in each group. While undergoing metabolic
-phenotyping animals were randomly assigned an order for testing. Sample
-sizes were determined using statistical rules of thumb
+available in the Supplementary File 3. All DO mice were maintained on a
+high-fat, high-sugar diet. The CC-RIX mice were randomized to a high-fat
+or a low-fat diet. The diets were different colors, so blinding was not
+possible. CC-RIX mice were sacrificed in a 6-month cohort and a 12-month
+cohort. In the DO population, we used sex, DO generation, and DO wave as
+covariates in all statistical tests. In the CC-RIX population, we used
+diet, sex, and age as covariates in all statistical tests. We did not
+investiagate sex-specific effects on genetic architecture in order to
+maximize power and generalizability, as well as to simplify the overall
+analysis. CC-RIX animals were randomly assigned to housing and diets
+based on litters with multiple litters in each group. While undergoing
+metabolic phenotyping animals were randomly assigned an order for
+testing. Sample sizes were determined using statistical rules of thumb
 \cite{van2011statistical}. We included at least four biological
 replicates that were tested over multiple months to increase replication
 power. No data were excluded. Further experimental details and
@@ -1639,14 +1638,14 @@ Figure \ref{fig:cc_imputation}B).
 traits}\label{prediction-of-cc-rix-traits}
 
 We used both measured expression and imputed expression combined with
-the results from HDM in the to predict metabolic disease index (MDI) in
+the results from HDMA in the to predict metabolic disease index (MDI) in
 the CC-RIX. The traits measured in the DO and the CC-RIX were not
 identical, so we limited our prediction to body weight, which was
 measured in both populations, and was the largest contributor to MDI in
 the DO.
 
 For each CC-RIX individual, we multiplied the transcript abundances
-across the transcriptome by the loadings derived from the HDM in the DO
+across the transcriptome by the loadings derived from the HDMA in the DO
 population. This resulted in a vector with \(n\) elements, where \(n\)
 is the number of transcripts in the trancriptome. Each element was a
 weighted value that combined the relative abundance of the transcript
@@ -1660,7 +1659,7 @@ weight (Supplementary Figure \ref{fig:cc_imputation}B).
 
 \subsubsection{Cell type specificity}\label{cell-type-specificity}
 
-We investigated whether the loadings derived from HDM reflected tissue
+We investigated whether the loadings derived from HDMA reflected tissue
 composition changes in the DO mice prone to obesity on the high-fat
 diet. To do this, we acquired lists of cell-type specific transcripts
 from the literature. In adipose tissue, we looked at cell-type specific
@@ -1818,7 +1817,7 @@ Count matrices and phenotype data can be found on
 Source Data for figures in this manuscript are available on
 \href{https://figshare.com/}{Figshare}.
 \href{https://figshare.com/account/projects/251795/articles/29247428?file=55154321}{DOI:
-10.6084/m9.figshare.29247428} \cite{tyler_2025}
+10.6084/m9.figshare.29247428} \cite{source_data}
 
 \textbf{Data from previous publications:}
 
@@ -2612,13 +2611,13 @@ Alexandra Kuznetsova, Per~B. Brockhoff, and Rune H.~B. Christensen.
 \newblock {lmerTest} package: Tests in linear mixed effects models.
 \newblock {\em Journal of Statistical Software}, 82(13):1--26, 2017.
 
-\bibitem{tyler_2025}
+\bibitem{source_data}
 A.L. Tyler, J.M. Mahoney, M.~P. Keller, Baker C.N., Gaca M., A.~Srivastava,
   Gyuricza I.G., Braun M.J., Rosenthal N.A., A.~D. Attie, G.~A. Churchill, and
   Carter G.W.
-\newblock Data and code for high-dimensional mediation analysis (HDMA) in
-  Diversity Outbred mice.
-\newblock {\em Figshare} Source\_data.zip, Jun 2025.
+\newblock Data for figures in high-dimensional mediation analysis (hdma) in
+  diversity outbred mice.
+\newblock {\em Figshare}, 2025.
 
 \end{thebibliography}
 
@@ -2853,10 +2852,10 @@ are provided as a Source Data file.
 %\includegraphics[width=\textwidth]{Figures/Fig7_CC_Prediction.pdf} 
 \caption{Transcription, but not local genotype, predicts 
 phenotype in the CC-RIX. \textbf{A.} Workflow showing 
-procedure for translating HDM results to an independent 
+procedure for translating HDMA results to an independent 
 population of mice. \textbf{B.} Relationships between the 
 predicted metabolic disease index (MDI) and the mean
-of the rankZ normalized body weight. In this column,
+of the rank normal body weight. In this column,
 MDI was derived from measured transcripts. Adipose - 
 $R^2 = 0.60$;  beta coefficient = $0.89\pm0.17$ 
 standard error; $t = 5.21$; $p = 5.9\times10^{-5}$.
@@ -2886,7 +2885,7 @@ file.
 
 \begin{figure}[ht!]
 %\includegraphics[width=\textwidth]{Figures/Fig8_Human_Translation.pdf} 
-\caption{HDM results translate to humans. \textbf{A.} Distribution of 
+\caption{HDMA results translate to humans. \textbf{A.} Distribution of 
 loadings for cell-type-specific transcripts in adipose tissue
 (purple). Numbers in parentheses indicate the number of 
 transcripts in each group. \textbf{B.} Distribution of loadings 
@@ -2902,7 +2901,7 @@ metabolic disease index (MDI) in four adipose transcription
 data sets downloaded from GEO. In each study the 
 obese/diabetic patients were predicted to have greater 
 MDI than the lean/non-diabetic patients based on the 
-HDM results from DO mice. 1) two-sided Welch's $t$ test: $t = 2.28$, 
+HDMA results from DO mice. 1) two-sided Welch's $t$ test: $t = 2.28$, 
 df = 58.1, 95\% CI of difference = $2.1\times10^{-5}$ 
 to $3.2\times10^{-4}$ A.U.; $p = 0.027$
 2) two-sided Welch's $t$ test: $t = 3.04$, 
